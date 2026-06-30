@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+
+# Datos crudos JSON (descargados de SofaScore, pueden ser GB)
+downloader/data/
+
+# Excel temporales de la app (se generan con el downloader)
+project_clean_v2/project/data/
+
+# Claude Code
+.claude/
+
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# OS
+.DS_Store
