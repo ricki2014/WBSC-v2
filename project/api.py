@@ -1048,6 +1048,8 @@ LIVE_STATE_PATH = os.path.join(REPO_ROOT, "data", "live_state.json")
 
 class LiveStateSnapshot(BaseModel):
     lineupData: dict = None
+    manualPos: list = None
+    baseSwapped: bool = None
     score: dict = None
     period: str = None
     liveStats: dict = None

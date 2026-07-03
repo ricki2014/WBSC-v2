@@ -204,7 +204,7 @@ export default function App() {
     setPushing(true); setPushMsg('');
     try {
       const res = await pushWebUpdate({
-        lineupData, score, period, liveStats, playerEvents, team1Name, team2Name,
+        lineupData, manualPos, baseSwapped, score, period, liveStats, playerEvents, team1Name, team2Name,
       });
       setLastPulledAt(res.updated_at || null);
       setSharedUpdatedAt(res.updated_at || null);
@@ -222,6 +222,8 @@ export default function App() {
     try {
       const shared = await getSharedLiveState();
       if (shared.lineupData) setLineupData(shared.lineupData);
+      if (shared.manualPos) setManualPos(shared.manualPos);
+      if (shared.baseSwapped != null) setBaseSwapped(shared.baseSwapped);
       if (shared.score) setScore(shared.score);
       if (shared.period) setPeriod(shared.period);
       if (shared.liveStats) setLiveStats(shared.liveStats);
