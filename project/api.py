@@ -1096,6 +1096,7 @@ def push_web_update(snapshot: LiveStateSnapshot):
         "committed": True,
         "updated_at": now_utc_iso,
         "update_number": payload["update_number"],
+        "manual_pos_count": len(payload.get("manualPos") or []),
     }
 
 # ─── DISTRIBUCIÓN DE TIROS ───────────────────────────────────────────────────

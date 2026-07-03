@@ -209,7 +209,8 @@ export default function App() {
       setLastPulledAt(res.updated_at || null);
       setSharedUpdatedAt(res.updated_at || null);
       if (res.update_number != null) setUpdateNumber(res.update_number);
-      setPushMsg(res.committed ? `✅ Publicado (Actualización ${res.update_number})` : '✅ Ya estaba al día');
+      const posInfo = ` · posiciones enviadas: ${manualPos?.length ?? 0}, guardadas: ${res.manual_pos_count ?? '?'}`;
+      setPushMsg((res.committed ? `✅ Publicado (Actualización ${res.update_number})` : '✅ Ya estaba al día') + posInfo);
     } catch (e) {
       setPushMsg('❌ ' + (e?.response?.data?.detail || 'Error al publicar'));
     } finally {
@@ -230,7 +231,7 @@ export default function App() {
       if (shared.playerEvents) setPlayerEvents(shared.playerEvents);
       setLastPulledAt(shared.updated_at || null);
       if (shared.update_number != null) setUpdateNumber(shared.update_number);
-      setPushMsg(`✅ Estado cargado (Actualización ${shared.update_number ?? '?'})`);
+      setPushMsg(`✅ Estado cargado (Actualización ${shared.update_number ?? '?'}) · posiciones recibidas: ${shared.manualPos?.length ?? 0}`);
     } catch (e) {
       setPushMsg('❌ ' + (e?.response?.data?.detail || 'No hay estado publicado'));
     } finally {
