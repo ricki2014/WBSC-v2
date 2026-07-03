@@ -189,8 +189,8 @@ function PlayerMatchModal({ player, statOption, file, teamName, onClose }) {
 
   return (
     <div className="absolute inset-0 z-50 bg-black/90 flex flex-col rounded-xl overflow-hidden">
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900 border-b border-gray-700 shrink-0">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-2 bg-gray-900 border-b border-gray-700 shrink-0">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="text-lg">{statOption.icon}</span>
           <span className="text-white font-bold text-sm">{player.name || player.shortName}</span>
           <span className={`text-xs font-semibold ${statOption.color}`}>· {statOption.label}</span>
@@ -436,9 +436,7 @@ export default function P7_StatsVivoJugador({
     setModalPlayer(player);
   }, []);
 
-  const isModalTeam1 = modalPlayer
-    ? (swapped ? modalPlayer.side === 'away' : modalPlayer.side === 'home')
-    : false;
+  const isModalTeam1 = modalPlayer ? modalPlayer.team === 'team1' : false;
   const modalFile     = modalPlayer ? (isModalTeam1 ? selectedFiles?.f1 : selectedFiles?.f2) : null;
   const modalTeamName = modalPlayer ? (isModalTeam1 ? team1Name : team2Name) : null;
 
@@ -455,13 +453,13 @@ export default function P7_StatsVivoJugador({
   }
 
   return (
-    <div className="h-full flex gap-3 overflow-hidden">
+    <div className="md:h-full flex flex-col md:flex-row gap-3 overflow-y-auto md:overflow-hidden">
 
       {/* ── CAMPO ─────────────────────────────────────────────────────────── */}
-      <div className="flex-1 flex flex-col gap-2 overflow-hidden">
+      <div className="flex-1 flex flex-col gap-2 md:overflow-hidden">
 
         {/* Header */}
-        <div className="flex items-center gap-3 text-xs shrink-0">
+        <div className="flex flex-wrap items-center gap-3 text-xs shrink-0">
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-700"/>
             <span className="text-gray-300 font-medium">{homeName}</span>
@@ -539,7 +537,7 @@ export default function P7_StatsVivoJugador({
       </div>
 
       {/* ── SIDEBAR DE ESTADÍSTICAS ────────────────────────────────────────── */}
-      <div className="w-44 shrink-0 flex flex-col gap-1.5 overflow-auto">
+      <div className="w-full md:w-44 shrink-0 flex flex-col gap-1.5 overflow-auto">
         <div className="text-white font-bold text-xs mb-0.5 shrink-0">📊 Estadística a ver</div>
 
         {STAT_OPTIONS.map(s => {

@@ -267,10 +267,10 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
         🎯 Tiros por jugador · clic para ver distribución (10 min)
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex flex-col md:flex-row gap-3">
         {/* Campo */}
         <div className="flex-1 flex flex-col gap-1 min-w-0">
-          <div className="flex items-center gap-4 text-xs mb-1">
+          <div className="flex flex-wrap items-center gap-4 text-xs mb-1">
             <div className="flex items-center gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-700"/>
               <span className="text-gray-300">{homeName}</span>
@@ -308,7 +308,7 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
         </div>
 
         {/* Gráfico del jugador seleccionado */}
-        <div className="w-72 shrink-0 flex flex-col justify-center">
+        <div className="w-full md:w-72 shrink-0 flex flex-col justify-center">
           {!selectedPlayer ? (
             <div className="h-full flex items-center justify-center text-gray-600 text-xs text-center border border-gray-700/40 rounded-xl p-4">
               Seleccioná un jugador en la cancha para ver su distribución de tiros
@@ -360,7 +360,7 @@ export default function P9_DistTiros({
       </div>
 
       {/* Paneles por equipo */}
-      <div className="flex gap-3">
+      <div className="flex flex-col md:flex-row gap-3">
         <TeamPanel file={selectedFiles?.f1} teamName={analysis.team1?.name} color="green" />
         <TeamPanel file={selectedFiles?.f2} teamName={analysis.team2?.name} color="blue"  />
       </div>

@@ -168,11 +168,11 @@ function Expectativas({ s1, s2, name1, name2 }) {
 
   return (
     <div className="bg-gray-900 border border-gray-700/40 rounded-xl p-4">
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
         <div className="flex items-center gap-2">
           <span className="text-base">📈</span>
           <span className="text-white font-bold text-sm">Expectativas del partido</span>
-          <span className="text-gray-500 text-[10px]">(Mi ataque + Defensa rival) / 2</span>
+          <span className="hidden sm:inline text-gray-500 text-[10px]">(Mi ataque + Defensa rival) / 2</span>
         </div>
         {/* Tabs 1T / 2T / Total */}
         <div className="flex gap-1">
@@ -188,7 +188,7 @@ function Expectativas({ s1, s2, name1, name2 }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
         {EXP_STATS.map(({ icon, label, pre, big, swap }) => {
           const { a, b, tot } = calcExp(s1, s2, pre, suf);
           const expA = swap ? b : a;
@@ -204,7 +204,7 @@ function Expectativas({ s1, s2, name1, name2 }) {
       </div>
 
       {/* Resumen numérico debajo */}
-      <div className="mt-3 pt-3 border-t border-gray-700/40 grid grid-cols-2 gap-3 text-[10px]">
+      <div className="mt-3 pt-3 border-t border-gray-700/40 grid grid-cols-1 sm:grid-cols-2 gap-3 text-[10px]">
         {['Goles','Corners'].map(stat => {
           const pre = stat === 'Goles' ? 'G' : 'C';
           const { a, b, tot } = calcExp(s1, s2, pre, suf);
@@ -266,7 +266,7 @@ function GoalDistSection({ dist1, dist2, name1, name2 }) {
         <span className="text-white font-bold text-sm">Distribución de goles por tramo</span>
         <span className="text-gray-500 text-[10px]">· cada 10 minutos</span>
       </div>
-      <div className="flex gap-6">
+      <div className="flex flex-col md:flex-row gap-6">
         <GoalDistChart dist={dist1} name={`${name1} (${total1} goles)`} color="green" />
         <GoalDistChart dist={dist2} name={`${name2} (${total2} goles)`} color="blue" />
       </div>
@@ -314,7 +314,7 @@ export default function P1_Comparacion({ analysis, selectedFiles }) {
     <div className="h-full flex flex-col gap-3 overflow-auto p-1">
 
       {/* Filtros de condición */}
-      <div className="grid grid-cols-2 gap-3 shrink-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 shrink-0">
         <div className="bg-gray-900 border border-green-800/30 rounded-xl px-3 py-2">
           <div className="text-green-400 font-bold text-xs mb-1.5">{team1.name}</div>
           <CondSelector value={cond1} onChange={setCond1} color="green" />
@@ -333,7 +333,7 @@ export default function P1_Comparacion({ analysis, selectedFiles }) {
       )}
 
       {/* Fichas de equipo lado a lado */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         <TeamFicha name={team1.name} stats={team1.stats} color="green" />
         <TeamFicha name={team2.name} stats={team2.stats} color="blue"  />
       </div>

@@ -155,8 +155,8 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, onClo
   return (
     <div className="absolute inset-0 z-50 bg-gray-900 flex flex-col rounded-xl overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-2.5 bg-gray-900 border-b border-gray-700 shrink-0">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 bg-gray-900 border-b border-gray-700 shrink-0">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="text-lg">{row.icon}</span>
           <span className="text-white font-bold text-sm">{row.label}</span>
           <span className="text-gray-500 text-[11px]">— {teamName}</span>
@@ -261,7 +261,7 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, onClo
               <div className="text-[11px] text-gray-500 mb-3 font-semibold uppercase tracking-wide">
                 Boxplot {row.label} por Partido — {halfLabel}
               </div>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <div className="text-[10px] text-green-400 font-bold mb-2 text-center">{teamName}</div>
                   <div className="flex flex-col gap-4">
@@ -392,7 +392,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
 
   return (
     <div className="h-full flex flex-col gap-3 overflow-auto p-1 relative">
-      <div className="flex items-center justify-between shrink-0">
+      <div className="flex flex-wrap items-center justify-between gap-2 shrink-0">
         <div className="flex items-center gap-2">
           <span className="text-lg">🧮</span>
           <span className="text-white font-bold">Esperado vs Sucedido vs Restante</span>
@@ -412,7 +412,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative">
         <TeamESR
           teamName={team1.name}
           stats={team1.stats}
