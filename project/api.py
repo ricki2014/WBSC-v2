@@ -1067,8 +1067,11 @@ def push_web_update(snapshot: LiveStateSnapshot):
     import subprocess
     import datetime as _dt
 
+    now = _dt.datetime.now()
+    now_utc_iso = _dt.datetime.utcnow().isoformat()
+
     payload = snapshot.dict()
-    payload["updated_at"] = _dt.datetime.utcnow().isoformat()
+    payload["updated_at"] = now_utc_iso
     os.makedirs(os.path.dirname(LIVE_STATE_PATH), exist_ok=True)
     with open(LIVE_STATE_PATH, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
@@ -1083,7 +1086,8 @@ def push_web_update(snapshot: LiveStateSnapshot):
         if add.returncode != 0:
             raise HTTPException(status_code=500, detail=f"git add falló: {add.stderr}")
 
-        commit = run(["git", "commit", "-m", "Actualizar datos y estado en vivo"])
+        commit_msg = f"Actualizar datos y estado en vivo - {now.strftime('%H:%M')}"
+        commit = run(["git", "commit", "-m", commit_msg])
         nothing_to_commit = commit.returncode != 0 and "nothing to commit" in (commit.stdout + commit.stderr).lower()
         if commit.returncode != 0 and not nothing_to_commit:
             raise HTTPException(status_code=500, detail=f"git commit falló: {commit.stdout}\n{commit.stderr}")
@@ -1098,6 +1102,7 @@ def push_web_update(snapshot: LiveStateSnapshot):
         "pushed": True,
         "committed": not nothing_to_commit,
         "push_output": push.stderr.strip(),
+        "updated_at": now_utc_iso,
     }
 
 # ─── DISTRIBUCIÓN DE TIROS ───────────────────────────────────────────────────

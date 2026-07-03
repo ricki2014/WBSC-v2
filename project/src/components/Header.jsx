@@ -1,4 +1,4 @@
-export default function Header({ team1, team2, score, timer, period }) {
+export default function Header({ team1, team2, score, timer, period, liveStateAt }) {
   const fmt = (s) => `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
   return (
     <div className="bg-gray-950 border-b border-gray-800 px-2 md:px-4 py-2 flex items-center justify-between gap-2 shrink-0">
@@ -17,6 +17,11 @@ export default function Header({ team1, team2, score, timer, period }) {
           </span>
           <span className="text-gray-400 text-xs font-bold">{period}</span>
         </div>
+        {liveStateAt && (
+          <span className="text-gray-500 text-[10px] mt-0.5 whitespace-nowrap">
+            🕐 Última actualización: {new Date(liveStateAt).toLocaleTimeString()}
+          </span>
+        )}
       </div>
       <div className="text-gray-400 text-xs text-right truncate min-w-0">
         {team1 && team2 ? <><span className="text-white">{team1}</span> vs <span className="text-white">{team2}</span></> : 'Selecciona equipos'}

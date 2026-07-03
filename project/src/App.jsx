@@ -203,7 +203,10 @@ export default function App() {
       const res = await pushWebUpdate({
         lineupData, score, period, liveStats, playerEvents, team1Name, team2Name,
       });
-      setPushMsg(res.committed ? '✅ Publicado' : '✅ Ya estaba al día');
+      const hora = res.updated_at ? new Date(res.updated_at).toLocaleTimeString() : '';
+      setLastPulledAt(res.updated_at || null);
+      setSharedUpdatedAt(res.updated_at || null);
+      setPushMsg(res.committed ? `✅ Publicado (${hora})` : '✅ Ya estaba al día');
     } catch (e) {
       setPushMsg('❌ ' + (e?.response?.data?.detail || 'Error al publicar'));
     } finally {
@@ -248,7 +251,7 @@ export default function App() {
 
   return (
     <div className="w-screen min-h-screen flex flex-col bg-gray-950 overflow-x-hidden">
-      <Header team1={team1Name} team2={team2Name} score={score} timer={timer} period={period} />
+      <Header team1={team1Name} team2={team2Name} score={score} timer={timer} period={period} liveStateAt={lastPulledAt} />
 
       {/* FileSelector — siempre visible arriba */}
       <div className="flex flex-wrap items-center gap-2 md:gap-3 px-2 md:px-3 pt-2 pb-2 border-b border-gray-800 shrink-0">
