@@ -437,7 +437,7 @@ def get_scorers(data):
 
 # ─── SOFASCORE LINEUPS ───────────────────────────────────────────────────────
 
-def fetch_starters_api(url_input=None, team_id=None):
+def fetch_starters_api(url_input=None, team_id=None, use_last=False):
     headers = {
         "User-Agent": "SofaScore/2023.11.14 (Linux; Android 13; SM-S918B; Build/TP1A.220624.014)",
         "Accept": "application/json, text/plain, */*",
@@ -456,6 +456,16 @@ def fetch_starters_api(url_input=None, team_id=None):
             match_id = m.group(1) if m else None
         else:
             match_id = url_input
+    elif team_id and use_last:
+        # "Descargar actual" = SOLO el partido en vivo ahora mismo. Sin fallback a
+        # events/last (terminados) porque eso trae partidos viejos, no el actual.
+        try:
+            live = session.get("https://api.sofascore.com/api/v1/sport/football/events/live", timeout=10).json()
+            for e in live.get('events', []):
+                if str(e.get('homeTeam', {}).get('id')) == str(team_id) or str(e.get('awayTeam', {}).get('id')) == str(team_id):
+                    match_id = e.get('id')
+                    break
+        except: pass
     elif team_id:
         try:
             ev = session.get(f"https://api.sofascore.com/api/v1/team/{team_id}/events/next/0", timeout=10).json()
@@ -474,7 +484,7 @@ def fetch_starters_api(url_input=None, team_id=None):
             away_name = det['event']['awayTeam']['name']
     except: pass
 
-    res = {'home': [], 'away': [], 'home_name': home_name, 'away_name': away_name}
+    res = {'home': [], 'away': [], 'home_name': home_name, 'away_name': away_name, 'match_id': match_id}
     for endpoint in ["lineups", "expected-lineups"]:
         try:
             r = session.get(f"https://api.sofascore.com/api/v1/event/{match_id}/{endpoint}", timeout=10)
@@ -493,7 +503,9 @@ def fetch_starters_api(url_input=None, team_id=None):
                             try: return int(raw)
                             except: return None
                         def _pos(p):
-                            raw = (p.get('player',{}).get('position','') or '')
+                            # p['position'] = posición táctica en ESTE partido; player.position = posición habitual/de club.
+                            # Priorizamos la del partido porque puede diferir (ej. mediocampista jugando de central).
+                            raw = (p.get('position') or p.get('player', {}).get('position', '') or '')
                             return _POS.get(raw.lower(), raw[:1].upper() if raw else 'M')
                         res[side] = [{
                             'id':           p.get('player', {}).get('id'),
@@ -644,6 +656,9 @@ _TEAM_COLS = {
     'TI_F': {'1T': ('tiros_home_1T',   'tiros_away_1T'),
               '2T': ('tiros_home_2T',   'tiros_away_2T'),
               'FT': ('tiros_home_FT',   'tiros_away_FT')},
+    'PA_F': {'1T': ('pases_home_1T',   'pases_away_1T'),
+              '2T': ('pases_home_2T',   'pases_away_2T'),
+              'FT': ('pases_home_FT',   'pases_away_FT')},
     'FA_F': {'1T': ('faltas_home_1T',  'faltas_away_1T'),
               '2T': ('faltas_home_2T',  'faltas_away_2T'),
               'FT': ('faltas_home_FT',  'faltas_away_FT')},
@@ -866,13 +881,132 @@ async def get_player_matches(file: str, player_name: str, stat_key: str = ''):
 class LineupRequest(BaseModel):
     url: str = None
     team_id: str = None
+    last: bool = False
 
 @app.post("/get-lineups")
 async def get_lineups(req: LineupRequest):
-    result = fetch_starters_api(url_input=req.url, team_id=req.team_id)
+    result = fetch_starters_api(url_input=req.url, team_id=req.team_id, use_last=req.last)
     if not result:
         raise HTTPException(status_code=404, detail="No se encontraron alineaciones")
     return result
+
+# ─── ESTADO EN VIVO (sync automático desde SofaScore) ────────────────────────
+
+def _live_period(status):
+    desc = str(status.get('description', '')).lower()
+    stype = status.get('type', '')
+    if stype == 'finished':
+        return 'FT'
+    if 'halftime' in desc or 'first' in desc or '1st' in desc:
+        return '1T'
+    if 'second' in desc or '2nd' in desc:
+        return '2T'
+    return '1T'
+
+@app.get("/live-status/{match_id}")
+def get_live_status(match_id: str):
+    session = requests_cffi.Session(impersonate="chrome120")
+    session.headers.update({
+        "User-Agent": "SofaScore/2023.11.14 (Linux; Android 13; SM-S918B; Build/TP1A.220624.014)",
+        "Accept": "application/json, text/plain, */*",
+        "Origin": "https://www.sofascore.com",
+        "Referer": "https://www.sofascore.com/",
+        "X-Requested-With": "com.sofascore.results",
+    })
+
+    try:
+        ev = session.get(f"https://api.sofascore.com/api/v1/event/{match_id}", timeout=10).json()["event"]
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"No se pudo obtener el partido: {e}")
+
+    score = {"home": ev.get("homeScore", {}).get("current", 0), "away": ev.get("awayScore", {}).get("current", 0)}
+    period = _live_period(ev.get("status", {}))
+
+    # ── Stats de equipo ──
+    STAT_MAP = {
+        "Corners": "Corner kicks", "Disparos": "Total shots", "TiroAlArco": "Shots on target",
+        "Pases": "Passes",
+    }
+    team_stats = {"home": {}, "away": {}}
+    try:
+        st = session.get(f"https://api.sofascore.com/api/v1/event/{match_id}/statistics", timeout=10).json()
+        all_block = next((b for b in st.get("statistics", []) if b.get("period") == "ALL"), None)
+        items = {}
+        if all_block:
+            for group in all_block.get("groups", []):
+                for item in group.get("statisticsItems", []):
+                    items[item.get("name")] = item
+        for field, sofa_name in STAT_MAP.items():
+            it = items.get(sofa_name, {})
+            team_stats["home"][field] = it.get("homeValue", 0) or 0
+            team_stats["away"][field] = it.get("awayValue", 0) or 0
+        fouls = items.get("Fouls", {})
+        team_stats["home"]["FoulCometido"] = fouls.get("homeValue", 0) or 0
+        team_stats["away"]["FoulCometido"] = fouls.get("awayValue", 0) or 0
+        team_stats["home"]["FoulRecibido"] = fouls.get("awayValue", 0) or 0
+        team_stats["away"]["FoulRecibido"] = fouls.get("homeValue", 0) or 0
+    except Exception:
+        pass
+    team_stats["home"]["Goles"] = score["home"]
+    team_stats["away"]["Goles"] = score["away"]
+
+    # ── Tarjetas y sustituciones (equipo y jugador) desde incidents ──
+    player_stats = {}
+    substitutions = []
+    team_stats["home"]["Tarjetas"] = 0; team_stats["home"]["Rojas"] = 0
+    team_stats["away"]["Tarjetas"] = 0; team_stats["away"]["Rojas"] = 0
+    try:
+        inc = session.get(f"https://api.sofascore.com/api/v1/event/{match_id}/incidents", timeout=10).json()
+        for i in inc.get("incidents", []):
+            if i.get("incidentType") == "card":
+                side = "home" if i.get("isHome") else "away"
+                pid = str(i.get("player", {}).get("id", ""))
+                klass = i.get("incidentClass")
+                field = "Amarilla" if klass == "yellow" else "Roja"
+                if klass == "yellow":
+                    team_stats[side]["Tarjetas"] += 1
+                else:
+                    team_stats[side]["Rojas"] += 1
+                if pid:
+                    player_stats.setdefault(pid, {})
+                    player_stats[pid][field] = player_stats[pid].get(field, 0) + 1
+            elif i.get("incidentType") == "substitution":
+                p_in = i.get("playerIn", {}) or {}
+                p_out = i.get("playerOut", {}) or {}
+                substitutions.append({
+                    "is_home":     i.get("isHome"),
+                    "out_id":      p_out.get("id"),
+                    "in_id":       p_in.get("id"),
+                    "in_name":     p_in.get("name", ""),
+                    "in_shortName":p_in.get("shortName") or p_in.get("name", ""),
+                    "in_position": p_in.get("position", ""),
+                    "in_number":   p_in.get("jerseyNumber"),
+                    "minute":      i.get("time"),
+                })
+    except Exception:
+        pass
+
+    # ── Stats por jugador desde lineups ──
+    PLAYER_MAP = {"goals": "Gol", "totalShots": "Disparo", "onTargetScoringAttempt": "TiroArco",
+                  "fouls": "FoulCom", "wasFouled": "FoulRec"}
+    try:
+        lu = session.get(f"https://api.sofascore.com/api/v1/event/{match_id}/lineups", timeout=10).json()
+        for side in ["home", "away"]:
+            for p in lu.get(side, {}).get("players", []):
+                pid = str(p.get("player", {}).get("id", ""))
+                if not pid:
+                    continue
+                stats = p.get("statistics", {}) or {}
+                for sofa_key, field in PLAYER_MAP.items():
+                    v = stats.get(sofa_key)
+                    if v:
+                        player_stats.setdefault(pid, {})
+                        player_stats[pid][field] = int(v)
+    except Exception:
+        pass
+
+    return {"score": score, "period": period, "team_stats": team_stats, "player_stats": player_stats,
+            "substitutions": substitutions}
 
 # ─── DISTRIBUCIÓN DE TIROS ───────────────────────────────────────────────────
 

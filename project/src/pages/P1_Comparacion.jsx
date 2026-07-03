@@ -119,14 +119,17 @@ function CondSelector({ value, onChange, color }) {
 //          expB = (B_favor_p + A_contra_p) / 2
 //          total = expA + expB
 
+// swap: true → intercambia expA/expB (para "recibidas" = lo que el rival
+// comete combinado con lo que este equipo recibe habitualmente, en vez de al revés)
 const EXP_STATS = [
-  { icon: '⚽', label: 'Goles',     pre: 'G',  big: false },
-  { icon: '🚩', label: 'Corners',   pre: 'C',  big: false },
-  { icon: '🟨', label: 'Amarillas', pre: 'AM', big: false },
-  { icon: '🟥', label: 'Rojas',     pre: 'RO', big: false },
-  { icon: '🎯', label: 'Disparos',  pre: 'TI', big: false },
-  { icon: '↔️', label: 'Pases',    pre: 'PA', big: true  },
-  { icon: '🤛', label: 'Faltas',    pre: 'FA', big: false },
+  { icon: '⚽', label: 'Goles',            pre: 'G',  big: false },
+  { icon: '🚩', label: 'Corners',          pre: 'C',  big: false },
+  { icon: '🟨', label: 'Amarillas',        pre: 'AM', big: false },
+  { icon: '🟥', label: 'Rojas',            pre: 'RO', big: false },
+  { icon: '🎯', label: 'Disparos',         pre: 'TI', big: false },
+  { icon: '↔️', label: 'Pases',           pre: 'PA', big: true  },
+  { icon: '🤛', label: 'Faltas cometidas', pre: 'FA', big: false },
+  { icon: '🛡️', label: 'Faltas recibidas', pre: 'FA', big: false, swap: true },
 ];
 
 function calcExp(s1, s2, pre, suf) {
@@ -186,12 +189,14 @@ function Expectativas({ s1, s2, name1, name2 }) {
       </div>
 
       <div className="grid grid-cols-4 gap-2">
-        {EXP_STATS.map(({ icon, label, pre, big }) => {
+        {EXP_STATS.map(({ icon, label, pre, big, swap }) => {
           const { a, b, tot } = calcExp(s1, s2, pre, suf);
+          const expA = swap ? b : a;
+          const expB = swap ? a : b;
           return (
             <ExpCard key={label}
               icon={icon} label={label}
-              expA={a} expB={b} total={tot}
+              expA={expA} expB={expB} total={tot}
               nameA={name1} nameB={name2}
               big={big} />
           );

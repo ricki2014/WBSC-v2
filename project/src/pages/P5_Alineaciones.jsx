@@ -1,8 +1,10 @@
 // TAB 5 — Alineaciones/Formaciones
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { fetchLineups } from '../api';
+import { fetchLineups, getLiveStatus } from '../api';
 
-function layoutFormation(players, formation, side) {
+// side: lado VISUAL ('home'/'away') · team: identidad real ('team1'/'team2'),
+// independiente del lado visual (que puede invertirse en 2T o manualmente).
+function layoutFormation(players, formation, side, team) {
   const posOrder = { G: 0, D: 1, M: 2, F: 3 };
   const starters = players
     .filter(p => !p.isSubstitute)
@@ -34,7 +36,7 @@ function layoutFormation(players, formation, side) {
     const x = isHome ? 4 + ratio * 43 : 96 - ratio * 43;
     group.forEach((player, pi) => {
       const y = n === 1 ? 50 : 8 + ((n - 1 - pi) / (n - 1)) * 84;
-      result.push({ ...player, x, y: isHome ? y : 100 - y, side, team: side === 'home' ? 'team1' : 'team2' });
+      result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
     });
   });
   return result;
@@ -112,9 +114,13 @@ function FieldMarkings() {
 export default function P5_Alineaciones({
   analysis, lineupData, setLineupData,
   manualPos, setManualPos,
-  playerEvents,
-  fieldSwapped, setFieldSwapped,
+  playerEvents, setPlayerEvents,
+  fieldSwapped, setFieldSwapped, baseSwapped,
+  team1Name, team2Name,
+  setScore, setPeriod, setLiveStats,
 }) {
+  const [updatingLive, setUpdatingLive] = useState(false);
+  const [liveError, setLiveError]       = useState('');
   const [localSubs,    setLocalSubs]    = useState({ home: [], away: [] });
   const [subTeam,      setSubTeam]      = useState('home');
   const [urlInput,     setUrlInput]     = useState('');
@@ -129,6 +135,10 @@ export default function P5_Alineaciones({
   const swapped    = fieldSwapped;
   const setSwapped = setFieldSwapped;
 
+  // Identidad real de equipo — independiente del lado visual (que invierte en 2T).
+  const teamOfHome = baseSwapped ? 'team2' : 'team1';
+  const teamOfAway = baseSwapped ? 'team1' : 'team2';
+
   const team1Id = analysis?.team1?.team_id;
   const team2Id = analysis?.team2?.team_id;
 
@@ -139,25 +149,29 @@ export default function P5_Alineaciones({
     if (!lineupData) return;
     const h = swapped ? lineupData.away : lineupData.home;
     const a = swapped ? lineupData.home : lineupData.away;
+    const hTeam = swapped ? teamOfAway : teamOfHome;
+    const aTeam = swapped ? teamOfHome : teamOfAway;
     const newSubs = {
-      home: (h || []).filter(p => p.isSubstitute),
-      away: (a || []).filter(p => p.isSubstitute),
+      home: (h || []).filter(p => p.isSubstitute).map(p => ({ ...p, team: hTeam })),
+      away: (a || []).filter(p => p.isSubstitute).map(p => ({ ...p, team: aTeam })),
     };
     if (skipResetRef.current) {
       skipResetRef.current = false;
     }
     setLocalSubs(newSubs);
-  }, [lineupData, swapped]);
+  }, [lineupData, swapped, teamOfHome, teamOfAway]);
 
   const autoPositions = useMemo(() => {
     if (!lineupData) return [];
     const h = swapped ? lineupData.away : lineupData.home;
     const a = swapped ? lineupData.home : lineupData.away;
+    const hTeam = swapped ? teamOfAway : teamOfHome;
+    const aTeam = swapped ? teamOfHome : teamOfAway;
     return [
-      ...layoutFormation(h || [], effHF() || '', 'home'),
-      ...layoutFormation(a || [], effAF() || '', 'away'),
+      ...layoutFormation(h || [], effHF() || '', 'home', hTeam),
+      ...layoutFormation(a || [], effAF() || '', 'away', aTeam),
     ];
-  }, [lineupData, swapped]);
+  }, [lineupData, swapped, teamOfHome, teamOfAway]);
 
   const positions = manualPos ?? autoPositions;
 
@@ -199,6 +213,99 @@ export default function P5_Alineaciones({
     try { applyLineup(await fetchLineups({ team_id: String(tid) })); }
     catch { setError('No se encontró próximo partido'); }
     finally { setLoading(false); }
+  };
+
+  // Descargar actual: el último partido con id (útil si el partido ya arrancó,
+  // porque auto-detectar sigue apuntando al siguiente upcoming en vez del que está en curso)
+  const downloadCurrent = async () => {
+    const tid = autoSide === 'home' ? team1Id : team2Id;
+    if (!tid) { setError('No hay team_id en el Excel'); return; }
+    setLoading(true); setError('');
+    try { applyLineup(await fetchLineups({ team_id: String(tid), last: true })); }
+    catch { setError('No se encontró el partido actual'); }
+    finally { setLoading(false); }
+  };
+
+  // Trae goles/disparos/tarjetas/etc. reales desde SofaScore y pisa lo cargado
+  // manualmente — para no tener que registrar cada evento a mano.
+  const updateLiveStatus = async () => {
+    if (!lineupData?.match_id) { setLiveError('Primero cargá una alineación con un partido válido'); return; }
+    setUpdatingLive(true); setLiveError('');
+    try {
+      const data = await getLiveStatus(lineupData.match_id);
+
+      const homeN = (lineupData.home_name || '').toLowerCase();
+      const t1 = (team1Name || '').toLowerCase();
+      const homeIsTeam1 = !!t1 && (homeN.includes(t1.split(' ')[0]) || t1.includes(homeN.split(' ')[0]));
+      const teamKey = homeIsTeam1
+        ? { home: 'team1', away: 'team2' }
+        : { home: 'team2', away: 'team1' };
+
+      setScore({
+        home: homeIsTeam1 ? data.score.home : data.score.away,
+        away: homeIsTeam1 ? data.score.away : data.score.home,
+      });
+      setPeriod(data.period);
+      setLiveStats(prev => ({
+        ...prev,
+        [teamKey.home]: { ...prev[teamKey.home], ...data.team_stats.home },
+        [teamKey.away]: { ...prev[teamKey.away], ...data.team_stats.away },
+      }));
+      setPlayerEvents(prev => {
+        const next = { ...prev };
+        for (const [pid, stats] of Object.entries(data.player_stats)) {
+          next[`p${pid}`] = { ...(next[`p${pid}`] || {}), ...stats };
+        }
+        return next;
+      });
+
+      // Sustituciones: el que entró toma la posición del que salió, en TODAS las
+      // canchas (P3/P5/P7/P8/P9), porque todas leen lineupData/manualPos compartidos.
+      const subs = data.substitutions || [];
+      if (subs.length) {
+        const applySubs = (roster) => {
+          if (!roster) return roster;
+          const inIds = new Set(subs.map(s => String(s.in_id)));
+          return roster
+            .filter(p => !inIds.has(String(p.id))) // saca la entrada original del suplente que ya entró
+            .map(p => {
+              const sub = subs.find(s => String(s.out_id) === String(p.id));
+              if (!sub) return p;
+              return {
+                ...p,
+                id: sub.in_id,
+                name: sub.in_name,
+                shortName: sub.in_shortName,
+                number: sub.in_number != null ? Number(sub.in_number) : p.number,
+                position: sub.in_position || p.position,
+                isSubstitute: false,
+              };
+            });
+        };
+
+        setLineupData(prev => prev ? { ...prev, home: applySubs(prev.home), away: applySubs(prev.away) } : prev);
+
+        setManualPos(prev => {
+          if (!prev) return prev;
+          return prev.map(p => {
+            const sub = subs.find(s => String(s.out_id) === String(p.id));
+            if (!sub) return p;
+            return {
+              ...p,
+              id: sub.in_id,
+              name: sub.in_name,
+              shortName: sub.in_shortName,
+              number: sub.in_number != null ? Number(sub.in_number) : p.number,
+              position: sub.in_position || p.position,
+            };
+          });
+        });
+      }
+    } catch (e) {
+      setLiveError(e?.response?.data?.detail || 'No se pudo actualizar el estado');
+    } finally {
+      setUpdatingLive(false);
+    }
   };
 
   // ── DRAG desde campo ──
@@ -284,7 +391,8 @@ export default function P5_Alineaciones({
       setManualPos(prev => {
         const list = [...(prev ?? autoPositions)];
         if (!list.find(p => uid(p) === dragUid)) {
-          list.push({ ...dragSub, side: dragSide, x, y, isSubstitute: false, team: dragSide === 'home' ? 'team1' : 'team2' });
+          // dragSub.team ya viene correcto desde localSubs — no recalcular desde dragSide (lado visual).
+          list.push({ ...dragSub, side: dragSide, x, y, isSubstitute: false });
         }
         return list;
       });
@@ -326,6 +434,13 @@ export default function P5_Alineaciones({
                   ⇄ Invertir lados
                 </button>
               )}
+              {lineupData?.match_id && (
+                <button onClick={updateLiveStatus} disabled={updatingLive}
+                  title="Trae goles, disparos, tarjetas y demás stats reales desde SofaScore"
+                  className="text-[10px] px-2 py-1 rounded-lg bg-gray-800 border border-green-600 text-green-400 hover:bg-gray-700 transition-colors whitespace-nowrap font-bold disabled:opacity-50">
+                  {updatingLive ? '⏳ Actualizando...' : '🔄 Actualizar estado'}
+                </button>
+              )}
               {lineupData && manualPos && (
                 <button onClick={() => setManualPos(null)}
                   className="text-[10px] text-gray-500 hover:text-gray-300 transition-colors whitespace-nowrap">
@@ -345,6 +460,7 @@ export default function P5_Alineaciones({
               </button>
             </div>
           </div>
+          {liveError && <div className="text-red-400 text-[10px] px-1">{liveError}</div>}
 
           {/* Panel expandible */}
           {showControls && (
@@ -369,9 +485,16 @@ export default function P5_Alineaciones({
                       </label>
                     ))}
                   </div>
-                  <button onClick={autoDetect} disabled={loading} className="btn-secondary w-full text-xs py-1.5">
-                    {loading ? '⏳...' : '🚀 Auto-detectar próximo'}
-                  </button>
+                  <div className="flex gap-2">
+                    <button onClick={autoDetect} disabled={loading} className="btn-secondary flex-1 text-xs py-1.5">
+                      {loading ? '⏳...' : '🚀 Auto-detectar próximo'}
+                    </button>
+                    <button onClick={downloadCurrent} disabled={loading}
+                      title="Trae el último partido con id (útil si el partido ya arrancó)"
+                      className="btn-secondary flex-1 text-xs py-1.5">
+                      {loading ? '⏳...' : '📥 Descargar actual'}
+                    </button>
+                  </div>
                 </div>
               </div>
               {error && <div className="mt-2 text-red-400 text-xs">{error}</div>}

@@ -199,10 +199,12 @@ function RankTable({ rows, teamColor, starterNames }) {
   );
 }
 
-export default function P3_RegistroJugador({ analysis, lineupData, manualPos, fieldSwapped }) {
+export default function P3_RegistroJugador({ analysis, lineupData, manualPos, baseSwapped }) {
   const [role, setRole] = useState('DEF');
 
-  // manualPos tiene campo `team: 'team1'|'team2'` estable (no cambia al invertir lados)
+  // manualPos tiene campo `team: 'team1'|'team2'` estable (no cambia al invertir lados).
+  // Para el resto, usar baseSwapped (identidad real) — NO fieldSwapped, que es solo
+  // el lado visual y cambia en 2T sin que el equipo deje de ser quien es.
   const team1Starters = useMemo(() => {
     if (manualPos) {
       return new Set(
@@ -212,13 +214,13 @@ export default function P3_RegistroJugador({ analysis, lineupData, manualPos, fi
       );
     }
     if (!lineupData) return new Set();
-    const side = fieldSwapped ? lineupData.away : lineupData.home;
+    const side = baseSwapped ? lineupData.away : lineupData.home;
     return new Set(
       (side || [])
         .filter(p => !p.isSubstitute)
         .flatMap(p => [p.shortName, p.name].filter(Boolean).map(normName))
     );
-  }, [manualPos, lineupData, fieldSwapped]);
+  }, [manualPos, lineupData, baseSwapped]);
 
   const team2Starters = useMemo(() => {
     if (manualPos) {
@@ -229,13 +231,13 @@ export default function P3_RegistroJugador({ analysis, lineupData, manualPos, fi
       );
     }
     if (!lineupData) return new Set();
-    const side = fieldSwapped ? lineupData.home : lineupData.away;
+    const side = baseSwapped ? lineupData.home : lineupData.away;
     return new Set(
       (side || [])
         .filter(p => !p.isSubstitute)
         .flatMap(p => [p.shortName, p.name].filter(Boolean).map(normName))
     );
-  }, [manualPos, lineupData, fieldSwapped]);
+  }, [manualPos, lineupData, baseSwapped]);
 
   if (!analysis) return (
     <div className="h-full flex items-center justify-center text-gray-500 text-sm">

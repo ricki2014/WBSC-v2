@@ -58,15 +58,24 @@ export default function App() {
   const [registroEvents,    setRegistroEvents]    = useState(saved.registroEvents ?? []);
   const [lastRegistroEvent, setLastRegistroEvent] = useState(saved.lastRegistroEvent ?? null);
   const registroHistoryRef = useRef([]);
-  // baseSwapped = lado correcto para 1T (team1 a la izquierda)
-  // En 2T los equipos cambian de lado, así que fieldSwapped = !base
+  // baseSwapped = identidad REAL de equipo (¿lineupData.home es team1 o team2?),
+  // solo la fija el auto-detect por nombre — "Invertir lados" NO debe tocarla,
+  // porque eso rompe todos los lookups (archivo, stats) que dependen de saber
+  // quién es quién. En 2T los equipos cambian de lado, así que el valor base
+  // se invierte automáticamente para la posición VISUAL (no la identidad).
   const [baseSwapped, setBaseSwapped]   = useState(saved.baseSwapped ?? false);
-  const fieldSwapped = period === '2T' ? !baseSwapped : baseSwapped;
-  // setFieldSwapped para uso manual (toggle) desde P3/P5 — siempre mueve baseSwapped
+  // visualSwap = preferencia puramente cosmética del usuario ("Invertir lados"),
+  // independiente de quién es cada equipo.
+  const [visualSwap, setVisualSwap]     = useState(saved.visualSwap ?? false);
+  const fieldSwapped = (period === '2T' ? !baseSwapped : baseSwapped) !== visualSwap;
+  // setFieldSwapped: lo que usan los botones "Invertir lados" — solo mueve visualSwap.
   const setFieldSwapped = (updater) =>
-    setBaseSwapped(prev => typeof updater === 'function' ? !prev : (period === '2T' ? !updater : updater));
+    setVisualSwap(prev => typeof updater === 'function' ? !prev : updater);
 
-  // Auto-detectar al cargar lineup: si team1 es el "away" en SofaScore, swap
+  // Auto-detectar al cargar un lineup NUEVO: si team1 es el "away" en SofaScore, swap.
+  // Dispara solo con match_id (no con lineupData entero) para no repetir la detección
+  // — y pisar una corrección manual con "Invertir lados" — cada vez que una
+  // sustitución (Actualizar estado) muta el roster del mismo partido.
   useEffect(() => {
     const t1name = analysis?.team1?.name;
     if (!lineupData || !t1name) return;
@@ -76,7 +85,8 @@ export default function App() {
     const awayIsTeam1 = awayN.includes(t1.split(' ')[0]) || t1.includes(awayN.split(' ')[0]);
     const homeIsTeam1 = homeN.includes(t1.split(' ')[0]) || t1.includes(homeN.split(' ')[0]);
     setBaseSwapped(awayIsTeam1 && !homeIsTeam1);
-  }, [lineupData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lineupData?.match_id]);
 
   // Al invertir lados: espejear x (100-x) y cambiar side, sin perder el orden manual
   useEffect(() => {
@@ -118,7 +128,7 @@ export default function App() {
     const snapshot = {
       selectedFiles, liveStats, score, timer, isRunning, period, lastUpdate,
       lineupData, manualPos, playerEvents, selectedStatKey,
-      registroEvents, lastRegistroEvent, baseSwapped,
+      registroEvents, lastRegistroEvent, baseSwapped, visualSwap,
     };
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
@@ -128,7 +138,7 @@ export default function App() {
   }, [
     selectedFiles, liveStats, score, timer, isRunning, period, lastUpdate,
     lineupData, manualPos, playerEvents, selectedStatKey,
-    registroEvents, lastRegistroEvent, baseSwapped,
+    registroEvents, lastRegistroEvent, baseSwapped, visualSwap,
   ]);
 
   const handleSelectFiles = async (f1, f2) => {
@@ -149,6 +159,7 @@ export default function App() {
       setLastRegistroEvent(null);
       registroHistoryRef.current = [];
       setBaseSwapped(false);
+      setVisualSwap(false);
       setLastUpdate(new Date().toLocaleTimeString());
     } catch (e) {
       console.error('Error cargando análisis:', e);
@@ -167,7 +178,7 @@ export default function App() {
     lineupData, setLineupData,
     manualPos, setManualPos,
     playerEvents, setPlayerEvents,
-    fieldSwapped, setFieldSwapped,
+    fieldSwapped, setFieldSwapped, baseSwapped,
     registroEvents, setRegistroEvents,
     lastRegistroEvent, setLastRegistroEvent,
     registroHistoryRef,

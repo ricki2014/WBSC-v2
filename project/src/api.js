@@ -29,6 +29,11 @@ export const fetchLineups = async (payload) => {
   return r.data;
 };
 
+export const getLiveStatus = async (matchId) => {
+  const r = await axios.get(`${BASE}/live-status/${encodeURIComponent(matchId)}`);
+  return r.data;
+};
+
 export const fetchTeamMatches = async (file, statKey) => {
   const r = await axios.get(`${BASE}/team-matches/${encodeURIComponent(file)}/${encodeURIComponent(statKey)}`);
   return r.data;

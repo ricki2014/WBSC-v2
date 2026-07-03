@@ -9,6 +9,7 @@ const ROWS_DEF = [
   { icon: '🟥', label: 'Tarjetas rojas', k: 'RO_F', lk: 'Rojas'        },
   { icon: '🎯', label: 'Disparos tot.',  k: 'TI_F', lk: 'Disparos'     },
   { icon: '🥅', label: 'Tiro al arco',   k: null,   lk: 'TiroAlArco'   },
+  { icon: '🔄', label: 'Pases',          k: 'PA_F', lk: 'Pases'        },
   { icon: '🤛', label: 'Faltas com.',    k: 'FA_F', lk: 'FoulCometido' },
   { icon: '🛡️', label: 'Faltas rec.',    k: 'FA_C', lk: 'FoulRecibido' },
 ];
@@ -287,8 +288,19 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, onClo
   );
 }
 
+// Esperado combinado: (mi propio promedio + promedio que el rival concede/induce) / 2
+// Igual fórmula que "Expectativas del partido" en Previa — no el promedio propio solo.
+function expectedValue(r, stats, rivalStats, half) {
+  if (!r.k) return 0;
+  const [pre, side] = r.k.split('_');
+  const otherSide = side === 'F' ? 'C' : 'F';
+  const own   = stats?.[`${pre}_${side}_${half}`] ?? 0;
+  const rival = rivalStats?.[`${pre}_${otherSide}_${half}`] ?? 0;
+  return (own + rival) / 2;
+}
+
 // ─── TABLA ESR POR EQUIPO ─────────────────────────────────────────────────────
-function TeamESR({ teamName, stats, liveTeam, color, half, file, onRowClick }) {
+function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onRowClick }) {
   const colorCls = color === 'green' ? 'text-green-400' : 'text-blue-400';
   const bgCls    = color === 'green'
     ? 'bg-green-500/10 border-green-500/30'
@@ -313,8 +325,7 @@ function TeamESR({ teamName, stats, liveTeam, color, half, file, onRowClick }) {
         </thead>
         <tbody>
           {ROWS_DEF.map(r => {
-            const key  = r.k ? `${r.k}_${half}` : null;
-            const esp  = stats && key ? (stats[key] ?? 0) : 0;
+            const esp  = expectedValue(r, stats, rivalStats, half);
             const suc  = liveTeam?.[r.lk] ?? 0;
             const rest = esp > 0 ? esp - suc : 0;
             const p    = pct(suc, esp);
@@ -405,6 +416,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
         <TeamESR
           teamName={team1.name}
           stats={team1.stats}
+          rivalStats={team2.stats}
           liveTeam={liveStats.team1}
           color="green"
           half={half}
@@ -414,6 +426,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
         <TeamESR
           teamName={team2.name}
           stats={team2.stats}
+          rivalStats={team1.stats}
           liveTeam={liveStats.team2}
           color="blue"
           half={half}
@@ -440,6 +453,8 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
       <div className="bg-gray-900/40 border border-gray-700/40 rounded-lg p-2 text-[10px] text-gray-500 shrink-0 flex gap-2">
         <span>ℹ️</span>
         <span>
+          Esperado = (mi promedio + lo que el rival concede/induce en promedio) / 2 · misma fórmula que "Expectativas" en Previa
+          <br/>
           Barra verde = dentro de lo esperado · Amarilla = llegando al límite · Roja = por encima
           <span className="ml-2 text-gray-600">· Haz clic en una fila para ver el historial por partido</span>
         </span>

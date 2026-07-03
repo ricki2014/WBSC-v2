@@ -11,7 +11,9 @@ const RESULTADO_COLOR = {
 const RESULTADO_ORDER = ['Gol', 'Al arco', 'Afuera', 'Bloqueado'];
 
 // ─── FORMACIÓN → COORDENADAS (igual que P5/P7/P8) ────────────────────────────
-function layoutFormation(players, formation, side) {
+// side: lado VISUAL ('home'/'away') · team: identidad real ('team1'/'team2'),
+// independiente del lado visual (que puede invertirse en 2T o manualmente).
+function layoutFormation(players, formation, side, team) {
   const posOrder = { G: 0, D: 1, M: 2, F: 3 };
   const starters = players
     .filter(p => !p.isSubstitute)
@@ -37,7 +39,7 @@ function layoutFormation(players, formation, side) {
     const x = isHome ? 4 + ratio * 43 : 96 - ratio * 43;
     group.forEach((player, pi) => {
       const y = n === 1 ? 50 : 8 + ((n - 1 - pi) / (n - 1)) * 84;
-      result.push({ ...player, x, y: isHome ? y : 100 - y, side, team: side === 'home' ? 'team1' : 'team2' });
+      result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
     });
   });
   return result;
@@ -204,12 +206,15 @@ function FieldMarkings() {
 }
 
 // ─── SECCIÓN CAMPO + DIST POR JUGADOR ────────────────────────────────────────
-function PlayerShotSection({ lineupData, manualPos, fieldSwapped, selectedFiles, team1Name, team2Name }) {
+function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, selectedFiles, team1Name, team2Name }) {
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [playerDist, setPlayerDist]         = useState(null);
   const [loadingDist, setLoadingDist]       = useState(false);
 
   const swapped = fieldSwapped;
+  // Identidad real de equipo — independiente del lado visual (que invierte en 2T).
+  const teamOfHome = baseSwapped ? 'team2' : 'team1';
+  const teamOfAway = baseSwapped ? 'team1' : 'team2';
 
   const positions = useMemo(() => {
     if (manualPos) return manualPos;
@@ -218,11 +223,13 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, selectedFiles,
     const a  = swapped ? lineupData.home : lineupData.away;
     const hf = swapped ? lineupData.away_formation : lineupData.home_formation;
     const af = swapped ? lineupData.home_formation : lineupData.away_formation;
+    const hTeam = swapped ? teamOfAway : teamOfHome;
+    const aTeam = swapped ? teamOfHome : teamOfAway;
     return [
-      ...layoutFormation(h || [], hf || '', 'home'),
-      ...layoutFormation(a || [], af || '', 'away'),
+      ...layoutFormation(h || [], hf || '', 'home', hTeam),
+      ...layoutFormation(a || [], af || '', 'away', aTeam),
     ];
-  }, [manualPos, lineupData, swapped]);
+  }, [manualPos, lineupData, swapped, teamOfHome, teamOfAway]);
 
   const handlePlayerClick = (player) => {
     if (selectedPlayer && (selectedPlayer.id ?? selectedPlayer.lineupOrder) === (player.id ?? player.lineupOrder)) {
@@ -233,10 +240,9 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, selectedFiles,
     setSelectedPlayer(player);
     setPlayerDist(null);
 
-    // Determinar archivo del equipo real
-    const isTeam1Player = swapped
-      ? player.team === 'team2'
-      : player.team === 'team1';
+    // player.team ya es la identidad real (team1/team2) — no hay que
+    // volver a corregir por "swapped" acá, eso ya duplicaba la inversión.
+    const isTeam1Player = player.team === 'team1';
     const file = isTeam1Player ? selectedFiles?.f1 : selectedFiles?.f2;
     if (!file) return;
 
@@ -325,7 +331,7 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, selectedFiles,
 // ─── COMPONENTE PRINCIPAL ─────────────────────────────────────────────────────
 export default function P9_DistTiros({
   analysis, selectedFiles,
-  lineupData, manualPos, fieldSwapped,
+  lineupData, manualPos, fieldSwapped, baseSwapped,
   team1Name, team2Name,
 }) {
   if (!analysis) return (
@@ -368,6 +374,7 @@ export default function P9_DistTiros({
         lineupData={lineupData}
         manualPos={manualPos}
         fieldSwapped={fieldSwapped}
+        baseSwapped={baseSwapped}
         selectedFiles={selectedFiles}
         team1Name={team1Name}
         team2Name={team2Name}
