@@ -1,0 +1,1082 @@
+{
+  "shotmap": [
+    {
+      "player": {
+        "name": "Riyad Mahrez",
+        "firstName": "Riyad",
+        "lastName": "Mahrez",
+        "slug": "riyad-mahrez",
+        "shortName": "R. Mahrez",
+        "position": "M",
+        "jerseyNumber": "7",
+        "userCount": 82132,
+        "gender": "M",
+        "sofascoreId": "RMahrez",
+        "id": 158213,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "رياض محرز",
+            "bn": "রিয়াদ মাহরেজ",
+            "hi": "रियाद महरेज़",
+            "ru": "Рияд Марез"
+          },
+          "shortNameTranslation": {
+            "ar": "ر. محرز",
+            "bn": "আর. মাহরেজ",
+            "hi": "आर. महरेज़",
+            "ru": "Р. Марез"
+          }
+        }
+      },
+      "isHome": false,
+      "shotType": "block",
+      "situation": "free-kick",
+      "playerCoordinates": {
+        "x": 20,
+        "y": 60,
+        "z": 0
+      },
+      "bodyPart": "left-foot",
+      "goalMouthLocation": "low-centre",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 50,
+        "z": 20
+      },
+      "blockCoordinates": {
+        "x": 20,
+        "y": 60,
+        "z": 0
+      },
+      "xg": 0.001916,
+      "id": 7529115,
+      "time": 86,
+      "timeSeconds": 5126,
+      "draw": {
+        "start": {
+          "x": 60,
+          "y": 20
+        },
+        "block": {
+          "x": 60,
+          "y": 20
+        },
+        "end": {
+          "x": 50,
+          "y": 0
+        },
+        "goal": {
+          "x": 50,
+          "y": 80
+        }
+      },
+      "reversedPeriodTime": 5,
+      "reversedPeriodTimeSeconds": 274,
+      "periodTimeSeconds": 2426,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Lionel Messi",
+        "slug": "lionel-messi",
+        "shortName": "L. Messi",
+        "position": "F",
+        "jerseyNumber": "10",
+        "userCount": 2688465,
+        "gender": "M",
+        "sofascoreId": "LM10",
+        "id": 12994,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ليونيل ميسي",
+            "bn": "লিওনেল মেসি",
+            "hi": "लियोनेल मेसी",
+            "ru": "Лионель Месси"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. ميسي",
+            "bn": "এল. মেসি",
+            "hi": "एल. मेसी",
+            "ru": "Л. Месси"
+          }
+        }
+      },
+      "isHome": true,
+      "shotType": "goal",
+      "goalType": "regular",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 16,
+        "y": 46,
+        "z": 0
+      },
+      "bodyPart": "left-foot",
+      "goalMouthLocation": "low-left",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 53.2,
+        "z": 9
+      },
+      "xg": 0.1316,
+      "xgot": 0.4085,
+      "id": 7529114,
+      "time": 76,
+      "timeSeconds": 4537,
+      "draw": {
+        "start": {
+          "x": 46,
+          "y": 16
+        },
+        "end": {
+          "x": 46.8,
+          "y": 0
+        },
+        "goal": {
+          "x": 46.8,
+          "y": 91
+        }
+      },
+      "reversedPeriodTime": 15,
+      "reversedPeriodTimeSeconds": 863,
+      "periodTimeSeconds": 1837,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Houssem Aouar",
+        "firstName": "Houssem",
+        "lastName": "Aouar",
+        "slug": "houssem-aouar",
+        "shortName": "H. Aouar",
+        "position": "M",
+        "jerseyNumber": "10",
+        "userCount": 15984,
+        "gender": "M",
+        "sofascoreId": "houssem_aouar",
+        "id": 846081,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "حسام عوار",
+            "bn": "আওয়ার, হাউসেম",
+            "hi": "औआर, हौसेम",
+            "ru": "Уссем Ауар"
+          },
+          "shortNameTranslation": {
+            "ar": "ح. عوار",
+            "bn": "এইচ. আওয়ার",
+            "hi": "एच. हौसेम",
+            "ru": "У. Ауар"
+          }
+        }
+      },
+      "isHome": false,
+      "shotType": "miss",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 20,
+        "y": 56,
+        "z": 0
+      },
+      "bodyPart": "right-foot",
+      "goalMouthLocation": "close-left",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 59.1,
+        "z": 12.1
+      },
+      "xg": 0.075,
+      "id": 7529113,
+      "time": 69,
+      "timeSeconds": 4103,
+      "draw": {
+        "start": {
+          "x": 56,
+          "y": 20
+        },
+        "end": {
+          "x": 40.9,
+          "y": 0
+        },
+        "goal": {
+          "x": 40.9,
+          "y": 87.9
+        }
+      },
+      "reversedPeriodTime": 22,
+      "reversedPeriodTimeSeconds": 1297,
+      "periodTimeSeconds": 1403,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Lionel Messi",
+        "slug": "lionel-messi",
+        "shortName": "L. Messi",
+        "position": "F",
+        "jerseyNumber": "10",
+        "userCount": 2688465,
+        "gender": "M",
+        "sofascoreId": "LM10",
+        "id": 12994,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ليونيل ميسي",
+            "bn": "লিওনেল মেসি",
+            "hi": "लियोनेल मेसी",
+            "ru": "Лионель Месси"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. ميسي",
+            "bn": "এল. মেসি",
+            "hi": "एल. मेसी",
+            "ru": "Л. Месси"
+          }
+        }
+      },
+      "isHome": true,
+      "shotType": "save",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 16,
+        "y": 47,
+        "z": 0
+      },
+      "bodyPart": "left-foot",
+      "goalMouthLocation": "high-centre",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 49.8,
+        "z": 28
+      },
+      "xg": 0.06193,
+      "xgot": 0.2243,
+      "id": 7529112,
+      "time": 66,
+      "timeSeconds": 3910,
+      "draw": {
+        "start": {
+          "x": 47,
+          "y": 16
+        },
+        "end": {
+          "x": 50.2,
+          "y": 0
+        },
+        "goal": {
+          "x": 50.2,
+          "y": 72
+        }
+      },
+      "reversedPeriodTime": 25,
+      "reversedPeriodTimeSeconds": 1490,
+      "periodTimeSeconds": 1210,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Lionel Messi",
+        "slug": "lionel-messi",
+        "shortName": "L. Messi",
+        "position": "F",
+        "jerseyNumber": "10",
+        "userCount": 2688465,
+        "gender": "M",
+        "sofascoreId": "LM10",
+        "id": 12994,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ليونيل ميسي",
+            "bn": "লিওনেল মেসি",
+            "hi": "लियोनेल मेसी",
+            "ru": "Лионель Месси"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. ميسي",
+            "bn": "এল. মেসি",
+            "hi": "एल. मेसी",
+            "ru": "Л. Месси"
+          }
+        }
+      },
+      "isHome": true,
+      "shotType": "goal",
+      "goalType": "regular",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 7,
+        "y": 47,
+        "z": 0
+      },
+      "bodyPart": "right-foot",
+      "goalMouthLocation": "low-right",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 47.7,
+        "z": 4.6
+      },
+      "xg": 0.6979,
+      "xgot": 0.8931,
+      "id": 7529111,
+      "time": 60,
+      "timeSeconds": 3582,
+      "draw": {
+        "start": {
+          "x": 47,
+          "y": 7
+        },
+        "end": {
+          "x": 52.3,
+          "y": 0
+        },
+        "goal": {
+          "x": 52.3,
+          "y": 95.4
+        }
+      },
+      "reversedPeriodTime": 31,
+      "reversedPeriodTimeSeconds": 1818,
+      "periodTimeSeconds": 882,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Alexis Mac Allister",
+        "slug": "alexis-mac-allister",
+        "shortName": "A. Mac Allister",
+        "position": "M",
+        "jerseyNumber": "10",
+        "userCount": 78986,
+        "gender": "M",
+        "sofascoreId": "Macca10",
+        "id": 895324,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أليكسيس ماك أليستر",
+            "bn": "অ্যালেক্সিস ম্যাক অ্যালিস্টার",
+            "hi": "एलेक्सिस मैक एलिस्टर",
+            "ru": "Алексис Мак Аллистер"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. ماك أليستر",
+            "bn": "এ. ম্যাক অ্যালিস্টার",
+            "hi": "ए. मैक एलिस्टर",
+            "ru": "А. Аллистер"
+          }
+        }
+      },
+      "isHome": true,
+      "shotType": "save",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 22,
+        "y": 41,
+        "z": 0
+      },
+      "bodyPart": "right-foot",
+      "goalMouthLocation": "low-centre",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 49.4,
+        "z": 9.5
+      },
+      "xg": 0.04155,
+      "xgot": 0.03245,
+      "id": 7529110,
+      "time": 60,
+      "timeSeconds": 3579,
+      "draw": {
+        "start": {
+          "x": 41,
+          "y": 22
+        },
+        "end": {
+          "x": 50.6,
+          "y": 0
+        },
+        "goal": {
+          "x": 50.6,
+          "y": 90.5
+        }
+      },
+      "reversedPeriodTime": 31,
+      "reversedPeriodTimeSeconds": 1821,
+      "periodTimeSeconds": 879,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Ibrahim Maza",
+        "firstName": "Ibrahim",
+        "lastName": "Maza",
+        "slug": "ibrahim-maza",
+        "shortName": "I. Maza",
+        "position": "F",
+        "jerseyNumber": "30",
+        "userCount": 44767,
+        "gender": "M",
+        "sofascoreId": "ibo_mz10",
+        "id": 1407524,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إبراهيم مازة",
+            "bn": "মাজা, ইব্রাহিম",
+            "hi": "माज़ा, इब्राहिम",
+            "ru": "Ибрагим Маза"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. مازة",
+            "bn": "আই. মাজা",
+            "hi": "आई. माज़ा",
+            "ru": "И. Маза"
+          }
+        }
+      },
+      "isHome": false,
+      "shotType": "block",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 19,
+        "y": 41,
+        "z": 0
+      },
+      "bodyPart": "right-foot",
+      "goalMouthLocation": "low-centre",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 50,
+        "z": 20
+      },
+      "blockCoordinates": {
+        "x": 19,
+        "y": 41,
+        "z": 0
+      },
+      "xg": 0.03627,
+      "id": 7529109,
+      "time": 57,
+      "timeSeconds": 3411,
+      "draw": {
+        "start": {
+          "x": 41,
+          "y": 19
+        },
+        "block": {
+          "x": 41,
+          "y": 19
+        },
+        "end": {
+          "x": 50,
+          "y": 0
+        },
+        "goal": {
+          "x": 50,
+          "y": 80
+        }
+      },
+      "reversedPeriodTime": 34,
+      "reversedPeriodTimeSeconds": 1989,
+      "periodTimeSeconds": 711,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Lautaro Martínez",
+        "firstName": "Lautaro",
+        "lastName": "Martinez",
+        "slug": "lautaro-martinez",
+        "shortName": "L. Martínez",
+        "position": "F",
+        "jerseyNumber": "10",
+        "userCount": 133390,
+        "gender": "M",
+        "sofascoreId": "LautaroM",
+        "id": 823984,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "لاوتارو مارتينيز",
+            "bn": "লাউতারো মার্টিনেজ",
+            "hi": "लौटारो मार्टिनेज़",
+            "ru": "Лаутаро Мартинес"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. مارتينيز",
+            "bn": "এল. মার্টিনেজ",
+            "hi": "एल. मार्टिनेज़",
+            "ru": "Л. Мартинес"
+          }
+        }
+      },
+      "isHome": true,
+      "shotType": "save",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 10,
+        "y": 66,
+        "z": 0
+      },
+      "bodyPart": "right-foot",
+      "goalMouthLocation": "low-right",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 45.9,
+        "z": 12.4
+      },
+      "xg": 0.27,
+      "xgot": 0.338,
+      "id": 7529108,
+      "time": 54,
+      "timeSeconds": 3187,
+      "draw": {
+        "start": {
+          "x": 66,
+          "y": 10
+        },
+        "end": {
+          "x": 54.1,
+          "y": 0
+        },
+        "goal": {
+          "x": 54.1,
+          "y": 87.6
+        }
+      },
+      "reversedPeriodTime": 37,
+      "reversedPeriodTimeSeconds": 2213,
+      "periodTimeSeconds": 487,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Lionel Messi",
+        "slug": "lionel-messi",
+        "shortName": "L. Messi",
+        "position": "F",
+        "jerseyNumber": "10",
+        "userCount": 2688465,
+        "gender": "M",
+        "sofascoreId": "LM10",
+        "id": 12994,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ليونيل ميسي",
+            "bn": "লিওনেল মেসি",
+            "hi": "लियोनेल मेसी",
+            "ru": "Лионель Месси"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. ميسي",
+            "bn": "এল. মেসি",
+            "hi": "एल. मेसी",
+            "ru": "Л. Месси"
+          }
+        }
+      },
+      "isHome": true,
+      "shotType": "miss",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 18,
+        "y": 59,
+        "z": 0
+      },
+      "bodyPart": "left-foot",
+      "goalMouthLocation": "close-high-left",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 56.3,
+        "z": 54.5
+      },
+      "xg": 0.09124,
+      "id": 7529107,
+      "time": 51,
+      "timeSeconds": 3010,
+      "draw": {
+        "start": {
+          "x": 59,
+          "y": 18
+        },
+        "end": {
+          "x": 43.7,
+          "y": 0
+        },
+        "goal": {
+          "x": 43.7,
+          "y": 45.5
+        }
+      },
+      "reversedPeriodTime": 40,
+      "reversedPeriodTimeSeconds": 2390,
+      "periodTimeSeconds": 310,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Alexis Mac Allister",
+        "slug": "alexis-mac-allister",
+        "shortName": "A. Mac Allister",
+        "position": "M",
+        "jerseyNumber": "10",
+        "userCount": 78986,
+        "gender": "M",
+        "sofascoreId": "Macca10",
+        "id": 895324,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أليكسيس ماك أليستر",
+            "bn": "অ্যালেক্সিস ম্যাক অ্যালিস্টার",
+            "hi": "एलेक्सिस मैक एलिस्टर",
+            "ru": "Алексис Мак Аллистер"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. ماك أليستر",
+            "bn": "এ. ম্যাক অ্যালিস্টার",
+            "hi": "ए. मैक एलिस्टर",
+            "ru": "А. Аллистер"
+          }
+        }
+      },
+      "isHome": true,
+      "shotType": "miss",
+      "situation": "set-piece",
+      "playerCoordinates": {
+        "x": 10,
+        "y": 51,
+        "z": 0
+      },
+      "bodyPart": "head",
+      "goalMouthLocation": "close-high-right",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 42.2,
+        "z": 51.8
+      },
+      "xg": 0.1134,
+      "id": 7529106,
+      "time": 45,
+      "addedTime": 5,
+      "timeSeconds": 2961,
+      "draw": {
+        "start": {
+          "x": 51,
+          "y": 10
+        },
+        "end": {
+          "x": 57.8,
+          "y": 0
+        },
+        "goal": {
+          "x": 57.8,
+          "y": 48.2
+        }
+      },
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 2439,
+      "periodTimeSeconds": 261,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Anis Hadj Moussa",
+        "firstName": "",
+        "lastName": "",
+        "slug": "anis-hadj-moussa",
+        "shortName": "A. H. Moussa",
+        "position": "M",
+        "jerseyNumber": "23",
+        "userCount": 29757,
+        "gender": "M",
+        "sofascoreId": "hadj.a20",
+        "id": 1218066,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أنيس حاج موسى",
+            "bn": "আনিস হাজ মুসা",
+            "hi": "अनीस हज़ मूसा",
+            "ru": "Анис Хадж Мусса"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. ح. موسى",
+            "bn": "এ.এইচ. মুসা",
+            "hi": "ए. एच. मूसा",
+            "ru": "А. Мусса"
+          }
+        }
+      },
+      "isHome": false,
+      "shotType": "block",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 14,
+        "y": 69,
+        "z": 0
+      },
+      "bodyPart": "left-foot",
+      "goalMouthLocation": "low-centre",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 50,
+        "z": 20
+      },
+      "blockCoordinates": {
+        "x": 14,
+        "y": 69,
+        "z": 0
+      },
+      "xg": 0.07087,
+      "id": 7529105,
+      "time": 45,
+      "addedTime": 4,
+      "timeSeconds": 2890,
+      "draw": {
+        "start": {
+          "x": 69,
+          "y": 14
+        },
+        "block": {
+          "x": 69,
+          "y": 14
+        },
+        "end": {
+          "x": 50,
+          "y": 0
+        },
+        "goal": {
+          "x": 50,
+          "y": 80
+        }
+      },
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 2510,
+      "periodTimeSeconds": 190,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Farès Chaïbi",
+        "firstName": "Fares",
+        "lastName": "Chaibi",
+        "slug": "fares-chaibi",
+        "shortName": "F. Chaïbi",
+        "position": "M",
+        "jerseyNumber": "8",
+        "userCount": 19226,
+        "gender": "M",
+        "sofascoreId": "fareschaibi28",
+        "id": 1192318,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فارس شايبي",
+            "bn": "ফারেস চাইবি",
+            "hi": "फ़रेस चाइबी",
+            "ru": "Фарес Шаиби"
+          },
+          "shortNameTranslation": {
+            "ar": "ف. شايبي",
+            "bn": "এফ. চাইবি",
+            "hi": "एफ. चाइबी",
+            "ru": "Ф. Шаиби"
+          }
+        }
+      },
+      "isHome": false,
+      "shotType": "miss",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 3,
+        "y": 78,
+        "z": 0
+      },
+      "bodyPart": "right-foot",
+      "goalMouthLocation": "close-right",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 41.4,
+        "z": 36.1
+      },
+      "xg": 0.01664,
+      "id": 7529104,
+      "time": 45,
+      "timeSeconds": 2665,
+      "draw": {
+        "start": {
+          "x": 78,
+          "y": 3
+        },
+        "end": {
+          "x": 58.6,
+          "y": 0
+        },
+        "goal": {
+          "x": 58.6,
+          "y": 63.9
+        }
+      },
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 35,
+      "periodTimeSeconds": 2665,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Farès Chaïbi",
+        "firstName": "Fares",
+        "lastName": "Chaibi",
+        "slug": "fares-chaibi",
+        "shortName": "F. Chaïbi",
+        "position": "M",
+        "jerseyNumber": "8",
+        "userCount": 19226,
+        "gender": "M",
+        "sofascoreId": "fareschaibi28",
+        "id": 1192318,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فارس شايبي",
+            "bn": "ফারেস চাইবি",
+            "hi": "फ़रेस चाइबी",
+            "ru": "Фарес Шаиби"
+          },
+          "shortNameTranslation": {
+            "ar": "ف. شايبي",
+            "bn": "এফ. চাইবি",
+            "hi": "एफ. चाइबी",
+            "ru": "Ф. Шаиби"
+          }
+        }
+      },
+      "isHome": false,
+      "shotType": "miss",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 23,
+        "y": 50,
+        "z": 0
+      },
+      "bodyPart": "right-foot",
+      "goalMouthLocation": "close-high-right",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 41.3,
+        "z": 40.7
+      },
+      "xg": 0.07441,
+      "id": 7529103,
+      "time": 44,
+      "timeSeconds": 2595,
+      "draw": {
+        "start": {
+          "x": 50,
+          "y": 23
+        },
+        "end": {
+          "x": 58.7,
+          "y": 0
+        },
+        "goal": {
+          "x": 58.7,
+          "y": 59.3
+        }
+      },
+      "reversedPeriodTime": 2,
+      "reversedPeriodTimeSeconds": 105,
+      "periodTimeSeconds": 2595,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Thiago Almada",
+        "slug": "thiago-almada",
+        "shortName": "T. Almada",
+        "position": "M",
+        "jerseyNumber": "11",
+        "userCount": 31851,
+        "gender": "M",
+        "sofascoreId": "thiago_almada23",
+        "id": 944660,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تياغو ألمادا",
+            "bn": "থিয়াগো আলমাদা",
+            "hi": "थियागो अल्माडा",
+            "ru": "Тьяго Альмада"
+          },
+          "shortNameTranslation": {
+            "ar": "ت. ألمادا",
+            "bn": "টি. আলমাদা",
+            "hi": "टी. अल्माडा",
+            "ru": "Т. Альмада"
+          }
+        }
+      },
+      "isHome": true,
+      "shotType": "miss",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 21,
+        "y": 34,
+        "z": 0
+      },
+      "bodyPart": "right-foot",
+      "goalMouthLocation": "close-high-right",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 41.9,
+        "z": 50.3
+      },
+      "xg": 0.01309,
+      "id": 7529102,
+      "time": 42,
+      "timeSeconds": 2482,
+      "draw": {
+        "start": {
+          "x": 34,
+          "y": 21
+        },
+        "end": {
+          "x": 58.1,
+          "y": 0
+        },
+        "goal": {
+          "x": 58.1,
+          "y": 49.7
+        }
+      },
+      "reversedPeriodTime": 4,
+      "reversedPeriodTimeSeconds": 218,
+      "periodTimeSeconds": 2482,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Farès Chaïbi",
+        "firstName": "Fares",
+        "lastName": "Chaibi",
+        "slug": "fares-chaibi",
+        "shortName": "F. Chaïbi",
+        "position": "M",
+        "jerseyNumber": "8",
+        "userCount": 19226,
+        "gender": "M",
+        "sofascoreId": "fareschaibi28",
+        "id": 1192318,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فارس شايبي",
+            "bn": "ফারেস চাইবি",
+            "hi": "फ़रेस चाइबी",
+            "ru": "Фарес Шаиби"
+          },
+          "shortNameTranslation": {
+            "ar": "ف. شايبي",
+            "bn": "এফ. চাইবি",
+            "hi": "एफ. चाइबी",
+            "ru": "Ф. Шаиби"
+          }
+        }
+      },
+      "isHome": false,
+      "shotType": "miss",
+      "situation": "corner",
+      "playerCoordinates": {
+        "x": 10,
+        "y": 44,
+        "z": 0
+      },
+      "bodyPart": "head",
+      "goalMouthLocation": "close-left",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 58.5,
+        "z": 34.5
+      },
+      "xg": 0.0225,
+      "id": 7529101,
+      "time": 41,
+      "timeSeconds": 2426,
+      "draw": {
+        "start": {
+          "x": 44,
+          "y": 10
+        },
+        "end": {
+          "x": 41.5,
+          "y": 0
+        },
+        "goal": {
+          "x": 41.5,
+          "y": 65.5
+        }
+      },
+      "reversedPeriodTime": 5,
+      "reversedPeriodTimeSeconds": 274,
+      "periodTimeSeconds": 2426,
+      "incidentType": "shot"
+    },
+    {
+      "player": {
+        "name": "Lionel Messi",
+        "slug": "lionel-messi",
+        "shortName": "L. Messi",
+        "position": "F",
+        "jerseyNumber": "10",
+        "userCount": 2688465,
+        "gender": "M",
+        "sofascoreId": "LM10",
+        "id": 12994,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ليونيل ميسي",
+            "bn": "লিওনেল মেসি",
+            "hi": "लियोनेल मेसी",
+            "ru": "Лионель Месси"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. ميسي",
+            "bn": "এল. মেসি",
+            "hi": "एल. मेसी",
+            "ru": "Л. Месси"
+          }
+        }
+      },
+      "isHome": true,
+      "shotType": "goal",
+      "goalType": "regular",
+      "situation": "regular",
+      "playerCoordinates": {
+        "x": 19,
+        "y": 46,
+        "z": 0
+      },
+      "bodyPart": "left-foot",
+      "goalMouthLocation": "high-right",
+      "goalMouthCoordinates": {
+        "x": 0,
+        "y": 47,
+        "z": 36
+      },
+      "xg": 0.04943,
+      "xgot": 0.713,
+      "id": 7529100,
+      "time": 17,
+      "timeSeconds": 998,
+      "draw": {
+        "start": {
+          "x": 46,
+          "y": 19
+        },
+        "end": {
+          "x": 53,
+          "y": 0
+        },
+        "goal": {
+          "x": 53,
+          "y": 64
+        }
+      },
+      "reversedPeriodTime": 29,
+      "reversedPeriodTimeSeconds": 1702,
+      "periodTimeSeconds": 998,
+      "incidentType": "shot"
+    }
+  ]
+}

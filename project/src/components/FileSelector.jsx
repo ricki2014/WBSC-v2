@@ -53,62 +53,66 @@ export default function FileSelector({ onSelectFiles }) {
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex gap-2 items-center">
-        <select value={f1} onChange={e=>setF1(e.target.value)}
-          className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-green-500">
-          <option value="">Equipo Local</option>
-          {files.map(f=><option key={f} value={f}>{f.replace('.xlsx','')}</option>)}
-        </select>
-        <span className="text-gray-500 text-xs font-bold">vs</span>
-        <select value={f2} onChange={e=>setF2(e.target.value)}
-          className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-blue-500">
-          <option value="">Equipo Visita</option>
-          {files.map(f=><option key={f} value={f}>{f.replace('.xlsx','')}</option>)}
-        </select>
-        <button onClick={handle} className="btn-primary text-xs py-1.5">Analizar</button>
-        <button onClick={() => setShowDownload(v => !v)}
-          className="text-xs px-2 py-1.5 rounded-lg border border-gray-600 text-gray-300 hover:border-gray-400 transition-colors">
-          ⬇ {showDownload ? 'Cerrar' : 'Descargar equipo'}
-        </button>
-        <button onClick={() => setShowManage(v => !v)}
-          className="text-xs px-2 py-1.5 rounded-lg border border-gray-600 text-gray-300 hover:border-gray-400 transition-colors">
-          🗑 {showManage ? 'Cerrar' : 'Gestionar archivos'}
-        </button>
-      </div>
+    <div className="flex gap-2 items-center">
+      <select value={f1} onChange={e=>setF1(e.target.value)}
+        className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-green-500">
+        <option value="">Equipo Local</option>
+        {files.map(f=><option key={f} value={f}>{f.replace('.xlsx','')}</option>)}
+      </select>
+      <span className="text-gray-500 text-xs font-bold">vs</span>
+      <select value={f2} onChange={e=>setF2(e.target.value)}
+        className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-blue-500">
+        <option value="">Equipo Visita</option>
+        {files.map(f=><option key={f} value={f}>{f.replace('.xlsx','')}</option>)}
+      </select>
+      <button onClick={handle} className="btn-primary text-xs py-1.5">Analizar</button>
 
-      {showDownload && (
-        <div className="flex items-center gap-2 bg-gray-900 border border-gray-700/40 rounded-lg px-2 py-1.5">
-          <input value={teamId} onChange={e => setTeamId(e.target.value)}
-            placeholder="ID equipo SofaScore (ej: 4819)"
-            className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 w-48 focus:outline-none focus:border-green-500"/>
-          <input type="number" min={1} value={nPartidos} onChange={e => setNPartidos(e.target.value)}
-            className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 w-16 focus:outline-none focus:border-green-500"/>
-          <span className="text-gray-500 text-[10px]">partidos</span>
-          <button onClick={handleDownload} disabled={downloading || !teamId.trim()}
-            className="btn-primary text-xs py-1.5 disabled:opacity-50 disabled:cursor-not-allowed">
-            {downloading ? '⏳ Descargando...' : '🚀 Descargar'}
-          </button>
-          {downloadError && <span className="text-red-400 text-[10px]">{downloadError}</span>}
-          {downloadOk && <span className="text-green-400 text-[10px]">{downloadOk}</span>}
-        </div>
-      )}
-
-      {showManage && (
-        <div className="flex flex-col gap-1 bg-gray-900 border border-gray-700/40 rounded-lg px-2 py-1.5 max-w-md">
-          {files.length === 0 && <span className="text-gray-500 text-[10px]">Sin archivos en data/upcoming</span>}
-          {files.map(f => (
-            <div key={f} className="flex items-center justify-between gap-2 text-xs">
-              <span className="text-gray-300 truncate">{f.replace('.xlsx', '')}</span>
-              <button onClick={() => handleDelete(f)} disabled={deletingFile === f}
-                className="text-red-400 hover:text-red-300 text-[10px] shrink-0 disabled:opacity-50">
-                {deletingFile === f ? '⏳...' : '✕ Borrar'}
+      <div className="relative">
+        <button onClick={() => { setShowDownload(v => !v); setShowManage(false); }}
+          className="text-xs px-2 py-1.5 rounded-lg border border-gray-600 text-gray-300 hover:border-gray-400 transition-colors">
+          ⬇ Descargar equipo
+        </button>
+        {showDownload && (
+          <div className="absolute right-0 top-full mt-1 z-50 flex flex-col gap-2 bg-gray-900 border border-gray-700/40 rounded-lg px-3 py-2.5 shadow-xl w-72">
+            <input value={teamId} onChange={e => setTeamId(e.target.value)}
+              placeholder="ID equipo SofaScore (ej: 4819)"
+              className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 w-full focus:outline-none focus:border-green-500"/>
+            <div className="flex items-center gap-2">
+              <input type="number" min={1} value={nPartidos} onChange={e => setNPartidos(e.target.value)}
+                className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 w-16 focus:outline-none focus:border-green-500"/>
+              <span className="text-gray-500 text-[10px]">partidos</span>
+              <button onClick={handleDownload} disabled={downloading || !teamId.trim()}
+                className="btn-primary text-xs py-1.5 ml-auto disabled:opacity-50 disabled:cursor-not-allowed">
+                {downloading ? '⏳ Descargando...' : '🚀 Descargar'}
               </button>
             </div>
-          ))}
-          {deleteError && <span className="text-red-400 text-[10px] mt-1">{deleteError}</span>}
-        </div>
-      )}
+            {downloadError && <span className="text-red-400 text-[10px]">{downloadError}</span>}
+            {downloadOk && <span className="text-green-400 text-[10px]">{downloadOk}</span>}
+          </div>
+        )}
+      </div>
+
+      <div className="relative">
+        <button onClick={() => { setShowManage(v => !v); setShowDownload(false); }}
+          className="text-xs px-2 py-1.5 rounded-lg border border-gray-600 text-gray-300 hover:border-gray-400 transition-colors">
+          🗑 Gestionar archivos
+        </button>
+        {showManage && (
+          <div className="absolute right-0 top-full mt-1 z-50 flex flex-col gap-1 bg-gray-900 border border-gray-700/40 rounded-lg px-3 py-2.5 shadow-xl w-64 max-h-72 overflow-auto">
+            {files.length === 0 && <span className="text-gray-500 text-[10px]">Sin archivos en data/upcoming</span>}
+            {files.map(f => (
+              <div key={f} className="flex items-center justify-between gap-2 text-xs">
+                <span className="text-gray-300 truncate">{f.replace('.xlsx', '')}</span>
+                <button onClick={() => handleDelete(f)} disabled={deletingFile === f}
+                  className="text-red-400 hover:text-red-300 text-[10px] shrink-0 disabled:opacity-50">
+                  {deletingFile === f ? '⏳...' : '✕ Borrar'}
+                </button>
+              </div>
+            ))}
+            {deleteError && <span className="text-red-400 text-[10px] mt-1">{deleteError}</span>}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
