@@ -476,18 +476,27 @@ def fetch_starters_api(url_input=None, team_id=None, use_last=False):
     if not match_id:
         return None
 
+    debug = []
+
     home_name, away_name = "", ""
     try:
-        det = session.get(f"https://api.sofascore.com/api/v1/event/{match_id}", timeout=10).json()
+        det_r = session.get(f"https://api.sofascore.com/api/v1/event/{match_id}", timeout=10)
+        print(f"   [fetch_starters_api] GET /event/{match_id} -> {det_r.status_code}")
+        debug.append(f"event: {det_r.status_code}")
+        det = det_r.json()
         if 'event' in det:
             home_name = det['event']['homeTeam']['name']
             away_name = det['event']['awayTeam']['name']
-    except: pass
+    except Exception as e:
+        print(f"   [fetch_starters_api] GET /event/{match_id} FAILED: {e}")
+        debug.append(f"event: error {e}")
 
-    res = {'home': [], 'away': [], 'home_name': home_name, 'away_name': away_name, 'match_id': match_id}
+    res = {'home': [], 'away': [], 'home_name': home_name, 'away_name': away_name, 'match_id': match_id, 'debug': debug}
     for endpoint in ["lineups", "expected-lineups"]:
         try:
             r = session.get(f"https://api.sofascore.com/api/v1/event/{match_id}/{endpoint}", timeout=10)
+            print(f"   [fetch_starters_api] GET /event/{match_id}/{endpoint} -> {r.status_code}")
+            debug.append(f"{endpoint}: {r.status_code}")
             if r.status_code == 200:
                 d = r.json()
                 main_data = d.get('expected', d)
@@ -519,7 +528,10 @@ def fetch_starters_api(url_input=None, team_id=None, use_last=False):
                         res[f'{side}_formation'] = formation
                 if res['home'] or res['away']:
                     break
-        except: continue
+        except Exception as e:
+            print(f"   [fetch_starters_api] GET /event/{match_id}/{endpoint} FAILED: {e}")
+            debug.append(f"{endpoint}: error {e}")
+            continue
 
     return res
 
