@@ -19,6 +19,11 @@ export const deleteFile = async (filename) => {
   return r.data;
 };
 
+export const moveFileToPast = async (filename) => {
+  const r = await axios.post(`${BASE}/available-files/${encodeURIComponent(filename)}/move-to-past`);
+  return r.data;
+};
+
 export const getAnalysis = async (file1, file2, cond1='TOTAL', cond2='TOTAL') => {
   const r = await axios.get(`${BASE}/analysis/${file1}/${file2}`, { params: { cond1, cond2 } });
   return r.data;

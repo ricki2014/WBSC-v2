@@ -1,0 +1,278 @@
+{
+  "team": {
+    "name": "Egypt",
+    "slug": "egypt",
+    "shortName": "Egypt",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "tournament": {
+      "name": "Africa Cup of Nations, Qualification, Group G",
+      "slug": "africa-cup-of-nations-qualification-group-g",
+      "category": {
+        "name": "Africa",
+        "slug": "africa",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 16,
+        "country": {},
+        "id": 1466,
+        "flag": "africa",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أفريقيا",
+            "ru": "Африка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "uniqueTournament": {
+        "name": "Africa Cup of Nations Qual.",
+        "slug": "africa-cup-of-nations-qual",
+        "primaryColorHex": "#00752e",
+        "secondaryColorHex": "#edc73e",
+        "category": {
+          "name": "Africa",
+          "slug": "africa",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 16,
+          "country": {},
+          "id": 1466,
+          "flag": "africa",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أفريقيا",
+              "ru": "Африка"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "userCount": 62438,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 1848,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تصفيات كأس أمم أفريقيا",
+            "bn": "আফ্রিকা কাপ অফ নেশনস কোয়ালিফাইং.",
+            "hi": "अफ्रीका कप ऑफ नेशंस क्वालिफिकेशन.",
+            "ru": "Кубок африканских наций, квалификация"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 556,
+      "isLive": false,
+      "id": 59845,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كأس الأمم الأفريقية، التصفيات، المجموعة G",
+          "bn": "আফ্রিকা কাপ অফ নেশনস, কোয়ালিফিকেশন, গ্রুপ জি",
+          "hi": "अफ्रीका कप ऑफ नेशंस, क्वालिफिकेशन, ग्रुप जी",
+          "ru": "Кубок африканских наций, Квалификация, Группа G"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "World Championship",
+      "slug": "world-championship",
+      "primaryColorHex": "#d20a11",
+      "secondaryColorHex": "#e8bb57",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 1871684,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 16,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "pt-pt": "Mundial",
+          "ar": "كأس العالم",
+          "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ",
+          "hi": "वर्ल्ड चैंपियनशिप",
+          "hr": "FIFA Svjetsko prvenstvo",
+          "az": "FİFA Dünya Kuboku",
+          "nl": "Wereldkampioenschap",
+          "fr": "Coupe du monde",
+          "de": "Weltmeisterschaft",
+          "el": "Παγκόσμιο Κύπελλο",
+          "hu": "FIFA Világbajnokság",
+          "id": "Piala Dunia FIFA",
+          "it": "Coppa del Mondo FIFA",
+          "ja": "FIFAワールドカップ",
+          "ko": "FIFA 월드컵",
+          "no": "Verdensmesterskapet",
+          "pl": "Mistrzostwa Świata",
+          "pt": "Copa do Mundo FIFA",
+          "ro": "Campionatul Mondial",
+          "es": "Copa Mundial",
+          "es-la": "Copa Mundial",
+          "sv": "Världsmästerskapet",
+          "th": "ฟุตบอลโลก",
+          "tr": "FIFA Dünya Kupası",
+          "vi": "Giải Vô Địch Thế Giới",
+          "ru": "Чемпионат мира",
+          "sr": "Светско првенство"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 741740,
+    "manager": {
+      "name": "Hossam Hassan",
+      "slug": "hossam-hassan",
+      "shortName": "H. Hassan",
+      "country": {
+        "alpha2": "EG",
+        "alpha3": "EGY",
+        "name": "Egypt",
+        "slug": "egypt"
+      },
+      "id": 790139,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "حسام حسن",
+          "ru": "Хосам Хассан"
+        },
+        "shortNameTranslation": {
+          "ar": "ح. حسن",
+          "ru": "Х. Хассан"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Cairo",
+        "country": {
+          "alpha2": "EG",
+          "alpha3": "EGY",
+          "name": "Egypt",
+          "slug": "egypt"
+        },
+        "id": 17999
+      },
+      "venueCoordinates": {
+        "latitude": 30.069115,
+        "longitude": 31.312206
+      },
+      "hidden": true,
+      "slug": "cairo-international-stadium",
+      "name": "Cairo International Stadium",
+      "capacity": 75000,
+      "country": {
+        "alpha2": "EG",
+        "alpha3": "EGY",
+        "name": "Egypt",
+        "slug": "egypt"
+      },
+      "id": 2166,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب القاهرة الدولي",
+          "hi": "काहिरा इंटरनेशनल स्टेडियम",
+          "bn": "কায়রো ইন্টারন্যাশনাল স্টেডিয়াম",
+          "ru": "Стадион Cairo International"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Cairo International Stadium",
+        "capacity": 75000
+      }
+    },
+    "nameCode": "EGY",
+    "ranking": 29,
+    "class": 4,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "EG",
+      "alpha3": "EGY",
+      "name": "Egypt",
+      "slug": "egypt"
+    },
+    "id": 4758,
+    "fullName": "Egypt",
+    "teamColors": {
+      "primary": "#f00000",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "foundationDateTimestamp": -1517270400,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "مصر",
+        "bn": "মিশর",
+        "hi": "इजिप्ट",
+        "ru": "Египет"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "avgRating": "6.97",
+    "position": 1,
+    "value": "4",
+    "form": [
+      "D",
+      "W"
+    ]
+  }
+}

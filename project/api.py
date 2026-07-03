@@ -14,6 +14,7 @@ app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 EXCEL_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "upcoming")
+PASADO_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "partido_pasado")
 
 # El downloader (downloader/) vive fuera de project/ y usa imports de script suelto
 # (from config import ..., from utils import ...) — lo agregamos al path para poder
@@ -29,15 +30,18 @@ def cargar_equipo(filename: str):
     if not os.path.exists(path):
         return None
     try:
-        xl = pd.ExcelFile(path)
-        sheets = xl.sheet_names
+        # "with" cierra el handle del archivo al salir — en Windows, si queda
+        # abierto (como pasaba antes), el archivo se bloquea y no se puede
+        # borrar ni mover después.
+        with pd.ExcelFile(path) as xl:
+            sheets = xl.sheet_names
 
-        df_partidos  = pd.read_excel(xl, sheet_name='Partidos')          if 'Partidos'              in sheets else pd.DataFrame()
-        df_goles     = pd.read_excel(xl, sheet_name='Goles del Equipo')  if 'Goles del Equipo'      in sheets else pd.DataFrame()
-        df_jugadores = pd.read_excel(xl, sheet_name='Por Jugador x Partido') if 'Por Jugador x Partido' in sheets else pd.DataFrame()
-        df_arqueros  = pd.read_excel(xl, sheet_name='Arqueros x Partido') if 'Arqueros x Partido'   in sheets else pd.DataFrame()
-        df_p90       = pd.read_excel(xl, sheet_name='JUGADORES P90')     if 'JUGADORES P90'          in sheets else pd.DataFrame()
-        df_disparos  = pd.read_excel(xl, sheet_name='Disparos Detalle')  if 'Disparos Detalle'       in sheets else pd.DataFrame()
+            df_partidos  = pd.read_excel(xl, sheet_name='Partidos')          if 'Partidos'              in sheets else pd.DataFrame()
+            df_goles     = pd.read_excel(xl, sheet_name='Goles del Equipo')  if 'Goles del Equipo'      in sheets else pd.DataFrame()
+            df_jugadores = pd.read_excel(xl, sheet_name='Por Jugador x Partido') if 'Por Jugador x Partido' in sheets else pd.DataFrame()
+            df_arqueros  = pd.read_excel(xl, sheet_name='Arqueros x Partido') if 'Arqueros x Partido'   in sheets else pd.DataFrame()
+            df_p90       = pd.read_excel(xl, sheet_name='JUGADORES P90')     if 'JUGADORES P90'          in sheets else pd.DataFrame()
+            df_disparos  = pd.read_excel(xl, sheet_name='Disparos Detalle')  if 'Disparos Detalle'       in sheets else pd.DataFrame()
 
         # Detectar nombre del equipo y team_id desde Partidos
         team_name = os.path.basename(path).split('_')[0]
@@ -554,6 +558,20 @@ async def delete_file(filename: str):
         raise HTTPException(status_code=404, detail="Archivo no encontrado")
     os.remove(path)
     return {"deleted": filename}
+
+@app.post("/available-files/{filename}/move-to-past")
+async def move_to_past(filename: str):
+    if os.path.basename(filename) != filename or not filename.endswith('.xlsx'):
+        raise HTTPException(status_code=400, detail="Nombre de archivo inválido")
+    src = os.path.join(EXCEL_DIR, filename)
+    if not os.path.exists(src):
+        raise HTTPException(status_code=404, detail="Archivo no encontrado")
+    os.makedirs(PASADO_DIR, exist_ok=True)
+    dst = os.path.join(PASADO_DIR, filename)
+    if os.path.exists(dst):
+        raise HTTPException(status_code=409, detail=f"Ya existe {filename} en partido_pasado")
+    os.replace(src, dst)
+    return {"moved": filename}
 
 class DownloadRequest(BaseModel):
     team_id: int

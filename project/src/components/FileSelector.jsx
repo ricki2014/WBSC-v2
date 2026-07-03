@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAvailableFiles, downloadTeam, deleteFile } from '../api';
+import { getAvailableFiles, downloadTeam, deleteFile, moveFileToPast } from '../api';
 
 export default function FileSelector({ onSelectFiles }) {
   const [files, setFiles] = useState([]);
@@ -15,6 +15,7 @@ export default function FileSelector({ onSelectFiles }) {
 
   const [showManage, setShowManage] = useState(false);
   const [deletingFile, setDeletingFile] = useState('');
+  const [movingFile, setMovingFile] = useState('');
   const [deleteError, setDeleteError] = useState('');
 
   const refreshFiles = () => getAvailableFiles().then(setFiles).catch(()=>{});
@@ -34,6 +35,20 @@ export default function FileSelector({ onSelectFiles }) {
       setDeleteError(e?.response?.data?.detail || `No se pudo borrar ${filename}`);
     } finally {
       setDeletingFile('');
+    }
+  };
+
+  const handleMoveToPast = async (filename) => {
+    setMovingFile(filename); setDeleteError('');
+    try {
+      await moveFileToPast(filename);
+      if (f1 === filename) setF1('');
+      if (f2 === filename) setF2('');
+      await refreshFiles();
+    } catch (e) {
+      setDeleteError(e?.response?.data?.detail || `No se pudo mover ${filename}`);
+    } finally {
+      setMovingFile('');
     }
   };
 
@@ -98,15 +113,22 @@ export default function FileSelector({ onSelectFiles }) {
           🗑 Gestionar archivos
         </button>
         {showManage && (
-          <div className="absolute right-0 top-full mt-1 z-50 flex flex-col gap-1 bg-gray-900 border border-gray-700/40 rounded-lg px-3 py-2.5 shadow-xl w-64 max-h-72 overflow-auto">
+          <div className="absolute right-0 top-full mt-1 z-50 flex flex-col gap-1 bg-gray-900 border border-gray-700/40 rounded-lg px-3 py-2.5 shadow-xl w-80 max-h-72 overflow-auto">
             {files.length === 0 && <span className="text-gray-500 text-[10px]">Sin archivos en data/upcoming</span>}
             {files.map(f => (
               <div key={f} className="flex items-center justify-between gap-2 text-xs">
                 <span className="text-gray-300 truncate">{f.replace('.xlsx', '')}</span>
-                <button onClick={() => handleDelete(f)} disabled={deletingFile === f}
-                  className="text-red-400 hover:text-red-300 text-[10px] shrink-0 disabled:opacity-50">
-                  {deletingFile === f ? '⏳...' : '✕ Borrar'}
-                </button>
+                <div className="flex items-center gap-2 shrink-0">
+                  <button onClick={() => handleMoveToPast(f)} disabled={movingFile === f || deletingFile === f}
+                    title="Mover a data/partido_pasado"
+                    className="text-yellow-400 hover:text-yellow-300 text-[10px] disabled:opacity-50">
+                    {movingFile === f ? '⏳...' : '📦 A pasado'}
+                  </button>
+                  <button onClick={() => handleDelete(f)} disabled={deletingFile === f || movingFile === f}
+                    className="text-red-400 hover:text-red-300 text-[10px] disabled:opacity-50">
+                    {deletingFile === f ? '⏳...' : '✕ Borrar'}
+                  </button>
+                </div>
               </div>
             ))}
             {deleteError && <span className="text-red-400 text-[10px] mt-1">{deleteError}</span>}

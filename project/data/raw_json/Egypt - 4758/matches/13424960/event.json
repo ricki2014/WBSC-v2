@@ -1,0 +1,230 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Africa Cup of Nations, Group B",
+    "slug": "africa-cup-of-nations-group-b",
+    "category": {
+      "name": "Africa",
+      "slug": "africa",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 16,
+      "country": {},
+      "id": 1466,
+      "flag": "africa",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أفريقيا",
+          "ru": "Африка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Africa Cup of Nations",
+      "slug": "africa-cup-of-nations",
+      "primaryColorHex": "#00752e",
+      "secondaryColorHex": "#edc73e",
+      "category": {
+        "name": "Africa",
+        "slug": "africa",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 16,
+        "country": {},
+        "id": 1466,
+        "flag": "africa",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أفريقيا",
+            "ru": "Африка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 399164,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 270,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كأس الأمم الأفريقية",
+          "bn": "আফ্রিকা কাপ অফ নেশনস",
+          "hi": "अफ्रीका कप ऑफ नेशंस",
+          "ru": "Кубок Африки"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 729,
+    "isGroup": true,
+    "groupName": "Group B",
+    "groupSign": "B",
+    "isLive": false,
+    "id": 44546,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس الأمم الأفريقية، المجموعة B",
+        "bn": "আফ্রিকা কাপ অফ নেশনস, গ্রুপ বি",
+        "hi": "अफ्रीका कप ऑफ नेशंस, ग्रुप बी",
+        "ru": "Кубок африканских наций, Группа B"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Africa Cup of Nations 2025",
+    "year": "25/26",
+    "editor": false,
+    "seasonCoverageInfo": {},
+    "id": 71636
+  },
+  "roundInfo": {
+    "round": 3
+  },
+  "customId": "RTbsiVb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 3,
+  "homeTeam": {
+    "name": "Angola",
+    "slug": "angola",
+    "shortName": "Angola",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 65617,
+    "nameCode": "ANG",
+    "ranking": 88,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "AO",
+      "alpha3": "AGO",
+      "name": "Angola",
+      "slug": "angola"
+    },
+    "id": 4692,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffff00",
+      "text": "#ffff00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أنغولا",
+        "bn": "অ্যাঙ্গোলা",
+        "hi": "अंगोला",
+        "ru": "Ангола"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Egypt",
+    "slug": "egypt",
+    "shortName": "Egypt",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 741740,
+    "nameCode": "EGY",
+    "ranking": 29,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "EG",
+      "alpha3": "EGY",
+      "name": "Egypt",
+      "slug": "egypt"
+    },
+    "id": 4758,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#f00000",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "مصر",
+        "bn": "মিশর",
+        "hi": "इजिप्ट",
+        "ru": "Египет"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 6,
+    "currentPeriodStartTimestamp": 1767027806
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1767030898
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "correctHalftimeAiInsight": false,
+  "id": 13424960,
+  "slug": "egypt-angola",
+  "startTimestamp": 1767024000,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "national"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}
