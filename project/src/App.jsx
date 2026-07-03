@@ -19,33 +19,48 @@ const INIT_LIVE = {
   team2: { Goles:0, Corners:0, Tarjetas:0, Rojas:0, Disparos:0, TiroAlArco:0, Pases:0, FoulCometido:0, FoulRecibido:0 },
 };
 
+// Autoguardado: evita perder el registro en vivo si el navegador
+// descarga la pestaña por falta de RAM (p. ej. al abrir otras apps en el celular).
+const STORAGE_KEY = 'wc2026_live_state_v1';
+
+function loadSavedState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+const saved = loadSavedState();
+
 export default function App() {
   const [tab, setTab]               = useState(0);
   const [analysis, setAnalysis]     = useState(null);
   const [loading, setLoading]       = useState(false);
-  const [selectedFiles, setSelectedFiles] = useState({ f1: null, f2: null });
-  const [liveStats, setLiveStats]   = useState(INIT_LIVE);
-  const [score, setScore]           = useState({ home: 0, away: 0 });
-  const [timer, setTimer]           = useState(0);
-  const [isRunning, setIsRunning]   = useState(false);
-  const [period, setPeriod]         = useState('1T');
-  const [lastUpdate, setLastUpdate] = useState(null);
+  const [selectedFiles, setSelectedFiles] = useState(saved.selectedFiles ?? { f1: null, f2: null });
+  const [liveStats, setLiveStats]   = useState(saved.liveStats ?? INIT_LIVE);
+  const [score, setScore]           = useState(saved.score ?? { home: 0, away: 0 });
+  const [timer, setTimer]           = useState(saved.timer ?? 0);
+  const [isRunning, setIsRunning]   = useState(saved.isRunning ?? false);
+  const [period, setPeriod]         = useState(saved.period ?? '1T');
+  const [lastUpdate, setLastUpdate] = useState(saved.lastUpdate ?? null);
 
   // Lineup compartido entre P3 (cancha), P5 (formaciones) y P7 (stats vivo)
-  const [lineupData,   setLineupData]   = useState(null);
-  const [manualPos,    setManualPos]    = useState(null);
-  const [playerEvents, setPlayerEvents] = useState({});
+  const [lineupData,   setLineupData]   = useState(saved.lineupData ?? null);
+  const [manualPos,    setManualPos]    = useState(saved.manualPos ?? null);
+  const [playerEvents, setPlayerEvents] = useState(saved.playerEvents ?? {});
 
   // Estadística seleccionada compartida entre Stats Fijos y Stats en Vivo
-  const [selectedStatKey, setSelectedStatKey] = useState('Goles p90');
+  const [selectedStatKey, setSelectedStatKey] = useState(saved.selectedStatKey ?? 'Goles p90');
 
   // Registro de eventos del jugador — persisten al cambiar de pestaña
-  const [registroEvents,    setRegistroEvents]    = useState([]);
-  const [lastRegistroEvent, setLastRegistroEvent] = useState(null);
+  const [registroEvents,    setRegistroEvents]    = useState(saved.registroEvents ?? []);
+  const [lastRegistroEvent, setLastRegistroEvent] = useState(saved.lastRegistroEvent ?? null);
   const registroHistoryRef = useRef([]);
   // baseSwapped = lado correcto para 1T (team1 a la izquierda)
   // En 2T los equipos cambian de lado, así que fieldSwapped = !base
-  const [baseSwapped, setBaseSwapped]   = useState(false);
+  const [baseSwapped, setBaseSwapped]   = useState(saved.baseSwapped ?? false);
   const fieldSwapped = period === '2T' ? !baseSwapped : baseSwapped;
   // setFieldSwapped para uso manual (toggle) desde P3/P5 — siempre mueve baseSwapped
   const setFieldSwapped = (updater) =>
@@ -86,6 +101,35 @@ export default function App() {
     }
     return () => clearInterval(intervalRef.current);
   }, [isRunning]);
+
+  // Al abrir la app: si había equipos cargados en la sesión guardada, recuperar
+  // el análisis (sin tocar el resto del estado en vivo ya restaurado).
+  useEffect(() => {
+    if (analysis || !selectedFiles?.f1 || !selectedFiles?.f2) return;
+    getAnalysis(selectedFiles.f1, selectedFiles.f2)
+      .then(setAnalysis)
+      .catch(e => console.error('No se pudo restaurar el análisis guardado:', e));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Autoguardado en localStorage — así el registro en vivo sobrevive
+  // si el navegador descarga la pestaña por falta de RAM o se recarga la página.
+  useEffect(() => {
+    const snapshot = {
+      selectedFiles, liveStats, score, timer, isRunning, period, lastUpdate,
+      lineupData, manualPos, playerEvents, selectedStatKey,
+      registroEvents, lastRegistroEvent, baseSwapped,
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
+    } catch (e) {
+      console.error('No se pudo guardar el progreso:', e);
+    }
+  }, [
+    selectedFiles, liveStats, score, timer, isRunning, period, lastUpdate,
+    lineupData, manualPos, playerEvents, selectedStatKey,
+    registroEvents, lastRegistroEvent, baseSwapped,
+  ]);
 
   const handleSelectFiles = async (f1, f2) => {
     setLoading(true);

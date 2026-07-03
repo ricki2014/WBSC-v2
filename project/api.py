@@ -11,7 +11,7 @@ from curl_cffi import requests as requests_cffi
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-EXCEL_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data", "upcoming")
+EXCEL_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "upcoming")
 
 # ─── CARGA DE EQUIPO ─────────────────────────────────────────────────────────
 

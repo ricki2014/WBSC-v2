@@ -117,9 +117,9 @@ function PlayerCircle({ player, selected, evSummary, onClick, onDragStart, onDro
 // ─── BOTONES DE EVENTO ────────────────────────────────────────────────────────
 // key: evento · statKey: qué campo de liveStats actualizar · scoreKey: si suma al marcador
 const EVENTOS = [
-  { icon: '⚽', label: '+ Gol',             key: 'Gol',      statKey: 'Goles',       addsScore: true,  color: 'text-yellow-400' },
+  { icon: '⚽', label: '+ Gol',             key: 'Gol',      statKey: 'Goles',       addsScore: true,  color: 'text-yellow-400', also: [{ key: 'TiroArco', statKey: 'TiroAlArco' }, { key: 'Disparo', statKey: 'Disparos' }] },
   { icon: '🎯', label: '+ Disparo (total)', key: 'Disparo',  statKey: 'Disparos',    addsScore: false, color: 'text-orange-400' },
-  { icon: '🥅', label: '+ Tiro al arco',    key: 'TiroArco', statKey: 'TiroAlArco',  addsScore: false, color: 'text-blue-400',   also: { key: 'Disparo', statKey: 'Disparos' } },
+  { icon: '🥅', label: '+ Tiro al arco',    key: 'TiroArco', statKey: 'TiroAlArco',  addsScore: false, color: 'text-blue-400',   also: [{ key: 'Disparo', statKey: 'Disparos' }] },
   { icon: '🤛', label: '+ Foul cometido',   key: 'FoulCom',  statKey: 'FoulCometido',addsScore: false, color: 'text-orange-400' },
   { icon: '🛡️', label: '+ Foul recibido',   key: 'FoulRec',  statKey: 'FoulRecibido',addsScore: false, color: 'text-green-400'  },
   { icon: '🟨', label: '+ Tarjeta amarilla',key: 'Amarilla', statKey: 'Tarjetas',    addsScore: false, color: 'text-yellow-300' },
@@ -313,9 +313,11 @@ export default function P3_RegistroJugadorCancha({
       const teamKey  = player.side === 'home' ? 'team1' : 'team2';
       const scoreKey = player.side === 'home' ? 'home'  : 'away';
 
+      const alsoList = ev.also || [];
+
       if (ev.statKey) {
         newLive[teamKey][ev.statKey] = (newLive[teamKey][ev.statKey] || 0) + 1;
-        if (ev.also) newLive[teamKey][ev.also.statKey] = (newLive[teamKey][ev.also.statKey] || 0) + 1;
+        for (const a of alsoList) newLive[teamKey][a.statKey] = (newLive[teamKey][a.statKey] || 0) + 1;
       }
       if (ev.addsScore) newScore[scoreKey] = (newScore[scoreKey] || 0) + 1;
 
@@ -323,8 +325,10 @@ export default function P3_RegistroJugadorCancha({
       newPE[pUid] = {
         ...(newPE[pUid] || {}),
         [ev.key]: ((newPE[pUid]?.[ev.key] || 0) + 1),
-        ...(ev.also ? { [ev.also.key]: ((newPE[pUid]?.[ev.also.key] || 0) + 1) } : {}),
       };
+      for (const a of alsoList) {
+        newPE[pUid][a.key] = (newPE[pUid][a.key] || 0) + 1;
+      }
 
       newEvs.push({
         id: Date.now() + Math.random(),
