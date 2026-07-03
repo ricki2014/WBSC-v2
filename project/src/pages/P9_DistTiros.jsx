@@ -137,9 +137,9 @@ function TeamPanel({ file, teamName, color }) {
 
 // ─── PUNTO DE JUGADOR EN CANCHA ───────────────────────────────────────────────
 function PlayerDot({ player, selected, onClick }) {
-  const isHome = player.side === 'home';
-  const baseColor = isHome ? 'bg-red-700 border-red-400' : 'bg-blue-700 border-blue-400';
-  const selColor  = isHome ? 'bg-red-400 border-yellow-300' : 'bg-blue-400 border-yellow-300';
+  const isTeam1 = player.team === 'team1';
+  const baseColor = isTeam1 ? 'bg-red-700 border-red-400' : 'bg-blue-700 border-blue-400';
+  const selColor  = isTeam1 ? 'bg-red-400 border-yellow-300' : 'bg-blue-400 border-yellow-300';
   const label = playerLabel(player);
   return (
     <div
@@ -209,10 +209,9 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
 
   if (!lineupData) return null;
 
-  const homeName = swapped ? (lineupData.away_name || team2Name || 'Visita') : (lineupData.home_name || team1Name || 'Local');
-  const awayName = swapped ? (lineupData.home_name || team1Name || 'Local')  : (lineupData.away_name || team2Name || 'Visita');
+  const team1Label = team1Name || (baseSwapped ? lineupData.away_name : lineupData.home_name) || 'Equipo 1';
+  const team2Label = team2Name || (baseSwapped ? lineupData.home_name : lineupData.away_name) || 'Equipo 2';
   const selLabel = selectedPlayer ? playerLabel(selectedPlayer) : null;
-  const selIsHome = selectedPlayer?.side === 'home';
 
   return (
     <div className="flex flex-col gap-3 border-t border-gray-700/50 pt-3 mt-1">
@@ -226,11 +225,11 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
           <div className="flex flex-wrap items-center gap-4 text-xs mb-1">
             <div className="flex items-center gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-700"/>
-              <span className="text-gray-300">{homeName}</span>
+              <span className="text-gray-300">{team1Label}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <div className="w-3 h-3 rounded-full bg-blue-700"/>
-              <span className="text-gray-300">{awayName}</span>
+              <span className="text-gray-300">{team2Label}</span>
             </div>
             {selectedPlayer && (
               <span className="ml-auto text-[10px] text-yellow-400">
@@ -270,7 +269,7 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
             <DistChart
               distribution={playerDist}
               subtitle={`${selLabel} · Tiros por tramo (10 min)`}
-              color={selIsHome ? 'red' : 'blue'}
+              color={selectedPlayer?.team === 'team1' ? 'green' : 'blue'}
               loading={loadingDist}
               noDataMsg="Sin disparos para este jugador"
             />

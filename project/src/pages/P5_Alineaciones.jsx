@@ -25,8 +25,8 @@ function playerLabel(player) {
 }
 
 function PlayerDot({ player, evSummary, onDragStart, onDrop }) {
-  const isHome = player.side === 'home';
-  const bg = isHome ? 'bg-red-700 border-red-400' : 'bg-blue-700 border-blue-400';
+  const isTeam1 = player.team === 'team1';
+  const bg = isTeam1 ? 'bg-red-700 border-red-400' : 'bg-blue-700 border-blue-400';
   const label = playerLabel(player);
   const badges = evSummary ? Object.entries(evSummary).filter(([, n]) => n > 0) : [];
 
@@ -360,12 +360,19 @@ export default function P5_Alineaciones({
     }
   };
 
-  const homeName = swapped
-    ? (lineupData?.away_name || analysis?.team2?.name || 'Visita')
-    : (lineupData?.home_name || analysis?.team1?.name || 'Local');
-  const awayName = swapped
-    ? (lineupData?.home_name || analysis?.team1?.name || 'Local')
-    : (lineupData?.away_name || analysis?.team2?.name || 'Visita');
+  // Nombres/formaciones fijos por identidad real (team1=rojo, team2=azul),
+  // independientes del lado visual — así el color siempre coincide con el
+  // equipo real, incluso al compartir el estado con otra sesión (push/pull).
+  const team1Label = (team1Name || analysis?.team1?.name) || (baseSwapped ? lineupData?.away_name : lineupData?.home_name) || 'Equipo 1';
+  const team2Label = (team2Name || analysis?.team2?.name) || (baseSwapped ? lineupData?.home_name : lineupData?.away_name) || 'Equipo 2';
+  // Qué equipo real ocupa cada bando visual (el panel de suplentes sigue
+  // indexado por lado visual home/away).
+  const homeTeam = swapped ? teamOfAway : teamOfHome;
+  const awayTeam = swapped ? teamOfHome : teamOfAway;
+  const homeName = homeTeam === 'team1' ? team1Label : team2Label;
+  const awayName = awayTeam === 'team1' ? team1Label : team2Label;
+  const team1Formation = baseSwapped ? lineupData?.away_formation : lineupData?.home_formation;
+  const team2Formation = baseSwapped ? lineupData?.home_formation : lineupData?.away_formation;
 
   return (
     <div className="flex flex-col md:flex-row gap-3">
@@ -377,7 +384,7 @@ export default function P5_Alineaciones({
             <span className="text-white text-xs font-bold">👕 Alineaciones</span>
             {lineupData && (
               <span className="text-gray-500 text-[10px]">
-                {homeName} {lineupData.home_formation} vs {awayName} {lineupData.away_formation}
+                {team1Label} {team1Formation} vs {team2Label} {team2Formation}
               </span>
             )}
             <div className="ml-auto flex flex-wrap items-center gap-2">
@@ -459,13 +466,13 @@ export default function P5_Alineaciones({
         <div className="flex flex-wrap items-center gap-4 text-xs shrink-0">
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-700"/>
-            <span className="text-gray-300">{homeName}</span>
-            {lineupData?.home_formation && <span className="text-gray-500 font-mono">{lineupData.home_formation}</span>}
+            <span className="text-gray-300">{team1Label}</span>
+            {team1Formation && <span className="text-gray-500 font-mono">{team1Formation}</span>}
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-blue-700"/>
-            <span className="text-gray-300">{awayName}</span>
-            {lineupData?.away_formation && <span className="text-gray-500 font-mono">{lineupData.away_formation}</span>}
+            <span className="text-gray-300">{team2Label}</span>
+            {team2Formation && <span className="text-gray-500 font-mono">{team2Formation}</span>}
           </div>
           <span className="text-gray-600 text-[10px] ml-auto">
             Suplente→Titular ó Titular→Suplente para sustituir
@@ -501,13 +508,13 @@ export default function P5_Alineaciones({
           <button
             onClick={() => setSubTeam('home')}
             className={`flex-1 text-[10px] py-1.5 font-bold transition-colors
-              ${subTeam === 'home' ? 'bg-red-700 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}>
+              ${subTeam === 'home' ? (homeTeam === 'team1' ? 'bg-red-700' : 'bg-blue-700') + ' text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}>
             ● {homeName.split(' ')[0]}
           </button>
           <button
             onClick={() => setSubTeam('away')}
             className={`flex-1 text-[10px] py-1.5 font-bold transition-colors
-              ${subTeam === 'away' ? 'bg-blue-700 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}>
+              ${subTeam === 'away' ? (awayTeam === 'team1' ? 'bg-red-700' : 'bg-blue-700') + ' text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}>
             ● {awayName.split(' ')[0]}
           </button>
         </div>
@@ -518,7 +525,7 @@ export default function P5_Alineaciones({
         </div>
 
         <div className="stat-card flex-1 min-h-0 overflow-auto">
-          <div className={`font-bold text-xs mb-2 ${subTeam === 'home' ? 'text-red-400' : 'text-blue-400'}`}>
+          <div className={`font-bold text-xs mb-2 ${(subTeam === 'home' ? homeTeam : awayTeam) === 'team1' ? 'text-red-400' : 'text-blue-400'}`}>
             ● {subTeam === 'home' ? homeName : awayName}
             <span className="text-gray-500 font-normal ml-1">
               ({localSubs[subTeam]?.length ?? 0} suplentes)
@@ -535,11 +542,11 @@ export default function P5_Alineaciones({
                   }}
                   onDragOver={e => e.preventDefault()}
                   className={`flex items-center gap-2 rounded p-1 transition-colors cursor-grab
-                    ${subTeam === 'home'
+                    ${p.team === 'team1'
                       ? 'hover:bg-red-900/30 active:bg-red-900/50'
                       : 'hover:bg-blue-900/30 active:bg-blue-900/50'}`}>
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white shrink-0
-                    ${subTeam === 'home' ? 'bg-red-700' : 'bg-blue-700'}`}>
+                    ${p.team === 'team1' ? 'bg-red-700' : 'bg-blue-700'}`}>
                     {p.number ?? '?'}
                   </div>
                   <div className="min-w-0">

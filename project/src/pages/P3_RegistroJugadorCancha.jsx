@@ -26,10 +26,10 @@ function playerLabel(player) {
 }
 
 function PlayerCircle({ player, selected, evSummary, onClick, onDragStart, onDrop }) {
-  const isHome = player.side === 'home';
+  const isTeam1 = player.team === 'team1';
   const base = selected
     ? 'bg-yellow-400 border-yellow-200 scale-110 text-black'
-    : isHome
+    : isTeam1
       ? 'bg-red-700 border-red-400 hover:bg-red-600'
       : 'bg-blue-700 border-blue-400 hover:bg-blue-600';
 
@@ -384,12 +384,19 @@ export default function P3_RegistroJugadorCancha({
     );
   }
 
-  const homeName = swapped
-    ? (lineupData.away_name || team2Name || 'Visita')
-    : (lineupData.home_name || team1Name || 'Local');
-  const awayName = swapped
-    ? (lineupData.home_name || team1Name || 'Local')
-    : (lineupData.away_name || team2Name || 'Visita');
+  // Nombres/formaciones fijos por identidad real (team1=rojo, team2=azul),
+  // independientes del lado visual — así el color siempre coincide con el
+  // equipo real, incluso al compartir el estado con otra sesión (push/pull).
+  const team1Label = team1Name || (baseSwapped ? lineupData.away_name : lineupData.home_name) || 'Equipo 1';
+  const team2Label = team2Name || (baseSwapped ? lineupData.home_name : lineupData.away_name) || 'Equipo 2';
+  const team1Formation = baseSwapped ? lineupData.away_formation : lineupData.home_formation;
+  const team2Formation = baseSwapped ? lineupData.home_formation : lineupData.away_formation;
+  // Qué equipo real ocupa cada bando visual (para el panel de suplentes,
+  // que sigue indexado por lado visual home/away).
+  const homeTeam = swapped ? teamOfAway : teamOfHome;
+  const awayTeam = swapped ? teamOfHome : teamOfAway;
+  const homeName = homeTeam === 'team1' ? team1Label : team2Label;
+  const awayName = awayTeam === 'team1' ? team1Label : team2Label;
 
   return (
     <div className="flex flex-col md:flex-row gap-3">
@@ -401,16 +408,16 @@ export default function P3_RegistroJugadorCancha({
         <div className="flex items-center gap-4 text-xs shrink-0">
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-700"/>
-            <span className="text-gray-300">{homeName}</span>
-            {lineupData.home_formation && (
-              <span className="text-gray-500">{lineupData.home_formation}</span>
+            <span className="text-gray-300">{team1Label}</span>
+            {team1Formation && (
+              <span className="text-gray-500">{team1Formation}</span>
             )}
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-blue-700"/>
-            <span className="text-gray-300">{awayName}</span>
-            {lineupData.away_formation && (
-              <span className="text-gray-500">{lineupData.away_formation}</span>
+            <span className="text-gray-300">{team2Label}</span>
+            {team2Formation && (
+              <span className="text-gray-500">{team2Formation}</span>
             )}
           </div>
           <div className="ml-auto flex items-center gap-2">
@@ -462,7 +469,7 @@ export default function P3_RegistroJugadorCancha({
                   onClick={() => setSubTeam(side)}
                   className={`text-[9px] px-3 py-1 font-bold transition-colors
                     ${subTeam === side
-                      ? side === 'home' ? 'bg-red-700 text-white' : 'bg-blue-700 text-white'
+                      ? (side === 'home' ? homeTeam : awayTeam) === 'team1' ? 'bg-red-700 text-white' : 'bg-blue-700 text-white'
                       : 'bg-gray-800 text-gray-500 hover:text-gray-300'}`}>
                   {side === 'home' ? homeName.split(' ')[0] : awayName.split(' ')[0]}
                 </button>
@@ -511,14 +518,14 @@ export default function P3_RegistroJugadorCancha({
               {[...selectedPlayers.values()].map(p => (
                 <div key={playerUid(p)} className="flex items-center gap-1.5">
                   <div className={`w-6 h-6 rounded-full border flex items-center justify-center font-bold text-white text-[10px] shrink-0
-                    ${p.side === 'home' ? 'bg-red-700 border-red-400' : 'bg-blue-700 border-blue-400'}`}>
+                    ${p.team === 'team1' ? 'bg-red-700 border-red-400' : 'bg-blue-700 border-blue-400'}`}>
                     {p.number ?? '?'}
                   </div>
                   <div className="min-w-0">
                     <div className="text-white text-[11px] font-bold leading-tight truncate">
                       {p.shortName || p.name}
                     </div>
-                    <div className="text-gray-500 text-[9px]">{p.position} · {p.side === 'home' ? homeName : awayName}</div>
+                    <div className="text-gray-500 text-[9px]">{p.position} · {p.team === 'team1' ? team1Label : team2Label}</div>
                   </div>
                   <button onClick={() => togglePlayer(p)} className="ml-auto text-gray-600 hover:text-gray-300 text-[10px] shrink-0">✕</button>
                 </div>

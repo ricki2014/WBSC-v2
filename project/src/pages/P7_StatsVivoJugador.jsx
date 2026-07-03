@@ -238,8 +238,8 @@ function playerLabel(player) {
 
 // ─── PUNTO EN CAMPO ───────────────────────────────────────────────────────────
 function PlayerDot({ player, statOption, pStats, liveEvents, onDragStart, onDrop, onDoubleClick }) {
-  const isHome  = player.side === 'home';
-  const bg      = isHome ? 'bg-red-700 border-red-400' : 'bg-blue-700 border-blue-400';
+  const isTeam1 = player.team === 'team1';
+  const bg      = isTeam1 ? 'bg-red-700 border-red-400' : 'bg-blue-700 border-blue-400';
   const label   = playerLabel(player);
   const uid     = playerUid(player);
 
@@ -337,15 +337,11 @@ export default function P7_StatsVivoJugador({
 
   const statOption = STAT_OPTIONS.find(s => s.key === selectedKey) || STAT_OPTIONS[0];
 
-  const homeStatsMap = swapped ? statsMap.team2 : statsMap.team1;
-  const awayStatsMap = swapped ? statsMap.team1 : statsMap.team2;
-
-  const homeName = swapped
-    ? (lineupData?.away_name || team2Name || 'Visita')
-    : (lineupData?.home_name || team1Name || 'Local');
-  const awayName = swapped
-    ? (lineupData?.home_name || team1Name || 'Local')
-    : (lineupData?.away_name || team2Name || 'Visita');
+  // Nombres/formaciones fijos por identidad real (team1=rojo, team2=azul),
+  // independientes del lado visual — así el color siempre coincide con el
+  // equipo real, incluso al compartir el estado con otra sesión (push/pull).
+  const team1Label = team1Name || (baseSwapped ? lineupData?.away_name : lineupData?.home_name) || 'Equipo 1';
+  const team2Label = team2Name || (baseSwapped ? lineupData?.home_name : lineupData?.away_name) || 'Equipo 2';
 
   const liveCount = Object.keys(playerEvents || {}).length;
 
@@ -412,13 +408,13 @@ export default function P7_StatsVivoJugador({
         <div className="flex flex-wrap items-center gap-3 text-xs shrink-0">
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-700"/>
-            <span className="text-gray-300 font-medium">{homeName}</span>
-            {lineupData.home_formation && <span className="text-gray-500 font-mono">{swapped ? lineupData.away_formation : lineupData.home_formation}</span>}
+            <span className="text-gray-300 font-medium">{team1Label}</span>
+            {lineupData.home_formation && <span className="text-gray-500 font-mono">{baseSwapped ? lineupData.away_formation : lineupData.home_formation}</span>}
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-blue-700"/>
-            <span className="text-gray-300 font-medium">{awayName}</span>
-            {lineupData.away_formation && <span className="text-gray-500 font-mono">{swapped ? lineupData.home_formation : lineupData.away_formation}</span>}
+            <span className="text-gray-300 font-medium">{team2Label}</span>
+            {lineupData.away_formation && <span className="text-gray-500 font-mono">{baseSwapped ? lineupData.home_formation : lineupData.away_formation}</span>}
           </div>
           <div className="ml-auto flex items-center gap-2">
             {liveCount > 0 && (
@@ -438,7 +434,7 @@ export default function P7_StatsVivoJugador({
           onDrop={handleFieldDrop} onDragOver={e => e.preventDefault()}>
           <FieldMarkings />
           {positions.map((p, i) => {
-            const pStats = findStats(p, p.side === 'home' ? homeStatsMap : awayStatsMap);
+            const pStats = findStats(p, p.team === 'team1' ? statsMap.team1 : statsMap.team2);
             return (
               <PlayerDot
                 key={`${p.side}-${p.id ?? i}`}
