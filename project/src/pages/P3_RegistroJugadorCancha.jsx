@@ -33,7 +33,7 @@ function layoutFormation(players, formation, side, team) {
     const n = group.length;
     if (!n) return;
     const ratio = totalL <= 1 ? 0 : li / (totalL - 1);
-    const x = isHome ? 4 + ratio * 43 : 96 - ratio * 43;
+    const x = isHome ? 4 + ratio * 38 : 96 - ratio * 38;
     group.forEach((player, pi) => {
       const y = n === 1 ? 50 : 12 + ((n - 1 - pi) / (n - 1)) * 76;
       result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
