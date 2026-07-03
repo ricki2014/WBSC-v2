@@ -6,6 +6,7 @@ import numpy as np
 import os
 import re
 import sys
+import json
 from scipy.stats import poisson
 from curl_cffi import requests as requests_cffi
 
@@ -1019,6 +1020,67 @@ def get_live_status(match_id: str):
 
     return {"score": score, "period": period, "team_stats": team_stats, "player_stats": player_stats,
             "substitutions": substitutions}
+
+# ─── PUSH A LA WEB (SofaScore está bloqueado desde Render — todo lo que le habla
+# a SofaScore se hace en la PC local, y esto publica el resultado para que la web
+# deployada lo sirva sin necesitar su propio acceso a SofaScore) ─────────────────
+
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LIVE_STATE_PATH = os.path.join(REPO_ROOT, "data", "live_state.json")
+
+class LiveStateSnapshot(BaseModel):
+    lineupData: dict = None
+    score: dict = None
+    period: str = None
+    liveStats: dict = None
+    playerEvents: dict = None
+    team1Name: str = None
+    team2Name: str = None
+
+@app.get("/live-state")
+def get_shared_live_state():
+    if not os.path.exists(LIVE_STATE_PATH):
+        raise HTTPException(status_code=404, detail="No hay estado publicado todavía")
+    with open(LIVE_STATE_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+@app.post("/push-web-update")
+def push_web_update(snapshot: LiveStateSnapshot):
+    import subprocess
+    import datetime as _dt
+
+    payload = snapshot.dict()
+    payload["updated_at"] = _dt.datetime.utcnow().isoformat()
+    os.makedirs(os.path.dirname(LIVE_STATE_PATH), exist_ok=True)
+    with open(LIVE_STATE_PATH, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    def run(cmd):
+        return subprocess.run(cmd, cwd=REPO_ROOT, capture_output=True, text=True)
+
+    try:
+        # -A (no solo "data"): así el botón también sube cualquier cambio de código
+        # pendiente, en vez de dejarlo desincronizado entre el repo y lo que corrés local.
+        add = run(["git", "add", "-A"])
+        if add.returncode != 0:
+            raise HTTPException(status_code=500, detail=f"git add falló: {add.stderr}")
+
+        commit = run(["git", "commit", "-m", "Actualizar datos y estado en vivo"])
+        nothing_to_commit = commit.returncode != 0 and "nothing to commit" in (commit.stdout + commit.stderr).lower()
+        if commit.returncode != 0 and not nothing_to_commit:
+            raise HTTPException(status_code=500, detail=f"git commit falló: {commit.stdout}\n{commit.stderr}")
+
+        push = run(["git", "push"])
+        if push.returncode != 0:
+            raise HTTPException(status_code=500, detail=f"git push falló: {push.stderr}")
+    except FileNotFoundError:
+        raise HTTPException(status_code=500, detail="git no está instalado o no está en PATH en esta máquina")
+
+    return {
+        "pushed": True,
+        "committed": not nothing_to_commit,
+        "push_output": push.stderr.strip(),
+    }
 
 # ─── DISTRIBUCIÓN DE TIROS ───────────────────────────────────────────────────
 

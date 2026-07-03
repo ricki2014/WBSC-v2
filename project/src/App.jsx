@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Tabs from './components/Tabs';
 import FileSelector from './components/FileSelector';
-import { getAnalysis } from './api';
+import { getAnalysis, pushWebUpdate, getSharedLiveState } from './api';
 
 import P1_Comparacion           from './pages/P1_Comparacion';
 import P2_RegistroEquipo        from './pages/P2_RegistroEquipo';
@@ -67,6 +67,9 @@ export default function App() {
   // visualSwap = preferencia puramente cosmética del usuario ("Invertir lados"),
   // independiente de quién es cada equipo.
   const [visualSwap, setVisualSwap]     = useState(saved.visualSwap ?? false);
+  // Último "updated_at" del estado publicado que efectivamente cargaste (para
+  // saber si hay una publicación más nueva sin haberla cargado todavía).
+  const [lastPulledAt, setLastPulledAt] = useState(saved.lastPulledAt ?? null);
   const fieldSwapped = (period === '2T' ? !baseSwapped : baseSwapped) !== visualSwap;
   // setFieldSwapped: lo que usan los botones "Invertir lados" — solo mueve visualSwap.
   const setFieldSwapped = (updater) =>
@@ -128,7 +131,7 @@ export default function App() {
     const snapshot = {
       selectedFiles, liveStats, score, timer, isRunning, period, lastUpdate,
       lineupData, manualPos, playerEvents, selectedStatKey,
-      registroEvents, lastRegistroEvent, baseSwapped, visualSwap,
+      registroEvents, lastRegistroEvent, baseSwapped, visualSwap, lastPulledAt,
     };
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
@@ -138,7 +141,7 @@ export default function App() {
   }, [
     selectedFiles, liveStats, score, timer, isRunning, period, lastUpdate,
     lineupData, manualPos, playerEvents, selectedStatKey,
-    registroEvents, lastRegistroEvent, baseSwapped, visualSwap,
+    registroEvents, lastRegistroEvent, baseSwapped, visualSwap, lastPulledAt,
   ]);
 
   const handleSelectFiles = async (f1, f2) => {
@@ -170,6 +173,61 @@ export default function App() {
 
   const team1Name = analysis?.team1?.name;
   const team2Name = analysis?.team2?.name;
+
+  // Push a la web: como SofaScore bloquea la IP de Render, todo lo que le habla a
+  // SofaScore (bajar equipos, cargar alineación, actualizar estado) se hace acá en
+  // la PC local, y esto publica el resultado (Excel + estado en vivo actual) para
+  // que la web deployada lo muestre sin necesitar su propio acceso a SofaScore.
+  const [pushing, setPushing]   = useState(false);
+  const [pushMsg, setPushMsg]   = useState('');
+  const [pulling, setPulling]   = useState(false);
+  const [sharedUpdatedAt, setSharedUpdatedAt] = useState(null);
+  const hasNewSharedState = sharedUpdatedAt && sharedUpdatedAt !== lastPulledAt;
+
+  // Revisa cada 30s si hay una publicación más nueva que la última que cargaste
+  // (sin aplicarla sola — solo prende el botón en rojo para avisar).
+  useEffect(() => {
+    const check = () => {
+      getSharedLiveState()
+        .then(shared => setSharedUpdatedAt(shared.updated_at || null))
+        .catch(() => {});
+    };
+    check();
+    const id = setInterval(check, 30000);
+    return () => clearInterval(id);
+  }, []);
+
+  const handlePush = async () => {
+    setPushing(true); setPushMsg('');
+    try {
+      const res = await pushWebUpdate({
+        lineupData, score, period, liveStats, playerEvents, team1Name, team2Name,
+      });
+      setPushMsg(res.committed ? '✅ Publicado' : '✅ Ya estaba al día');
+    } catch (e) {
+      setPushMsg('❌ ' + (e?.response?.data?.detail || 'Error al publicar'));
+    } finally {
+      setPushing(false);
+    }
+  };
+
+  const handlePull = async () => {
+    setPulling(true); setPushMsg('');
+    try {
+      const shared = await getSharedLiveState();
+      if (shared.lineupData) setLineupData(shared.lineupData);
+      if (shared.score) setScore(shared.score);
+      if (shared.period) setPeriod(shared.period);
+      if (shared.liveStats) setLiveStats(shared.liveStats);
+      if (shared.playerEvents) setPlayerEvents(shared.playerEvents);
+      setLastPulledAt(shared.updated_at || null);
+      setPushMsg(`✅ Estado cargado (${shared.updated_at ? new Date(shared.updated_at).toLocaleTimeString() : ''})`);
+    } catch (e) {
+      setPushMsg('❌ ' + (e?.response?.data?.detail || 'No hay estado publicado'));
+    } finally {
+      setPulling(false);
+    }
+  };
 
   const commonProps = {
     analysis, liveStats, setLiveStats, score, setScore,
@@ -218,6 +276,22 @@ export default function App() {
             </div>
           </div>
         )}
+        <div className="flex items-center gap-2 shrink-0">
+          {pushMsg && <span className="text-[10px] text-gray-400 whitespace-nowrap">{pushMsg}</span>}
+          <button onClick={handlePull} disabled={pulling}
+            title={hasNewSharedState ? '¡Hay una actualización nueva sin cargar!' : 'Trae el último estado publicado (marcador, stats, alineación) — funciona en cualquier lado'}
+            className={`text-xs px-2 py-1.5 rounded-lg border transition-colors disabled:opacity-50
+              ${hasNewSharedState
+                ? 'border-red-500 text-red-400 bg-red-900/20 animate-pulse'
+                : 'border-gray-600 text-gray-300 hover:border-gray-400'}`}>
+            {pulling ? '⏳...' : hasNewSharedState ? '🔴 Cargar estado publicado' : '🔄 Cargar estado publicado'}
+          </button>
+          <button onClick={handlePush} disabled={pushing}
+            title="Publica el marcador/stats/alineación actuales para que cualquiera que entre a la web los vea — solo funciona corriendo local (necesita git y salida a SofaScore)"
+            className="text-xs px-2 py-1.5 rounded-lg border border-green-600 text-green-400 hover:bg-green-900/20 transition-colors disabled:opacity-50">
+            {pushing ? '⏳ Publicando...' : '🚀 Push a la web'}
+          </button>
+        </div>
       </div>
 
       {/* Tabs */}

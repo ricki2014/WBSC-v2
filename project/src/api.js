@@ -34,6 +34,17 @@ export const getLiveStatus = async (matchId) => {
   return r.data;
 };
 
+// Solo funciona corriendo local (necesita git + salida a SofaScore sin bloqueo)
+export const pushWebUpdate = async (snapshot) => {
+  const r = await axios.post(`${BASE}/push-web-update`, snapshot, { timeout: 60 * 1000 });
+  return r.data;
+};
+
+export const getSharedLiveState = async () => {
+  const r = await axios.get(`${BASE}/live-state`);
+  return r.data;
+};
+
 export const fetchTeamMatches = async (file, statKey) => {
   const r = await axios.get(`${BASE}/team-matches/${encodeURIComponent(file)}/${encodeURIComponent(statKey)}`);
   return r.data;
