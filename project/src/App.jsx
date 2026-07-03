@@ -203,6 +203,8 @@ export default function App() {
   const handlePush = async () => {
     setPushing(true); setPushMsg('');
     try {
+      // eslint-disable-next-line no-console
+      console.log('PUSH manualPos:', (manualPos || []).map(p => ({ id: p.id, num: p.number, name: p.shortName || p.name, x: Math.round(p.x), y: Math.round(p.y), team: p.team })));
       const res = await pushWebUpdate({
         lineupData, manualPos, baseSwapped, score, period, liveStats, playerEvents, team1Name, team2Name,
       });
@@ -222,6 +224,8 @@ export default function App() {
     setPulling(true); setPushMsg('');
     try {
       const shared = await getSharedLiveState();
+      // eslint-disable-next-line no-console
+      console.log('PULL manualPos:', (shared.manualPos || []).map(p => ({ id: p.id, num: p.number, name: p.shortName || p.name, x: Math.round(p.x), y: Math.round(p.y), team: p.team })));
       if (shared.lineupData) setLineupData(shared.lineupData);
       if (shared.manualPos) setManualPos(shared.manualPos);
       if (shared.baseSwapped != null) setBaseSwapped(shared.baseSwapped);
