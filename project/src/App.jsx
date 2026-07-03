@@ -200,6 +200,19 @@ export default function App() {
     return () => clearInterval(id);
   }, []);
 
+  // e.response.data.detail no siempre es un string: FastAPI lo manda como
+  // lista de objetos en errores de validación (422), lo que renderizaba
+  // "[object Object]" si se concatenaba directo.
+  const formatApiError = (e, fallback) => {
+    const detail = e?.response?.data?.detail;
+    if (typeof detail === 'string') return detail;
+    if (Array.isArray(detail)) {
+      return detail.map(d => d?.msg || JSON.stringify(d)).join('; ');
+    }
+    if (detail) return JSON.stringify(detail);
+    return e?.message || fallback;
+  };
+
   const handlePush = async () => {
     setPushing(true); setPushMsg('');
     try {
@@ -211,7 +224,7 @@ export default function App() {
       if (res.update_number != null) setUpdateNumber(res.update_number);
       setPushMsg(res.committed ? `✅ Publicado (Actualización ${res.update_number})` : '✅ Ya estaba al día');
     } catch (e) {
-      setPushMsg('❌ ' + (e?.response?.data?.detail || 'Error al publicar'));
+      setPushMsg('❌ ' + formatApiError(e, 'Error al publicar'));
     } finally {
       setPushing(false);
     }
@@ -232,7 +245,7 @@ export default function App() {
       if (shared.update_number != null) setUpdateNumber(shared.update_number);
       setPushMsg(`✅ Estado cargado (Actualización ${shared.update_number ?? '?'})`);
     } catch (e) {
-      setPushMsg('❌ ' + (e?.response?.data?.detail || 'No hay estado publicado'));
+      setPushMsg('❌ ' + formatApiError(e, 'No hay estado publicado'));
     } finally {
       setPulling(false);
     }

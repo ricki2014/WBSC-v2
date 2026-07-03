@@ -910,8 +910,8 @@ async def get_player_matches(file: str, player_name: str, stat_key: str = ''):
 
 
 class LineupRequest(BaseModel):
-    url: str = None
-    team_id: str = None
+    url: str | None = None
+    team_id: str | None = None
     last: bool = False
 
 @app.post("/get-lineups")
@@ -1047,15 +1047,15 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIVE_STATE_PATH = os.path.join(REPO_ROOT, "data", "live_state.json")
 
 class LiveStateSnapshot(BaseModel):
-    lineupData: dict = None
-    manualPos: list = None
-    baseSwapped: bool = None
-    score: dict = None
-    period: str = None
-    liveStats: dict = None
-    playerEvents: dict = None
-    team1Name: str = None
-    team2Name: str = None
+    lineupData: dict | None = None
+    manualPos: list | None = None
+    baseSwapped: bool | None = None
+    score: dict | None = None
+    period: str | None = None
+    liveStats: dict | None = None
+    playerEvents: dict | None = None
+    team1Name: str | None = None
+    team2Name: str | None = None
 
 @app.get("/live-state")
 def get_shared_live_state():
