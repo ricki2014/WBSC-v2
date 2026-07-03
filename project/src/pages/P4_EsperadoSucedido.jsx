@@ -391,7 +391,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
   const { team1, team2 } = analysis;
 
   return (
-    <div className="h-full flex flex-col gap-3 overflow-auto p-1 relative">
+    <div className="flex flex-col gap-3 p-1 relative">
       <div className="flex flex-wrap items-center justify-between gap-2 shrink-0">
         <div className="flex items-center gap-2">
           <span className="text-lg">🧮</span>

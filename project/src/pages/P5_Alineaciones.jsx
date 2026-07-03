@@ -415,8 +415,8 @@ export default function P5_Alineaciones({
     : (lineupData?.away_name || analysis?.team2?.name || 'Visita');
 
   return (
-    <div className="md:h-full flex flex-col md:flex-row gap-3 overflow-y-auto md:overflow-hidden">
-      <div className="flex-1 flex flex-col gap-2 md:overflow-hidden">
+    <div className="flex flex-col md:flex-row gap-3">
+      <div className="flex-1 flex flex-col gap-2">
 
         {/* Barra compacta siempre visible */}
         <div className="shrink-0">

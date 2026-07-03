@@ -252,7 +252,7 @@ export default function P3_RegistroJugador({ analysis, lineupData, manualPos, ba
   const r2 = analysis.rankings?.team2?.[role] || [];
 
   return (
-    <div className="md:h-full flex flex-col gap-3 overflow-y-auto md:overflow-hidden">
+    <div className="flex flex-col gap-3">
       {/* Role selector */}
       <div className="flex gap-2 overflow-x-auto pb-1 shrink-0">
         {ROLES.map(r => (
@@ -267,14 +267,14 @@ export default function P3_RegistroJugador({ analysis, lineupData, manualPos, ba
       </div>
 
       {/* Tables */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 flex-1 md:overflow-hidden">
-        <div className="stat-card md:overflow-hidden flex flex-col">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="stat-card flex flex-col">
           <div className="text-green-400 font-bold text-sm mb-2 shrink-0">
             {analysis.team1?.name}
           </div>
           <RankTable rows={r1} teamColor="green" starterNames={team1Starters} />
         </div>
-        <div className="stat-card md:overflow-hidden flex flex-col">
+        <div className="stat-card flex flex-col">
           <div className="text-blue-400 font-bold text-sm mb-2 shrink-0">
             {analysis.team2?.name}
           </div>

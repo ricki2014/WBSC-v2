@@ -247,11 +247,11 @@ export default function App() {
   const formation2 = lineupData?.away_formation || '';
 
   return (
-    <div className="w-screen min-h-screen md:h-screen flex flex-col bg-gray-950 md:overflow-hidden overflow-x-hidden">
+    <div className="w-screen min-h-screen flex flex-col bg-gray-950 overflow-x-hidden">
       <Header team1={team1Name} team2={team2Name} score={score} timer={timer} period={period} />
 
       {/* FileSelector — siempre visible arriba */}
-      <div className="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3 px-2 md:px-3 pt-2 pb-2 border-b border-gray-800 shrink-0">
+      <div className="flex flex-wrap items-center gap-2 md:gap-3 px-2 md:px-3 pt-2 pb-2 border-b border-gray-800 shrink-0">
         <FileSelector onSelectFiles={handleSelectFiles} />
         {/* Team badges inline */}
         {analysis && (
@@ -307,7 +307,7 @@ export default function App() {
         </div>
       )}
 
-      <div className="flex-1 overflow-y-auto md:overflow-hidden p-2 md:p-3">
+      <div className="flex-1 p-2 md:p-3">
         {tab === 0 && <P1_Comparacion           {...commonProps} />}
         {tab === 1 && <P2_RegistroEquipo         {...commonProps} />}
         {tab === 2 && <P4_EsperadoSucedido       {...commonProps} />}

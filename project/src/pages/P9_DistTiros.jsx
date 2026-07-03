@@ -345,7 +345,7 @@ export default function P9_DistTiros({
   );
 
   return (
-    <div className="h-full flex flex-col gap-3 overflow-auto p-1">
+    <div className="flex flex-col gap-3 p-1">
       {/* Encabezado */}
       <div className="flex items-center gap-2 shrink-0">
         <span className="text-white font-bold text-sm">🎯 Distribución de tiros por tramo</span>

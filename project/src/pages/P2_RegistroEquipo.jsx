@@ -106,11 +106,11 @@ export default function P2_RegistroEquipo({
   };
 
   return (
-    <div className="md:h-full flex flex-col overflow-y-auto md:overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr,280px,1fr] gap-3 flex-1 md:overflow-hidden">
+    <div className="flex flex-col">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr,280px,1fr] gap-3">
 
         {/* Team 1 buttons */}
-        <div className="flex flex-col gap-1.5 md:overflow-auto pr-1">
+        <div className="flex flex-col gap-1.5 pr-1">
           <div className="text-green-400 font-bold text-sm mb-1 text-center">
             {team1Name || 'Equipo Local'}
           </div>
@@ -217,7 +217,7 @@ export default function P2_RegistroEquipo({
         </div>
 
         {/* Team 2 buttons */}
-        <div className="flex flex-col gap-1.5 md:overflow-auto pl-1">
+        <div className="flex flex-col gap-1.5 pl-1">
           <div className="text-blue-400 font-bold text-sm mb-1 text-center">
             {team2Name || 'Equipo Visita'}
           </div>

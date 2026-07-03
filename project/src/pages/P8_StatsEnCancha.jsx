@@ -337,10 +337,10 @@ export default function P8_StatsEnCancha({
   }
 
   return (
-    <div className="md:h-full flex flex-col md:flex-row gap-3 overflow-y-auto md:overflow-hidden">
+    <div className="flex flex-col md:flex-row gap-3">
 
       {/* ── CAMPO ─────────────────────────────────────────────────────────── */}
-      <div className="flex-1 flex flex-col gap-2 md:overflow-hidden">
+      <div className="flex-1 flex flex-col gap-2">
 
         <div className="flex flex-wrap items-center gap-3 text-xs shrink-0">
           <div className="flex items-center gap-1.5">

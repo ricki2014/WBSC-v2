@@ -442,10 +442,10 @@ export default function P3_RegistroJugadorCancha({
     : (lineupData.away_name || team2Name || 'Visita');
 
   return (
-    <div className="md:h-full flex flex-col md:flex-row gap-3 overflow-y-auto md:overflow-hidden">
+    <div className="flex flex-col md:flex-row gap-3">
 
       {/* ── CAMPO ─────────────────────────────────────────────────────────── */}
-      <div className="flex-1 flex flex-col gap-2 md:overflow-hidden min-w-0">
+      <div className="flex-1 flex flex-col gap-2 min-w-0">
 
         {/* Leyenda */}
         <div className="flex items-center gap-4 text-xs shrink-0">
@@ -482,7 +482,7 @@ export default function P3_RegistroJugadorCancha({
         </div>
 
         {/* Campo */}
-        <div className="min-h-[380px] md:min-h-0 md:flex-1 relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden"
+        <div className="min-h-[420px] relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden"
           onDrop={handleFieldDrop} onDragOver={e => e.preventDefault()}>
           <FieldMarkings />
           {starters.map((p, i) => (

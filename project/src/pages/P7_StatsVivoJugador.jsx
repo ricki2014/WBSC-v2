@@ -453,10 +453,10 @@ export default function P7_StatsVivoJugador({
   }
 
   return (
-    <div className="md:h-full flex flex-col md:flex-row gap-3 overflow-y-auto md:overflow-hidden">
+    <div className="flex flex-col md:flex-row gap-3">
 
       {/* ── CAMPO ─────────────────────────────────────────────────────────── */}
-      <div className="flex-1 flex flex-col gap-2 md:overflow-hidden">
+      <div className="flex-1 flex flex-col gap-2">
 
         {/* Header */}
         <div className="flex flex-wrap items-center gap-3 text-xs shrink-0">

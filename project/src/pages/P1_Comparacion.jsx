@@ -311,7 +311,7 @@ export default function P1_Comparacion({ analysis, selectedFiles }) {
   const { team1, team2 } = localAnalysis;
 
   return (
-    <div className="h-full flex flex-col gap-3 overflow-auto p-1">
+    <div className="flex flex-col gap-3 p-1">
 
       {/* Filtros de condición */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 shrink-0">
