@@ -308,7 +308,7 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
         </div>
 
         {/* Gráfico del jugador seleccionado */}
-        <div className="w-full md:w-72 shrink-0 flex flex-col justify-center">
+        <div className="w-full md:w-56 lg:w-72 shrink-0 flex flex-col justify-center">
           {!selectedPlayer ? (
             <div className="h-full flex items-center justify-center text-gray-600 text-xs text-center border border-gray-700/40 rounded-xl p-4">
               Seleccioná un jugador en la cancha para ver su distribución de tiros

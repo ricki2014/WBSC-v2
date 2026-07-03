@@ -537,7 +537,7 @@ export default function P7_StatsVivoJugador({
       </div>
 
       {/* ── SIDEBAR DE ESTADÍSTICAS ────────────────────────────────────────── */}
-      <div className="w-full md:w-44 shrink-0 flex flex-col gap-1.5 overflow-auto">
+      <div className="w-full md:w-32 lg:w-44 shrink-0 flex flex-col gap-1.5 overflow-auto">
         <div className="text-white font-bold text-xs mb-0.5 shrink-0">📊 Estadística a ver</div>
 
         {STAT_OPTIONS.map(s => {

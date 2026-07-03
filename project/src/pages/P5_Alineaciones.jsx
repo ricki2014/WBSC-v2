@@ -540,7 +540,7 @@ export default function P5_Alineaciones({
       </div>
 
       {/* Panel de suplentes */}
-      <div className="w-full md:w-52 shrink-0 flex flex-col gap-2 overflow-auto"
+      <div className="w-full md:w-40 lg:w-52 shrink-0 flex flex-col gap-2 overflow-auto"
         onDrop={handleSidebarDrop} onDragOver={e => e.preventDefault()}>
         <div className="text-white font-bold text-sm">Suplentes</div>
 

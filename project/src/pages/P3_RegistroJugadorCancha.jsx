@@ -542,7 +542,7 @@ export default function P3_RegistroJugadorCancha({
       </div>
 
       {/* ── PANEL DERECHO ─────────────────────────────────────────────────── */}
-      <div className="w-full md:w-52 shrink-0 flex flex-col gap-3 overflow-auto">
+      <div className="w-full md:w-40 lg:w-52 shrink-0 flex flex-col gap-3 overflow-auto">
 
         {/* Jugadores seleccionados */}
         <div className="bg-gray-900 border border-gray-700/40 rounded-xl p-3">
