@@ -1,5 +1,8 @@
 import axios from 'axios';
 const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8005';
+// Publicar el estado en vivo siempre va DIRECTO a la web deployada (aunque estés
+// corriendo local), así aparece al instante — no pasa por localhost ni por git.
+const PUBLIC_BASE = import.meta.env.VITE_API_URL || 'https://wbsc-v2.onrender.com';
 
 export const getAvailableFiles = async () => {
   const r = await axios.get(`${BASE}/available-files`);
@@ -39,14 +42,15 @@ export const getLiveStatus = async (matchId) => {
   return r.data;
 };
 
-// Solo funciona corriendo local (necesita git + salida a SofaScore sin bloqueo)
+// Va directo a PUBLIC_BASE (Render), no a localhost — así queda visible al
+// instante para cualquiera en la web, sin pasar por git/build/deploy.
 export const pushWebUpdate = async (snapshot) => {
-  const r = await axios.post(`${BASE}/push-web-update`, snapshot, { timeout: 60 * 1000 });
+  const r = await axios.post(`${PUBLIC_BASE}/push-web-update`, snapshot, { timeout: 30 * 1000 });
   return r.data;
 };
 
 export const getSharedLiveState = async () => {
-  const r = await axios.get(`${BASE}/live-state`);
+  const r = await axios.get(`${PUBLIC_BASE}/live-state`);
   return r.data;
 };
 

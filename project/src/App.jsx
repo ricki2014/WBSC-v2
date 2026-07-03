@@ -176,10 +176,11 @@ export default function App() {
   const team1Name = analysis?.team1?.name;
   const team2Name = analysis?.team2?.name;
 
-  // Push a la web: como SofaScore bloquea la IP de Render, todo lo que le habla a
+  // Push a la web: como SofaScore bloquea la IP de Render, lo que le habla a
   // SofaScore (bajar equipos, cargar alineación, actualizar estado) se hace acá en
-  // la PC local, y esto publica el resultado (Excel + estado en vivo actual) para
-  // que la web deployada lo muestre sin necesitar su propio acceso a SofaScore.
+  // la PC local. Este botón publica el estado en vivo actual DIRECTO a la URL
+  // pública (sin pasar por git/build/deploy, por eso es instantáneo) para que
+  // la web deployada lo muestre sin necesitar su propio acceso a SofaScore.
   const [pushing, setPushing]   = useState(false);
   const [pushMsg, setPushMsg]   = useState('');
   const [pulling, setPulling]   = useState(false);
@@ -294,7 +295,7 @@ export default function App() {
             <span className="hidden md:inline"> Cargar estado publicado</span>
           </button>
           <button onClick={handlePush} disabled={pushing}
-            title="Publica el marcador/stats/alineación actuales para que cualquiera que entre a la web los vea — solo funciona corriendo local (necesita git y salida a SofaScore)"
+            title="Publica el marcador/stats/alineación actuales al instante para que cualquiera que entre a la web los vea"
             className="text-xs px-2 py-1.5 rounded-lg border border-green-600 text-green-400 hover:bg-green-900/20 transition-colors disabled:opacity-50">
             {pushing ? '⏳' : '🚀'}
             <span className="hidden md:inline">{pushing ? ' Publicando...' : ' Push a la web'}</span>

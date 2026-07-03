@@ -1064,7 +1064,11 @@ def get_shared_live_state():
 
 @app.post("/push-web-update")
 def push_web_update(snapshot: LiveStateSnapshot):
-    import subprocess
+    # Escritura directa, SIN git — el frontend le pega directo a la URL de Render
+    # (no a localhost), así que esto queda visible al instante para cualquiera que
+    # entre a la web, sin esperar un commit+build+deploy (eso tarda minutos y es
+    # inútil para algo "en vivo"). El botón push.bat sigue existiendo aparte para
+    # cuando sí quieras subir código/Excel nuevos a GitHub.
     import datetime as _dt
 
     now_utc_iso = _dt.datetime.utcnow().isoformat()
@@ -1085,32 +1089,9 @@ def push_web_update(snapshot: LiveStateSnapshot):
     with open(LIVE_STATE_PATH, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    def run(cmd):
-        return subprocess.run(cmd, cwd=REPO_ROOT, capture_output=True, text=True)
-
-    try:
-        # -A (no solo "data"): así el botón también sube cualquier cambio de código
-        # pendiente, en vez de dejarlo desincronizado entre el repo y lo que corrés local.
-        add = run(["git", "add", "-A"])
-        if add.returncode != 0:
-            raise HTTPException(status_code=500, detail=f"git add falló: {add.stderr}")
-
-        commit_msg = f"Actualizacion {payload['update_number']}"
-        commit = run(["git", "commit", "-m", commit_msg])
-        nothing_to_commit = commit.returncode != 0 and "nothing to commit" in (commit.stdout + commit.stderr).lower()
-        if commit.returncode != 0 and not nothing_to_commit:
-            raise HTTPException(status_code=500, detail=f"git commit falló: {commit.stdout}\n{commit.stderr}")
-
-        push = run(["git", "push"])
-        if push.returncode != 0:
-            raise HTTPException(status_code=500, detail=f"git push falló: {push.stderr}")
-    except FileNotFoundError:
-        raise HTTPException(status_code=500, detail="git no está instalado o no está en PATH en esta máquina")
-
     return {
         "pushed": True,
-        "committed": not nothing_to_commit,
-        "push_output": push.stderr.strip(),
+        "committed": True,
         "updated_at": now_utc_iso,
         "update_number": payload["update_number"],
     }

@@ -19,6 +19,10 @@ project_clean_v2/project/data/
 # Claude Code
 .claude/
 
+# Estado en vivo publicado — ya no se sincroniza por git (se manda directo a
+# la web con el botón "Push a la web"), así que no tiene sentido versionarlo.
+data/live_state.json
+
 # Windows
 Thumbs.db
 desktop.ini
