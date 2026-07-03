@@ -1,4 +1,4 @@
-export default function Header({ team1, team2, score, timer, period, liveStateAt }) {
+export default function Header({ team1, team2, score, timer, period, updateNumber }) {
   const fmt = (s) => `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
   return (
     <div className="bg-gray-950 border-b border-gray-800 px-2 md:px-4 py-2 flex items-center justify-between gap-2 shrink-0">
@@ -17,9 +17,9 @@ export default function Header({ team1, team2, score, timer, period, liveStateAt
           </span>
           <span className="text-gray-400 text-xs font-bold">{period}</span>
         </div>
-        {liveStateAt && (
+        {updateNumber != null && (
           <span className="text-gray-500 text-[10px] mt-0.5 whitespace-nowrap">
-            🕐 Última actualización: {new Date(liveStateAt).toLocaleTimeString()}
+            🔄 Actualización {updateNumber}
           </span>
         )}
       </div>

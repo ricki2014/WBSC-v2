@@ -70,6 +70,8 @@ export default function App() {
   // Último "updated_at" del estado publicado que efectivamente cargaste (para
   // saber si hay una publicación más nueva sin haberla cargado todavía).
   const [lastPulledAt, setLastPulledAt] = useState(saved.lastPulledAt ?? null);
+  // Contador simple de publicaciones ("Actualización N") en vez de mostrar la hora.
+  const [updateNumber, setUpdateNumber] = useState(saved.updateNumber ?? null);
   const fieldSwapped = (period === '2T' ? !baseSwapped : baseSwapped) !== visualSwap;
   // setFieldSwapped: lo que usan los botones "Invertir lados" — solo mueve visualSwap.
   const setFieldSwapped = (updater) =>
@@ -131,7 +133,7 @@ export default function App() {
     const snapshot = {
       selectedFiles, liveStats, score, timer, isRunning, period, lastUpdate,
       lineupData, manualPos, playerEvents, selectedStatKey,
-      registroEvents, lastRegistroEvent, baseSwapped, visualSwap, lastPulledAt,
+      registroEvents, lastRegistroEvent, baseSwapped, visualSwap, lastPulledAt, updateNumber,
     };
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
@@ -203,10 +205,10 @@ export default function App() {
       const res = await pushWebUpdate({
         lineupData, score, period, liveStats, playerEvents, team1Name, team2Name,
       });
-      const hora = res.updated_at ? new Date(res.updated_at).toLocaleTimeString() : '';
       setLastPulledAt(res.updated_at || null);
       setSharedUpdatedAt(res.updated_at || null);
-      setPushMsg(res.committed ? `✅ Publicado (${hora})` : '✅ Ya estaba al día');
+      if (res.update_number != null) setUpdateNumber(res.update_number);
+      setPushMsg(res.committed ? `✅ Publicado (Actualización ${res.update_number})` : '✅ Ya estaba al día');
     } catch (e) {
       setPushMsg('❌ ' + (e?.response?.data?.detail || 'Error al publicar'));
     } finally {
@@ -224,7 +226,8 @@ export default function App() {
       if (shared.liveStats) setLiveStats(shared.liveStats);
       if (shared.playerEvents) setPlayerEvents(shared.playerEvents);
       setLastPulledAt(shared.updated_at || null);
-      setPushMsg(`✅ Estado cargado (${shared.updated_at ? new Date(shared.updated_at).toLocaleTimeString() : ''})`);
+      if (shared.update_number != null) setUpdateNumber(shared.update_number);
+      setPushMsg(`✅ Estado cargado (Actualización ${shared.update_number ?? '?'})`);
     } catch (e) {
       setPushMsg('❌ ' + (e?.response?.data?.detail || 'No hay estado publicado'));
     } finally {
@@ -251,7 +254,7 @@ export default function App() {
 
   return (
     <div className="w-screen min-h-screen flex flex-col bg-gray-950 overflow-x-hidden">
-      <Header team1={team1Name} team2={team2Name} score={score} timer={timer} period={period} liveStateAt={lastPulledAt} />
+      <Header team1={team1Name} team2={team2Name} score={score} timer={timer} period={period} updateNumber={updateNumber} />
 
       {/* FileSelector — siempre visible arriba */}
       <div className="flex flex-wrap items-center gap-2 md:gap-3 px-2 md:px-3 pt-2 pb-2 border-b border-gray-800 shrink-0">
