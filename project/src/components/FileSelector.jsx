@@ -68,15 +68,15 @@ export default function FileSelector({ onSelectFiles }) {
   };
 
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex flex-wrap gap-2 items-center">
       <select value={f1} onChange={e=>setF1(e.target.value)}
-        className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-green-500">
+        className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-green-500 max-w-[38vw] md:max-w-none">
         <option value="">Equipo Local</option>
         {files.map(f=><option key={f} value={f}>{f.replace('.xlsx','')}</option>)}
       </select>
       <span className="text-gray-500 text-xs font-bold">vs</span>
       <select value={f2} onChange={e=>setF2(e.target.value)}
-        className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-blue-500">
+        className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 focus:outline-none focus:border-blue-500 max-w-[38vw] md:max-w-none">
         <option value="">Equipo Visita</option>
         {files.map(f=><option key={f} value={f}>{f.replace('.xlsx','')}</option>)}
       </select>
@@ -85,10 +85,10 @@ export default function FileSelector({ onSelectFiles }) {
       <div className="relative">
         <button onClick={() => { setShowDownload(v => !v); setShowManage(false); }}
           className="text-xs px-2 py-1.5 rounded-lg border border-gray-600 text-gray-300 hover:border-gray-400 transition-colors">
-          ⬇ Descargar equipo
+          ⬇ <span className="hidden sm:inline">Descargar equipo</span>
         </button>
         {showDownload && (
-          <div className="absolute right-0 top-full mt-1 z-50 flex flex-col gap-2 bg-gray-900 border border-gray-700/40 rounded-lg px-3 py-2.5 shadow-xl w-72">
+          <div className="absolute left-0 md:left-auto right-auto md:right-0 top-full mt-1 z-50 flex flex-col gap-2 bg-gray-900 border border-gray-700/40 rounded-lg px-3 py-2.5 shadow-xl w-72 max-w-[90vw]">
             <input value={teamId} onChange={e => setTeamId(e.target.value)}
               placeholder="ID equipo SofaScore (ej: 4819)"
               className="bg-gray-800 border border-gray-600 text-white text-xs rounded-lg px-2 py-1.5 w-full focus:outline-none focus:border-green-500"/>
@@ -110,10 +110,10 @@ export default function FileSelector({ onSelectFiles }) {
       <div className="relative">
         <button onClick={() => { setShowManage(v => !v); setShowDownload(false); }}
           className="text-xs px-2 py-1.5 rounded-lg border border-gray-600 text-gray-300 hover:border-gray-400 transition-colors">
-          🗑 Gestionar archivos
+          🗑 <span className="hidden sm:inline">Gestionar archivos</span>
         </button>
         {showManage && (
-          <div className="absolute right-0 top-full mt-1 z-50 flex flex-col gap-1 bg-gray-900 border border-gray-700/40 rounded-lg px-3 py-2.5 shadow-xl w-80 max-h-72 overflow-auto">
+          <div className="absolute left-0 md:left-auto right-auto md:right-0 top-full mt-1 z-50 flex flex-col gap-1 bg-gray-900 border border-gray-700/40 rounded-lg px-3 py-2.5 shadow-xl w-80 max-w-[90vw] max-h-72 overflow-auto">
             {files.length === 0 && <span className="text-gray-500 text-[10px]">Sin archivos en data/upcoming</span>}
             {files.map(f => (
               <div key={f} className="flex items-center justify-between gap-2 text-xs">

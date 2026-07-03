@@ -48,7 +48,7 @@ function layoutFormation(players, formation, side, team) {
     const ratio = totalL <= 1 ? 0 : li / (totalL - 1);
     const x = isHome ? 4 + ratio * 43 : 96 - ratio * 43;
     group.forEach((player, pi) => {
-      const y = n === 1 ? 50 : 8 + ((n - 1 - pi) / (n - 1)) * 84;
+      const y = n === 1 ? 50 : 12 + ((n - 1 - pi) / (n - 1)) * 76;
       result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
     });
   });
@@ -486,7 +486,7 @@ export default function P7_StatsVivoJugador({
         </div>
 
         {/* Cancha */}
-        <div className="flex-1 relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden min-h-[280px]"
+        <div className="flex-1 relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden min-h-[320px]"
           onDrop={handleFieldDrop} onDragOver={e => e.preventDefault()}>
           <FieldMarkings />
           {positions.map((p, i) => {

@@ -35,7 +35,7 @@ function layoutFormation(players, formation, side, team) {
     const ratio = totalL <= 1 ? 0 : li / (totalL - 1);
     const x = isHome ? 4 + ratio * 43 : 96 - ratio * 43;
     group.forEach((player, pi) => {
-      const y = n === 1 ? 50 : 8 + ((n - 1 - pi) / (n - 1)) * 84;
+      const y = n === 1 ? 50 : 12 + ((n - 1 - pi) / (n - 1)) * 76;
       result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
     });
   });
@@ -393,7 +393,7 @@ export default function P3_RegistroJugadorCancha({
           <p className="text-gray-500 text-xs mb-3">
             Carga la alineación desde SofaScore para poder registrar eventos por jugador en tiempo real.
           </p>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
               <div className="text-xs text-gray-400 mb-1">URL del partido (SofaScore)</div>
               <input value={urlInput} onChange={e => setUrlInput(e.target.value)}
@@ -442,10 +442,10 @@ export default function P3_RegistroJugadorCancha({
     : (lineupData.away_name || team2Name || 'Visita');
 
   return (
-    <div className="h-full flex gap-3 overflow-hidden">
+    <div className="md:h-full flex flex-col md:flex-row gap-3 overflow-y-auto md:overflow-hidden">
 
       {/* ── CAMPO ─────────────────────────────────────────────────────────── */}
-      <div className="flex-1 flex flex-col gap-2 overflow-hidden min-w-0">
+      <div className="flex-1 flex flex-col gap-2 md:overflow-hidden min-w-0">
 
         {/* Leyenda */}
         <div className="flex items-center gap-4 text-xs shrink-0">
@@ -482,7 +482,7 @@ export default function P3_RegistroJugadorCancha({
         </div>
 
         {/* Campo */}
-        <div className="flex-1 relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden"
+        <div className="min-h-[380px] md:min-h-0 md:flex-1 relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden"
           onDrop={handleFieldDrop} onDragOver={e => e.preventDefault()}>
           <FieldMarkings />
           {starters.map((p, i) => (
@@ -542,7 +542,7 @@ export default function P3_RegistroJugadorCancha({
       </div>
 
       {/* ── PANEL DERECHO ─────────────────────────────────────────────────── */}
-      <div className="w-52 shrink-0 flex flex-col gap-3 overflow-auto">
+      <div className="w-full md:w-52 shrink-0 flex flex-col gap-3 overflow-auto">
 
         {/* Jugadores seleccionados */}
         <div className="bg-gray-900 border border-gray-700/40 rounded-xl p-3">

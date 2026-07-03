@@ -35,7 +35,7 @@ function layoutFormation(players, formation, side, team) {
     const ratio = totalL <= 1 ? 0 : li / (totalL - 1);
     const x = isHome ? 4 + ratio * 43 : 96 - ratio * 43;
     group.forEach((player, pi) => {
-      const y = n === 1 ? 50 : 8 + ((n - 1 - pi) / (n - 1)) * 84;
+      const y = n === 1 ? 50 : 12 + ((n - 1 - pi) / (n - 1)) * 76;
       result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
     });
   });
@@ -415,19 +415,19 @@ export default function P5_Alineaciones({
     : (lineupData?.away_name || analysis?.team2?.name || 'Visita');
 
   return (
-    <div className="h-full flex gap-3 overflow-hidden">
-      <div className="flex-1 flex flex-col gap-2 overflow-hidden">
+    <div className="md:h-full flex flex-col md:flex-row gap-3 overflow-y-auto md:overflow-hidden">
+      <div className="flex-1 flex flex-col gap-2 md:overflow-hidden">
 
         {/* Barra compacta siempre visible */}
         <div className="shrink-0">
-          <div className="flex items-center gap-2 bg-gray-900 border border-gray-700/50 rounded-xl px-3 py-2">
+          <div className="flex flex-wrap items-center gap-2 bg-gray-900 border border-gray-700/50 rounded-xl px-3 py-2">
             <span className="text-white text-xs font-bold">👕 Alineaciones</span>
             {lineupData && (
               <span className="text-gray-500 text-[10px]">
                 {homeName} {lineupData.home_formation} vs {awayName} {lineupData.away_formation}
               </span>
             )}
-            <div className="ml-auto flex items-center gap-2">
+            <div className="ml-auto flex flex-wrap items-center gap-2">
               {lineupData && (
                 <button onClick={() => setSwapped(v => !v)}
                   className="text-[10px] px-2 py-1 rounded-lg bg-gray-800 border border-gray-600 text-yellow-400 hover:bg-gray-700 transition-colors whitespace-nowrap font-bold">
@@ -465,7 +465,7 @@ export default function P5_Alineaciones({
           {/* Panel expandible */}
           {showControls && (
             <div className="mt-1 bg-gray-900 border border-gray-700/50 rounded-xl p-3">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <div className="text-xs text-gray-400 mb-1">URL del partido SofaScore</div>
                   <input value={urlInput} onChange={e => setUrlInput(e.target.value)}
@@ -503,7 +503,7 @@ export default function P5_Alineaciones({
         </div>
 
         {/* Leyenda */}
-        <div className="flex items-center gap-4 text-xs shrink-0">
+        <div className="flex flex-wrap items-center gap-4 text-xs shrink-0">
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-700"/>
             <span className="text-gray-300">{homeName}</span>
@@ -520,7 +520,7 @@ export default function P5_Alineaciones({
         </div>
 
         {/* Campo */}
-        <div className="flex-1 relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden min-h-[280px]"
+        <div className="flex-1 relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden min-h-[320px]"
           onDrop={handleFieldDrop} onDragOver={e => e.preventDefault()}>
           <FieldMarkings/>
           {positions.map((p, i) => (
@@ -540,7 +540,7 @@ export default function P5_Alineaciones({
       </div>
 
       {/* Panel de suplentes */}
-      <div className="w-52 shrink-0 flex flex-col gap-2 overflow-auto"
+      <div className="w-full md:w-52 shrink-0 flex flex-col gap-2 overflow-auto"
         onDrop={handleSidebarDrop} onDragOver={e => e.preventDefault()}>
         <div className="text-white font-bold text-sm">Suplentes</div>
 

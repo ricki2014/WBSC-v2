@@ -38,7 +38,7 @@ function layoutFormation(players, formation, side, team) {
     const ratio = totalL <= 1 ? 0 : li / (totalL - 1);
     const x = isHome ? 4 + ratio * 43 : 96 - ratio * 43;
     group.forEach((player, pi) => {
-      const y = n === 1 ? 50 : 8 + ((n - 1 - pi) / (n - 1)) * 84;
+      const y = n === 1 ? 50 : 12 + ((n - 1 - pi) / (n - 1)) * 76;
       result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
     });
   });
@@ -285,7 +285,7 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
               </span>
             )}
           </div>
-          <div className="relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden" style={{ height: '280px' }}>
+          <div className="relative bg-green-900 rounded-xl border-2 border-green-700 overflow-hidden" style={{ height: '320px' }}>
             <FieldMarkings />
             {positions.map((p, i) => {
               const isSel = selectedPlayer &&

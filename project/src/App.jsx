@@ -247,11 +247,11 @@ export default function App() {
   const formation2 = lineupData?.away_formation || '';
 
   return (
-    <div className="w-screen h-screen flex flex-col bg-gray-950 overflow-hidden">
+    <div className="w-screen min-h-screen md:h-screen flex flex-col bg-gray-950 md:overflow-hidden overflow-x-hidden">
       <Header team1={team1Name} team2={team2Name} score={score} timer={timer} period={period} />
 
       {/* FileSelector — siempre visible arriba */}
-      <div className="flex items-center gap-3 px-3 pt-2 pb-2 border-b border-gray-800 shrink-0">
+      <div className="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3 px-2 md:px-3 pt-2 pb-2 border-b border-gray-800 shrink-0">
         <FileSelector onSelectFiles={handleSelectFiles} />
         {/* Team badges inline */}
         {analysis && (
@@ -276,7 +276,7 @@ export default function App() {
             </div>
           </div>
         )}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-2 shrink-0 flex-wrap">
           {pushMsg && <span className="text-[10px] text-gray-400 whitespace-nowrap">{pushMsg}</span>}
           <button onClick={handlePull} disabled={pulling}
             title={hasNewSharedState ? '¡Hay una actualización nueva sin cargar!' : 'Trae el último estado publicado (marcador, stats, alineación) — funciona en cualquier lado'}
@@ -284,18 +284,20 @@ export default function App() {
               ${hasNewSharedState
                 ? 'border-red-500 text-red-400 bg-red-900/20 animate-pulse'
                 : 'border-gray-600 text-gray-300 hover:border-gray-400'}`}>
-            {pulling ? '⏳...' : hasNewSharedState ? '🔴 Cargar estado publicado' : '🔄 Cargar estado publicado'}
+            {pulling ? '⏳...' : hasNewSharedState ? '🔴' : '🔄'}
+            <span className="hidden md:inline"> Cargar estado publicado</span>
           </button>
           <button onClick={handlePush} disabled={pushing}
             title="Publica el marcador/stats/alineación actuales para que cualquiera que entre a la web los vea — solo funciona corriendo local (necesita git y salida a SofaScore)"
             className="text-xs px-2 py-1.5 rounded-lg border border-green-600 text-green-400 hover:bg-green-900/20 transition-colors disabled:opacity-50">
-            {pushing ? '⏳ Publicando...' : '🚀 Push a la web'}
+            {pushing ? '⏳' : '🚀'}
+            <span className="hidden md:inline">{pushing ? ' Publicando...' : ' Push a la web'}</span>
           </button>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="px-3 pt-1 pb-1 border-b border-gray-800 shrink-0">
+      <div className="px-2 md:px-3 pt-1 pb-1 border-b border-gray-800 shrink-0">
         <Tabs tab={tab} setTab={setTab} />
       </div>
 
@@ -305,7 +307,7 @@ export default function App() {
         </div>
       )}
 
-      <div className="flex-1 overflow-hidden p-3">
+      <div className="flex-1 overflow-y-auto md:overflow-hidden p-2 md:p-3">
         {tab === 0 && <P1_Comparacion           {...commonProps} />}
         {tab === 1 && <P2_RegistroEquipo         {...commonProps} />}
         {tab === 2 && <P4_EsperadoSucedido       {...commonProps} />}
