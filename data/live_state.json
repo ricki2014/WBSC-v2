@@ -214,7 +214,7 @@
   },
   "score": {
     "home": 0,
-    "away": 0
+    "away": 1
   },
   "period": "1T",
   "liveStats": {
@@ -230,19 +230,25 @@
       "FoulRecibido": 0
     },
     "team2": {
-      "Goles": 0,
+      "Goles": 1,
       "Corners": 0,
       "Tarjetas": 0,
       "Rojas": 0,
-      "Disparos": 0,
-      "TiroAlArco": 0,
+      "Disparos": 1,
+      "TiroAlArco": 1,
       "Pases": 0,
       "FoulCometido": 0,
       "FoulRecibido": 0
     }
   },
-  "playerEvents": {},
+  "playerEvents": {
+    "p1101624": {
+      "Gol": 1,
+      "TiroArco": 1,
+      "Disparo": 1
+    }
+  },
   "team1Name": "Australia",
   "team2Name": "Egypt",
-  "updated_at": "2026-07-03T15:16:16.433191"
+  "updated_at": "2026-07-03T15:18:19.890730"
 }
