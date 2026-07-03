@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import os
 import re
+import sys
 from scipy.stats import poisson
 from curl_cffi import requests as requests_cffi
 
@@ -12,6 +13,13 @@ app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 EXCEL_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "upcoming")
+
+# El downloader (downloader/) vive fuera de project/ y usa imports de script suelto
+# (from config import ..., from utils import ...) — lo agregamos al path para poder
+# reusarlo desde acá sin duplicar código.
+DOWNLOADER_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "downloader")
+if DOWNLOADER_DIR not in sys.path:
+    sys.path.insert(0, DOWNLOADER_DIR)
 
 # ─── CARGA DE EQUIPO ─────────────────────────────────────────────────────────
 
@@ -511,6 +519,56 @@ async def get_available_files():
         return {"files": []}
     files = sorted([f for f in os.listdir(EXCEL_DIR) if f.endswith('.xlsx')])
     return {"files": files}
+
+@app.delete("/available-files/{filename}")
+async def delete_file(filename: str):
+    if os.path.basename(filename) != filename or not filename.endswith('.xlsx'):
+        raise HTTPException(status_code=400, detail="Nombre de archivo inválido")
+    path = os.path.join(EXCEL_DIR, filename)
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="Archivo no encontrado")
+    os.remove(path)
+    return {"deleted": filename}
+
+class DownloadRequest(BaseModel):
+    team_id: int
+    n_partidos: int = 10
+    skip: int = 0
+
+@app.post("/download-team")
+def download_team(req: DownloadRequest):
+    """Descarga los últimos partidos de un equipo desde SofaScore y genera
+    su Excel en data/upcoming/, listo para aparecer en /available-files."""
+    from client import SofaScoreClient
+    from downloader import Downloader
+    from excel_exporter import build_excel
+
+    try:
+        client = SofaScoreClient()
+        dl = Downloader(client)
+        result = dl.descargar_equipo(req.team_id, req.n_partidos, skip=req.skip, refresh_last=True)
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"No se pudo consultar SofaScore: {e}")
+
+    if not result.get("matches"):
+        raise HTTPException(status_code=404, detail="No se encontraron partidos finalizados para ese ID de equipo")
+
+    try:
+        excel_path = build_excel(
+            team_id=result["team_id"],
+            team_name=result["team_name"],
+            team_folder=result["team_folder"],
+            urls_rows=result.get("urls_rows", []),
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error generando el Excel: {e}")
+
+    return {
+        "team_id": result["team_id"],
+        "team_name": result["team_name"],
+        "matches_found": len(result["matches"]),
+        "file": os.path.basename(excel_path),
+    }
 
 @app.get("/analysis/{file1}/{file2}")
 async def full_analysis(file1: str, file2: str, cond1: str = 'TOTAL', cond2: str = 'TOTAL'):

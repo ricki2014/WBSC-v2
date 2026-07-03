@@ -6,6 +6,19 @@ export const getAvailableFiles = async () => {
   return r.data.files;
 };
 
+// La descarga puede tardar bastante (varios requests a SofaScore por partido)
+export const downloadTeam = async (teamId, nPartidos = 10, skip = 0) => {
+  const r = await axios.post(`${BASE}/download-team`,
+    { team_id: Number(teamId), n_partidos: Number(nPartidos), skip: Number(skip) },
+    { timeout: 5 * 60 * 1000 });
+  return r.data;
+};
+
+export const deleteFile = async (filename) => {
+  const r = await axios.delete(`${BASE}/available-files/${encodeURIComponent(filename)}`);
+  return r.data;
+};
+
 export const getAnalysis = async (file1, file2, cond1='TOTAL', cond2='TOTAL') => {
   const r = await axios.get(`${BASE}/analysis/${file1}/${file2}`, { params: { cond1, cond2 } });
   return r.data;
