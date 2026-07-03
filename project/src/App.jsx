@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Tabs from './components/Tabs';
 import FileSelector from './components/FileSelector';
-import { getAnalysis, pushWebUpdate, getSharedLiveState } from './api';
+import { getAnalysis, pushWebUpdate, getSharedLiveState, syncFilesToWeb } from './api';
 
 import P1_Comparacion           from './pages/P1_Comparacion';
 import P2_RegistroEquipo        from './pages/P2_RegistroEquipo';
@@ -222,7 +222,20 @@ export default function App() {
       setLastPulledAt(res.updated_at || null);
       setSharedUpdatedAt(res.updated_at || null);
       if (res.update_number != null) setUpdateNumber(res.update_number);
-      setPushMsg(res.committed ? `✅ Publicado (Actualización ${res.update_number})` : '✅ Ya estaba al día');
+
+      // Además del estado en vivo, sincronizamos los excels (upcoming + pasado)
+      // directo al backend público de Render — sin git, instantáneo, igual que
+      // el estado en vivo. Si falla, no rompe la publicación en vivo.
+      let filesMsg = '';
+      try {
+        const filesRes = await syncFilesToWeb();
+        const total = filesRes.upcoming.kept.length + filesRes.pasado.kept.length;
+        filesMsg = ` · 📁 ${total} excels sincronizados`;
+      } catch (filesErr) {
+        filesMsg = ' · ⚠ No se pudieron sincronizar los excels: ' + formatApiError(filesErr, 'error desconocido');
+      }
+
+      setPushMsg((res.committed ? `✅ Publicado (Actualización ${res.update_number})` : '✅ Ya estaba al día') + filesMsg);
     } catch (e) {
       setPushMsg('❌ ' + formatApiError(e, 'Error al publicar'));
     } finally {

@@ -1,0 +1,219 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Int. Friendly Games",
+    "slug": "int-friendly-games",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "International Friendly Games",
+      "slug": "int-friendly-games",
+      "primaryColorHex": "#25497d",
+      "secondaryColorHex": "#d38f1d",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 119408,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 851,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مباريات ودية دولية",
+          "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+          "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+          "ru": "Международные товарищеские игры"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 89,
+    "isGroup": false,
+    "isLive": false,
+    "id": 66,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+        "ar": "مباريات ودية دولية",
+        "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+        "ru": "Международные товарищеские матчи"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Int. Friendly Games 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87155
+  },
+  "customId": "VUbsdVb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Cabo Verde",
+    "slug": "cape-verde",
+    "shortName": "Cabo Verde",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 132152,
+    "nameCode": "CPV",
+    "ranking": 67,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "CV",
+      "alpha3": "CPV",
+      "name": "Cape Verde",
+      "slug": "cape-verde"
+    },
+    "id": 4753,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#21418e",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "الرأس الأخضر",
+        "bn": "কেপ ভার্দে",
+        "hi": "केप वर्डे",
+        "ru": "Кабо-Верде"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Bermuda",
+    "slug": "bermuda",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 5116,
+    "nameCode": "BER",
+    "ranking": 167,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "BM",
+      "alpha3": "BMU",
+      "name": "Bermuda",
+      "slug": "bermuda"
+    },
+    "id": 4745,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#0000ff",
+      "text": "#0000ff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "جزر برمودا",
+        "hi": "बरमूडा",
+        "ru": "Бермудские острова"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 1,
+    "period2": 2,
+    "normaltime": 3
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "currentPeriodStartTimestamp": 1780780679
+  },
+  "changes": {
+    "changes": [
+      "homeScore.current",
+      "homeScore.display",
+      "homeScore.period1",
+      "homeScore.period2",
+      "homeScore.normaltime"
+    ],
+    "changeTimestamp": 1780813293
+  },
+  "hasGlobalHighlights": false,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 16277698,
+  "slug": "cabo-verde-bermuda",
+  "startTimestamp": 1780776000,
+  "finalResultOnly": false,
+  "feedLocked": false,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "national"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

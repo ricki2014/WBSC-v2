@@ -1,5 +1,6 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import pandas as pd
 import numpy as np
@@ -13,8 +14,9 @@ from curl_cffi import requests as requests_cffi
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-EXCEL_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "upcoming")
-PASADO_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "partido_pasado")
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+EXCEL_DIR = os.path.join(ROOT_DIR, "data", "upcoming")
+PASADO_DIR = os.path.join(ROOT_DIR, "data", "partido_pasado")
 
 # El downloader (downloader/) vive fuera de project/ y usa imports de script suelto
 # (from config import ..., from utils import ...) — lo agregamos al path para poder
@@ -1097,6 +1099,68 @@ def push_web_update(snapshot: LiveStateSnapshot):
         "updated_at": now_utc_iso,
         "update_number": payload["update_number"],
         "manual_pos_count": len(payload.get("manualPos") or []),
+    }
+
+# ─── SYNC DE EXCELS A LA WEB (directo, sin git) ─────────────────────────────
+# Mismo espíritu que push-web-update: el frontend le manda los excels locales
+# directo a la URL pública de Render, sin pasar por git/build/deploy. Como el
+# disco de Render es efímero, cada sync manda el estado COMPLETO de upcoming/
+# y pasado/ (no un diff) y el otro lado reemplaza su carpeta para que coincida
+# exactamente — así un archivo borrado o movido localmente también desaparece
+# del lado publicado.
+
+def _list_xlsx(dir_path: str):
+    if not os.path.exists(dir_path):
+        return []
+    return sorted([f for f in os.listdir(dir_path) if f.endswith('.xlsx')])
+
+@app.get("/data-files/{folder}")
+async def list_data_files(folder: str):
+    if folder not in ("upcoming", "pasado"):
+        raise HTTPException(status_code=400, detail="folder debe ser 'upcoming' o 'pasado'")
+    dir_path = EXCEL_DIR if folder == "upcoming" else PASADO_DIR
+    return {"files": _list_xlsx(dir_path)}
+
+@app.get("/data-files/{folder}/{filename}/download")
+async def download_data_file(folder: str, filename: str):
+    if folder not in ("upcoming", "pasado"):
+        raise HTTPException(status_code=400, detail="folder debe ser 'upcoming' o 'pasado'")
+    if os.path.basename(filename) != filename or not filename.endswith('.xlsx'):
+        raise HTTPException(status_code=400, detail="Nombre de archivo inválido")
+    dir_path = EXCEL_DIR if folder == "upcoming" else PASADO_DIR
+    path = os.path.join(dir_path, filename)
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="Archivo no encontrado")
+    return FileResponse(path, filename=filename)
+
+@app.post("/receive-data-sync")
+async def receive_data_sync(
+    upcoming: list[UploadFile] = File(default=[]),
+    pasado: list[UploadFile] = File(default=[]),
+):
+    async def replace_folder(dir_path: str, files: list[UploadFile]):
+        os.makedirs(dir_path, exist_ok=True)
+        keep = set()
+        for f in files:
+            name = os.path.basename(f.filename or "")
+            if not name.endswith('.xlsx'):
+                continue
+            keep.add(name)
+            content = await f.read()
+            with open(os.path.join(dir_path, name), "wb") as out:
+                out.write(content)
+        removed = []
+        for existing in _list_xlsx(dir_path):
+            if existing not in keep:
+                os.remove(os.path.join(dir_path, existing))
+                removed.append(existing)
+        return sorted(keep), removed
+
+    up_kept, up_removed = await replace_folder(EXCEL_DIR, upcoming)
+    past_kept, past_removed = await replace_folder(PASADO_DIR, pasado)
+    return {
+        "upcoming": {"kept": up_kept, "removed": up_removed},
+        "pasado": {"kept": past_kept, "removed": past_removed},
     }
 
 # ─── DISTRIBUCIÓN DE TIROS ───────────────────────────────────────────────────

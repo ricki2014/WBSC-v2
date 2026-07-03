@@ -27,6 +27,40 @@ export const moveFileToPast = async (filename) => {
   return r.data;
 };
 
+// Sync directo de excels a la web (sin git): lee los .xlsx locales (BASE) y
+// los sube al backend público de Render (PUBLIC_BASE), que reemplaza su
+// carpeta para que quede idéntica — así los nuevos aparecen y los que
+// moviste/borraste localmente también desaparecen del lado publicado.
+const listDataFiles = async (folder) => {
+  const r = await axios.get(`${BASE}/data-files/${folder}`);
+  return r.data.files;
+};
+
+const fetchDataFileBlob = async (folder, filename) => {
+  const r = await axios.get(`${BASE}/data-files/${folder}/${encodeURIComponent(filename)}/download`, {
+    responseType: 'blob',
+  });
+  return r.data;
+};
+
+export const syncFilesToWeb = async () => {
+  const [upcomingNames, pasadoNames] = await Promise.all([
+    listDataFiles('upcoming'),
+    listDataFiles('pasado'),
+  ]);
+
+  const formData = new FormData();
+  for (const name of upcomingNames) {
+    formData.append('upcoming', await fetchDataFileBlob('upcoming', name), name);
+  }
+  for (const name of pasadoNames) {
+    formData.append('pasado', await fetchDataFileBlob('pasado', name), name);
+  }
+
+  const r = await axios.post(`${PUBLIC_BASE}/receive-data-sync`, formData, { timeout: 120 * 1000 });
+  return r.data;
+};
+
 export const getAnalysis = async (file1, file2, cond1='TOTAL', cond2='TOTAL') => {
   const r = await axios.get(`${BASE}/analysis/${file1}/${file2}`, { params: { cond1, cond2 } });
   return r.data;

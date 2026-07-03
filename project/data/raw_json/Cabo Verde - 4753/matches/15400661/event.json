@@ -1,0 +1,219 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "FIFA Series, New Zealand ",
+    "slug": "fifa-series-new-zealand",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "FIFA Series",
+      "slug": "fifa-series",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 4205,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 32832,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سلسلة فيفا",
+          "ru": "Серия ФИФА"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 0,
+    "isGroup": false,
+    "id": 177013,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سلسلة فيفا، نيوزيلندا",
+        "ru": "Серия ФИФА, Новая Зеландия"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "2026 ",
+    "year": "2026 ",
+    "editor": false,
+    "id": 91220
+  },
+  "roundInfo": {
+    "round": 1
+  },
+  "customId": "dVbseVb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Chile",
+    "slug": "chile",
+    "shortName": "Chile",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 144463,
+    "nameCode": "CHI",
+    "ranking": 51,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "CL",
+      "alpha3": "CHL",
+      "name": "Chile",
+      "slug": "chile"
+    },
+    "id": 4754,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#3300cc",
+      "text": "#3300cc"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "شيلي",
+        "bn": "চিলি",
+        "hi": "चिली",
+        "ru": "Чили"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Cabo Verde",
+    "slug": "cape-verde",
+    "shortName": "Cabo Verde",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 132152,
+    "nameCode": "CPV",
+    "ranking": 67,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "CV",
+      "alpha3": "CPV",
+      "name": "Cape Verde",
+      "slug": "cape-verde"
+    },
+    "id": 4753,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#21418e",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "الرأس الأخضر",
+        "bn": "কেপ ভার্দে",
+        "hi": "केप वर्डे",
+        "ru": "Кабо-Верде"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 4,
+    "display": 4,
+    "period1": 1,
+    "period2": 3,
+    "normaltime": 4
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 2,
+    "period2": 0,
+    "normaltime": 2
+  },
+  "time": {
+    "currentPeriodStartTimestamp": 1774584586
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1774587673
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 15400661,
+  "awayRedCards": 1,
+  "slug": "chile-cabo-verde",
+  "startTimestamp": 1774580400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "national"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}
