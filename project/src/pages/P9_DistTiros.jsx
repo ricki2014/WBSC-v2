@@ -1,6 +1,7 @@
 // TAB 9 — Distribución de tiros por tramo
 import { useState, useEffect, useMemo } from 'react';
 import { fetchShotDistribution } from '../api';
+import { computePositions } from '../lib/pitchLayout';
 
 const RESULTADO_COLOR = {
   'Gol':      { bar: 'bg-yellow-400', text: 'text-yellow-400' },
@@ -9,41 +10,6 @@ const RESULTADO_COLOR = {
   'Bloqueado':{ bar: 'bg-orange-500', text: 'text-orange-400' },
 };
 const RESULTADO_ORDER = ['Gol', 'Al arco', 'Afuera', 'Bloqueado'];
-
-// ─── FORMACIÓN → COORDENADAS (igual que P5/P7/P8) ────────────────────────────
-// side: lado VISUAL ('home'/'away') · team: identidad real ('team1'/'team2'),
-// independiente del lado visual (que puede invertirse en 2T o manualmente).
-function layoutFormation(players, formation, side, team) {
-  const posOrder = { G: 0, D: 1, M: 2, F: 3 };
-  const starters = players
-    .filter(p => !p.isSubstitute)
-    .sort((a, b) => (posOrder[a.position] ?? 2) - (posOrder[b.position] ?? 2));
-  const isHome = side === 'home';
-  const fNums  = (formation || '').split('-').map(Number).filter(n => n > 0);
-  const gks      = starters.filter(p => p.position === 'G');
-  const outfield = starters.filter(p => p.position !== 'G');
-  const layers = [gks];
-  if (fNums.length >= 1) {
-    let rest = [...outfield];
-    fNums.forEach(count => layers.push(rest.splice(0, count)));
-    if (rest.length) layers[layers.length - 1].push(...rest);
-  } else if (outfield.length) {
-    layers.push(outfield);
-  }
-  const totalL = layers.length;
-  const result = [];
-  layers.forEach((group, li) => {
-    const n = group.length;
-    if (!n) return;
-    const ratio = totalL <= 1 ? 0 : li / (totalL - 1);
-    const x = isHome ? 4 + ratio * 38 : 96 - ratio * 38;
-    group.forEach((player, pi) => {
-      const y = n === 1 ? 50 : 12 + ((n - 1 - pi) / (n - 1)) * 76;
-      result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
-    });
-  });
-  return result;
-}
 
 function playerLabel(player) {
   const full = player.name || player.shortName || '';
@@ -212,24 +178,11 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
   const [loadingDist, setLoadingDist]       = useState(false);
 
   const swapped = fieldSwapped;
-  // Identidad real de equipo — independiente del lado visual (que invierte en 2T).
-  const teamOfHome = baseSwapped ? 'team2' : 'team1';
-  const teamOfAway = baseSwapped ? 'team1' : 'team2';
 
-  const positions = useMemo(() => {
-    if (manualPos) return manualPos;
-    if (!lineupData) return [];
-    const h  = swapped ? lineupData.away : lineupData.home;
-    const a  = swapped ? lineupData.home : lineupData.away;
-    const hf = swapped ? lineupData.away_formation : lineupData.home_formation;
-    const af = swapped ? lineupData.home_formation : lineupData.away_formation;
-    const hTeam = swapped ? teamOfAway : teamOfHome;
-    const aTeam = swapped ? teamOfHome : teamOfAway;
-    return [
-      ...layoutFormation(h || [], hf || '', 'home', hTeam),
-      ...layoutFormation(a || [], af || '', 'away', aTeam),
-    ];
-  }, [manualPos, lineupData, swapped, teamOfHome, teamOfAway]);
+  const positions = useMemo(
+    () => manualPos ?? computePositions(lineupData, swapped, baseSwapped),
+    [manualPos, lineupData, swapped, baseSwapped]
+  );
 
   const handlePlayerClick = (player) => {
     if (selectedPlayer && (selectedPlayer.id ?? selectedPlayer.lineupOrder) === (player.id ?? player.lineupOrder)) {

@@ -1,46 +1,7 @@
 // TAB 5 — Alineaciones/Formaciones
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { fetchLineups, getLiveStatus } from '../api';
-
-// side: lado VISUAL ('home'/'away') · team: identidad real ('team1'/'team2'),
-// independiente del lado visual (que puede invertirse en 2T o manualmente).
-function layoutFormation(players, formation, side, team) {
-  const posOrder = { G: 0, D: 1, M: 2, F: 3 };
-  const starters = players
-    .filter(p => !p.isSubstitute)
-    .sort((a, b) => (posOrder[a.position] ?? 2) - (posOrder[b.position] ?? 2));
-
-  const isHome = side === 'home';
-  const fNums  = (formation || '').split('-').map(Number).filter(n => n > 0);
-
-  const gks      = starters.filter(p => p.position === 'G');
-  const outfield = starters.filter(p => p.position !== 'G');
-
-  // Dividir el campo estrictamente según los números de la formación,
-  // en lugar de agrupar por posición de SofaScore (que puede no coincidir)
-  const layers = [gks];
-  if (fNums.length >= 1) {
-    let rest = [...outfield];
-    fNums.forEach(count => layers.push(rest.splice(0, count)));
-    if (rest.length) layers[layers.length - 1].push(...rest);
-  } else if (outfield.length) {
-    layers.push(outfield);
-  }
-
-  const totalL = layers.length;
-  const result = [];
-  layers.forEach((group, li) => {
-    const n = group.length;
-    if (!n) return;
-    const ratio = totalL <= 1 ? 0 : li / (totalL - 1);
-    const x = isHome ? 4 + ratio * 38 : 96 - ratio * 38;
-    group.forEach((player, pi) => {
-      const y = n === 1 ? 50 : 12 + ((n - 1 - pi) / (n - 1)) * 76;
-      result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
-    });
-  });
-  return result;
-}
+import { teamIdentities, computePositions } from '../lib/pitchLayout';
 
 const uid = p => p.id != null ? `p${p.id}` : `${p.side}-${p.lineupOrder}`;
 
@@ -136,8 +97,7 @@ export default function P5_Alineaciones({
   const setSwapped = setFieldSwapped;
 
   // Identidad real de equipo — independiente del lado visual (que invierte en 2T).
-  const teamOfHome = baseSwapped ? 'team2' : 'team1';
-  const teamOfAway = baseSwapped ? 'team1' : 'team2';
+  const { teamOfHome, teamOfAway } = teamIdentities(baseSwapped);
 
   const team1Id = analysis?.team1?.team_id;
   const team2Id = analysis?.team2?.team_id;
@@ -161,17 +121,10 @@ export default function P5_Alineaciones({
     setLocalSubs(newSubs);
   }, [lineupData, swapped, teamOfHome, teamOfAway]);
 
-  const autoPositions = useMemo(() => {
-    if (!lineupData) return [];
-    const h = swapped ? lineupData.away : lineupData.home;
-    const a = swapped ? lineupData.home : lineupData.away;
-    const hTeam = swapped ? teamOfAway : teamOfHome;
-    const aTeam = swapped ? teamOfHome : teamOfAway;
-    return [
-      ...layoutFormation(h || [], effHF() || '', 'home', hTeam),
-      ...layoutFormation(a || [], effAF() || '', 'away', aTeam),
-    ];
-  }, [lineupData, swapped, teamOfHome, teamOfAway]);
+  const autoPositions = useMemo(
+    () => computePositions(lineupData, swapped, baseSwapped),
+    [lineupData, swapped, baseSwapped]
+  );
 
   const positions = manualPos ?? autoPositions;
 

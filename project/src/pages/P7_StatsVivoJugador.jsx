@@ -1,6 +1,7 @@
 // TAB 7 — Stats en vivo por jugador
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import { fetchPlayerMatches } from '../api';
+import { computePositions } from '../lib/pitchLayout';
 
 // Estadísticas disponibles con su equivalente en playerEvents
 const STAT_OPTIONS = [
@@ -16,44 +17,6 @@ const STAT_OPTIONS = [
   { key: 'Duelos %',        label: 'Duelos %',         liveKey: null,       icon: '⚔️', color: 'text-amber-400'  },
 ];
 
-// ─── FORMACIÓN → COORDENADAS ──────────────────────────────────────────────────
-// side: lado VISUAL ('home'/'away') · team: identidad real ('team1'/'team2'),
-// independiente del lado visual (que puede invertirse en 2T o manualmente).
-function layoutFormation(players, formation, side, team) {
-  const posOrder = { G: 0, D: 1, M: 2, F: 3 };
-  const starters = players
-    .filter(p => !p.isSubstitute)
-    .sort((a, b) => (posOrder[a.position] ?? 2) - (posOrder[b.position] ?? 2));
-
-  const isHome = side === 'home';
-  const fNums  = (formation || '').split('-').map(Number).filter(n => n > 0);
-
-  const gks      = starters.filter(p => p.position === 'G');
-  const outfield = starters.filter(p => p.position !== 'G');
-
-  const layers = [gks];
-  if (fNums.length >= 1) {
-    let rest = [...outfield];
-    fNums.forEach(count => layers.push(rest.splice(0, count)));
-    if (rest.length) layers[layers.length - 1].push(...rest);
-  } else if (outfield.length) {
-    layers.push(outfield);
-  }
-
-  const totalL = layers.length;
-  const result = [];
-  layers.forEach((group, li) => {
-    const n = group.length;
-    if (!n) return;
-    const ratio = totalL <= 1 ? 0 : li / (totalL - 1);
-    const x = isHome ? 4 + ratio * 38 : 96 - ratio * 38;
-    group.forEach((player, pi) => {
-      const y = n === 1 ? 50 : 12 + ((n - 1 - pi) / (n - 1)) * 76;
-      result.push({ ...player, x, y: isHome ? y : 100 - y, side, team });
-    });
-  });
-  return result;
-}
 
 function FieldMarkings() {
   return (
@@ -343,9 +306,6 @@ export default function P7_StatsVivoJugador({
   const setSelectedKey = setSelectedStatKey;
   const [modalPlayer, setModalPlayer] = useState(null);
   const swapped = fieldSwapped;
-  // Identidad real de equipo — independiente del lado visual (que invierte en 2T).
-  const teamOfHome = baseSwapped ? 'team2' : 'team1';
-  const teamOfAway = baseSwapped ? 'team1' : 'team2';
 
   const handleCloseModal = useCallback(() => setModalPlayer(null), []);
 
@@ -370,20 +330,10 @@ export default function P7_StatsVivoJugador({
 
   // Posiciones de todos los titulares en campo
   // Si hay posiciones manuales (arrastradas en P5), usarlas directamente
-  const positions = useMemo(() => {
-    if (manualPos) return manualPos;
-    if (!lineupData) return [];
-    const h  = swapped ? lineupData.away : lineupData.home;
-    const a  = swapped ? lineupData.home : lineupData.away;
-    const hf = swapped ? lineupData.away_formation : lineupData.home_formation;
-    const af = swapped ? lineupData.home_formation : lineupData.away_formation;
-    const hTeam = swapped ? teamOfAway : teamOfHome;
-    const aTeam = swapped ? teamOfHome : teamOfAway;
-    return [
-      ...layoutFormation(h || [], hf || '', 'home', hTeam),
-      ...layoutFormation(a || [], af || '', 'away', aTeam),
-    ];
-  }, [manualPos, lineupData, swapped, teamOfHome, teamOfAway]);
+  const positions = useMemo(
+    () => manualPos ?? computePositions(lineupData, swapped, baseSwapped),
+    [manualPos, lineupData, swapped, baseSwapped]
+  );
 
   const statOption = STAT_OPTIONS.find(s => s.key === selectedKey) || STAT_OPTIONS[0];
 
