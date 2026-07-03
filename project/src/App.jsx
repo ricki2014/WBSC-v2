@@ -203,16 +203,13 @@ export default function App() {
   const handlePush = async () => {
     setPushing(true); setPushMsg('');
     try {
-      // eslint-disable-next-line no-console
-      console.log('PUSH manualPos:', (manualPos || []).map(p => ({ id: p.id, num: p.number, name: p.shortName || p.name, x: Math.round(p.x), y: Math.round(p.y), team: p.team })));
       const res = await pushWebUpdate({
         lineupData, manualPos, baseSwapped, score, period, liveStats, playerEvents, team1Name, team2Name,
       });
       setLastPulledAt(res.updated_at || null);
       setSharedUpdatedAt(res.updated_at || null);
       if (res.update_number != null) setUpdateNumber(res.update_number);
-      const posInfo = ` · posiciones enviadas: ${manualPos?.length ?? 0}, guardadas: ${res.manual_pos_count ?? '?'}`;
-      setPushMsg((res.committed ? `✅ Publicado (Actualización ${res.update_number})` : '✅ Ya estaba al día') + posInfo);
+      setPushMsg(res.committed ? `✅ Publicado (Actualización ${res.update_number})` : '✅ Ya estaba al día');
     } catch (e) {
       setPushMsg('❌ ' + (e?.response?.data?.detail || 'Error al publicar'));
     } finally {
@@ -224,8 +221,6 @@ export default function App() {
     setPulling(true); setPushMsg('');
     try {
       const shared = await getSharedLiveState();
-      // eslint-disable-next-line no-console
-      console.log('PULL manualPos:', (shared.manualPos || []).map(p => ({ id: p.id, num: p.number, name: p.shortName || p.name, x: Math.round(p.x), y: Math.round(p.y), team: p.team })));
       if (shared.lineupData) setLineupData(shared.lineupData);
       if (shared.manualPos) setManualPos(shared.manualPos);
       if (shared.baseSwapped != null) setBaseSwapped(shared.baseSwapped);
@@ -235,7 +230,7 @@ export default function App() {
       if (shared.playerEvents) setPlayerEvents(shared.playerEvents);
       setLastPulledAt(shared.updated_at || null);
       if (shared.update_number != null) setUpdateNumber(shared.update_number);
-      setPushMsg(`✅ Estado cargado (Actualización ${shared.update_number ?? '?'}) · posiciones recibidas: ${shared.manualPos?.length ?? 0}`);
+      setPushMsg(`✅ Estado cargado (Actualización ${shared.update_number ?? '?'})`);
     } catch (e) {
       setPushMsg('❌ ' + (e?.response?.data?.detail || 'No hay estado publicado'));
     } finally {
