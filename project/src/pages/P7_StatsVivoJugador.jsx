@@ -254,6 +254,7 @@ function PlayerDot({ player, statOption, pStats, liveEvents, onDragStart, onDrop
 
   let badge = null;
   let exceeded = false;
+  let started  = false;
 
   if (histRaw !== null) {
     const hist = parseFloat(histRaw);
@@ -261,6 +262,7 @@ function PlayerDot({ player, statOption, pStats, liveEvents, onDragStart, onDrop
       // Mostrar restante: histórico − lo ya hecho
       const remaining = hist - liveVal;
       exceeded = remaining <= 0;
+      started  = !exceeded && liveVal > 0;
       badge = exceeded ? `↓${fmt(Math.abs(remaining))}` : fmt(remaining);
     } else {
       // Sin live tracking: solo mostrar histórico
@@ -270,9 +272,11 @@ function PlayerDot({ player, statOption, pStats, liveEvents, onDragStart, onDrop
 
   const badgeBg = exceeded
     ? 'bg-green-900/90 border-green-600 text-green-300'
-    : badge !== null
-      ? 'bg-black/85 border-gray-600 text-white'
-      : '';
+    : started
+      ? 'bg-orange-900/90 border-orange-500 text-orange-300'
+      : badge !== null
+        ? 'bg-black/85 border-gray-600 text-white'
+        : '';
 
   return (
     <div
@@ -479,6 +483,10 @@ export default function P7_StatsVivoJugador({
           {statOption.liveKey ? (
             <>
               <span>{statOption.icon} Valor = promedio histórico p90 <span className="text-gray-600">−</span> eventos registrados en vivo</span>
+              <span className="flex items-center gap-1">
+                <span className="inline-block w-3 h-3 rounded bg-orange-900/90 border border-orange-500"/>
+                <span className="text-orange-400">= ya hizo algo, todavía no alcanzó su promedio</span>
+              </span>
               <span className="flex items-center gap-1">
                 <span className="inline-block w-3 h-3 rounded bg-green-900/90 border border-green-600"/>
                 <span className="text-green-400">↓ = ya alcanzó o superó su promedio</span>

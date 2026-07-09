@@ -1,6 +1,7 @@
 // TAB 4 — Esperado vs Sucedido vs Restante
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { fetchTeamMatches } from '../api';
+import { computePositions } from '../lib/pitchLayout';
 
 const ROWS_DEF = [
   { icon: '⚽', label: 'Goles',          k: 'G_F',  lk: 'Goles'        },
@@ -19,6 +20,50 @@ const HALVES = [
   { id: '2T', label: '2° Tiempo' },
   { id: 'FT', label: 'Total'     },
 ];
+
+// ─── TIRO AL ARCO: no hay columna histórica por equipo (el downloader nunca
+// captura "shots on target" a nivel equipo/tiempo, solo por jugador). Como
+// alternativa, el Esperado de esta fila se arma sumando el promedio individual
+// histórico (Al Arco p90) de los jugadores que están EN CANCHA ahora mismo —
+// se recalcula solo porque `positions` depende de `lineupData`, que cambia con
+// cada sustitución.
+function buildStatsMap(rankings) {
+  const byId = {}, byName = {};
+  Object.values(rankings || {}).forEach(roleRows => {
+    (roleRows || []).forEach(row => {
+      const name = (row.jugador || '').toLowerCase();
+      if (row.player_id != null) byId[row.player_id] = { ...(byId[row.player_id] || {}), ...row };
+      if (name) byName[name] = { ...(byName[name] || {}), ...row };
+    });
+  });
+  return { byId, byName };
+}
+
+function findPlayerStatsRow(player, statsMap) {
+  if (player.id != null && statsMap.byId[player.id]) return statsMap.byId[player.id];
+  const names = [player.shortName, player.name].filter(Boolean);
+  for (const name of names) {
+    const nl = name.toLowerCase();
+    if (statsMap.byName[nl]) return statsMap.byName[nl];
+    for (const [key, val] of Object.entries(statsMap.byName)) {
+      const tokens = nl.split(' ').filter(t => t.length > 3);
+      if (tokens.some(t => key.includes(t))) return val;
+      const ktokens = key.split(' ').filter(t => t.length > 3);
+      if (ktokens.some(t => nl.includes(t))) return val;
+    }
+  }
+  return null;
+}
+
+function sumOnFieldStat(onFieldPlayers, statsMap, key) {
+  let sum = 0, matched = 0;
+  onFieldPlayers.forEach(p => {
+    const row = findPlayerStatsRow(p, statsMap);
+    const v = row ? Number(row[key]) : NaN;
+    if (!isNaN(v)) { sum += v; matched++; }
+  });
+  return { sum, matched, total: onFieldPlayers.length };
+}
 
 function pct(suc, esp) {
   if (!esp || esp === 0) return null;
@@ -429,7 +474,7 @@ function expectedValue(r, stats, rivalStats, half) {
 }
 
 // ─── TABLA ESR POR EQUIPO ─────────────────────────────────────────────────────
-function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onRowClick }) {
+function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onRowClick, onFieldSHO }) {
   const colorCls = color === 'green' ? 'text-green-400' : 'text-blue-400';
   const bgCls    = color === 'green'
     ? 'bg-green-500/10 border-green-500/30'
@@ -454,7 +499,10 @@ function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onR
         </thead>
         <tbody>
           {ROWS_DEF.map(r => {
-            const esp  = expectedValue(r, stats, rivalStats, half);
+            const isSHO = r.lk === 'TiroAlArco';
+            const esp  = isSHO
+              ? (onFieldSHO ? (half === 'FT' ? onFieldSHO.sum : onFieldSHO.sum / 2) : 0)
+              : expectedValue(r, stats, rivalStats, half);
             const suc  = liveTeam?.[r.lk] ?? 0;
             const rest = esp > 0 ? esp - suc : 0;
             const p    = pct(suc, esp);
@@ -465,11 +513,18 @@ function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onR
                 className={`border-b border-gray-800/50 transition-colors
                   ${clickable ? 'cursor-pointer hover:bg-white/5 active:bg-white/10' : ''}`}
                 onClick={clickable ? () => onRowClick(r) : undefined}
-                title={clickable ? `Ver historial de ${r.label} por partido` : undefined}
+                title={clickable
+                  ? `Ver historial de ${r.label} por partido`
+                  : isSHO
+                    ? `Esperado = suma del promedio individual (Al Arco p90) de los ${onFieldSHO?.total ?? 11} jugadores en cancha (${onFieldSHO?.matched ?? 0} con datos) — se recalcula con cada cambio`
+                    : undefined}
               >
                 <td className="py-1.5 text-gray-300 text-[11px]">
                   {r.icon} {r.label}
                   {clickable && <span className="ml-1 text-gray-600 text-[9px]">↗</span>}
+                  {isSHO && onFieldSHO && (
+                    <span className="ml-1 text-gray-600 text-[9px]">({onFieldSHO.matched}/{onFieldSHO.total} en cancha)</span>
+                  )}
                 </td>
                 <td className="py-1.5 text-center">
                   <span className="text-yellow-400 font-bold">
@@ -502,11 +557,31 @@ function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onR
 }
 
 // ─── COMPONENTE PRINCIPAL ─────────────────────────────────────────────────────
-export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles, matches1, matches2 }) {
+export default function P4_EsperadoSucedido({
+  analysis, liveStats, selectedFiles, matches1, matches2,
+  lineupData, manualPos, fieldSwapped, baseSwapped,
+}) {
   const [half, setHalf] = useState('FT');
   const [modal, setModal] = useState(null); // { row, teamName, file }
 
   const handleClose = useCallback(() => setModal(null), []);
+
+  // Jugadores actualmente en cancha — se recalcula solo con cada sustitución
+  // porque `lineupData` se actualiza en el lugar (ver P5_Alineaciones).
+  const positions = useMemo(
+    () => manualPos ?? computePositions(lineupData, fieldSwapped, baseSwapped),
+    [manualPos, lineupData, fieldSwapped, baseSwapped]
+  );
+
+  const shoStatsMaps = useMemo(() => ({
+    team1: buildStatsMap(analysis?.rankings?.team1),
+    team2: buildStatsMap(analysis?.rankings?.team2),
+  }), [analysis]);
+
+  const onFieldSHO = useMemo(() => ({
+    team1: sumOnFieldStat(positions.filter(p => p.team === 'team1'), shoStatsMaps.team1, 'Al Arco p90'),
+    team2: sumOnFieldStat(positions.filter(p => p.team === 'team2'), shoStatsMaps.team2, 'Al Arco p90'),
+  }), [positions, shoStatsMaps]);
 
   if (!analysis) return (
     <div className="h-full flex items-center justify-center text-gray-500 text-sm">
@@ -550,6 +625,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
           color="green"
           half={half}
           file={selectedFiles?.f1}
+          onFieldSHO={onFieldSHO.team1}
           onRowClick={r => setModal({ row: r, teamName: team1.name, file: selectedFiles?.f1, rivalFile: selectedFiles?.f2, rivalName: team2.name, matches: matches1, rivalMatches: matches2 })}
         />
         <TeamESR
@@ -560,6 +636,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
           color="blue"
           half={half}
           file={selectedFiles?.f2}
+          onFieldSHO={onFieldSHO.team2}
           onRowClick={r => setModal({ row: r, teamName: team2.name, file: selectedFiles?.f2, rivalFile: selectedFiles?.f1, rivalName: team1.name, matches: matches2, rivalMatches: matches1 })}
         />
 
@@ -585,6 +662,8 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
         <span>ℹ️</span>
         <span>
           Esperado = (mi promedio + lo que el rival concede/induce en promedio) / 2 · misma fórmula que "Expectativas" en Previa
+          <br/>
+          🥅 Tiro al arco es la excepción: no hay dato histórico por equipo, así que Esperado = suma del promedio individual (Al Arco p90) de los jugadores en cancha ahora — se recalcula con cada sustitución
           <br/>
           Barra verde = dentro de lo esperado · Amarilla = llegando al límite · Roja = por encima
           <span className="ml-2 text-gray-600">· Haz clic en una fila para ver el historial por partido</span>
