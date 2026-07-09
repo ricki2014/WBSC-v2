@@ -350,12 +350,20 @@ def _build_jugadores_p90(team_folder, team_id):
     agg_dict = {c: 'sum' for c in numeric_cols if c in df_j.columns}
     agg_dict['rating'] = 'mean'
 
-    # Agrupar solo por jugador para evitar duplicados cuando la posición varía entre partidos
-    agg = df_j.groupby('jugador').agg(agg_dict).reset_index()
-    pos_map = df_j.groupby('jugador')['posicion'].apply(
+    # Agrupar por player_id (no por nombre corto): SofaScore abrevia "Inicial + Apellido",
+    # y dos jugadores distintos (ej. Lautaro Martínez y Lisandro Martínez) pueden compartir
+    # el mismo "jugador" ("L. Martínez"), lo que sumaría sus stats como si fueran uno solo.
+    group_key = 'player_id' if 'player_id' in df_j.columns else 'jugador'
+    agg = df_j.groupby(group_key).agg(agg_dict).reset_index()
+    name_map = df_j.groupby(group_key)['jugador'].first()
+    agg['jugador'] = agg[group_key].map(name_map)
+    if 'jugador_nombre' in df_j.columns:
+        nombre_map = df_j.groupby(group_key)['jugador_nombre'].first()
+        agg['jugador_nombre'] = agg[group_key].map(nombre_map)
+    pos_map = df_j.groupby(group_key)['posicion'].apply(
         lambda s: s[s.astype(str).str.strip() != ''].mode().iloc[0] if len(s[s.astype(str).str.strip() != '']) else ''
     )
-    agg['posicion'] = agg['jugador'].map(pos_map).fillna('')
+    agg['posicion'] = agg[group_key].map(pos_map).fillna('')
     agg['minutos_jugados'] = agg['minutos_jugados'].clip(lower=90)
 
     m = agg['minutos_jugados'] / 90

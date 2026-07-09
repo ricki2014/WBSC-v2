@@ -1,0 +1,227 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Int. Friendly Games",
+    "slug": "int-friendly-games",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "International Friendly Games",
+      "slug": "int-friendly-games",
+      "primaryColorHex": "#25497d",
+      "secondaryColorHex": "#d38f1d",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 119513,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 851,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مباريات ودية دولية",
+          "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+          "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+          "ru": "Международные товарищеские игры"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 89,
+    "isGroup": false,
+    "isLive": false,
+    "id": 66,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+        "ar": "مباريات ودية دولية",
+        "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+        "ru": "Международные товарищеские матчи"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Int. Friendly Games 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87155
+  },
+  "customId": "zUbsOUb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "USA",
+    "slug": "usa",
+    "shortName": "USA",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 248609,
+    "nameCode": "USA",
+    "ranking": 17,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "US",
+      "alpha3": "USA",
+      "name": "USA",
+      "slug": "usa"
+    },
+    "id": 4724,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "الولايات المتحدة",
+        "bn": "ইউএসএ",
+        "hi": "यूएसए",
+        "ru": "США"
+      },
+      "shortNameTranslation": {
+        "ar": "الولايات المتحدة"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Senegal",
+    "slug": "senegal",
+    "shortName": "Senegal",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 613090,
+    "nameCode": "SEN",
+    "ranking": 15,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "SN",
+      "alpha3": "SEN",
+      "name": "Senegal",
+      "slug": "senegal"
+    },
+    "id": 4739,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#047151",
+      "text": "#047151"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "السنغال",
+        "bn": "সেনেগাল",
+        "hi": "सेनेगल",
+        "ru": "Сенегал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 2,
+    "period2": 1,
+    "normaltime": 3
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 1,
+    "period2": 1,
+    "normaltime": 2
+  },
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 4,
+    "currentPeriodStartTimestamp": 1780260196
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1780263141
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 15362151,
+  "slug": "senegal-usa",
+  "startTimestamp": 1780255800,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "national"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

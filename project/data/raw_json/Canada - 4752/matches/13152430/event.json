@@ -1,0 +1,219 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONCACAF Nations League, Finals",
+    "slug": "concacaf-nations-league-finals",
+    "category": {
+      "name": "North & Central America",
+      "slug": "north-central-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 15,
+      "country": {},
+      "id": 1469,
+      "flag": "north-and-central-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الشمالية والوسطى",
+          "ru": "Северная и Центральная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONCACAF Nations League",
+      "slug": "concacaf-nations-league",
+      "primaryColorHex": "#0084cb",
+      "secondaryColorHex": "#d34346",
+      "category": {
+        "name": "North & Central America",
+        "slug": "north-central-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 15,
+        "country": {},
+        "id": 1469,
+        "flag": "north-and-central-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الشمالية والوسطى",
+            "ru": "Северная и Центральная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 16996,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 14100,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دوري أمم الكونكاكاف",
+          "bn": "কনকাকাফ নেশনস লীগ",
+          "hi": "कोनकाकैफ़ नेशंस लीग",
+          "es": "Liga de Naciones CONCACAF",
+          "es-la": "Liga de Naciones CONCACAF",
+          "ru": "Лига наций КОНКАКАФ"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 147,
+    "isGroup": false,
+    "isLive": false,
+    "id": 78905,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري أمم الكونكاكاف، النهائيات",
+        "bn": "কনকাকাফ নেশনস লীগ, ফাইনাল",
+        "hi": "कॉनकैकाफ़ नेशंस लीग, फाइनल",
+        "ru": "Лига наций КОНКАКАФ, Финал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONCACAF Nations League 24/25",
+    "year": "24/25",
+    "editor": false,
+    "id": 61662
+  },
+  "roundInfo": {
+    "round": 28,
+    "name": "Semifinals",
+    "slug": "semifinals",
+    "cupRoundType": 2
+  },
+  "customId": "cVbsGVb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Canada",
+    "slug": "canada",
+    "shortName": "Canada",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 187580,
+    "nameCode": "CAN",
+    "ranking": 30,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "CA",
+      "alpha3": "CAN",
+      "name": "Canada",
+      "slug": "canada"
+    },
+    "id": 4752,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كندا",
+        "bn": "কানাডা",
+        "hi": "कनाडा",
+        "ru": "Канада"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Mexico",
+    "slug": "mexico",
+    "shortName": "Mexico",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 478669,
+    "nameCode": "MEX",
+    "ranking": 14,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "MX",
+      "alpha3": "MEX",
+      "name": "Mexico",
+      "slug": "mexico"
+    },
+    "id": 4781,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#1a4d3e",
+      "secondary": "#960000",
+      "text": "#960000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "المكسيك",
+        "bn": "মেক্সিকো",
+        "hi": "मेक्सिको",
+        "ru": "Мексика"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 1,
+    "period2": 1,
+    "normaltime": 2
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 5,
+    "currentPeriodStartTimestamp": 1742528148
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1742531163
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 13152430,
+  "slug": "mexico-canada",
+  "startTimestamp": 1742524200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "cupMatchesInRound": 1,
+  "isEditor": false
+}

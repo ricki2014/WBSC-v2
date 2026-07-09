@@ -18,6 +18,11 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXCEL_DIR = os.path.join(ROOT_DIR, "data", "upcoming")
 PASADO_DIR = os.path.join(ROOT_DIR, "data", "partido_pasado")
 
+# El downloader guarda los JSON crudos de SofaScore (graph, incidents, event...)
+# acá, uno por equipo — "{TeamName} - {team_id}" — a diferencia de los excels
+# que viven fuera de project/. Sirve de fuente para el gráfico de Attack Momentum.
+RAW_JSON_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "raw_json")
+
 # El downloader (downloader/) vive fuera de project/ y usa imports de script suelto
 # (from config import ..., from utils import ...) — lo agregamos al path para poder
 # reusarlo desde acá sin duplicar código.
@@ -69,6 +74,28 @@ def cargar_equipo(filename: str):
     except Exception as e:
         print(f"Error cargando {filename}: {e}")
         return None
+
+# ─── FILTRO POR PARTIDOS SELECCIONADOS ───────────────────────────────────────
+# Permite restringir cualquier análisis a un subconjunto de partidos elegidos
+# a mano (en vez de TOTAL/LOCAL/VISITA). Filtra todas las hojas que tengan
+# match_id — el resto de las funciones (get_stats, rankings, goleadores, etc.)
+# no necesitan saber que existe este filtro: ya reciben el data recortado.
+def filter_matches_data(data, match_ids):
+    if not match_ids:
+        return data
+    ids = set(str(m) for m in match_ids)
+    filtered = dict(data)
+    for key in ('partidos', 'goles', 'jugadores', 'arqueros', 'disparos'):
+        df = data.get(key)
+        if df is not None and not df.empty and 'match_id' in df.columns:
+            filtered[key] = df[df['match_id'].astype(str).isin(ids)].reset_index(drop=True)
+    return filtered
+
+def _parse_match_ids(matches: str | None):
+    if not matches:
+        return None
+    ids = [m.strip() for m in matches.split(',') if m.strip()]
+    return ids or None
 
 # ─── ESTADÍSTICAS DEL EQUIPO ─────────────────────────────────────────────────
 
@@ -280,11 +307,17 @@ def _ranking_from_partidos(df_j, role):
     df_j = df_j.copy()
     df_j['jugador'] = df_j['jugador'].astype(str).str.strip()
 
+    # Agrupar por player_id, no por "jugador" (nombre corto): SofaScore abrevia como
+    # "Inicial + Apellido", y jugadores distintos (ej. Lautaro Martínez y Lisandro
+    # Martínez → ambos "L. Martínez") pueden compartir esa abreviatura. Agrupar por
+    # nombre sumaría/mezclaría las stats de dos personas distintas en una sola fila.
+    group_key = 'player_id' if 'player_id' in df_j.columns else 'jugador'
+
     # Resolver posición por jugador: tomar la más frecuente (no vacía)
     def _best_pos(series):
         s = series[series.astype(str).str.strip() != '']
         return s.mode().iloc[0] if len(s) else ''
-    pos_map = df_j.groupby('jugador')['posicion'].apply(_best_pos)
+    pos_map = df_j.groupby(group_key)['posicion'].apply(_best_pos)
 
     agg_dict = {
         'minutos_jugados':  'sum',
@@ -306,11 +339,15 @@ def _ranking_from_partidos(df_j, role):
     if 'faltas_recibidas' in df_j.columns:  agg_dict['faltas_recibidas']  = 'sum'
     if 'faltas_cometidas' in df_j.columns:  agg_dict['faltas_cometidas']  = 'sum'
 
-    # Agrupar solo por jugador para evitar duplicados por posición inconsistente
-    agg = df_j.groupby('jugador').agg(
+    agg = df_j.groupby(group_key).agg(
         {k: v for k, v in agg_dict.items() if k in df_j.columns}
     ).reset_index()
-    agg['posicion'] = agg['jugador'].map(pos_map).fillna('')
+    name_map = df_j.groupby(group_key)['jugador'].first()
+    agg['jugador'] = agg[group_key].map(name_map)
+    if 'jugador_nombre' in df_j.columns:
+        nombre_map = df_j.groupby(group_key)['jugador_nombre'].first()
+        agg['jugador_nombre'] = agg[group_key].map(nombre_map)
+    agg['posicion'] = agg[group_key].map(pos_map).fillna('')
 
     agg['minutos_jugados'] = agg['minutos_jugados'].clip(lower=90)
     mt = agg['minutos_jugados'] / 90
@@ -360,7 +397,7 @@ def _apply_role(agg, role, df_j_raw):
             normalize(agg['Recup. p90'])   * 0.20
         ) * 0.75 + normalize_inv(agg['Perdidas p90']) * 0.25
         agg['Score'] = agg['Score'].round(2)
-        cols = ['jugador','posicion','minutos_jugados','Duelos %','Interc. p90','Despejes p90','Recup. p90','Perdidas p90','Faltas Com. p90','Faltas Rec. p90','Score']
+        cols = ['jugador','player_id','posicion','minutos_jugados','Duelos %','Interc. p90','Despejes p90','Recup. p90','Perdidas p90','Faltas Com. p90','Faltas Rec. p90','Score']
 
     elif role == 'MED':
         agg = agg[agg['minutos_jugados'] >= 90].copy()
@@ -372,7 +409,7 @@ def _apply_role(agg, role, df_j_raw):
             normalize(agg['Duelos %'])     * 0.15
         ) * 0.80 + normalize_inv(agg['Perdidas p90']) * 0.20
         agg['Score'] = agg['Score'].round(2)
-        cols = ['jugador','posicion','minutos_jugados','P. Clave p90','Pases %','Recup. p90','Perdidas p90','Faltas Com. p90','Faltas Rec. p90','Score']
+        cols = ['jugador','player_id','posicion','minutos_jugados','P. Clave p90','Pases %','Recup. p90','Perdidas p90','Faltas Com. p90','Faltas Rec. p90','Score']
 
     elif role == 'DEL':
         agg = agg[(agg.get('goles', agg.get('Goles p90', pd.Series([0]*len(agg)))) > 0) |
@@ -385,19 +422,19 @@ def _apply_role(agg, role, df_j_raw):
             normalize(agg['Tiros Arco %']) * 0.15 +
             normalize(agg['Duelos %'])     * 0.10
         ).round(2)
-        cols = ['jugador','posicion','minutos_jugados','Goles p90','Asist. p90','Tiros Arco %','Duelos %','Faltas Rec. p90','Score']
+        cols = ['jugador','player_id','posicion','minutos_jugados','Goles p90','Asist. p90','Tiros Arco %','Duelos %','Faltas Rec. p90','Score']
         avail = [c for c in cols if c in agg.columns]
         return agg[avail].sort_values('Score', ascending=False)
 
     elif role == 'SHO':
         agg = agg[agg.get('tiros_totales', agg.get('Tiros p90', pd.Series([0]*len(agg)))) > 0].copy()
         if agg.empty: return pd.DataFrame()
-        cols = ['jugador','posicion','minutos_jugados','Tiros p90','Al Arco p90','Tiros Arco %']
+        cols = ['jugador','player_id','posicion','minutos_jugados','Tiros p90','Al Arco p90','Tiros Arco %']
         avail = [c for c in cols if c in agg.columns]
         return agg[avail].sort_values('Tiros p90', ascending=False)
 
     else:
-        cols = ['jugador','posicion','minutos_jugados','Goles p90','Asist. p90','Score']
+        cols = ['jugador','player_id','posicion','minutos_jugados','Goles p90','Asist. p90','Score']
 
     avail = [c for c in cols if c in agg.columns]
     return agg[avail].sort_values('Score', ascending=False) if 'Score' in agg.columns else agg[avail]
@@ -616,11 +653,21 @@ def download_team(req: DownloadRequest):
     }
 
 @app.get("/analysis/{file1}/{file2}")
-async def full_analysis(file1: str, file2: str, cond1: str = 'TOTAL', cond2: str = 'TOTAL'):
+async def full_analysis(file1: str, file2: str, cond1: str = 'TOTAL', cond2: str = 'TOTAL',
+                         matches1: str = None, matches2: str = None):
     d1 = cargar_equipo(file1)
     d2 = cargar_equipo(file2)
     if not d1 or not d2:
         raise HTTPException(status_code=404, detail="Archivo(s) no encontrado(s)")
+
+    # "Solo partidos seleccionados" pisa cond1/cond2: se filtran las hojas a
+    # esos match_id y se calcula todo (stats, rankings, goleadores, etc.) como TOTAL.
+    ids1 = _parse_match_ids(matches1)
+    ids2 = _parse_match_ids(matches2)
+    if ids1:
+        d1, cond1 = filter_matches_data(d1, ids1), 'TOTAL'
+    if ids2:
+        d2, cond2 = filter_matches_data(d2, ids2), 'TOTAL'
 
     s1 = get_stats(d1, cond1)
     s2 = get_stats(d2, cond2)
@@ -700,11 +747,44 @@ _TEAM_COLS = {
               'FT': ('faltas_home_FT',  'faltas_away_FT')},
 }
 
-@app.get("/team-matches/{file}/{stat_key}")
-async def get_team_matches(file: str, stat_key: str):
+@app.get("/team-match-list/{file}")
+async def get_team_match_list(file: str):
+    """Lista liviana de los partidos de un equipo, para el selector de
+    'Solo partidos seleccionados' (P1_Comparacion)."""
     data = cargar_equipo(file)
     if not data:
         raise HTTPException(status_code=404, detail="Archivo no encontrado")
+
+    df = data.get('partidos', pd.DataFrame())
+    if df.empty or 'match_id' not in df.columns:
+        return {"matches": []}
+
+    def _n(v):
+        try: return int(v) if pd.notna(v) else None
+        except Exception: return None
+
+    out = []
+    for _, row in df.iterrows():
+        hf, af = _n(row.get('homeScore_FT')), _n(row.get('awayScore_FT'))
+        out.append({
+            'match_id':  str(row.get('match_id')),
+            'fecha':     str(row.get('fecha'))[:10] if pd.notna(row.get('fecha')) else '',
+            'partido':   str(row.get('partido', '')),
+            'rival':     str(row.get('rival', '')),
+            'condicion': str(row.get('condicion', '')),
+            'resultado': f"{hf}-{af}" if hf is not None and af is not None else '?',
+        })
+    out.sort(key=lambda r: r['fecha'] or '0000-00-00')
+    return {"matches": out}
+
+@app.get("/team-matches/{file}/{stat_key}")
+async def get_team_matches(file: str, stat_key: str, matches: str = None):
+    data = cargar_equipo(file)
+    if not data:
+        raise HTTPException(status_code=404, detail="Archivo no encontrado")
+    ids = _parse_match_ids(matches)
+    if ids:
+        data = filter_matches_data(data, ids)
 
     df = data.get('partidos', pd.DataFrame())
     if df.empty:
@@ -827,10 +907,14 @@ STAT_COL_MAP = {
 }
 
 @app.get("/player-matches/{file}/{player_name}")
-async def get_player_matches(file: str, player_name: str, stat_key: str = ''):
+async def get_player_matches(file: str, player_name: str, stat_key: str = '', player_id: int | None = None,
+                              matches: str = None):
     data = cargar_equipo(file)
     if not data:
         raise HTTPException(status_code=404, detail="Archivo no encontrado")
+    ids = _parse_match_ids(matches)
+    if ids:
+        data = filter_matches_data(data, ids)
 
     df_j = data.get('jugadores', pd.DataFrame())
     df_p = data.get('partidos', pd.DataFrame())
@@ -850,23 +934,33 @@ async def get_player_matches(file: str, player_name: str, stat_key: str = ''):
     if df_j.empty:
         return {"matches": [], "stat_col": None}
 
-    # Buscar jugador por nombre (tokens)
-    pn = player_name.lower()
-    tokens = [t for t in pn.split() if len(t) >= 3]
-
-    def score_row(name):
-        nl = name.lower()
-        if pn in nl or nl in pn: return 10
-        matched = sum(1 for t in tokens if t in nl)
-        return matched
-
     df_j = df_j.copy()
-    df_j['_score'] = df_j['jugador'].apply(lambda n: score_row(str(n)))
-    best = df_j['_score'].max()
-    if best == 0:
-        return {"matches": [], "stat_col": None}
 
-    player_rows = df_j[df_j['_score'] == best].drop(columns=['_score'])
+    # Si tenemos player_id (SofaScore) usamos match exacto e inequívoco: el nombre
+    # corto ("jugador") solo trae inicial + apellido, y dos jugadores distintos
+    # (ej. Lautaro Martínez y Lisandro Martínez) pueden compartir esa abreviatura
+    # ("L. Martínez"), lo que mezclaría el historial de ambos en una sola tabla.
+    if player_id is not None and 'player_id' in df_j.columns:
+        player_rows = df_j[df_j['player_id'] == player_id]
+        if player_rows.empty:
+            return {"matches": [], "stat_col": None}
+    else:
+        # Fallback por nombre (tokens) para casos sin player_id disponible
+        pn = player_name.lower()
+        tokens = [t for t in pn.split() if len(t) >= 3]
+
+        def score_row(name):
+            nl = name.lower()
+            if pn in nl or nl in pn: return 10
+            matched = sum(1 for t in tokens if t in nl)
+            return matched
+
+        df_j['_score'] = df_j['jugador'].apply(lambda n: score_row(str(n)))
+        best = df_j['_score'].max()
+        if best == 0:
+            return {"matches": [], "stat_col": None}
+
+        player_rows = df_j[df_j['_score'] == best].drop(columns=['_score'])
 
     # Columna de la stat seleccionada
     stat_col = STAT_COL_MAP.get(stat_key)
@@ -1166,10 +1260,14 @@ async def receive_data_sync(
 # ─── DISTRIBUCIÓN DE TIROS ───────────────────────────────────────────────────
 
 @app.get("/shot-distribution/{file}")
-async def get_shot_distribution(file: str, match_id: str = None, bin_size: int = 10, player_name: str = None):
+async def get_shot_distribution(file: str, match_id: str = None, bin_size: int = 10, player_name: str = None,
+                                 matches: str = None):
     data = cargar_equipo(file)
     if not data:
         raise HTTPException(status_code=404, detail="Archivo no encontrado")
+    ids = _parse_match_ids(matches)
+    if ids:
+        data = filter_matches_data(data, ids)
 
     df = data.get('disparos', pd.DataFrame())
     if df.empty:
@@ -1244,6 +1342,124 @@ async def get_shot_distribution(file: str, match_id: str = None, bin_size: int =
         })
 
     return {"matches": matches_list, "distribution": distribution}
+
+
+# ─── ATTACK MOMENTUM (desde raw_json descargado) ─────────────────────────────
+# Réplica del gráfico "Attack Momentum" de SofaScore (graphPoints de
+# /event/{id}/graph): barras verdes hacia arriba = presión del local,
+# barras hacia abajo = presión de la visita, con goles/tarjetas marcados.
+
+def _read_raw_json(path):
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _find_team_raw_folder(team_id):
+    if not team_id or not os.path.isdir(RAW_JSON_DIR):
+        return None
+    suffix = f" - {team_id}"
+    for name in os.listdir(RAW_JSON_DIR):
+        if name.endswith(suffix) and os.path.isdir(os.path.join(RAW_JSON_DIR, name)):
+            return os.path.join(RAW_JSON_DIR, name)
+    return None
+
+@app.get("/momentum-matches/{team_id}")
+async def get_momentum_matches(team_id: int):
+    """Lista los partidos de un equipo que tienen graph.json descargado
+    (raw_json/), para elegir cuál ver en el gráfico de Attack Momentum."""
+    folder = _find_team_raw_folder(team_id)
+    if not folder:
+        return {"matches": []}
+
+    matches_dir = os.path.join(folder, "matches")
+    if not os.path.isdir(matches_dir):
+        return {"matches": []}
+
+    out = []
+    for match_id in os.listdir(matches_dir):
+        match_folder = os.path.join(matches_dir, match_id)
+        if not os.path.isfile(os.path.join(match_folder, "graph.json")):
+            continue
+        event = _read_raw_json(os.path.join(match_folder, "event.json"))
+        if not event:
+            continue
+        home = event.get("homeTeam", {}) or {}
+        away = event.get("awayTeam", {}) or {}
+        ts = event.get("startTimestamp")
+        import datetime as _dt
+        fecha = _dt.datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d') if ts else None
+        out.append({
+            "match_id":   match_id,
+            "fecha":      fecha,
+            "home_id":    home.get("id"),
+            "home_name":  home.get("name", "?"),
+            "away_id":    away.get("id"),
+            "away_name":  away.get("name", "?"),
+            "home_score": (event.get("homeScore") or {}).get("current"),
+            "away_score": (event.get("awayScore") or {}).get("current"),
+            "tournament": (event.get("tournament") or {}).get("name", ""),
+        })
+    out.sort(key=lambda r: r["fecha"] or "0000-00-00", reverse=True)
+    return {"matches": out}
+
+@app.get("/momentum/{team_id}/{match_id}")
+async def get_momentum(team_id: int, match_id: str):
+    folder = _find_team_raw_folder(team_id)
+    if not folder:
+        raise HTTPException(status_code=404, detail="Equipo sin datos raw_json")
+
+    match_folder = os.path.join(folder, "matches", match_id)
+    graph = _read_raw_json(os.path.join(match_folder, "graph.json"))
+    if not graph or not graph.get("graphPoints"):
+        raise HTTPException(status_code=404, detail="Sin datos de Attack Momentum para este partido")
+
+    event = _read_raw_json(os.path.join(match_folder, "event.json"))
+    incidents_raw = _read_raw_json(os.path.join(match_folder, "incidents.json")).get("incidents", [])
+
+    home = event.get("homeTeam", {}) or {}
+    away = event.get("awayTeam", {}) or {}
+
+    incidents = []
+    for inc in incidents_raw:
+        itype = inc.get("incidentType")
+        if itype == "goal":
+            incidents.append({
+                "type":      "goal",
+                "isHome":    bool(inc.get("isHome")),
+                "time":      inc.get("time"),
+                "addedTime": inc.get("addedTime"),
+            })
+        elif itype == "card":
+            klass = inc.get("incidentClass")  # yellow | red | yellowRed
+            incidents.append({
+                "type":      "card",
+                "cardType":  klass,
+                "isHome":    bool(inc.get("isHome")),
+                "time":      inc.get("time"),
+                "addedTime": inc.get("addedTime"),
+            })
+
+    return {
+        "graphPoints":    graph.get("graphPoints", []),
+        "periodTime":     graph.get("periodTime", 45),
+        "overtimeLength": graph.get("overtimeLength", 15),
+        "periodCount":    graph.get("periodCount", 2),
+        "homeTeam": {
+            "id": home.get("id"), "name": home.get("name", "?"),
+            "colors": home.get("teamColors", {}),
+        },
+        "awayTeam": {
+            "id": away.get("id"), "name": away.get("name", "?"),
+            "colors": away.get("teamColors", {}),
+        },
+        "homeScore": (event.get("homeScore") or {}).get("current"),
+        "awayScore": (event.get("awayScore") or {}).get("current"),
+        "incidents": incidents,
+    }
 
 
 if __name__ == "__main__":

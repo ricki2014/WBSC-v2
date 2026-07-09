@@ -1,0 +1,286 @@
+{
+  "team": {
+    "name": "Brazil",
+    "slug": "brazil",
+    "shortName": "Brazil",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "tournament": {
+      "name": "World Cup Qualification, CONMEBOL",
+      "slug": "world-cup-qualification-conmebol",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "country": {},
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "uniqueTournament": {
+        "name": "World Cup Qual. CONMEBOL",
+        "slug": "world-championship-qual-conmebol",
+        "primaryColorHex": "#9a1133",
+        "secondaryColorHex": "#c11541",
+        "category": {
+          "name": "South America",
+          "slug": "south-america",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 18,
+          "country": {},
+          "id": 1470,
+          "flag": "south-america",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أمريكا الجنوبية",
+              "ru": "Южная Америка"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "userCount": 171155,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 295,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تصفيات كأس العالم في أمريكا الجنوبية",
+            "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ কোয়াল. কনমেবল",
+            "hi": "वर्ल्ड चैंपियनशिप क्वालीफिकेशन कॉनमेबोल",
+            "es": "Eliminatorias Sudamericanas",
+            "es-la": "Eliminatorias Sudamericanas",
+            "ru": "Кубок мира, отборочный тур. КОНМЕБОЛ"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 619,
+      "isLive": false,
+      "id": 1434,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تصفيات كأس العالم - كونميبول",
+          "bn": "ওয়ার্ল্ডকাপ কোয়ালিফিকেশন, কনমেবল",
+          "hi": "वर्ल्ड कप क्वालिफिकेशन, कॉनमेबोल",
+          "es": "Eliminatorias Sudamericanas",
+          "es-la": "Eliminatorias Sudamericanas",
+          "ru": "Квалификация чемпионата мира, КОНМЕБОЛ"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "World Championship",
+      "slug": "world-championship",
+      "primaryColorHex": "#d20a11",
+      "secondaryColorHex": "#e8bb57",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 1908018,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 16,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "pt-pt": "Mundial",
+          "ar": "كأس العالم",
+          "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ",
+          "hi": "वर्ल्ड चैंपियनशिप",
+          "hr": "FIFA Svjetsko prvenstvo",
+          "az": "FİFA Dünya Kuboku",
+          "nl": "Wereldkampioenschap",
+          "fr": "Coupe du monde",
+          "de": "Weltmeisterschaft",
+          "el": "Παγκόσμιο Κύπελλο",
+          "hu": "FIFA Világbajnokság",
+          "id": "Piala Dunia FIFA",
+          "it": "Coppa del Mondo FIFA",
+          "ja": "FIFAワールドカップ",
+          "ko": "FIFA 월드컵",
+          "no": "Verdensmesterskapet",
+          "pl": "Mistrzostwa Świata",
+          "pt": "Copa do Mundo FIFA",
+          "ro": "Campionatul Mondial",
+          "es": "Copa Mundial",
+          "es-la": "Copa Mundial",
+          "sv": "Världsmästerskapet",
+          "th": "ฟุตบอลโลก",
+          "tr": "FIFA Dünya Kupası",
+          "vi": "Giải Vô Địch Thế Giới",
+          "ru": "Чемпионат мира",
+          "sr": "Светско првенство"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 3241645,
+    "manager": {
+      "name": "Carlo Ancelotti",
+      "slug": "carlo-ancelotti",
+      "shortName": "C. Ancelotti",
+      "country": {
+        "alpha2": "IT",
+        "alpha3": "ITA",
+        "name": "Italy",
+        "slug": "italy"
+      },
+      "id": 52965,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كارلو أنشيلوتي",
+          "bn": "কার্লো আনচেলত্তি",
+          "hi": "कार्लो एंसेलोटी",
+          "ru": "Карло Анчелотти"
+        },
+        "shortNameTranslation": {
+          "ar": "ك. أنشيلوتي",
+          "bn": "সি. আনচেলত্তি",
+          "hi": "सी. एंसेलोटी",
+          "ru": "К. Анчелотти"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Rio de Janeiro",
+        "country": {
+          "alpha2": "BR",
+          "alpha3": "BRA",
+          "name": "Brazil",
+          "slug": "brazil"
+        },
+        "id": 19026
+      },
+      "venueCoordinates": {
+        "latitude": -22.91196,
+        "longitude": -43.23019
+      },
+      "hidden": false,
+      "slug": "est-dio-do-maracan-",
+      "name": "Estádio do Maracanã",
+      "capacity": 78838,
+      "country": {
+        "alpha2": "BR",
+        "alpha3": "BRA",
+        "name": "Brazil",
+        "slug": "brazil"
+      },
+      "id": 686,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب ماراكانا",
+          "hi": "एस्टैडियो डो माराकाना",
+          "bn": "এস্টাডিও মারাকানা",
+          "ru": "Стадион Маракана"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estádio do Maracanã",
+        "capacity": 78838
+      }
+    },
+    "nameCode": "BRA",
+    "ranking": 6,
+    "class": 4,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "BR",
+      "alpha3": "BRA",
+      "name": "Brazil",
+      "slug": "brazil"
+    },
+    "id": 4748,
+    "fullName": "Brazil",
+    "teamColors": {
+      "primary": "#ffff00",
+      "secondary": "#009933",
+      "text": "#009933"
+    },
+    "foundationDateTimestamp": -1747267200,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "البرازيل",
+        "bn": "ব্রাজিল",
+        "hi": "ब्राजील",
+        "ru": "Бразилия"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "avgRating": "7.02",
+    "position": 2,
+    "value": "4",
+    "form": [
+      "D",
+      "W"
+    ]
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Int. Friendly Games",
+    "slug": "int-friendly-games",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "International Friendly Games",
+      "slug": "int-friendly-games",
+      "primaryColorHex": "#25497d",
+      "secondaryColorHex": "#d38f1d",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 119453,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 851,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مباريات ودية دولية",
+          "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+          "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+          "ru": "Международные товарищеские игры"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 89,
+    "isGroup": false,
+    "isLive": false,
+    "id": 66,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+        "ar": "مباريات ودية دولية",
+        "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+        "ru": "Международные товарищеские матчи"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Int. Friendly Games 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87155
+  },
+  "customId": "yUbscVb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Canada",
+    "slug": "canada",
+    "shortName": "Canada",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 187580,
+    "nameCode": "CAN",
+    "ranking": 30,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "CA",
+      "alpha3": "CAN",
+      "name": "Canada",
+      "slug": "canada"
+    },
+    "id": 4752,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كندا",
+        "bn": "কানাডা",
+        "hi": "कनाडा",
+        "ru": "Канада"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Uzbekistan",
+    "slug": "uzbekistan",
+    "shortName": "Uzbekistan",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 193014,
+    "nameCode": "UZB",
+    "ranking": 50,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "UZ",
+      "alpha3": "UZB",
+      "name": "Uzbekistan",
+      "slug": "uzbekistan"
+    },
+    "id": 4723,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#0080ff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أوزبكستان",
+        "bn": "উজবেকিস্তান",
+        "hi": "उज़्बेकिस्तान",
+        "ru": "Узбекистан"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 0,
+    "period2": 2,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 3,
+    "currentPeriodStartTimestamp": 1780366761
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.normaltime"
+    ],
+    "changeTimestamp": 1780369653
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 15530938,
+  "slug": "canada-uzbekistan",
+  "startTimestamp": 1780362000,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "national"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Int. Friendly Games",
+    "slug": "int-friendly-games",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "International Friendly Games",
+      "slug": "int-friendly-games",
+      "primaryColorHex": "#25497d",
+      "secondaryColorHex": "#d38f1d",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 119140,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 851,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مباريات ودية دولية",
+          "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+          "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+          "ru": "Международные товарищеские игры"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 89,
+    "isGroup": false,
+    "isLive": false,
+    "id": 66,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+        "ar": "مباريات ودية دولية",
+        "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+        "ru": "Международные товарищеские матчи"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Int. Friendly Games 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87155
+  },
+  "customId": "DVbsKkd",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Morocco",
+    "slug": "morocco",
+    "shortName": "Morocco",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 1204147,
+    "nameCode": "MAR",
+    "ranking": 7,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "MA",
+      "alpha3": "MAR",
+      "name": "Morocco",
+      "slug": "morocco"
+    },
+    "id": 4778,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#006600",
+      "text": "#006600"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "المغرب",
+        "bn": "মরক্কো",
+        "hi": "मोरक्को",
+        "ru": "Марокко"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Madagascar",
+    "slug": "madagascar",
+    "shortName": "Madagascar",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 40226,
+    "nameCode": "MAD",
+    "ranking": 104,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "MG",
+      "alpha3": "MDG",
+      "name": "Madagascar",
+      "slug": "madagascar"
+    },
+    "id": 8035,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#009933",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "مدغشقر",
+        "bn": "মাদাগাস্কার",
+        "hi": "मेडागास्कर",
+        "ru": "Мадагаскар"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 4,
+    "display": 4,
+    "period1": 2,
+    "period2": 2,
+    "normaltime": 4
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 4,
+    "currentPeriodStartTimestamp": 1780425091
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1780428066
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 16205026,
+  "awayRedCards": 1,
+  "slug": "madagascar-morocco",
+  "startTimestamp": 1780419600,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "national"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

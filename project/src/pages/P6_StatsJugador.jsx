@@ -99,7 +99,7 @@ function RankTable({ rows, teamColor, starterNames }) {
   if (!rows || rows.length === 0)
     return <div className="text-gray-500 text-xs p-4 text-center">Sin datos</div>;
 
-  const cols = Object.keys(rows[0]).filter(k => k !== 'posicion');
+  const cols = Object.keys(rows[0]).filter(k => k !== 'posicion' && k !== 'player_id');
   const accent = teamColor === 'green' ? 'text-green-400' : 'text-blue-400';
   const starterBg = teamColor === 'green'
     ? 'bg-green-950/50 border-l-2 border-green-500/60'
@@ -146,7 +146,7 @@ function RankTable({ rows, teamColor, starterNames }) {
           {sorted.map((r, i) => {
             const isStarter = matchesStarter(r['jugador'], starterNames);
             return (
-              <tr key={i} className={`hover:bg-gray-700/30 ${isStarter ? starterBg : ''}`}>
+              <tr key={r.player_id ?? i} className={`hover:bg-gray-700/30 ${isStarter ? starterBg : ''}`}>
                 {cols.map(c => (
                   <td key={c}
                     className={`text-[11px] ${

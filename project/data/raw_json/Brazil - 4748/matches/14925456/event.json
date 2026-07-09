@@ -1,0 +1,211 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Int. Friendly Games",
+    "slug": "int-friendly-games",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "International Friendly Games",
+      "slug": "int-friendly-games",
+      "primaryColorHex": "#25497d",
+      "secondaryColorHex": "#d38f1d",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 119473,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 851,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مباريات ودية دولية",
+          "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+          "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+          "ru": "Международные товарищеские игры"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 89,
+    "isGroup": false,
+    "isLive": false,
+    "id": 66,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "hi": "इंटरनेशनल फ्रेंडली गेम्स",
+        "ar": "مباريات ودية دولية",
+        "bn": "ইন্টারন্যাশনাল ফ্রেন্ডলি গেমস",
+        "ru": "Международные товарищеские матчи"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Int. Friendly Games 2025",
+    "year": "2025",
+    "editor": false,
+    "id": 69578
+  },
+  "customId": "OUbsYUb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Brazil",
+    "slug": "brazil",
+    "shortName": "Brazil",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 3241645,
+    "nameCode": "BRA",
+    "ranking": 6,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "BR",
+      "alpha3": "BRA",
+      "name": "Brazil",
+      "slug": "brazil"
+    },
+    "id": 4748,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffff00",
+      "secondary": "#009933",
+      "text": "#009933"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "البرازيل",
+        "bn": "ব্রাজিল",
+        "hi": "ब्राजील",
+        "ru": "Бразилия"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Senegal",
+    "slug": "senegal",
+    "shortName": "Senegal",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 611311,
+    "nameCode": "SEN",
+    "ranking": 15,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "SN",
+      "alpha3": "SEN",
+      "name": "Senegal",
+      "slug": "senegal"
+    },
+    "id": 4739,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#047151",
+      "text": "#047151"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "السنغال",
+        "bn": "সেনেগাল",
+        "hi": "सेनेगल",
+        "ru": "Сенегал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 2,
+    "period2": 0,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "currentPeriodStartTimestamp": 1763226862
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1763229758
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 14925456,
+  "slug": "brazil-senegal",
+  "startTimestamp": 1763222400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false
+}

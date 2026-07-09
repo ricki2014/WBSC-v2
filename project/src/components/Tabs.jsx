@@ -8,6 +8,7 @@ const TABS = [
   { icon: '📌', label: 'Stats Fijos' },
   { icon: '⚡', label: 'Stats en Vivo' },
   { icon: '🎯', label: 'Dist Tiros' },
+  { icon: '📉', label: 'Momentum' },
 ];
 
 export default function Tabs({ tab, setTab }) {

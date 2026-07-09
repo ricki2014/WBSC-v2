@@ -61,9 +61,17 @@ export const syncFilesToWeb = async () => {
   return r.data;
 };
 
-export const getAnalysis = async (file1, file2, cond1='TOTAL', cond2='TOTAL') => {
-  const r = await axios.get(`${BASE}/analysis/${file1}/${file2}`, { params: { cond1, cond2 } });
+export const getAnalysis = async (file1, file2, cond1='TOTAL', cond2='TOTAL', matches1=null, matches2=null) => {
+  const params = { cond1, cond2 };
+  if (matches1?.length) params.matches1 = matches1.join(',');
+  if (matches2?.length) params.matches2 = matches2.join(',');
+  const r = await axios.get(`${BASE}/analysis/${file1}/${file2}`, { params });
   return r.data;
+};
+
+export const fetchTeamMatchList = async (file) => {
+  const r = await axios.get(`${BASE}/team-match-list/${encodeURIComponent(file)}`);
+  return r.data.matches;
 };
 
 export const fetchLineups = async (payload) => {
@@ -88,23 +96,39 @@ export const getSharedLiveState = async () => {
   return r.data;
 };
 
-export const fetchTeamMatches = async (file, statKey) => {
-  const r = await axios.get(`${BASE}/team-matches/${encodeURIComponent(file)}/${encodeURIComponent(statKey)}`);
+export const fetchTeamMatches = async (file, statKey, matches = null) => {
+  const params = {};
+  if (matches?.length) params.matches = matches.join(',');
+  const r = await axios.get(`${BASE}/team-matches/${encodeURIComponent(file)}/${encodeURIComponent(statKey)}`, { params });
   return r.data;
 };
 
-export const fetchPlayerMatches = async (file, playerName, statKey = '') => {
+export const fetchPlayerMatches = async (file, playerName, statKey = '', playerId = null, matches = null) => {
+  const params = { stat_key: statKey };
+  if (playerId != null) params.player_id = playerId;
+  if (matches?.length) params.matches = matches.join(',');
   const r = await axios.get(`${BASE}/player-matches/${encodeURIComponent(file)}/${encodeURIComponent(playerName)}`, {
-    params: { stat_key: statKey },
+    params,
   });
   return r.data;
 };
 
-export const fetchShotDistribution = async (file, matchId = 'all', binSize = 10, playerName = null) => {
+export const fetchShotDistribution = async (file, matchId = 'all', binSize = 10, playerName = null, matches = null) => {
   const params = {};
   if (matchId !== 'all') params.match_id = matchId;
   if (binSize !== 10) params.bin_size = binSize;
   if (playerName) params.player_name = playerName;
+  if (matches?.length) params.matches = matches.join(',');
   const r = await axios.get(`${BASE}/shot-distribution/${encodeURIComponent(file)}`, { params });
+  return r.data;
+};
+
+export const fetchMomentumMatches = async (teamId) => {
+  const r = await axios.get(`${BASE}/momentum-matches/${encodeURIComponent(teamId)}`);
+  return r.data.matches;
+};
+
+export const fetchMomentumData = async (teamId, matchId) => {
+  const r = await axios.get(`${BASE}/momentum/${encodeURIComponent(teamId)}/${encodeURIComponent(matchId)}`);
   return r.data;
 };

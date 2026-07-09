@@ -53,7 +53,7 @@ function Boxplot({ values, label, color }) {
   const stats = boxStats(values.filter(v => v !== null && v !== undefined));
   if (!stats) return null;
 
-  const W = 320, H = 90, PAD = 30, PLOT_W = W - PAD * 2;
+  const W = 430, H = 120, PAD = 38, PLOT_W = W - PAD * 2;
   const domainMax = Math.max(stats.max, 1);
   const x = v => PAD + (v / domainMax) * PLOT_W;
 
@@ -66,44 +66,143 @@ function Boxplot({ values, label, color }) {
 
   return (
     <div className="flex flex-col gap-1">
-      <div className="text-[11px] text-gray-400 font-semibold px-1">{label}</div>
-      <svg width={W} height={H} className="overflow-visible">
+      <div className="text-[12px] text-gray-300 font-semibold px-1">{label}</div>
+      <svg width="100%" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet" className="overflow-visible">
         {/* grid lines */}
         {ticks.map(t => (
-          <line key={t} x1={x(t)} y1={10} x2={x(t)} y2={60} stroke="#374151" strokeWidth={0.5} strokeDasharray="2,2"/>
+          <line key={t} x1={x(t)} y1={14} x2={x(t)} y2={80} stroke="#374151" strokeWidth={0.6} strokeDasharray="2,2"/>
         ))}
         {/* whiskers */}
-        <line x1={x(stats.min)} y1={35} x2={x(stats.q1)} y2={35} stroke={colors.whisker} strokeWidth={1.5}/>
-        <line x1={x(stats.q3)} y1={35} x2={x(stats.max)} y2={35} stroke={colors.whisker} strokeWidth={1.5}/>
-        <line x1={x(stats.min)} y1={28} x2={x(stats.min)} y2={42} stroke={colors.whisker} strokeWidth={1.5}/>
-        <line x1={x(stats.max)} y1={28} x2={x(stats.max)} y2={42} stroke={colors.whisker} strokeWidth={1.5}/>
+        <line x1={x(stats.min)} y1={47} x2={x(stats.q1)} y2={47} stroke={colors.whisker} strokeWidth={2}/>
+        <line x1={x(stats.q3)} y1={47} x2={x(stats.max)} y2={47} stroke={colors.whisker} strokeWidth={2}/>
+        <line x1={x(stats.min)} y1={38} x2={x(stats.min)} y2={57} stroke={colors.whisker} strokeWidth={2}/>
+        <line x1={x(stats.max)} y1={38} x2={x(stats.max)} y2={57} stroke={colors.whisker} strokeWidth={2}/>
         {/* IQR box */}
-        <rect x={x(stats.q1)} y={20} width={Math.max(1, x(stats.q3)-x(stats.q1))} height={30}
-          fill={colors.box} fillOpacity={0.25} stroke={colors.box} strokeWidth={1.5} rx={2}/>
+        <rect x={x(stats.q1)} y={27} width={Math.max(1, x(stats.q3)-x(stats.q1))} height={40}
+          fill={colors.box} fillOpacity={0.25} stroke={colors.box} strokeWidth={2} rx={3}/>
         {/* median */}
-        <line x1={x(stats.median)} y1={20} x2={x(stats.median)} y2={50} stroke={colors.med} strokeWidth={2.5}/>
+        <line x1={x(stats.median)} y1={27} x2={x(stats.median)} y2={67} stroke={colors.med} strokeWidth={3}/>
         {/* mean dot */}
-        <circle cx={x(stats.mean)} cy={35} r={3} fill={colors.dot} opacity={0.8}/>
+        <circle cx={x(stats.mean)} cy={47} r={4} fill={colors.dot} opacity={0.85}/>
         {/* individual points jittered */}
         {values.map((v, i) => (
-          <circle key={i} cx={x(v ?? 0)} cy={35 + (((i * 7) % 14) - 7) * 0.6} r={2}
+          <circle key={i} cx={x(v ?? 0)} cy={47 + (((i * 7) % 14) - 7) * 0.8} r={2.6}
             fill={colors.box} fillOpacity={0.35}/>
         ))}
         {/* tick labels */}
         {ticks.map(t => (
-          <text key={t} x={x(t)} y={72} textAnchor="middle" fontSize={9} fill="#6b7280">{t}</text>
+          <text key={t} x={x(t)} y={97} textAnchor="middle" fontSize={11} fill="#9ca3af">{t}</text>
         ))}
         {/* stat labels */}
-        <text x={x(stats.min)}  y={H} textAnchor="middle" fontSize={8} fill="#9ca3af">min:{stats.min}</text>
-        <text x={x(stats.median)} y={H} textAnchor="middle" fontSize={8} fill={colors.med}>med:{stats.median.toFixed(1)}</text>
-        <text x={x(stats.max)}  y={H} textAnchor="middle" fontSize={8} fill="#9ca3af">max:{stats.max}</text>
+        <text x={x(stats.min)}  y={116} textAnchor="middle" fontSize={10} fill="#9ca3af">min:{stats.min}</text>
+        <text x={x(stats.median)} y={116} textAnchor="middle" fontSize={10} fill={colors.med}>med:{stats.median.toFixed(1)}</text>
+        <text x={x(stats.max)}  y={116} textAnchor="middle" fontSize={10} fill="#9ca3af">max:{stats.max}</text>
       </svg>
     </div>
   );
 }
 
+// ─── GOLES: PROBABILIDAD Y CONTEO POR TIEMPO ─────────────────────────────────
+const GOAL_PERIODS = [
+  { id: '1T', label: '1° Tiempo' },
+  { id: '2T', label: '2° Tiempo' },
+  { id: 'FT', label: 'Total' },
+];
+// 1T/2T rara vez pasan de 3 goles → alcanza con "3+". El Total es la suma de
+// ambos tiempos y puede llegar a 4/5/6+ con frecuencia suficiente como para
+// que agruparlo todo en "3+" distorsione el gráfico (una sola barra gigante).
+const HALF_BUCKETS  = ['0', '1', '2', '3+'];
+const HALF_COLORS   = ['bg-gray-500', 'bg-green-500', 'bg-yellow-500', 'bg-red-500'];
+const TOTAL_BUCKETS = ['0', '1', '2', '3', '4', '5', '6+'];
+const TOTAL_COLORS  = ['bg-gray-500', 'bg-green-500', 'bg-emerald-500', 'bg-yellow-500', 'bg-orange-500', 'bg-red-500', 'bg-red-700'];
+
+function bucketsForPeriod(periodId) {
+  return periodId === 'FT'
+    ? { buckets: TOTAL_BUCKETS, colors: TOTAL_COLORS }
+    : { buckets: HALF_BUCKETS,  colors: HALF_COLORS  };
+}
+
+function bucketOfGoals(g, buckets) {
+  const n = Number(g) || 0;
+  const lastIdx = buckets.length - 1;
+  return n >= lastIdx ? buckets[lastIdx] : String(n);
+}
+
+function computeGoalBuckets(matches, key) {
+  return GOAL_PERIODS.map(({ id, label }) => {
+    const { buckets, colors } = bucketsForPeriod(id);
+    const counts = {};
+    buckets.forEach(b => { counts[b] = 0; });
+    matches.forEach(m => { counts[bucketOfGoals(m[`${key}_${id}`], buckets)]++; });
+    return { id, label, counts, total: matches.length, buckets, colors };
+  });
+}
+
+// `mode` = 'prob' (probabilidad %) | 'count' (n° de partidos)
+function GoalBucketChart({ matches, statKey, mode, title }) {
+  const periods = computeGoalBuckets(matches, statKey);
+  const maxVal = mode === 'prob'
+    ? 100
+    : Math.max(...periods.flatMap(p => p.buckets.map(b => p.counts[b])), 1);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="text-[13px] text-gray-300 font-semibold px-1">{title}</div>
+      <div className="flex gap-10">
+        {periods.map(p => (
+          <div key={p.id} className="flex flex-col items-center gap-2">
+            <div className="flex items-end gap-1.5" style={{ height: '160px' }}>
+              {p.buckets.map((b, i) => {
+                const raw = p.counts[b];
+                const val = mode === 'prob' ? (p.total ? (raw / p.total) * 100 : 0) : raw;
+                const h   = Math.max(3, (val / maxVal) * 144);
+                return (
+                  <div key={b} className="flex flex-col items-center justify-end" style={{ height: '160px' }}>
+                    <span className="text-[11px] text-gray-300 font-semibold mb-1 leading-none">
+                      {mode === 'prob' ? `${val.toFixed(0)}%` : raw}
+                    </span>
+                    <div className={`w-5 rounded-t ${p.colors[i]}`} style={{ height: `${h}px` }}
+                      title={`${b} goles: ${raw} partido${raw === 1 ? '' : 's'}`} />
+                    <span className="text-[9px] text-gray-500 mt-1">{b}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <span className="text-[11px] text-gray-400 font-semibold">{p.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function GoalBucketLegend() {
+  return (
+    <div className="flex flex-wrap items-center gap-4">
+      <div className="flex items-center gap-2">
+        <span className="text-[10px] text-gray-600 uppercase tracking-wide">1T / 2T:</span>
+        {HALF_BUCKETS.map((b, i) => (
+          <div key={b} className="flex items-center gap-1">
+            <div className={`w-2.5 h-2.5 rounded-sm ${HALF_COLORS[i]}`} />
+            <span className="text-[11px] text-gray-400">{b}</span>
+          </div>
+        ))}
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="text-[10px] text-gray-600 uppercase tracking-wide">Total:</span>
+        {TOTAL_BUCKETS.map((b, i) => (
+          <div key={b} className="flex items-center gap-1">
+            <div className={`w-2.5 h-2.5 rounded-sm ${TOTAL_COLORS[i]}`} />
+            <span className="text-[11px] text-gray-400">{b}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── MODAL HISTORIAL POR PARTIDO ─────────────────────────────────────────────
-function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, onClose }) {
+function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMatches, selRivalMatches, onClose }) {
   const [data, setData]           = useState(null);
   const [rivalData, setRivalData] = useState(null);
   const [loading, setLoading]     = useState(true);
@@ -111,18 +210,18 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, onClo
   useEffect(() => {
     if (!file || !row?.k) return;
     setLoading(true);
-    fetchTeamMatches(file, row.k)
+    fetchTeamMatches(file, row.k, selMatches)
       .then(d => setData(d))
       .catch(() => setData(null))
       .finally(() => setLoading(false));
-  }, [file, row?.k]);
+  }, [file, row?.k, selMatches]);
 
   useEffect(() => {
     if (!rivalFile || !row?.k) return;
-    fetchTeamMatches(rivalFile, row.k)
+    fetchTeamMatches(rivalFile, row.k, selRivalMatches)
       .then(d => setRivalData(d))
       .catch(() => setRivalData(null));
-  }, [rivalFile, row?.k]);
+  }, [rivalFile, row?.k, selRivalMatches]);
 
   useEffect(() => {
     const h = e => { if (e.key === 'Escape') onClose(); };
@@ -280,6 +379,36 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, onClo
               <div className="text-[9px] text-gray-600 mt-2">
                 Línea = mediana · Punto = media · Caja = IQR (Q1–Q3) · Bigotes = min/max
               </div>
+
+              {row.k === 'G_F' && (
+                <div className="mt-4 pt-3 border-t border-gray-700/50">
+                  <div className="text-[11px] text-gray-500 mb-3 font-semibold uppercase tracking-wide">
+                    Distribución de Goles por Partido — 1° Tiempo · 2° Tiempo · Total
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <div className="text-[10px] text-green-400 font-bold mb-2 text-center">{teamName}</div>
+                      <div className="flex flex-col gap-4">
+                        <GoalBucketChart matches={matches} statKey="stat" mode="prob"  title="Probabilidad de goles a favor" />
+                        <GoalBucketChart matches={matches} statKey="stat" mode="count" title="N° de partidos con X goles a favor" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-blue-400 font-bold mb-2 text-center">{rivalName}</div>
+                      <div className="flex flex-col gap-4">
+                        <GoalBucketChart matches={rMatches} statKey="stat" mode="prob"  title="Probabilidad de goles a favor" />
+                        <GoalBucketChart matches={rMatches} statKey="stat" mode="count" title="N° de partidos con X goles a favor" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
+                    <GoalBucketLegend />
+                    <span className="text-[9px] text-gray-600">
+                      Sobre {matches.length} partidos ({teamName}) · {rMatches.length} partidos ({rivalName})
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
           );
         })()}
@@ -373,7 +502,7 @@ function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onR
 }
 
 // ─── COMPONENTE PRINCIPAL ─────────────────────────────────────────────────────
-export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles }) {
+export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles, matches1, matches2 }) {
   const [half, setHalf] = useState('FT');
   const [modal, setModal] = useState(null); // { row, teamName, file }
 
@@ -391,7 +520,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
   const { team1, team2 } = analysis;
 
   return (
-    <div className="flex flex-col gap-3 p-1 relative">
+    <div className="flex-1 min-h-0 flex flex-col gap-3 p-1 relative">
       <div className="flex flex-wrap items-center justify-between gap-2 shrink-0">
         <div className="flex items-center gap-2">
           <span className="text-lg">🧮</span>
@@ -412,7 +541,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative flex-1 min-h-0">
         <TeamESR
           teamName={team1.name}
           stats={team1.stats}
@@ -421,7 +550,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
           color="green"
           half={half}
           file={selectedFiles?.f1}
-          onRowClick={r => setModal({ row: r, teamName: team1.name, file: selectedFiles?.f1, rivalFile: selectedFiles?.f2, rivalName: team2.name })}
+          onRowClick={r => setModal({ row: r, teamName: team1.name, file: selectedFiles?.f1, rivalFile: selectedFiles?.f2, rivalName: team2.name, matches: matches1, rivalMatches: matches2 })}
         />
         <TeamESR
           teamName={team2.name}
@@ -431,7 +560,7 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
           color="blue"
           half={half}
           file={selectedFiles?.f2}
-          onRowClick={r => setModal({ row: r, teamName: team2.name, file: selectedFiles?.f2, rivalFile: selectedFiles?.f1, rivalName: team1.name })}
+          onRowClick={r => setModal({ row: r, teamName: team2.name, file: selectedFiles?.f2, rivalFile: selectedFiles?.f1, rivalName: team1.name, matches: matches2, rivalMatches: matches1 })}
         />
 
         {/* Modal sobreposición */}
@@ -443,6 +572,8 @@ export default function P4_EsperadoSucedido({ analysis, liveStats, selectedFiles
               file={modal.file}
               rivalFile={modal.rivalFile}
               rivalName={modal.rivalName}
+              selMatches={modal.matches}
+              selRivalMatches={modal.rivalMatches}
               half={half}
               onClose={handleClose}
             />

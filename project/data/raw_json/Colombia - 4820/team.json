@@ -1,0 +1,246 @@
+{
+  "team": {
+    "name": "Colombia",
+    "slug": "colombia",
+    "shortName": "Colombia",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "tournament": {
+      "name": "World Cup Qualification, CONMEBOL",
+      "slug": "world-cup-qualification-conmebol",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "country": {},
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "uniqueTournament": {
+        "name": "World Cup Qual. CONMEBOL",
+        "slug": "world-championship-qual-conmebol",
+        "primaryColorHex": "#9a1133",
+        "secondaryColorHex": "#c11541",
+        "category": {
+          "name": "South America",
+          "slug": "south-america",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 18,
+          "country": {},
+          "id": 1470,
+          "flag": "south-america",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أمريكا الجنوبية",
+              "ru": "Южная Америка"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "userCount": 171301,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 295,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تصفيات كأس العالم في أمريكا الجنوبية",
+            "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ কোয়াল. কনমেবল",
+            "hi": "वर्ल्ड चैंपियनशिप क्वालीफिकेशन कॉनमेबोल",
+            "es": "Eliminatorias Sudamericanas",
+            "es-la": "Eliminatorias Sudamericanas",
+            "ru": "Кубок мира, отборочный тур. КОНМЕБОЛ"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 619,
+      "isLive": false,
+      "id": 1434,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تصفيات كأس العالم - كونميبول",
+          "bn": "ওয়ার্ল্ডকাপ কোয়ালিফিকেশন, কনমেবল",
+          "hi": "वर्ल्ड कप क्वालिफिकेशन, कॉनमेबोल",
+          "es": "Eliminatorias Sudamericanas",
+          "es-la": "Eliminatorias Sudamericanas",
+          "ru": "Квалификация чемпионата мира, КОНМЕБОЛ"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "World Championship",
+      "slug": "world-championship",
+      "primaryColorHex": "#d20a11",
+      "secondaryColorHex": "#e8bb57",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 1936369,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 16,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "pt-pt": "Mundial",
+          "ar": "كأس العالم",
+          "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ",
+          "hi": "वर्ल्ड चैंपियनशिप",
+          "hr": "FIFA Svjetsko prvenstvo",
+          "az": "FİFA Dünya Kuboku",
+          "nl": "Wereldkampioenschap",
+          "fr": "Coupe du monde",
+          "de": "Weltmeisterschaft",
+          "el": "Παγκόσμιο Κύπελλο",
+          "hu": "FIFA Világbajnokság",
+          "id": "Piala Dunia FIFA",
+          "it": "Coppa del Mondo FIFA",
+          "ja": "FIFAワールドカップ",
+          "ko": "FIFA 월드컵",
+          "no": "Verdensmesterskapet",
+          "pl": "Mistrzostwa Świata",
+          "pt": "Copa do Mundo FIFA",
+          "ro": "Campionatul Mondial",
+          "es": "Copa Mundial",
+          "es-la": "Copa Mundial",
+          "sv": "Världsmästerskapet",
+          "th": "ฟุตบอลโลก",
+          "tr": "FIFA Dünya Kupası",
+          "vi": "Giải Vô Địch Thế Giới",
+          "ru": "Чемпионат мира",
+          "sr": "Светско првенство"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 500578,
+    "manager": {
+      "name": "Nestor Lorenzo",
+      "slug": "nestor-lorenzo",
+      "shortName": "N. Lorenzo",
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 795312,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "نيستور لورينزو",
+          "bn": "নেস্টর লরেঞ্জো",
+          "hi": "नेस्टर लोरेंजो",
+          "ru": "Нестор Лоренсо"
+        },
+        "shortNameTranslation": {
+          "ar": "ن. لورينزو",
+          "bn": "এন. লরেঞ্জো",
+          "hi": "एन. लोरेंजो",
+          "ru": "Н. Лоренсо"
+        }
+      }
+    },
+    "nameCode": "COL",
+    "ranking": 13,
+    "class": 4,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "CO",
+      "alpha3": "COL",
+      "name": "Colombia",
+      "slug": "colombia"
+    },
+    "id": 4820,
+    "fullName": "Colombia",
+    "teamColors": {
+      "primary": "#ffd808",
+      "secondary": "#000066",
+      "text": "#000066"
+    },
+    "foundationDateTimestamp": -1427068800,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كولومبيا",
+        "bn": "কলম্বিয়া",
+        "hi": "कोलंबिया",
+        "ru": "Колумбия"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "avgRating": "6.96",
+    "position": 1,
+    "value": "6",
+    "form": [
+      "W",
+      "W"
+    ]
+  }
+}

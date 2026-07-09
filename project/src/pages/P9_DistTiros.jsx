@@ -19,9 +19,9 @@ function playerLabel(player) {
 }
 
 // ─── BARRAS ───────────────────────────────────────────────────────────────────
-function ShotBar({ bin, maxCount }) {
+function ShotBar({ bin, maxCount, maxBarHeight }) {
   const total  = bin.count;
-  const height = Math.max(4, (total / Math.max(maxCount, 1)) * 96);
+  const height = Math.max(4, (total / Math.max(maxCount, 1)) * maxBarHeight);
   const segments = RESULTADO_ORDER
     .map(r => ({ r, n: bin.by_result?.[r] || 0 }))
     .filter(s => s.n > 0);
@@ -39,7 +39,10 @@ function ShotBar({ bin, maxCount }) {
   );
 }
 
-function DistChart({ distribution, subtitle, color, loading, noDataMsg }) {
+// `sharedMax`, cuando se pasa, fuerza la misma escala vertical que el gráfico
+// del otro equipo (mismo tipo de tramo), para que la altura de las barras sea
+// comparable entre paneles y no cada uno escale contra su propio máximo.
+function DistChart({ distribution, subtitle, color, loading, noDataMsg, sharedMax }) {
   const compact = distribution && distribution.length > 12;
   if (loading) return <div className="flex items-center justify-center py-6 text-gray-500 text-xs">Cargando...</div>;
   if (!distribution || distribution.length === 0) return (
@@ -49,7 +52,10 @@ function DistChart({ distribution, subtitle, color, loading, noDataMsg }) {
   if (total === 0) return (
     <div className="flex items-center justify-center py-6 text-gray-500 text-xs">Sin disparos registrados</div>
   );
-  const maxCount = Math.max(...distribution.map(d => d.count), 1);
+  const localMax  = Math.max(...distribution.map(d => d.count), 1);
+  const maxCount  = Math.max(sharedMax || 0, localMax);
+  const chartHeight  = 140;
+  const maxBarHeight = chartHeight - 14;
   const accent   = color === 'green' ? 'text-green-400' : color === 'red' ? 'text-red-400' : 'text-blue-400';
   const border   = color === 'green' ? 'border-green-800/30' : color === 'red' ? 'border-red-800/30' : 'border-blue-800/30';
   const byRes = {};
@@ -62,8 +68,8 @@ function DistChart({ distribution, subtitle, color, loading, noDataMsg }) {
         <span className={`text-xs font-semibold ${accent}`}>{subtitle}</span>
         <span className="text-gray-500 text-[10px]">{total} disparos</span>
       </div>
-      <div className={`flex items-end ${compact ? 'gap-0.5' : 'gap-1.5'}`} style={{ height: '100px' }}>
-        {distribution.map((d, i) => <ShotBar key={i} bin={d} maxCount={maxCount} />)}
+      <div className={`flex items-end ${compact ? 'gap-0.5' : 'gap-1.5'}`} style={{ height: `${chartHeight}px` }}>
+        {distribution.map((d, i) => <ShotBar key={i} bin={d} maxCount={maxCount} maxBarHeight={maxBarHeight} />)}
       </div>
       <div className={`flex ${compact ? 'gap-0.5' : 'gap-1.5'}`}>
         {distribution.map((d, i) => (
@@ -85,29 +91,37 @@ function DistChart({ distribution, subtitle, color, loading, noDataMsg }) {
 }
 
 // ─── PANEL DE EQUIPO (gráficos 10+5 min) ─────────────────────────────────────
-function TeamPanel({ file, teamName, color }) {
+function TeamPanel({ file, teamName, color, selMatches, onMaxUpdate, sharedMax10, sharedMax5 }) {
   const [data10, setData10] = useState(null);
   const [data5,  setData5]  = useState(null);
   const [loading, setLoading] = useState(false);
   const [selectedMatch, setSelectedMatch] = useState('all');
 
+  const reportMax = (d10, d5) => {
+    if (!onMaxUpdate) return;
+    const max10 = d10?.length ? Math.max(...d10.map(d => d.count), 0) : 0;
+    const max5  = d5?.length  ? Math.max(...d5.map(d => d.count), 0)  : 0;
+    onMaxUpdate({ max10, max5 });
+  };
+
   useEffect(() => {
     if (!file) return;
     setLoading(true);
-    Promise.all([fetchShotDistribution(file, 'all', 10), fetchShotDistribution(file, 'all', 5)])
-      .then(([d10, d5]) => { setData10(d10); setData5(d5); setSelectedMatch('all'); })
+    Promise.all([fetchShotDistribution(file, 'all', 10, null, selMatches), fetchShotDistribution(file, 'all', 5, null, selMatches)])
+      .then(([d10, d5]) => { setData10(d10); setData5(d5); setSelectedMatch('all'); reportMax(d10.distribution, d5.distribution); })
       .catch(() => { setData10(null); setData5(null); })
       .finally(() => setLoading(false));
-  }, [file]);
+  }, [file, selMatches]);
 
   const handleMatchChange = (matchId) => {
     setSelectedMatch(matchId);
     if (!file) return;
     setLoading(true);
-    Promise.all([fetchShotDistribution(file, matchId, 10), fetchShotDistribution(file, matchId, 5)])
+    Promise.all([fetchShotDistribution(file, matchId, 10, null, selMatches), fetchShotDistribution(file, matchId, 5, null, selMatches)])
       .then(([d10, d5]) => {
         setData10(prev => ({ ...prev, distribution: d10.distribution }));
         setData5(prev  => ({ ...prev, distribution: d5.distribution }));
+        reportMax(d10.distribution, d5.distribution);
       })
       .catch(() => {})
       .finally(() => setLoading(false));
@@ -129,8 +143,8 @@ function TeamPanel({ file, teamName, color }) {
           ))}
         </select>
       </div>
-      <DistChart distribution={data10?.distribution} subtitle="Tramos de 10 min" color={color} loading={loading} />
-      <DistChart distribution={data5?.distribution}  subtitle="Tramos de 5 min"  color={color} loading={loading} />
+      <DistChart distribution={data10?.distribution} subtitle="Tramos de 10 min" color={color} loading={loading} sharedMax={sharedMax10} />
+      <DistChart distribution={data5?.distribution}  subtitle="Tramos de 5 min"  color={color} loading={loading} sharedMax={sharedMax5} />
     </div>
   );
 }
@@ -172,7 +186,7 @@ function FieldMarkings() {
 }
 
 // ─── SECCIÓN CAMPO + DIST POR JUGADOR ────────────────────────────────────────
-function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, selectedFiles, team1Name, team2Name }) {
+function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, selectedFiles, team1Name, team2Name, matches1, matches2 }) {
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [playerDist, setPlayerDist]         = useState(null);
   const [loadingDist, setLoadingDist]       = useState(false);
@@ -201,7 +215,7 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
 
     const name = player.name || player.shortName || '';
     setLoadingDist(true);
-    fetchShotDistribution(file, 'all', 10, name)
+    fetchShotDistribution(file, 'all', 10, name, isTeam1Player ? matches1 : matches2)
       .then(d => setPlayerDist(d.distribution))
       .catch(() => setPlayerDist(null))
       .finally(() => setLoadingDist(false));
@@ -284,8 +298,13 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
 export default function P9_DistTiros({
   analysis, selectedFiles,
   lineupData, manualPos, fieldSwapped, baseSwapped,
-  team1Name, team2Name,
+  team1Name, team2Name, matches1, matches2,
 }) {
+  const [team1Max, setTeam1Max] = useState({ max10: 0, max5: 0 });
+  const [team2Max, setTeam2Max] = useState({ max10: 0, max5: 0 });
+  const sharedMax10 = Math.max(team1Max.max10, team2Max.max10, 1);
+  const sharedMax5  = Math.max(team1Max.max5,  team2Max.max5,  1);
+
   if (!analysis) return (
     <div className="h-full flex items-center justify-center text-gray-500 text-sm">
       <div className="text-center">
@@ -313,8 +332,10 @@ export default function P9_DistTiros({
 
       {/* Paneles por equipo */}
       <div className="flex flex-col md:flex-row gap-3">
-        <TeamPanel file={selectedFiles?.f1} teamName={analysis.team1?.name} color="green" />
-        <TeamPanel file={selectedFiles?.f2} teamName={analysis.team2?.name} color="blue"  />
+        <TeamPanel file={selectedFiles?.f1} teamName={analysis.team1?.name} color="green" selMatches={matches1}
+          onMaxUpdate={setTeam1Max} sharedMax10={sharedMax10} sharedMax5={sharedMax5} />
+        <TeamPanel file={selectedFiles?.f2} teamName={analysis.team2?.name} color="blue"  selMatches={matches2}
+          onMaxUpdate={setTeam2Max} sharedMax10={sharedMax10} sharedMax5={sharedMax5} />
       </div>
 
       <div className="text-[10px] text-gray-600 shrink-0">
@@ -330,6 +351,8 @@ export default function P9_DistTiros({
         selectedFiles={selectedFiles}
         team1Name={team1Name}
         team2Name={team2Name}
+        matches1={matches1}
+        matches2={matches2}
       />
     </div>
   );

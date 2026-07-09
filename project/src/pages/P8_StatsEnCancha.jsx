@@ -22,11 +22,16 @@ const STAT_OPTIONS = [
 const playerUid = p => p.id != null ? `p${p.id}` : `${p.side}-${p.lineupOrder}`;
 
 function findStats(player, statsMap) {
+  // Match exacto por player_id (SofaScore) — evita mezclar jugadores distintos que
+  // comparten nombre corto "Inicial + Apellido" (ej. Lautaro y Lisandro Martínez,
+  // ambos "L. Martínez").
+  if (player.id != null && statsMap.byId[player.id]) return statsMap.byId[player.id];
+
   const names = [player.shortName, player.name].filter(Boolean);
   for (const name of names) {
     const nl = name.toLowerCase();
-    if (statsMap[nl]) return statsMap[nl];
-    for (const [key, val] of Object.entries(statsMap)) {
+    if (statsMap.byName[nl]) return statsMap.byName[nl];
+    for (const [key, val] of Object.entries(statsMap.byName)) {
       const tokens = nl.split(' ').filter(t => t.length > 3);
       if (tokens.some(t => key.includes(t))) return val;
       const ktokens = key.split(' ').filter(t => t.length > 3);
@@ -67,18 +72,18 @@ const COL_HEADER = {
   '_x_rating': 'Rating', '_x_goles': 'Goles', '_x_asistencias': 'Asis.', '_x_tiros_al_arco': 'Arco',
 };
 
-function PlayerMatchModal({ player, statOption, file, teamName, onClose }) {
+function PlayerMatchModal({ player, statOption, file, teamName, matches, onClose }) {
   const [data, setData]       = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!file || !player) return;
     setLoading(true);
-    fetchPlayerMatches(file, player.name || player.shortName || '', statOption.key)
+    fetchPlayerMatches(file, player.name || player.shortName || '', statOption.key, player.id, matches)
       .then(d => setData(d))
       .catch(() => setData(null))
       .finally(() => setLoading(false));
-  }, [file, player, statOption.key]);
+  }, [file, player, statOption.key, matches]);
 
   useEffect(() => {
     const handler = e => { if (e.key === 'Escape') onClose(); };
@@ -232,7 +237,7 @@ function PlayerDot({ player, statOption, pStats, onDoubleClick }) {
 export default function P8_StatsEnCancha({
   analysis, lineupData, manualPos, setManualPos,
   fieldSwapped, baseSwapped, team1Name, team2Name, selectedFiles,
-  selectedStatKey, setSelectedStatKey,
+  selectedStatKey, setSelectedStatKey, matches1, matches2,
 }) {
   const selectedKey    = selectedStatKey;
   const setSelectedKey = setSelectedStatKey;
@@ -242,16 +247,17 @@ export default function P8_StatsEnCancha({
   const handleCloseModal = useCallback(() => setModalPlayer(null), []);
 
   const statsMap = useMemo(() => {
-    if (!analysis) return { team1: {}, team2: {} };
+    if (!analysis) return { team1: { byId: {}, byName: {} }, team2: { byId: {}, byName: {} } };
     const buildMap = (rankings) => {
-      const map = {};
+      const byId = {}, byName = {};
       Object.values(rankings || {}).forEach(roleRows => {
         (roleRows || []).forEach(row => {
           const name = (row.jugador || '').toLowerCase();
-          if (name) map[name] = { ...(map[name] || {}), ...row };
+          if (row.player_id != null) byId[row.player_id] = { ...(byId[row.player_id] || {}), ...row };
+          if (name) byName[name] = { ...(byName[name] || {}), ...row };
         });
       });
-      return map;
+      return { byId, byName };
     };
     return {
       team1: buildMap(analysis.rankings?.team1),
@@ -275,6 +281,7 @@ export default function P8_StatsEnCancha({
   const isModalTeam1 = modalPlayer ? modalPlayer.team === 'team1' : false;
   const modalFile     = modalPlayer ? (isModalTeam1 ? selectedFiles?.f1 : selectedFiles?.f2) : null;
   const modalTeamName = modalPlayer ? (isModalTeam1 ? team1Name : team2Name) : null;
+  const modalMatches  = modalPlayer ? (isModalTeam1 ? matches1 : matches2) : null;
 
   if (!lineupData) {
     return (
@@ -337,6 +344,7 @@ export default function P8_StatsEnCancha({
               statOption={statOption}
               file={modalFile}
               teamName={modalTeamName}
+              matches={modalMatches}
               onClose={handleCloseModal}
             />
           )}

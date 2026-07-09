@@ -13,6 +13,7 @@ import P6_StatsJugador          from './pages/P6_StatsJugador';
 import P7_StatsVivoJugador      from './pages/P7_StatsVivoJugador';
 import P8_StatsEnCancha         from './pages/P8_StatsEnCancha';
 import P9_DistTiros             from './pages/P9_DistTiros';
+import P10_Momentum             from './pages/P10_Momentum';
 
 const INIT_LIVE = {
   team1: { Goles:0, Corners:0, Tarjetas:0, Rojas:0, Disparos:0, TiroAlArco:0, Pases:0, FoulCometido:0, FoulRecibido:0 },
@@ -39,6 +40,13 @@ export default function App() {
   const [analysis, setAnalysis]     = useState(null);
   const [loading, setLoading]       = useState(false);
   const [selectedFiles, setSelectedFiles] = useState(saved.selectedFiles ?? { f1: null, f2: null });
+  // Filtro de partidos por equipo (Previa): TOTAL/LOCAL/VISITA o "SELECTED" con
+  // una lista puntual de match_id — maneja el análisis compartido por TODA la
+  // app (rankings, esperado/sucedido, dist. de tiros, etc.), no solo la Previa.
+  const [cond1, setCond1]       = useState(saved.cond1 ?? 'TOTAL');
+  const [cond2, setCond2]       = useState(saved.cond2 ?? 'TOTAL');
+  const [matches1, setMatches1] = useState(saved.matches1 ?? null);
+  const [matches2, setMatches2] = useState(saved.matches2 ?? null);
   const [liveStats, setLiveStats]   = useState(saved.liveStats ?? INIT_LIVE);
   const [score, setScore]           = useState(saved.score ?? { home: 0, away: 0 });
   const [timer, setTimer]           = useState(saved.timer ?? 0);
@@ -117,15 +125,22 @@ export default function App() {
     return () => clearInterval(intervalRef.current);
   }, [isRunning]);
 
-  // Al abrir la app: si había equipos cargados en la sesión guardada, recuperar
-  // el análisis (sin tocar el resto del estado en vivo ya restaurado).
+  // Único punto que trae el análisis: corre al abrir la app (restaurando la
+  // sesión guardada) y cada vez que cambian los archivos o el filtro de
+  // partidos (cond1/cond2/matches1/matches2) — así el filtro de la Previa
+  // queda reflejado en TODA la app (rankings, esperado/sucedido, etc.), no
+  // solo en esa pestaña.
   useEffect(() => {
-    if (analysis || !selectedFiles?.f1 || !selectedFiles?.f2) return;
-    getAnalysis(selectedFiles.f1, selectedFiles.f2)
-      .then(setAnalysis)
-      .catch(e => console.error('No se pudo restaurar el análisis guardado:', e));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (!selectedFiles?.f1 || !selectedFiles?.f2) return;
+    setLoading(true);
+    getAnalysis(selectedFiles.f1, selectedFiles.f2, cond1, cond2, matches1, matches2)
+      .then(data => {
+        setAnalysis(data);
+        setLastUpdate(new Date().toLocaleTimeString());
+      })
+      .catch(e => console.error('Error cargando análisis:', e))
+      .finally(() => setLoading(false));
+  }, [selectedFiles, cond1, cond2, matches1, matches2]);
 
   // Autoguardado en localStorage — así el registro en vivo sobrevive
   // si el navegador descarga la pestaña por falta de RAM o se recarga la página.
@@ -134,6 +149,7 @@ export default function App() {
       selectedFiles, liveStats, score, timer, isRunning, period, lastUpdate,
       lineupData, manualPos, playerEvents, selectedStatKey,
       registroEvents, lastRegistroEvent, baseSwapped, visualSwap, lastPulledAt, updateNumber,
+      cond1, cond2, matches1, matches2,
     };
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
@@ -144,33 +160,27 @@ export default function App() {
     selectedFiles, liveStats, score, timer, isRunning, period, lastUpdate,
     lineupData, manualPos, playerEvents, selectedStatKey,
     registroEvents, lastRegistroEvent, baseSwapped, visualSwap, lastPulledAt,
+    cond1, cond2, matches1, matches2,
   ]);
 
-  const handleSelectFiles = async (f1, f2) => {
-    setLoading(true);
+  const handleSelectFiles = (f1, f2) => {
     setSelectedFiles({ f1, f2 });
-    try {
-      const data = await getAnalysis(f1, f2);
-      setAnalysis(data);
-      setLiveStats(INIT_LIVE);
-      setScore({ home: 0, away: 0 });
-      setTimer(0);
-      setIsRunning(false);
-      setPeriod('1T');
-      setLineupData(null);
-      setManualPos(null);
-      setPlayerEvents({});
-      setRegistroEvents([]);
-      setLastRegistroEvent(null);
-      registroHistoryRef.current = [];
-      setBaseSwapped(false);
-      setVisualSwap(false);
-      setLastUpdate(new Date().toLocaleTimeString());
-    } catch (e) {
-      console.error('Error cargando análisis:', e);
-    } finally {
-      setLoading(false);
-    }
+    setCond1('TOTAL'); setCond2('TOTAL');
+    setMatches1(null);  setMatches2(null);
+    setLiveStats(INIT_LIVE);
+    setScore({ home: 0, away: 0 });
+    setTimer(0);
+    setIsRunning(false);
+    setPeriod('1T');
+    setLineupData(null);
+    setManualPos(null);
+    setPlayerEvents({});
+    setRegistroEvents([]);
+    setLastRegistroEvent(null);
+    registroHistoryRef.current = [];
+    setBaseSwapped(false);
+    setVisualSwap(false);
+    // El análisis se trae en el useEffect de arriba (dispara solo con selectedFiles).
   };
 
   const team1Name = analysis?.team1?.name;
@@ -276,6 +286,8 @@ export default function App() {
     lastRegistroEvent, setLastRegistroEvent,
     registroHistoryRef,
     selectedStatKey, setSelectedStatKey,
+    cond1, setCond1, cond2, setCond2,
+    matches1, setMatches1, matches2, setMatches2,
   };
 
   const formation1 = lineupData?.home_formation || '';
@@ -342,7 +354,7 @@ export default function App() {
         </div>
       )}
 
-      <div className="flex-1 p-2 md:p-3">
+      <div className="flex-1 min-h-0 p-2 md:p-3 flex flex-col">
         {tab === 0 && <P1_Comparacion           {...commonProps} />}
         {tab === 1 && <P2_RegistroEquipo         {...commonProps} />}
         {tab === 2 && <P4_EsperadoSucedido       {...commonProps} />}
@@ -352,6 +364,7 @@ export default function App() {
         {tab === 6 && <P8_StatsEnCancha          {...commonProps} />}
         {tab === 7 && <P7_StatsVivoJugador       {...commonProps} />}
         {tab === 8 && <P9_DistTiros              {...commonProps} />}
+        {tab === 9 && <P10_Momentum              {...commonProps} />}
       </div>
 
       <div className="shrink-0 border-t border-gray-800 px-3 py-1 flex items-center justify-between">

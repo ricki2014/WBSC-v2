@@ -1,11 +1,12 @@
 // TAB 1 — Comparación previa estilo Aw.py (1T / 2T / Total)
 import { useState, useEffect } from 'react';
-import { getAnalysis } from '../api';
+import { fetchTeamMatchList } from '../api';
 
 const CONDITIONS = [
-  { value: 'TOTAL',  label: 'Ambos'       },
-  { value: 'LOCAL',  label: 'Solo LOCAL'  },
-  { value: 'VISITA', label: 'Solo VISITA' },
+  { value: 'TOTAL',    label: 'Ambos'       },
+  { value: 'LOCAL',    label: 'Solo LOCAL'  },
+  { value: 'VISITA',   label: 'Solo VISITA' },
+  { value: 'SELECTED', label: '📋 Seleccionados' },
 ];
 
 function v(s, k) {
@@ -110,6 +111,111 @@ function CondSelector({ value, onChange, color }) {
           {c.label}
         </button>
       ))}
+    </div>
+  );
+}
+
+// ─── SELECTOR DE PARTIDOS ("Solo partidos seleccionados") ───────────────────
+function MatchPickerModal({ file, initialSelected, onConfirm, onClose, color }) {
+  const [matches, setMatches] = useState(null);
+  const [error, setError]     = useState('');
+  const [checked, setChecked] = useState(() => new Set(initialSelected ?? []));
+
+  useEffect(() => {
+    if (!file) return;
+    fetchTeamMatchList(file)
+      .then(setMatches)
+      .catch(() => setError('No se pudo cargar la lista de partidos.'));
+  }, [file]);
+
+  useEffect(() => {
+    const h = e => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', h);
+    return () => window.removeEventListener('keydown', h);
+  }, [onClose]);
+
+  const toggle = (id) => {
+    setChecked(prev => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  };
+
+  const accent = color === 'green' ? 'text-green-400' : 'text-blue-400';
+  const btnAccent = color === 'green'
+    ? 'bg-green-600 hover:bg-green-500'
+    : 'bg-blue-600 hover:bg-blue-500';
+
+  return (
+    <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <div
+        className="bg-gray-900 border border-gray-700 rounded-xl p-4 w-full max-w-md max-h-[80vh] flex flex-col"
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between mb-3">
+          <span className={`font-bold text-sm ${accent}`}>📋 Elegir partidos</span>
+          <button onClick={onClose} className="text-gray-500 hover:text-white text-lg leading-none">✕</button>
+        </div>
+
+        {error && <div className="text-red-400 text-xs mb-2">{error}</div>}
+        {!matches && !error && <div className="text-gray-500 text-xs">Cargando partidos...</div>}
+
+        {matches && (
+          <>
+            <div className="flex gap-2 mb-2 text-[10px]">
+              <button
+                className="text-gray-400 hover:text-white underline"
+                onClick={() => setChecked(new Set(matches.map(m => m.match_id)))}
+              >
+                Seleccionar todos
+              </button>
+              <button
+                className="text-gray-400 hover:text-white underline"
+                onClick={() => setChecked(new Set())}
+              >
+                Ninguno
+              </button>
+            </div>
+
+            <div className="overflow-y-auto flex-1 flex flex-col gap-1 pr-1">
+              {matches.length === 0 && (
+                <div className="text-gray-500 text-xs">Este equipo no tiene partidos cargados.</div>
+              )}
+              {matches.map(m => (
+                <label
+                  key={m.match_id}
+                  className="flex items-center gap-2 text-xs bg-white/5 hover:bg-white/10 rounded-lg px-2 py-1.5 cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    checked={checked.has(m.match_id)}
+                    onChange={() => toggle(m.match_id)}
+                    className="shrink-0"
+                  />
+                  <span className="text-gray-500 w-9 shrink-0">{m.condicion === 'LOCAL' ? 'L' : 'V'}</span>
+                  <span className="text-gray-300 truncate flex-1">{m.partido || m.rival}</span>
+                  <span className="text-gray-500 shrink-0">{m.resultado}</span>
+                  <span className="text-gray-600 text-[10px] shrink-0">{m.fecha}</span>
+                </label>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div className="flex justify-end gap-2 mt-3 pt-3 border-t border-gray-800">
+          <button onClick={onClose} className="text-xs px-3 py-1.5 rounded-lg border border-gray-600 text-gray-300 hover:border-gray-400">
+            Cancelar
+          </button>
+          <button
+            disabled={checked.size === 0}
+            onClick={() => onConfirm(Array.from(checked))}
+            className={`text-xs px-3 py-1.5 rounded-lg text-white font-medium disabled:opacity-40 disabled:cursor-not-allowed ${btnAccent}`}
+          >
+            Aplicar ({checked.size})
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -276,30 +382,35 @@ function GoalDistSection({ dist1, dist2, name1, name2 }) {
 
 // ─── COMPONENTE PRINCIPAL ─────────────────────────────────────────────────────
 
-export default function P1_Comparacion({ analysis, selectedFiles }) {
-  const [cond1, setCond1] = useState('TOTAL');
-  const [cond2, setCond2] = useState('TOTAL');
-  const [localAnalysis, setLocalAnalysis] = useState(null);
-  const [loading, setLoading] = useState(false);
+export default function P1_Comparacion({
+  analysis, selectedFiles,
+  cond1, setCond1, cond2, setCond2,
+  matches1, setMatches1, matches2, setMatches2,
+}) {
+  // Qué modal de selección de partidos está abierto ('team1' | 'team2' | null)
+  const [picker, setPicker] = useState(null);
 
-  // Sincronizar con el analysis inicial del App
-  useEffect(() => {
-    setLocalAnalysis(analysis);
-    setCond1('TOTAL');
-    setCond2('TOTAL');
-  }, [analysis]);
+  const makeCondHandler = (setCond, setMatches, key) => (value) => {
+    if (value === 'SELECTED') {
+      setPicker(key);
+      return;
+    }
+    setMatches(null);
+    setCond(value);
+  };
 
-  // Re-fetch cuando cambia condición
-  useEffect(() => {
-    if (!selectedFiles?.f1 || !selectedFiles?.f2) return;
-    setLoading(true);
-    getAnalysis(selectedFiles.f1, selectedFiles.f2, cond1, cond2)
-      .then(data => setLocalAnalysis(data))
-      .catch(e => console.error(e))
-      .finally(() => setLoading(false));
-  }, [cond1, cond2, selectedFiles]);
+  const handleConfirmPicker = (ids) => {
+    if (picker === 'team1') { setMatches1(ids); setCond1('SELECTED'); }
+    else                    { setMatches2(ids); setCond2('SELECTED'); }
+    setPicker(null);
+  };
 
-  if (!localAnalysis) return (
+  const clearSelection = (key) => {
+    if (key === 'team1') { setMatches1(null); setCond1('TOTAL'); }
+    else                 { setMatches2(null); setCond2('TOTAL'); }
+  };
+
+  if (!analysis) return (
     <div className="h-full flex items-center justify-center text-gray-500 text-sm">
       <div className="text-center">
         <div className="text-4xl mb-3">📊</div>
@@ -308,7 +419,7 @@ export default function P1_Comparacion({ analysis, selectedFiles }) {
     </div>
   );
 
-  const { team1, team2 } = localAnalysis;
+  const { team1, team2 } = analysis;
 
   return (
     <div className="flex flex-col gap-3 p-1">
@@ -317,19 +428,36 @@ export default function P1_Comparacion({ analysis, selectedFiles }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 shrink-0">
         <div className="bg-gray-900 border border-green-800/30 rounded-xl px-3 py-2">
           <div className="text-green-400 font-bold text-xs mb-1.5">{team1.name}</div>
-          <CondSelector value={cond1} onChange={setCond1} color="green" />
+          <CondSelector value={cond1} onChange={makeCondHandler(setCond1, setMatches1, 'team1')} color="green" />
+          {cond1 === 'SELECTED' && (
+            <div className="flex items-center gap-2 mt-1.5 text-[10px]">
+              <span className="text-green-400">📋 {matches1?.length ?? 0} partido(s) seleccionado(s)</span>
+              <button onClick={() => setPicker('team1')} className="text-gray-400 hover:text-white underline">editar</button>
+              <button onClick={() => clearSelection('team1')} className="text-gray-400 hover:text-white underline">quitar</button>
+            </div>
+          )}
         </div>
         <div className="bg-gray-900 border border-blue-800/30 rounded-xl px-3 py-2">
           <div className="text-blue-400 font-bold text-xs mb-1.5">{team2.name}</div>
-          <CondSelector value={cond2} onChange={setCond2} color="blue" />
+          <CondSelector value={cond2} onChange={makeCondHandler(setCond2, setMatches2, 'team2')} color="blue" />
+          {cond2 === 'SELECTED' && (
+            <div className="flex items-center gap-2 mt-1.5 text-[10px]">
+              <span className="text-blue-400">📋 {matches2?.length ?? 0} partido(s) seleccionado(s)</span>
+              <button onClick={() => setPicker('team2')} className="text-gray-400 hover:text-white underline">editar</button>
+              <button onClick={() => clearSelection('team2')} className="text-gray-400 hover:text-white underline">quitar</button>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Loading bar */}
-      {loading && (
-        <div className="h-0.5 bg-gray-800 shrink-0 rounded">
-          <div className="h-full bg-yellow-500 animate-pulse w-full rounded" />
-        </div>
+      {picker && (
+        <MatchPickerModal
+          file={picker === 'team1' ? selectedFiles?.f1 : selectedFiles?.f2}
+          initialSelected={picker === 'team1' ? matches1 : matches2}
+          color={picker === 'team1' ? 'green' : 'blue'}
+          onConfirm={handleConfirmPicker}
+          onClose={() => setPicker(null)}
+        />
       )}
 
       {/* Fichas de equipo lado a lado */}
@@ -343,15 +471,15 @@ export default function P1_Comparacion({ analysis, selectedFiles }) {
 
       {/* Distribución de goles */}
       <GoalDistSection
-        dist1={localAnalysis.goals_dist?.team1}
-        dist2={localAnalysis.goals_dist?.team2}
+        dist1={analysis.goals_dist?.team1}
+        dist2={analysis.goals_dist?.team2}
         name1={team1.name}
         name2={team2.name}
       />
 
       <div className="bg-gray-900/40 border border-gray-700/40 rounded-lg p-2 text-[10px] text-gray-500 flex gap-2 shrink-0">
         <span>ℹ️</span>
-        <span>Datos desde Excel · Modelo: Distribución de Poisson · Filtros independientes por equipo</span>
+        <span>Datos desde Excel · Modelo: Distribución de Poisson · Filtros independientes por equipo · el filtro se aplica a toda la app</span>
       </div>
     </div>
   );

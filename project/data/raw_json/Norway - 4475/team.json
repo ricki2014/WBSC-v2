@@ -1,0 +1,262 @@
+{
+  "team": {
+    "name": "Norway",
+    "slug": "norway",
+    "shortName": "Norway",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "International",
+      "slug": "international",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 12,
+      "country": {},
+      "id": 4,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دولي",
+          "ru": "Международные"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "tournament": {
+      "name": "World Cup Qual. UEFA G",
+      "slug": "world-championship-qual-uefa-g",
+      "category": {
+        "name": "Europe",
+        "slug": "europe",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 19,
+        "country": {},
+        "id": 1465,
+        "flag": "europe",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أوروبا",
+            "hi": "यूरोप",
+            "bn": "ইউরোপ",
+            "ru": "Европа"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "uniqueTournament": {
+        "name": "World Cup Qual. UEFA",
+        "slug": "world-championship-qual-uefa",
+        "primaryColorHex": "#9a1133",
+        "secondaryColorHex": "#c11541",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أوروبا",
+              "hi": "यूरोप",
+              "bn": "ইউরোপ",
+              "ru": "Европа"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "userCount": 212258,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 11,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تصفيات كأس العالم للاتحاد الأوروبي لكرة القدم",
+            "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ কোয়াল. উয়েফা",
+            "hi": "वर्ल्ड चैंपियनशिप क्वालीफाइंग यूईएफए",
+            "ru": "Квалификация к Кубку мира УЕФА"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 644,
+      "groupSign": "G",
+      "isLive": false,
+      "id": 1763,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تصفيات كأس العالم - الاتحاد الأوروبي G",
+          "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ কোয়াল. উয়েফা জি",
+          "hi": "वर्ल्ड चैंपियनशिप क्वालिफिकेशन यूईएफए जी",
+          "ru": "Квалификация Кубка мира, УЕФА G"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "UEFA Nations League",
+      "slug": "uefa-nations-league",
+      "primaryColorHex": "#3a4179",
+      "secondaryColorHex": "#e5a422",
+      "category": {
+        "name": "Europe",
+        "slug": "europe",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 19,
+        "country": {},
+        "id": 1465,
+        "flag": "europe",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أوروبا",
+            "hi": "यूरोप",
+            "bn": "ইউরোপ",
+            "ru": "Европа"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 274472,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 10783,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دوري أمم أوروبا",
+          "bn": "উয়েফা নেশনস লিগ",
+          "hi": "यूईएफए नेशंस लीग",
+          "ru": "Лига наций УЕФА"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 321699,
+    "manager": {
+      "name": "Ståle Solbakken",
+      "slug": "stale-solbakken",
+      "shortName": "S. Solbakken",
+      "country": {
+        "alpha2": "NO",
+        "alpha3": "NOR",
+        "name": "Norway",
+        "slug": "norway"
+      },
+      "id": 53102,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ستالي سولباكن",
+          "bn": "স্টেল সোলবাক্কেন",
+          "hi": "स्टाल सोलबैकेन",
+          "ru": "Стаале Солбаккен"
+        },
+        "shortNameTranslation": {
+          "ar": "س. سولباكن",
+          "bn": "এস. সোলবাক্কেন",
+          "hi": "एस. सोलबैकेन",
+          "ru": "С. Солбаккен"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Oslo",
+        "country": {
+          "alpha2": "NO",
+          "alpha3": "NOR",
+          "name": "Norway",
+          "slug": "norway"
+        },
+        "id": 19248
+      },
+      "venueCoordinates": {
+        "latitude": 59.949136,
+        "longitude": 10.734349
+      },
+      "hidden": true,
+      "slug": "ullevaal",
+      "name": "Ullevaal",
+      "capacity": 28000,
+      "country": {
+        "alpha2": "NO",
+        "alpha3": "NOR",
+        "name": "Norway",
+        "slug": "norway"
+      },
+      "id": 7,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب أوليفول",
+          "hi": "उल्लेवाल",
+          "bn": "উল্লেভাল",
+          "ru": "Стадион Ullevaal"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Ullevaal",
+        "capacity": 28000
+      }
+    },
+    "nameCode": "NOR",
+    "ranking": 31,
+    "class": 4,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "NO",
+      "alpha3": "NOR",
+      "name": "Norway",
+      "slug": "norway"
+    },
+    "id": 4475,
+    "fullName": "Norway",
+    "teamColors": {
+      "primary": "#ef2b2d",
+      "secondary": "#001f5b",
+      "text": "#001f5b"
+    },
+    "foundationDateTimestamp": -2135635200,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "النرويج",
+        "bn": "নরওয়ে",
+        "hi": "नॉर्वे",
+        "ru": "Норвегия"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "avgRating": "6.88",
+    "position": 2,
+    "value": "6",
+    "form": [
+      "W",
+      "W"
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "team": {
+    "name": "England",
+    "slug": "england",
+    "shortName": "England",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "International",
+      "slug": "international",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 12,
+      "country": {},
+      "id": 4,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دولي",
+          "ru": "Международные"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "tournament": {
+      "name": "World Cup Qual. UEFA I",
+      "slug": "world-championship-qual-uefa-i",
+      "category": {
+        "name": "Europe",
+        "slug": "europe",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 19,
+        "country": {},
+        "id": 1465,
+        "flag": "europe",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أوروبا",
+            "hi": "यूरोप",
+            "bn": "ইউরোপ",
+            "ru": "Европа"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "uniqueTournament": {
+        "name": "World Cup Qual. UEFA",
+        "slug": "world-championship-qual-uefa",
+        "primaryColorHex": "#9a1133",
+        "secondaryColorHex": "#c11541",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أوروبا",
+              "hi": "यूरोप",
+              "bn": "ইউরোপ",
+              "ru": "Европа"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "userCount": 212258,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 11,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تصفيات كأس العالم للاتحاد الأوروبي لكرة القدم",
+            "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ কোয়াল. উয়েফা",
+            "hi": "वर्ल्ड चैंपियनशिप क्वालीफाइंग यूईएफए",
+            "ru": "Квалификация к Кубку мира УЕФА"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 642,
+      "groupSign": "I",
+      "isLive": false,
+      "id": 7255,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تصفيات بطولة العالم، الاتحاد الأوروبي لكرة القدم I",
+          "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ কোয়ালিফিকেশন. উয়েফা আই",
+          "hi": "वर्ल्ड चैंपियनशिप क्वालीफ. यूईएफए I",
+          "ru": "Квалификация чемпионата мира, УЕФА I"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "UEFA Nations League",
+      "slug": "uefa-nations-league",
+      "primaryColorHex": "#3a4179",
+      "secondaryColorHex": "#e5a422",
+      "category": {
+        "name": "Europe",
+        "slug": "europe",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 19,
+        "country": {},
+        "id": 1465,
+        "flag": "europe",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أوروبا",
+            "hi": "यूरोप",
+            "bn": "ইউরোপ",
+            "ru": "Европа"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 274472,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 10783,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دوري أمم أوروبا",
+          "bn": "উয়েফা নেশনস লিগ",
+          "hi": "यूईएफए नेशंस लीग",
+          "ru": "Лига наций УЕФА"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 1325954,
+    "manager": {
+      "name": "Thomas Tuchel",
+      "slug": "thomas-tuchel",
+      "shortName": "T. Tuchel",
+      "country": {
+        "alpha2": "DE",
+        "alpha3": "DEU",
+        "name": "Germany",
+        "slug": "germany"
+      },
+      "id": 785186,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "توماس توخيل",
+          "bn": "টমাস টুখেল",
+          "hi": "थॉमस टुचेल",
+          "ru": "Томас Тухель"
+        },
+        "shortNameTranslation": {
+          "ar": "ت. توخيل",
+          "bn": "টি. টুখেল",
+          "hi": "टी. टुचेल",
+          "ru": "Т. Тухель"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "London",
+        "country": {
+          "alpha2": "EN",
+          "alpha3": "ENG",
+          "name": "England",
+          "slug": "england"
+        },
+        "id": 17960
+      },
+      "venueCoordinates": {
+        "latitude": 51.556069,
+        "longitude": -0.279603
+      },
+      "hidden": false,
+      "slug": "wembley-stadium",
+      "name": "Wembley Stadium",
+      "capacity": 90000,
+      "country": {
+        "alpha2": "EN",
+        "alpha3": "ENG",
+        "name": "England",
+        "slug": "england"
+      },
+      "id": 8,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب ويمبلي",
+          "hi": "वेम्बली स्टेडियम",
+          "bn": "ওয়েম্বলি স্টেডিয়াম",
+          "ru": "Уэмбли"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Wembley Stadium",
+        "capacity": 90000
+      }
+    },
+    "nameCode": "ENG",
+    "ranking": 4,
+    "class": 4,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "EN",
+      "alpha3": "ENG",
+      "name": "England",
+      "slug": "england"
+    },
+    "id": 4713,
+    "fullName": "England",
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#cc0000",
+      "text": "#cc0000"
+    },
+    "foundationDateTimestamp": -3350851200,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "انجلترا",
+        "bn": "ইংল্যান্ড",
+        "hi": "इंग्लैंड",
+        "ru": "Англия"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "avgRating": "6.93",
+    "position": 1,
+    "value": "4",
+    "form": [
+      "W",
+      "D"
+    ]
+  }
+}

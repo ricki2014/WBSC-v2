@@ -1,0 +1,247 @@
+{
+  "team": {
+    "name": "Mexico",
+    "slug": "mexico",
+    "shortName": "Mexico",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "tournament": {
+      "name": "CONCACAF Gold Cup, Group A",
+      "slug": "concacaf-gold-cup-group-a",
+      "category": {
+        "name": "North & Central America",
+        "slug": "north-central-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 15,
+        "country": {},
+        "id": 1469,
+        "flag": "north-and-central-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الشمالية والوسطى",
+            "ru": "Северная и Центральная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "uniqueTournament": {
+        "name": "CONCACAF Gold Cup",
+        "slug": "concacaf-gold-cup",
+        "primaryColorHex": "#031236",
+        "secondaryColorHex": "#ffc84e",
+        "category": {
+          "name": "North & Central America",
+          "slug": "north-central-america",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 15,
+          "country": {},
+          "id": 1469,
+          "flag": "north-and-central-america",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أمريكا الشمالية والوسطى",
+              "ru": "Северная и Центральная Америка"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "userCount": 42231,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 140,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "es-la": "Copa Oro",
+            "ar": "كأس الكونكاكاف الذهبي",
+            "bn": "কনকাক্যাফ গোল্ড কাপ",
+            "hi": "कोंकाकाफ गोल्ड कप",
+            "es": "Copa Oro",
+            "ru": "Кубок Золотой КОНКАКАФ"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 118,
+      "groupSign": "A",
+      "isLive": false,
+      "id": 3328,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "es": "Copa Oro, Grupo A",
+          "ar": "كأس كونكاكاف الذهبية - المجموعة A",
+          "bn": "কনকাকাফ গোল্ড কাপ, গ্রুপ এ",
+          "hi": "कॉनकैकाफ़ गोल्ड कप, ग्रुप ए",
+          "es-la": "Copa Oro, Grupo A",
+          "ru": "Кубок Золотой КОНКАКАФ, Группа A"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "World Championship",
+      "slug": "world-championship",
+      "primaryColorHex": "#d20a11",
+      "secondaryColorHex": "#e8bb57",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 1908018,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 16,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "pt-pt": "Mundial",
+          "ar": "كأس العالم",
+          "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ",
+          "hi": "वर्ल्ड चैंपियनशिप",
+          "hr": "FIFA Svjetsko prvenstvo",
+          "az": "FİFA Dünya Kuboku",
+          "nl": "Wereldkampioenschap",
+          "fr": "Coupe du monde",
+          "de": "Weltmeisterschaft",
+          "el": "Παγκόσμιο Κύπελλο",
+          "hu": "FIFA Világbajnokság",
+          "id": "Piala Dunia FIFA",
+          "it": "Coppa del Mondo FIFA",
+          "ja": "FIFAワールドカップ",
+          "ko": "FIFA 월드컵",
+          "no": "Verdensmesterskapet",
+          "pl": "Mistrzostwa Świata",
+          "pt": "Copa do Mundo FIFA",
+          "ro": "Campionatul Mondial",
+          "es": "Copa Mundial",
+          "es-la": "Copa Mundial",
+          "sv": "Världsmästerskapet",
+          "th": "ฟุตบอลโลก",
+          "tr": "FIFA Dünya Kupası",
+          "vi": "Giải Vô Địch Thế Giới",
+          "ru": "Чемпионат мира",
+          "sr": "Светско првенство"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 483279,
+    "manager": {
+      "name": "Javier Aguirre",
+      "slug": "javier-aguirre",
+      "shortName": "J. Aguirre",
+      "country": {
+        "alpha2": "MX",
+        "alpha3": "MEX",
+        "name": "Mexico",
+        "slug": "mexico"
+      },
+      "id": 784504,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "خافيير أغيري",
+          "bn": "জাভিয়ার আগুয়েরে",
+          "hi": "जेवियर एगुइरे",
+          "ru": "Хавьер Агирре"
+        },
+        "shortNameTranslation": {
+          "ar": "ج. أغيري",
+          "bn": "জে. আগুয়েরে",
+          "hi": "जे. एगुइरे",
+          "ru": "Х. Агирре"
+        }
+      }
+    },
+    "nameCode": "MEX",
+    "ranking": 14,
+    "class": 4,
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "country": {
+      "alpha2": "MX",
+      "alpha3": "MEX",
+      "name": "Mexico",
+      "slug": "mexico"
+    },
+    "id": 4781,
+    "fullName": "Mexico",
+    "teamColors": {
+      "primary": "#1a4d3e",
+      "secondary": "#960000",
+      "text": "#960000"
+    },
+    "foundationDateTimestamp": -1336780800,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "المكسيك",
+        "bn": "মেক্সিকো",
+        "hi": "मेक्सिको",
+        "ru": "Мексика"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "avgRating": "7.00",
+    "position": 1,
+    "value": "6",
+    "form": [
+      "W",
+      "W"
+    ]
+  }
+}
