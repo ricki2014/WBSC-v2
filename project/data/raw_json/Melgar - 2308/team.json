@@ -1,0 +1,306 @@
+{
+  "team": {
+    "name": "Melgar",
+    "slug": "melgar",
+    "shortName": "Melgar",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "tournament": {
+      "name": "Liga 1, Clausura",
+      "slug": "liga-1-clausura",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "uniqueTournament": {
+        "name": "Liga 1",
+        "slug": "liga-1",
+        "secondaryColorHex": "#f91018",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          },
+          "transferPeriod": [
+            {
+              "activeFrom": "06-01 00:00",
+              "activeTo": "09-18 00:00"
+            },
+            {
+              "activeFrom": "12-30 00:00",
+              "activeTo": "02-16 00:00"
+            }
+          ]
+        },
+        "userCount": 21942,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 406,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري الممتاز",
+            "bn": "লিগা 1",
+            "hi": "लीगा 1",
+            "ru": "Лига 1"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 218,
+      "roundPrefix": "Clausura",
+      "isLive": false,
+      "id": 34468,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دوري 1، إياب",
+          "bn": "লিগা 1, ক্লাউসুরা",
+          "hi": "लीगा 1, क्लॉसुरा",
+          "ru": "Лига 1, Клаусура"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 21942,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 26485,
+    "manager": {
+      "name": "Miguel Rondelli",
+      "slug": "miguel-rondelli",
+      "shortName": "M. Rondelli",
+      "country": {},
+      "id": 796898,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ميغيل رونديلي",
+          "ru": "Мигель Рондельи"
+        },
+        "shortNameTranslation": {
+          "ar": "م. رونديلي",
+          "ru": "М. Рондельи"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Arequipa",
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 23778
+      },
+      "venueCoordinates": {
+        "latitude": -16.407304,
+        "longitude": -71.520469
+      },
+      "hidden": true,
+      "slug": "estadio-de-la-unsa",
+      "name": "Estadio de la UNSA",
+      "capacity": 60000,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 5172,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب دي لا يو إن إس إيه",
+          "hi": "एस्टेडियो डी ला यूएनएसए",
+          "bn": "এস্তাদিও দে লা ইউএনএসএ",
+          "ru": "Стадион de la UNSA"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio de la UNSA",
+        "capacity": 60000
+      }
+    },
+    "nameCode": "MEL",
+    "class": 1,
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2308,
+    "fullName": "Melgar",
+    "teamColors": {
+      "primary": "#000000",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "foundationDateTimestamp": -1728518400,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ميلغار",
+        "ru": "ФБК Мельгар"
+      },
+      "shortNameTranslation": {
+        "ar": "ميلغار"
+      }
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "position": 3,
+    "value": "0",
+    "form": [
+      "L"
+    ]
+  }
+}

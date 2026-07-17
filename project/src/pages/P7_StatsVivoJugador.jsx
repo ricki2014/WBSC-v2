@@ -15,7 +15,15 @@ const STAT_OPTIONS = [
   { key: 'Recup. p90',      label: 'Recuperaciones',   liveKey: null,       icon: '💪', color: 'text-cyan-400'   },
   { key: 'Interc. p90',     label: 'Intercepciones',   liveKey: null,       icon: '✋', color: 'text-pink-400'   },
   { key: 'Duelos %',        label: 'Duelos %',         liveKey: null,       icon: '⚔️', color: 'text-amber-400'  },
+  { key: 'Tarjetas Am. p90',  label: 'Tarjetas Am.',   liveKey: 'Amarilla',            icon: '🟨',   color: 'text-yellow-300' },
+  { key: 'Tarjetas Roja p90', label: 'Tarjetas Roja',  liveKey: 'Roja',                icon: '🟥',   color: 'text-red-500'    },
+  // Roja pesa x2 (equivalencia estándar en fútbol): liveKey como pares [evento, peso].
+  { key: 'Tarjetas Tot. p90', label: 'Tarjetas',       liveKey: [['Amarilla', 1], ['Roja', 2]], icon: '🟨🟥', color: 'text-amber-300'  },
 ];
+
+// Las 3 variantes de tarjetas se agrupan en un solo botón con un mini-toggle
+// (ver sidebar más abajo) en vez de ocupar 3 filas separadas.
+const CARD_MODE_KEY = { am: 'Tarjetas Am. p90', roja: 'Tarjetas Roja p90', ambas: 'Tarjetas Tot. p90' };
 
 
 function FieldMarkings() {
@@ -79,7 +87,7 @@ const COL_LABELS = {
   tiros_totales: 'Tiros', rating: 'Rating',
 };
 
-function PlayerMatchModal({ player, statOption, file, teamName, matches, onClose }) {
+function PlayerMatchModal({ player, statOption, file, teamName, matches, cond, onClose }) {
   const [data, setData]       = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -87,11 +95,11 @@ function PlayerMatchModal({ player, statOption, file, teamName, matches, onClose
     if (!file || !player) return;
     const name = player.name || player.shortName || '';
     setLoading(true);
-    fetchPlayerMatches(file, name, statOption.key, player.id, matches)
+    fetchPlayerMatches(file, name, statOption.key, player.id, matches, cond)
       .then(d => setData(d))
       .catch(() => setData(null))
       .finally(() => setLoading(false));
-  }, [file, player, statOption.key, matches]);
+  }, [file, player, statOption.key, matches, cond]);
 
   useEffect(() => {
     const handler = e => { if (e.key === 'Escape') onClose(); };
@@ -250,7 +258,10 @@ function PlayerDot({ player, statOption, pStats, liveEvents, onDragStart, onDrop
 
   // Calcular valor a mostrar
   const histRaw = pStats?.[statOption.key] ?? null;
-  const liveVal = statOption.liveKey ? (liveEvents?.[uid]?.[statOption.liveKey] ?? 0) : 0;
+  const liveVal = !statOption.liveKey ? 0
+    : Array.isArray(statOption.liveKey)
+      ? statOption.liveKey.reduce((s, [k, w]) => s + (liveEvents?.[uid]?.[k] ?? 0) * (w ?? 1), 0)
+      : (liveEvents?.[uid]?.[statOption.liveKey] ?? 0);
 
   let badge = null;
   let exceeded = false;
@@ -261,8 +272,12 @@ function PlayerDot({ player, statOption, pStats, liveEvents, onDragStart, onDrop
     if (statOption.liveKey) {
       // Mostrar restante: histórico − lo ya hecho
       const remaining = hist - liveVal;
-      exceeded = remaining <= 0;
-      started  = !exceeded && liveVal > 0;
+      // Promedio histórico 0 → no hay objetivo real que superar, se deja en
+      // negro (sin flechita ni color) aunque el jugador ya haya hecho algo.
+      if (hist > 0) {
+        exceeded = remaining <= 0;
+        started  = !exceeded && liveVal > 0;
+      }
       badge = exceeded ? `↓${fmt(Math.abs(remaining))}` : fmt(remaining);
     } else {
       // Sin live tracking: solo mostrar histórico
@@ -309,11 +324,12 @@ function PlayerDot({ player, statOption, pStats, liveEvents, onDragStart, onDrop
 export default function P7_StatsVivoJugador({
   analysis, lineupData, manualPos, setManualPos, playerEvents,
   fieldSwapped, baseSwapped, team1Name, team2Name, selectedFiles,
-  selectedStatKey, setSelectedStatKey, matches1, matches2,
+  selectedStatKey, setSelectedStatKey, matches1, matches2, cond1, cond2,
 }) {
   const selectedKey    = selectedStatKey;
   const setSelectedKey = setSelectedStatKey;
   const [modalPlayer, setModalPlayer] = useState(null);
+  const [cardMode, setCardMode] = useState('am');
   const swapped = fieldSwapped;
 
   const handleCloseModal = useCallback(() => setModalPlayer(null), []);
@@ -396,6 +412,7 @@ export default function P7_StatsVivoJugador({
   const modalFile     = modalPlayer ? (isModalTeam1 ? selectedFiles?.f1 : selectedFiles?.f2) : null;
   const modalTeamName = modalPlayer ? (isModalTeam1 ? team1Name : team2Name) : null;
   const modalMatches  = modalPlayer ? (isModalTeam1 ? matches1 : matches2) : null;
+  const modalCond     = modalPlayer ? (isModalTeam1 ? cond1 : cond2) : 'TOTAL';
 
   if (!lineupData) {
     return (
@@ -473,6 +490,7 @@ export default function P7_StatsVivoJugador({
               file={modalFile}
               teamName={modalTeamName}
               matches={modalMatches}
+              cond={modalCond}
               onClose={handleCloseModal}
             />
           )}
@@ -502,7 +520,7 @@ export default function P7_StatsVivoJugador({
       <div className="w-full md:w-32 lg:w-44 shrink-0 flex flex-col gap-1.5 overflow-auto">
         <div className="text-white font-bold text-xs mb-0.5 shrink-0">📊 Estadística a ver</div>
 
-        {STAT_OPTIONS.map(s => {
+        {STAT_OPTIONS.filter(s => !Object.values(CARD_MODE_KEY).includes(s.key)).map(s => {
           const active = selectedKey === s.key;
           return (
             <button
@@ -525,6 +543,47 @@ export default function P7_StatsVivoJugador({
             </button>
           );
         })}
+
+        {/* Tarjetas: un solo botón con mini-toggle Amarilla/Roja/Ambas */}
+        {(() => {
+          const cardKey = CARD_MODE_KEY[cardMode];
+          const cardOpt = STAT_OPTIONS.find(s => s.key === cardKey);
+          const active  = selectedKey === cardKey;
+          return (
+            <div className={`w-full flex flex-col gap-1.5 px-2.5 py-2 rounded-lg border transition-all
+              ${active
+                ? 'bg-gray-700 border-gray-400 shadow-inner'
+                : 'bg-gray-900 border-gray-700/60 hover:bg-gray-800 hover:border-gray-500'}`}>
+              <button
+                onClick={() => setSelectedKey(cardKey)}
+                className="w-full flex items-center gap-2 text-left">
+                <span className="text-sm shrink-0">{cardOpt.icon}</span>
+                <div className="min-w-0 flex-1">
+                  <div className={`text-[11px] font-medium leading-tight ${active ? cardOpt.color : 'text-gray-300'}`}>
+                    Tarjetas
+                  </div>
+                  <div className="text-[9px] text-gray-600 leading-tight">{cardOpt.key}</div>
+                </div>
+                <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-green-500 opacity-70" title="Soporta descuento en vivo"/>
+              </button>
+              <div className="flex gap-1">
+                {[['am', '🟨', 'Amarilla'], ['roja', '🟥', 'Roja'], ['ambas', '🟨🟥', 'Ambas']].map(([m, ic, title]) => (
+                  <button
+                    key={m}
+                    type="button"
+                    title={title}
+                    onClick={() => { setCardMode(m); setSelectedKey(CARD_MODE_KEY[m]); }}
+                    className={`flex-1 text-[10px] leading-none py-1 rounded border transition-all
+                      ${cardMode === m
+                        ? 'bg-gray-600 border-gray-400'
+                        : 'bg-gray-950 border-gray-800 hover:bg-gray-800'}`}>
+                    {ic}
+                  </button>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
 
         <div className="mt-1 text-[9px] text-gray-700 leading-relaxed shrink-0">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500 mr-1 opacity-70"/>

@@ -13,7 +13,9 @@ import P6_StatsJugador          from './pages/P6_StatsJugador';
 import P7_StatsVivoJugador      from './pages/P7_StatsVivoJugador';
 import P8_StatsEnCancha         from './pages/P8_StatsEnCancha';
 import P9_DistTiros             from './pages/P9_DistTiros';
+import P11_DistTarjetas         from './pages/P11_DistTarjetas';
 import P10_Momentum             from './pages/P10_Momentum';
+import P12_ScorelineTramos      from './pages/P12_ScorelineTramos';
 
 const INIT_LIVE = {
   team1: { Goles:0, Corners:0, Tarjetas:0, Rojas:0, Disparos:0, TiroAlArco:0, Pases:0, FoulCometido:0, FoulRecibido:0 },
@@ -364,7 +366,9 @@ export default function App() {
         {tab === 6 && <P8_StatsEnCancha          {...commonProps} />}
         {tab === 7 && <P7_StatsVivoJugador       {...commonProps} />}
         {tab === 8 && <P9_DistTiros              {...commonProps} />}
-        {tab === 9 && <P10_Momentum              {...commonProps} />}
+        {tab === 9 && <P11_DistTarjetas          {...commonProps} />}
+        {tab === 10 && <P10_Momentum             {...commonProps} />}
+        {tab === 11 && <P12_ScorelineTramos      {...commonProps} />}
       </div>
 
       <div className="shrink-0 border-t border-gray-800 px-3 py-1 flex items-center justify-between">

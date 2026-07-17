@@ -1,0 +1,200 @@
+{
+  "team": {
+    "name": "Deportivo Garcilaso",
+    "slug": "deportivo-garcilaso",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 21942,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 8823,
+    "manager": {
+      "name": "Sebastian Enrique Dominguez",
+      "slug": "sebastian-enrique-dominguez",
+      "shortName": "S. E. Dominguez",
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 804671,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سيباستيان إنريكي دومينغيز",
+          "ru": "Себастьян Энрике Домингес"
+        },
+        "shortNameTranslation": {
+          "ar": "س. إ. دومينغيز",
+          "ru": "С. Домингес"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Cusco",
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 31705
+      },
+      "venueCoordinates": {
+        "latitude": -13.525519,
+        "longitude": -71.966476
+      },
+      "hidden": true,
+      "slug": "estadio-inca-garcilaso-de-la-vega",
+      "name": "Estadio Inca Garcilaso de la Vega",
+      "capacity": 42056,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 980,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب إنكا غارثيلاسو دي لا فيغا",
+          "hi": "एस्टेडियो इंका गार्सिलासो डे ला वेगा",
+          "bn": "এস্তাদিও ইনকা গারসিলাসো দে লা ভেগা",
+          "ru": "Стадион Estadio Inca Garcilaso de la Vega"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio Inca Garcilaso de la Vega",
+        "capacity": 42056
+      }
+    },
+    "nameCode": "DEP",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 458584,
+    "fullName": "Deportivo Garcilaso",
+    "teamColors": {
+      "primary": "#374df5",
+      "secondary": "#374df5",
+      "text": "#ffffff"
+    },
+    "foundationDateTimestamp": -401414400,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ديبورتيفو غارسيلاسو",
+        "ru": "Депортиво Гарсиласо"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "position": 3,
+    "value": "1",
+    "form": [
+      "D",
+      "L"
+    ]
+  }
+}

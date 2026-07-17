@@ -11,6 +11,17 @@ import json
 from scipy.stats import poisson
 from curl_cffi import requests as requests_cffi
 
+# En Windows, cuando el proceso arranca con stdout/stderr en cp1252 (charmap)
+# en vez de UTF-8, cualquier print() con emoji (🔵, ✅, etc. — hay varios en
+# downloader/) tira UnicodeEncodeError y aborta el request a mitad de camino
+# (se veía como "No se pudo consultar SofaScore: 'charmap' codec can't
+# encode..." aunque la consulta a SofaScore nunca fue el problema).
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")
+    except (AttributeError, ValueError):
+        pass
+
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
@@ -23,6 +34,11 @@ PASADO_DIR = os.path.join(ROOT_DIR, "data", "partido_pasado")
 # que viven fuera de project/. Sirve de fuente para el gráfico de Attack Momentum.
 RAW_JSON_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "raw_json")
 
+# Igual idea que RAW_JSON_DIR pero para árbitros — una carpeta por árbitro
+# ("{Nombre} - {referee_id}") con event.json + incidents.json de sus últimos
+# partidos, que alimenta el análisis de tarjetas por árbitro.
+RAW_REFEREE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "raw_referees")
+
 # El downloader (downloader/) vive fuera de project/ y usa imports de script suelto
 # (from config import ..., from utils import ...) — lo agregamos al path para poder
 # reusarlo desde acá sin duplicar código.
@@ -32,10 +48,64 @@ if DOWNLOADER_DIR not in sys.path:
 
 # ─── CARGA DE EQUIPO ─────────────────────────────────────────────────────────
 
+_EQUIPO_CACHE = {}  # filename -> (mtime, data) — evita re-leer el Excel entero en cada request
+
+def _pivot_disparos_equipo(df_de):
+    """'DISPAROS EQUIPO' viene una fila por (match_id, periodo). La pasamos a
+    ancho (una fila por match_id, columnas sot_home_1T/2T/FT, sof_home_1T/2T/FT)
+    para poder usar el mismo helper team_col() de get_stats()."""
+    if df_de.empty or 'match_id' not in df_de.columns:
+        return pd.DataFrame()
+
+    period_map = {'1ST': '1T', '2ND': '2T', 'ALL': 'FT'}
+    src_cols = {
+        'Shots on target_home':  'sot_home',
+        'Shots on target_away':  'sot_away',
+        'Shots off target_home': 'sof_home',
+        'Shots off target_away': 'sof_away',
+    }
+    missing = [c for c in src_cols if c not in df_de.columns]
+    if missing:
+        return pd.DataFrame()
+
+    out = df_de[['match_id']].drop_duplicates().reset_index(drop=True)
+    for raw_p, label in period_map.items():
+        sub = df_de[df_de['periodo'] == raw_p][['match_id', *src_cols.keys()]].copy()
+        sub = sub.rename(columns={src: f"{dst}_{label}" for src, dst in src_cols.items()})
+        out = out.merge(sub, on='match_id', how='left')
+    return out
+
+def _fill_missing_total_shots(df_partidos):
+    """SofaScore a veces no trae 'Total shots' para un partido (queda -1) pero
+    sí trae 'Shots on target'/'Shots off target' — en ese caso reconstruimos
+    el total como on target + off target en vez de perder el partido entero
+    del promedio de Disparos."""
+    if df_partidos.empty:
+        return df_partidos
+    for label in ('1T', '2T', 'FT'):
+        for side in ('home', 'away'):
+            ti_col, sot_col, sof_col = f'tiros_{side}_{label}', f'sot_{side}_{label}', f'sof_{side}_{label}'
+            if ti_col not in df_partidos.columns or sot_col not in df_partidos.columns or sof_col not in df_partidos.columns:
+                continue
+            ti  = pd.to_numeric(df_partidos[ti_col],  errors='coerce')
+            sot = pd.to_numeric(df_partidos[sot_col], errors='coerce')
+            sof = pd.to_numeric(df_partidos[sof_col], errors='coerce')
+            missing   = ti.isna() | (ti == -1)
+            has_parts = sot.notna() & (sot != -1) & sof.notna() & (sof != -1)
+            fix = missing & has_parts
+            df_partidos.loc[fix, ti_col] = (sot + sof)[fix]
+    return df_partidos
+
 def cargar_equipo(filename: str):
     path = os.path.join(EXCEL_DIR, filename)
     if not os.path.exists(path):
         return None
+
+    mtime = os.path.getmtime(path)
+    cached = _EQUIPO_CACHE.get(filename)
+    if cached and cached[0] == mtime:
+        return cached[1]
+
     try:
         # "with" cierra el handle del archivo al salir — en Windows, si queda
         # abierto (como pasaba antes), el archivo se bloquea y no se puede
@@ -49,6 +119,39 @@ def cargar_equipo(filename: str):
             df_arqueros  = pd.read_excel(xl, sheet_name='Arqueros x Partido') if 'Arqueros x Partido'   in sheets else pd.DataFrame()
             df_p90       = pd.read_excel(xl, sheet_name='JUGADORES P90')     if 'JUGADORES P90'          in sheets else pd.DataFrame()
             df_disparos  = pd.read_excel(xl, sheet_name='Disparos Detalle')  if 'Disparos Detalle'       in sheets else pd.DataFrame()
+            df_disp_eq   = pd.read_excel(xl, sheet_name='DISPAROS EQUIPO')   if 'DISPAROS EQUIPO'        in sheets else pd.DataFrame()
+            df_tarjetas  = pd.read_excel(xl, sheet_name='Tarjetas Detalle')  if 'Tarjetas Detalle'       in sheets else pd.DataFrame()
+
+        # "Tarjetas Detalle" es un timeline evento-a-evento (una fila por tarjeta),
+        # no viene por jugador/partido como el resto de las stats — se agrega acá
+        # (propias, excluyendo las del rival) y se mergea a "Por Jugador x Partido"
+        # para poder calcular p90 y mostrar el historial igual que cualquier otra stat.
+        if not df_tarjetas.empty and not df_jugadores.empty and \
+           {'match_id', 'jugador'}.issubset(df_tarjetas.columns):
+            dfc = df_tarjetas.copy()
+            if 'equipo' in dfc.columns:
+                dfc = dfc[dfc['equipo'] == 'Propio']
+            dfc['jugador'] = dfc['jugador'].astype(str).str.strip()
+            tipo = dfc['tipo'].astype(str) if 'tipo' in dfc.columns else pd.Series('', index=dfc.index)
+
+            # La 2da amarilla que termina en expulsión llega como incidente
+            # separado "Roja (doble amarilla)", junto con la 1ra "Amarilla" del
+            # mismo jugador/partido — esa amarilla no debe contarse aparte, ya
+            # la representa la roja (roja = doble amarilla, no amarilla + roja).
+            dfc = dfc.assign(_pair=list(zip(dfc['match_id'], dfc['jugador'])))
+            doble_am_pairs = set(dfc.loc[tipo == 'Roja (doble amarilla)', '_pair'])
+            es_amarilla_simple = tipo == 'Amarilla'
+            dfc = dfc[~(es_amarilla_simple & dfc['_pair'].isin(doble_am_pairs))]
+
+            is_red = dfc['tipo'].astype(str).str.startswith('Roja') if 'tipo' in dfc.columns else False
+            am = dfc[~is_red].groupby(['match_id', 'jugador']).size().rename('tarjetas_amarillas')
+            ro = dfc[is_red].groupby(['match_id', 'jugador']).size().rename('tarjetas_rojas')
+            df_jugadores = df_jugadores.merge(am, on=['match_id', 'jugador'], how='left')
+            df_jugadores = df_jugadores.merge(ro, on=['match_id', 'jugador'], how='left')
+            df_jugadores['tarjetas_amarillas'] = df_jugadores['tarjetas_amarillas'].fillna(0)
+            df_jugadores['tarjetas_rojas']     = df_jugadores['tarjetas_rojas'].fillna(0)
+            # Una roja "pesa" como 2 amarillas (equivalencia estándar en fútbol).
+            df_jugadores['tarjetas_totales']   = df_jugadores['tarjetas_amarillas'] + 2 * df_jugadores['tarjetas_rojas']
 
         # Detectar nombre del equipo y team_id desde Partidos
         team_name = os.path.basename(path).split('_')[0]
@@ -60,20 +163,51 @@ def cargar_equipo(filename: str):
                 raw_id = df_partidos['team_id_meta'].iloc[0]
                 team_id = int(raw_id) if pd.notna(raw_id) else None
 
-        return {
+        # "DISPAROS EQUIPO" trae, por (match_id, periodo ALL/1ST/2ND), los tiros al
+        # arco / afuera a nivel equipo (Shots on/off target) — se pivotea al mismo
+        # formato ancho (sot_home_1T, etc.) que 'Partidos' para reusar get_stats().
+        df_sot = _pivot_disparos_equipo(df_disp_eq)
+        if not df_sot.empty and not df_partidos.empty and 'match_id' in df_partidos.columns:
+            df_partidos = df_partidos.merge(df_sot, on='match_id', how='left')
+            df_partidos = _fill_missing_total_shots(df_partidos)
+
+        data = {
             'partidos':  df_partidos,
             'goles':     df_goles,
             'jugadores': df_jugadores,
             'arqueros':  df_arqueros,
             'p90':       df_p90,
             'disparos':  df_disparos,
+            'tarjetas':  df_tarjetas,
             'abr':       abr,
             'team':      team_name,
             'team_id':   team_id,
         }
+        data = _apply_considerar_filter(data)
+        _EQUIPO_CACHE[filename] = (mtime, data)
+        return data
     except Exception as e:
         print(f"Error cargando {filename}: {e}")
         return None
+
+# ─── FILTRO POR COLUMNA 'considerar' ─────────────────────────────────────────
+# La hoja 'Partidos' trae una columna 'considerar' (default 'Si', editable a
+# mano en el Excel) — los partidos marcados 'No' se excluyen de raíz de todo
+# análisis de ese equipo, igual que si nunca hubiesen sido descargados.
+def _apply_considerar_filter(data):
+    df = data.get('partidos')
+    if df is None or df.empty or 'considerar' not in df.columns:
+        return data
+    mask_no = df['considerar'].astype(str).str.strip().str.lower().isin(['no', 'n', '0', 'false'])
+    if not mask_no.any():
+        return data
+    ids = set(df.loc[~mask_no, 'match_id'].astype(str))
+    filtered = dict(data)
+    for key in ('partidos', 'goles', 'jugadores', 'arqueros', 'disparos', 'tarjetas'):
+        d = data.get(key)
+        if d is not None and not d.empty and 'match_id' in d.columns:
+            filtered[key] = d[d['match_id'].astype(str).isin(ids)].reset_index(drop=True)
+    return filtered
 
 # ─── FILTRO POR PARTIDOS SELECCIONADOS ───────────────────────────────────────
 # Permite restringir cualquier análisis a un subconjunto de partidos elegidos
@@ -85,7 +219,7 @@ def filter_matches_data(data, match_ids):
         return data
     ids = set(str(m) for m in match_ids)
     filtered = dict(data)
-    for key in ('partidos', 'goles', 'jugadores', 'arqueros', 'disparos'):
+    for key in ('partidos', 'goles', 'jugadores', 'arqueros', 'disparos', 'tarjetas'):
         df = data.get(key)
         if df is not None and not df.empty and 'match_id' in df.columns:
             filtered[key] = df[df['match_id'].astype(str).isin(ids)].reset_index(drop=True)
@@ -96,6 +230,26 @@ def _parse_match_ids(matches: str | None):
         return None
     ids = [m.strip() for m in matches.split(',') if m.strip()]
     return ids or None
+
+# ─── FILTRO POR CONDICIÓN (LOCAL/VISITA) ─────────────────────────────────────
+# Igual idea que filter_matches_data, pero a partir de la condición (LOCAL/
+# VISITA) en vez de una lista puntual de match_id — así el filtro "Solo LOCAL"
+# / "Solo VISITA" elegido en Previa también recorta las hojas de detalle
+# (jugadores, goles, disparos, tarjetas), no solo el promedio agregado que ya
+# calculaba get_stats() por su cuenta.
+def _filter_by_condicion(data, condicion):
+    if not condicion or condicion == 'TOTAL':
+        return data
+    df = data.get('partidos')
+    if df is None or df.empty or 'condicion' not in df.columns:
+        return data
+    ids = set(df.loc[df['condicion'] == condicion, 'match_id'].astype(str))
+    filtered = dict(data)
+    for key in ('partidos', 'goles', 'jugadores', 'arqueros', 'disparos', 'tarjetas'):
+        d = data.get(key)
+        if d is not None and not d.empty and 'match_id' in d.columns:
+            filtered[key] = d[d['match_id'].astype(str).isin(ids)].reset_index(drop=True)
+    return filtered
 
 # ─── ESTADÍSTICAS DEL EQUIPO ─────────────────────────────────────────────────
 
@@ -223,6 +377,14 @@ def get_stats(data, condicion='TOTAL'):
     res['TI_F_2T'] = _mean(ti_f_2t); res['TI_C_2T'] = _mean(ti_c_2t)
     res['TI_F_FT'] = _mean(ti_f_ft); res['TI_C_FT'] = _mean(ti_c_ft)
 
+    # ── Tiros al arco (equipo, viene de "DISPAROS EQUIPO" / statistics.json) ──
+    sot_f_1t, sot_c_1t = team_col('sot', periodo='1T')
+    sot_f_2t, sot_c_2t = team_col('sot', periodo='2T')
+    sot_f_ft, sot_c_ft = team_col('sot', periodo='FT')
+    res['SOT_F_1T'] = _mean(sot_f_1t); res['SOT_C_1T'] = _mean(sot_c_1t)
+    res['SOT_F_2T'] = _mean(sot_f_2t); res['SOT_C_2T'] = _mean(sot_c_2t)
+    res['SOT_F_FT'] = _mean(sot_f_ft); res['SOT_C_FT'] = _mean(sot_c_ft)
+
     # ── Pases ──
     pa_f_1t, pa_c_1t = team_col('pases', periodo='1T')
     pa_f_2t, pa_c_2t = team_col('pases', periodo='2T')
@@ -315,7 +477,12 @@ def _ranking_from_partidos(df_j, role):
 
     # Resolver posición por jugador: tomar la más frecuente (no vacía)
     def _best_pos(series):
-        s = series[series.astype(str).str.strip() != '']
+        # dropna() primero: si no, un jugador con 'posicion' NaN en todos sus
+        # partidos pasaba el filtro de string (str(NaN) != '') pero .mode()
+        # descarta los NaN por defecto, dejando una serie vacía e .iloc[0]
+        # tiraba IndexError.
+        s = series.dropna().astype(str).str.strip()
+        s = s[s != '']
         return s.mode().iloc[0] if len(s) else ''
     pos_map = df_j.groupby(group_key)['posicion'].apply(_best_pos)
 
@@ -338,6 +505,8 @@ def _ranking_from_partidos(df_j, role):
     }
     if 'faltas_recibidas' in df_j.columns:  agg_dict['faltas_recibidas']  = 'sum'
     if 'faltas_cometidas' in df_j.columns:  agg_dict['faltas_cometidas']  = 'sum'
+    if 'tarjetas_amarillas' in df_j.columns: agg_dict['tarjetas_amarillas'] = 'sum'
+    if 'tarjetas_rojas'     in df_j.columns: agg_dict['tarjetas_rojas']     = 'sum'
 
     agg = df_j.groupby(group_key).agg(
         {k: v for k, v in agg_dict.items() if k in df_j.columns}
@@ -366,6 +535,10 @@ def _ranking_from_partidos(df_j, role):
     agg['Perdidas p90'] = (agg['perdidas_balon'] / mt).round(2) if 'perdidas_balon' in agg.columns else 0.0
     agg['Faltas Rec. p90'] = (agg['faltas_recibidas'] / mt).round(2) if 'faltas_recibidas' in agg.columns else 0.0
     agg['Faltas Com. p90'] = (agg['faltas_cometidas'] / mt).round(2) if 'faltas_cometidas' in agg.columns else 0.0
+    agg['Tarjetas Am. p90']  = (agg['tarjetas_amarillas'] / mt).round(2) if 'tarjetas_amarillas' in agg.columns else 0.0
+    agg['Tarjetas Roja p90'] = (agg['tarjetas_rojas']     / mt).round(2) if 'tarjetas_rojas'     in agg.columns else 0.0
+    # Una roja "pesa" como 2 amarillas (equivalencia estándar en fútbol).
+    agg['Tarjetas Tot. p90'] = (agg['Tarjetas Am. p90'] + 2 * agg['Tarjetas Roja p90']).round(2)
 
     return _apply_role(agg, role, df_j)
 
@@ -397,7 +570,7 @@ def _apply_role(agg, role, df_j_raw):
             normalize(agg['Recup. p90'])   * 0.20
         ) * 0.75 + normalize_inv(agg['Perdidas p90']) * 0.25
         agg['Score'] = agg['Score'].round(2)
-        cols = ['jugador','player_id','posicion','minutos_jugados','Duelos %','Interc. p90','Despejes p90','Recup. p90','Perdidas p90','Faltas Com. p90','Faltas Rec. p90','Score']
+        cols = ['jugador','player_id','posicion','minutos_jugados','Duelos %','Interc. p90','Despejes p90','Recup. p90','Perdidas p90','Faltas Com. p90','Faltas Rec. p90','Tarjetas Am. p90','Tarjetas Roja p90','Tarjetas Tot. p90','Score']
 
     elif role == 'MED':
         agg = agg[agg['minutos_jugados'] >= 90].copy()
@@ -409,7 +582,7 @@ def _apply_role(agg, role, df_j_raw):
             normalize(agg['Duelos %'])     * 0.15
         ) * 0.80 + normalize_inv(agg['Perdidas p90']) * 0.20
         agg['Score'] = agg['Score'].round(2)
-        cols = ['jugador','player_id','posicion','minutos_jugados','P. Clave p90','Pases %','Recup. p90','Perdidas p90','Faltas Com. p90','Faltas Rec. p90','Score']
+        cols = ['jugador','player_id','posicion','minutos_jugados','P. Clave p90','Pases %','Recup. p90','Perdidas p90','Faltas Com. p90','Faltas Rec. p90','Tarjetas Am. p90','Tarjetas Roja p90','Tarjetas Tot. p90','Score']
 
     elif role == 'DEL':
         agg = agg[(agg.get('goles', agg.get('Goles p90', pd.Series([0]*len(agg)))) > 0) |
@@ -422,7 +595,7 @@ def _apply_role(agg, role, df_j_raw):
             normalize(agg['Tiros Arco %']) * 0.15 +
             normalize(agg['Duelos %'])     * 0.10
         ).round(2)
-        cols = ['jugador','player_id','posicion','minutos_jugados','Goles p90','Asist. p90','Tiros Arco %','Duelos %','Faltas Rec. p90','Score']
+        cols = ['jugador','player_id','posicion','minutos_jugados','Goles p90','Asist. p90','Tiros Arco %','Duelos %','Faltas Rec. p90','Tarjetas Am. p90','Tarjetas Roja p90','Tarjetas Tot. p90','Score']
         avail = [c for c in cols if c in agg.columns]
         return agg[avail].sort_values('Score', ascending=False)
 
@@ -666,9 +839,17 @@ async def full_analysis(file1: str, file2: str, cond1: str = 'TOTAL', cond2: str
     ids2 = _parse_match_ids(matches2)
     if ids1:
         d1, cond1 = filter_matches_data(d1, ids1), 'TOTAL'
+    elif cond1 in ('LOCAL', 'VISITA'):
+        d1 = _filter_by_condicion(d1, cond1)
     if ids2:
         d2, cond2 = filter_matches_data(d2, ids2), 'TOTAL'
+    elif cond2 in ('LOCAL', 'VISITA'):
+        d2 = _filter_by_condicion(d2, cond2)
 
+    # d1/d2 ya vienen recortados por condición/selección de arriba — se usan
+    # tal cual para rankings/goleadores/distribución de goles, así el filtro
+    # de Previa (LOCAL/VISITA/Seleccionados) queda reflejado en TODA la app
+    # (Stats x Jugador, Momentum de goles, etc.), no solo en las fichas.
     s1 = get_stats(d1, cond1)
     s2 = get_stats(d2, cond2)
 
@@ -736,6 +917,9 @@ _TEAM_COLS = {
     'TI_F': {'1T': ('tiros_home_1T',   'tiros_away_1T'),
               '2T': ('tiros_home_2T',   'tiros_away_2T'),
               'FT': ('tiros_home_FT',   'tiros_away_FT')},
+    'SOT_F': {'1T': ('sot_home_1T',    'sot_away_1T'),
+              '2T': ('sot_home_2T',    'sot_away_2T'),
+              'FT': ('sot_home_FT',    'sot_away_FT')},
     'PA_F': {'1T': ('pases_home_1T',   'pases_away_1T'),
               '2T': ('pases_home_2T',   'pases_away_2T'),
               'FT': ('pases_home_FT',   'pases_away_FT')},
@@ -778,13 +962,15 @@ async def get_team_match_list(file: str):
     return {"matches": out}
 
 @app.get("/team-matches/{file}/{stat_key}")
-async def get_team_matches(file: str, stat_key: str, matches: str = None):
+async def get_team_matches(file: str, stat_key: str, matches: str = None, cond: str = 'TOTAL'):
     data = cargar_equipo(file)
     if not data:
         raise HTTPException(status_code=404, detail="Archivo no encontrado")
     ids = _parse_match_ids(matches)
     if ids:
         data = filter_matches_data(data, ids)
+    elif cond in ('LOCAL', 'VISITA'):
+        data = _filter_by_condicion(data, cond)
 
     df = data.get('partidos', pd.DataFrame())
     if df.empty:
@@ -904,17 +1090,22 @@ STAT_COL_MAP = {
     'Recup. p90':      'recuperaciones',
     'Interc. p90':     'intercepciones',
     'Duelos %':        'duelos_ganados',
+    'Tarjetas Am. p90':  'tarjetas_amarillas',
+    'Tarjetas Roja p90': 'tarjetas_rojas',
+    'Tarjetas Tot. p90': 'tarjetas_totales',
 }
 
 @app.get("/player-matches/{file}/{player_name}")
 async def get_player_matches(file: str, player_name: str, stat_key: str = '', player_id: int | None = None,
-                              matches: str = None):
+                              matches: str = None, cond: str = 'TOTAL'):
     data = cargar_equipo(file)
     if not data:
         raise HTTPException(status_code=404, detail="Archivo no encontrado")
     ids = _parse_match_ids(matches)
     if ids:
         data = filter_matches_data(data, ids)
+    elif cond in ('LOCAL', 'VISITA'):
+        data = _filter_by_condicion(data, cond)
 
     df_j = data.get('jugadores', pd.DataFrame())
     df_p = data.get('partidos', pd.DataFrame())
@@ -1261,13 +1452,15 @@ async def receive_data_sync(
 
 @app.get("/shot-distribution/{file}")
 async def get_shot_distribution(file: str, match_id: str = None, bin_size: int = 10, player_name: str = None,
-                                 matches: str = None):
+                                 matches: str = None, cond: str = 'TOTAL', scoreline: str = None, normalized: bool = False):
     data = cargar_equipo(file)
     if not data:
         raise HTTPException(status_code=404, detail="Archivo no encontrado")
     ids = _parse_match_ids(matches)
     if ids:
         data = filter_matches_data(data, ids)
+    elif cond in ('LOCAL', 'VISITA'):
+        data = _filter_by_condicion(data, cond)
 
     df = data.get('disparos', pd.DataFrame())
     if df.empty:
@@ -1308,6 +1501,12 @@ async def get_shot_distribution(file: str, match_id: str = None, bin_size: int =
             pn = player_name.lower().strip()
             pn_tokens = [t for t in pn.split() if len(t) > 3]
             def _match_player(n):
+                # Filas sin jugador (dato faltante, p. ej. roja a un director
+                # técnico) no deben "matchear" a nadie — str(NaN) da el texto
+                # literal "nan", que por coincidencia es substring de nombres
+                # como "Fernando" y les atribuía tarjetas/tiros ajenos.
+                if pd.isna(n) or not str(n).strip():
+                    return False
                 nl = str(n).lower().strip()
                 if pn in nl or nl in pn:
                     return True
@@ -1317,6 +1516,22 @@ async def get_shot_distribution(file: str, match_id: str = None, bin_size: int =
             df_f = df_f[df_f[player_col].apply(_match_player)]
 
     df_f['min_clean'] = df_f['minuto'].apply(clean_min) if 'minuto' in df_f.columns else 0
+
+    # Toggle "Normalizado": en vez de tramos de N minutos, devuelve tiros
+    # cada 90' REALMENTE jugados en cada estado (ganando/empate/perdiendo) —
+    # así un equipo que casi nunca gana no queda "artificialmente limpio" en
+    # Ganando solo por tener pocos minutos ahí. Corta acá, no pasa por bins.
+    if normalized:
+        df_partidos = data.get('partidos', pd.DataFrame())
+        all_match_ids = df_partidos['match_id'].astype(str).unique().tolist() if not df_partidos.empty else []
+        if match_id and match_id != 'all':
+            all_match_ids = [m for m in all_match_ids if m == str(match_id)]
+        states, n_reliable = _build_normalized_states(df_f, data.get('team_id'), all_match_ids)
+        return {"matches": matches_list, "normalized": True, "n_matches_reliable": n_reliable, "states": states}
+
+    # Filtro ganando/empate/perdiendo: cruza cada tiro (match_id + minuto)
+    # contra el marcador de ESE partido en ESE instante (raw_json).
+    df_f = _apply_scoreline_filter(df_f, data.get('team_id'), scoreline)
 
     num_regular = 90 // bin_size
     df_f['bin'] = df_f['min_clean'].apply(lambda x: min((x - 1) // bin_size if x > 0 else 0, num_regular))
@@ -1334,6 +1549,116 @@ async def get_shot_distribution(file: str, match_id: str = None, bin_size: int =
         by_result = {}
         if 'resultado' in chunk.columns:
             for res, cnt in chunk.groupby('resultado').size().items():
+                by_result[str(res)] = int(cnt)
+        distribution.append({
+            'label':     lbl,
+            'count':     int(len(chunk)),
+            'by_result': by_result,
+        })
+
+    return {"matches": matches_list, "distribution": distribution}
+
+
+@app.get("/card-distribution/{file}")
+async def get_card_distribution(file: str, match_id: str = None, bin_size: int = 10, player_name: str = None,
+                                 side: str = 'Propio', matches: str = None, cond: str = 'TOTAL', scoreline: str = None,
+                                 normalized: bool = False):
+    """Igual que /shot-distribution pero sobre la hoja 'Tarjetas Detalle' —
+    agrupa por 'tipo' (Amarilla/Roja) en vez de 'resultado'. `side` filtra
+    Propio/Rival/Ambas (por defecto Propio, igual que Disparos Detalle, que
+    ya viene pre-filtrada a los tiros del equipo dueño del Excel)."""
+    data = cargar_equipo(file)
+    if not data:
+        raise HTTPException(status_code=404, detail="Archivo no encontrado")
+    ids = _parse_match_ids(matches)
+    if ids:
+        data = filter_matches_data(data, ids)
+    elif cond in ('LOCAL', 'VISITA'):
+        data = _filter_by_condicion(data, cond)
+
+    df = data.get('tarjetas', pd.DataFrame())
+    if df.empty:
+        return {"matches": [], "distribution": []}
+
+    def clean_min(m):
+        try:
+            nums = re.findall(r'(\d+)', str(m))
+            return int(nums[0]) if nums else 0
+        except:
+            return 0
+
+    # Lista de partidos disponibles para el filtro
+    matches_list = []
+    if 'match_id' in df.columns and 'partido' in df.columns:
+        for _, row in df[['match_id', 'partido', 'condicion', 'rival']].drop_duplicates('match_id').iterrows():
+            matches_list.append({
+                'match_id': str(row.get('match_id', '')),
+                'partido':  str(row.get('partido', '')),
+                'condicion':str(row.get('condicion', '')),
+                'rival':    str(row.get('rival', '')),
+            })
+
+    df_f = df.copy()
+    if side and side.lower() != 'ambas' and 'equipo' in df_f.columns:
+        df_f = df_f[df_f['equipo'].str.lower() == side.lower()]
+
+    if match_id and match_id != 'all' and 'match_id' in df_f.columns:
+        df_f = df_f[df_f['match_id'].astype(str) == str(match_id)]
+
+    if player_name:
+        player_col = 'jugador' if 'jugador' in df_f.columns else None
+        if player_col:
+            pn = player_name.lower().strip()
+            pn_tokens = [t for t in pn.split() if len(t) > 3]
+            def _match_player(n):
+                # Filas sin jugador (dato faltante, p. ej. roja a un director
+                # técnico) no deben "matchear" a nadie — str(NaN) da el texto
+                # literal "nan", que por coincidencia es substring de nombres
+                # como "Fernando" y les atribuía tarjetas/tiros ajenos.
+                if pd.isna(n) or not str(n).strip():
+                    return False
+                nl = str(n).lower().strip()
+                if pn in nl or nl in pn:
+                    return True
+                if pn_tokens and any(t in nl for t in pn_tokens):
+                    return True
+                return False
+            df_f = df_f[df_f[player_col].apply(_match_player)]
+
+    df_f['min_clean'] = df_f['minuto'].apply(clean_min) if 'minuto' in df_f.columns else 0
+
+    # Toggle "Normalizado": en vez de tramos de N minutos, devuelve tarjetas
+    # cada 90' REALMENTE jugados en cada estado (ganando/empate/perdiendo) —
+    # así un equipo que casi nunca gana no queda "artificialmente limpio" en
+    # Ganando solo por tener pocos minutos ahí. Corta acá, no pasa por bins.
+    if normalized:
+        df_partidos = data.get('partidos', pd.DataFrame())
+        all_match_ids = df_partidos['match_id'].astype(str).unique().tolist() if not df_partidos.empty else []
+        if match_id and match_id != 'all':
+            all_match_ids = [m for m in all_match_ids if m == str(match_id)]
+        states, n_reliable = _build_normalized_states(df_f, data.get('team_id'), all_match_ids)
+        return {"matches": matches_list, "normalized": True, "n_matches_reliable": n_reliable, "states": states}
+
+    # Filtro ganando/empate/perdiendo: cruza cada tarjeta (match_id + minuto)
+    # contra el marcador de ESE partido en ESE instante (raw_json).
+    df_f = _apply_scoreline_filter(df_f, data.get('team_id'), scoreline)
+
+    num_regular = 90 // bin_size
+    df_f['bin'] = df_f['min_clean'].apply(lambda x: min((x - 1) // bin_size if x > 0 else 0, num_regular))
+
+    labels = []
+    for i in range(num_regular):
+        start = 0 if i == 0 else i * bin_size + 1
+        end = (i + 1) * bin_size
+        labels.append(f'{start}-{end}')
+    labels.append('90+')
+
+    distribution = []
+    for i, lbl in enumerate(labels):
+        chunk = df_f[df_f['bin'] == i]
+        by_result = {}
+        if 'tipo' in chunk.columns:
+            for res, cnt in chunk.groupby('tipo').size().items():
                 by_result[str(res)] = int(cnt)
         distribution.append({
             'label':     lbl,
@@ -1459,6 +1784,502 @@ async def get_momentum(team_id: int, match_id: str):
         "homeScore": (event.get("homeScore") or {}).get("current"),
         "awayScore": (event.get("awayScore") or {}).get("current"),
         "incidents": incidents,
+    }
+
+
+# ─── SCORELINE POR TRAMO (ganando/empate/perdiendo, desde raw_json) ──────────
+# Una fila horizontal por partido: para cada tramo de N minutos, en qué estado
+# pasó la MAYOR PARTE del tiempo el equipo (ponderado por minutos), a partir
+# de las incidencias de gol (que traen el score acumulado en cada una).
+
+def _team_side_in_event(event, team_id):
+    home = event.get("homeTeam", {}) or {}
+    away = event.get("awayTeam", {}) or {}
+    if str(home.get("id")) == str(team_id):
+        return "home"
+    if str(away.get("id")) == str(team_id):
+        return "away"
+    return None
+
+def _scoreline_state(diff):
+    if diff > 0:
+        return "win"
+    if diff < 0:
+        return "loss"
+    return "draw"
+
+def _goal_breakpoints(event, incidents_raw, team_id):
+    """Momentos (minuto real, diff de gol acumulado desde la perspectiva de
+    `team_id`) en que cambia la diferencia de gol — arranca en (0.0, 0).
+    Reusado tanto para el estado por TRAMO (scoreline-timeline) como para el
+    estado en un minuto EXACTO (filtro ganando/empate/perdiendo de tiros y
+    tarjetas)."""
+    side = _team_side_in_event(event, team_id)
+    if not side:
+        return None
+
+    goals = []
+    for inc in incidents_raw:
+        if not isinstance(inc, dict) or inc.get("incidentType") != "goal":
+            continue
+        minute = inc.get("time")
+        hs, as_ = inc.get("homeScore"), inc.get("awayScore")
+        if minute is None or hs is None or as_ is None:
+            continue
+        added = inc.get("addedTime") or 0
+        order_minute = float(minute) + float(added) / 1000.0
+        diff = (hs - as_) if side == "home" else (as_ - hs)
+        goals.append((order_minute, diff))
+    goals.sort(key=lambda g: g[0])
+
+    return [(0.0, 0)] + goals
+
+def _scoreline_state_at_minute(event, incidents_raw, team_id, minute):
+    """Estado (win/draw/loss) de `team_id` justo antes/en `minute` — para
+    saber si un tiro o una tarjeta ocurrió con el equipo ganando, empatando
+    o perdiendo en ESE instante (no por tramo)."""
+    breakpoints = _goal_breakpoints(event, incidents_raw, team_id)
+    if breakpoints is None:
+        return None
+    cur_diff = 0
+    for bp_minute, diff in breakpoints:
+        if bp_minute > minute:
+            break
+        cur_diff = diff
+    return _scoreline_state(cur_diff)
+
+def _incidents_goals_reliable(event, incidents_raw, team_id):
+    """Algunos partidos (ligas menores, sobre todo) traen incidents.json con
+    goles faltantes — el diff que se arma con las incidencias no llega al
+    marcador final real del evento. En ese caso NO se puede confiar en el
+    estado ganando/empate/perdiendo minuto a minuto (los tramos después del
+    último gol registrado quedarían mal clasificados), así que el partido se
+    excluye del filtro en vez de arriesgar una clasificación incorrecta."""
+    breakpoints = _goal_breakpoints(event, incidents_raw, team_id)
+    if breakpoints is None:
+        return False
+    side = _team_side_in_event(event, team_id)
+    home_final = (event.get("homeScore") or {}).get("current")
+    away_final = (event.get("awayScore") or {}).get("current")
+    if home_final is None or away_final is None:
+        return False
+    real_diff = (home_final - away_final) if side == "home" else (away_final - home_final)
+    return breakpoints[-1][1] == real_diff
+
+def _apply_scoreline_filter(df_f, team_id, scoreline, minute_col='min_clean'):
+    """Filtra un DataFrame de tiros/tarjetas (con columnas match_id + minute_col)
+    a las filas donde `team_id` estaba ganando/empatando/perdiendo en ESE
+    instante, cruzando contra el raw_json del partido (event+incidents). Un
+    partido sin raw_json descargado, o con incidents.json incompleto (goles
+    faltantes — ver _incidents_goals_reliable), no tiene forma confiable de
+    saber su estado, así que sus filas se excluyen en vez de asumir algo."""
+    if not scoreline or scoreline.lower() in ('todas', 'todos'):
+        return df_f
+    target = {'ganando': 'win', 'empate': 'draw', 'perdiendo': 'loss'}.get(scoreline.lower())
+    if not target or df_f.empty or 'match_id' not in df_f.columns:
+        return df_f.iloc[0:0]
+
+    folder = _find_team_raw_folder(team_id)
+    if not folder:
+        return df_f.iloc[0:0]
+
+    cache = {}
+    def match_state(match_id, minute):
+        mid = str(match_id)
+        if mid not in cache:
+            match_folder = os.path.join(folder, "matches", mid)
+            event = _read_raw_json(os.path.join(match_folder, "event.json"))
+            incidents = _read_raw_json(os.path.join(match_folder, "incidents.json")).get("incidents", [])
+            reliable = bool(event) and _incidents_goals_reliable(event, incidents, team_id)
+            cache[mid] = (event, incidents, reliable)
+        event, incidents, reliable = cache[mid]
+        if not event or not reliable:
+            return None
+        return _scoreline_state_at_minute(event, incidents, team_id, minute)
+
+    mask = df_f.apply(lambda r: match_state(r['match_id'], r.get(minute_col, 0)) == target, axis=1)
+    return df_f[mask]
+
+def _minutes_by_state(team_id, match_ids):
+    """Minutos totales (0-90) que `team_id` pasó ganando/empatando/perdiendo,
+    sumados sobre `match_ids` — para "normalizar" tarjetas/tiros por cuánto
+    tiempo estuvo REALMENTE en cada estado, en vez de comparar totales crudos
+    (un equipo que casi nunca gana no debería verse artificialmente "limpio"
+    en Ganando solo porque casi no tuvo minutos en ese estado). Partidos sin
+    raw_json confiable (ver _incidents_goals_reliable) no aportan minutos a
+    NINGÚN estado — mismo criterio que _apply_scoreline_filter."""
+    totals = {"win": 0.0, "draw": 0.0, "loss": 0.0}
+    n_reliable = 0
+    folder = _find_team_raw_folder(team_id)
+    if not folder:
+        return totals, n_reliable
+    for match_id in match_ids:
+        match_folder = os.path.join(folder, "matches", str(match_id))
+        event = _read_raw_json(os.path.join(match_folder, "event.json"))
+        if not event:
+            continue
+        incidents = _read_raw_json(os.path.join(match_folder, "incidents.json")).get("incidents", [])
+        if not _incidents_goals_reliable(event, incidents, team_id):
+            continue
+        breakpoints = _goal_breakpoints(event, incidents, team_id)
+        n_reliable += 1
+        for i, (seg_start, diff) in enumerate(breakpoints):
+            seg_end = breakpoints[i + 1][0] if i + 1 < len(breakpoints) else 90.0
+            seg_end = min(seg_end, 90.0)
+            if seg_end <= seg_start:
+                continue
+            totals[_scoreline_state(diff)] += (seg_end - seg_start)
+    return totals, n_reliable
+
+def _build_normalized_states(df_f, team_id, match_ids):
+    """Para el toggle "Normalizado": en vez de conteo crudo por ganando/
+    empate/perdiendo (sesgado por cuánto juega el equipo en cada estado),
+    devuelve tarjetas/tiros cada 90' REALMENTE jugados en cada estado."""
+    minutes, n_reliable = _minutes_by_state(team_id, match_ids)
+    states = []
+    for key, label in (('win', 'Ganando'), ('draw', 'Empate'), ('loss', 'Perdiendo')):
+        sub = _apply_scoreline_filter(df_f, team_id, label)
+        count = len(sub)
+        mins = minutes.get(key, 0.0)
+        rate = round(count / mins * 90, 2) if mins > 0 else None
+        states.append({
+            'state':      label,
+            'count':      int(count),
+            'minutes':    round(mins, 1),
+            'rate_per_90': rate,
+        })
+    return states, n_reliable
+
+def _build_scoreline_segments(event, incidents_raw, team_id, bin_size=10):
+    breakpoints = _goal_breakpoints(event, incidents_raw, team_id)
+    if breakpoints is None:
+        return None
+    final_diff = breakpoints[-1][1]
+
+    def weighted_state(seg_start, seg_end):
+        totals = {"win": 0.0, "draw": 0.0, "loss": 0.0}
+        cur_diff, cur_t = 0, seg_start
+        for minute, diff in breakpoints:
+            if minute <= seg_start:
+                cur_diff = diff
+                continue
+            if minute >= seg_end:
+                break
+            totals[_scoreline_state(cur_diff)] += (minute - cur_t)
+            cur_t, cur_diff = minute, diff
+        totals[_scoreline_state(cur_diff)] += (seg_end - cur_t)
+        return max(totals, key=totals.get)
+
+    num_regular = 90 // bin_size
+    segments = []
+    for i in range(num_regular):
+        start = 0 if i == 0 else i * bin_size + 1
+        end = (i + 1) * bin_size
+        segments.append({"label": f"{start}-{end}", "state": weighted_state(i * bin_size, end)})
+    segments.append({"label": "90+", "state": _scoreline_state(final_diff)})
+    return segments
+
+@app.get("/scoreline-timeline/{team_id}")
+async def get_scoreline_timeline(team_id: int, bin_size: int = 10, matches: str = None):
+    """Estado (ganando/empate/perdiendo) por tramo de `bin_size` minutos, para
+    todos los partidos de `team_id` que tengan incidents.json + event.json en
+    raw_json/ — una fila por partido, pensada para dibujar barras horizontales
+    apiladas por color (verde/plomo/rojo) por cada tramo."""
+    folder = _find_team_raw_folder(team_id)
+    if not folder:
+        return {"matches": []}
+
+    matches_dir = os.path.join(folder, "matches")
+    if not os.path.isdir(matches_dir):
+        return {"matches": []}
+
+    ids_filter = _parse_match_ids(matches)
+
+    out = []
+    for match_id in os.listdir(matches_dir):
+        if ids_filter and match_id not in ids_filter:
+            continue
+        match_folder = os.path.join(matches_dir, match_id)
+        event = _read_raw_json(os.path.join(match_folder, "event.json"))
+        incidents = _read_raw_json(os.path.join(match_folder, "incidents.json"))
+        if not event or not incidents:
+            continue
+        incidents_raw = incidents.get("incidents", []) if isinstance(incidents, dict) else incidents
+        segments = _build_scoreline_segments(event, incidents_raw, team_id, bin_size)
+        if segments is None:
+            continue
+
+        home = event.get("homeTeam", {}) or {}
+        away = event.get("awayTeam", {}) or {}
+        side = _team_side_in_event(event, team_id)
+        rival = away.get("name", "?") if side == "home" else home.get("name", "?")
+        own_score   = (event.get("homeScore") or {}).get("current") if side == "home" else (event.get("awayScore") or {}).get("current")
+        rival_score = (event.get("awayScore") or {}).get("current") if side == "home" else (event.get("homeScore") or {}).get("current")
+
+        ts = event.get("startTimestamp")
+        import datetime as _dt
+        fecha = _dt.datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d') if ts else None
+
+        out.append({
+            "match_id":    match_id,
+            "fecha":       fecha,
+            "rival":       rival,
+            "condicion":   "LOCAL" if side == "home" else "VISITA",
+            "own_score":   own_score,
+            "rival_score": rival_score,
+            "segments":    segments,
+        })
+
+    out.sort(key=lambda r: r["fecha"] or "0000-00-00", reverse=True)
+    return {"matches": out}
+
+
+# ─── ANÁLISIS DE ÁRBITRO (ventana aparte, botón "Árbitro" del Header) ────────
+# Reusa el mismo patrón que /download-team + raw_json, pero con su propio
+# downloader liviano (referee_downloader.py: solo event.json + incidents.json
+# por partido, no lineups/statistics/graph/shotmap) y su propia carpeta
+# (RAW_REFEREE_DIR) para no mezclar árbitros con equipos.
+
+def _parse_referee_id(raw: str):
+    """Acepta tanto un ID numérico como una URL de SofaScore
+    (.../referee/perez-gutierrez-roberto/786859) y devuelve el ID."""
+    raw = (raw or "").strip()
+    if not raw:
+        return None
+    if raw.isdigit():
+        return int(raw)
+    m = re.search(r'/(\d+)/?(?:[?#].*)?$', raw.rstrip('/'))
+    return int(m.group(1)) if m else None
+
+def _find_referee_folder(referee_id):
+    if not referee_id or not os.path.isdir(RAW_REFEREE_DIR):
+        return None
+    suffix = f" - {referee_id}"
+    for name in os.listdir(RAW_REFEREE_DIR):
+        if name.endswith(suffix) and os.path.isdir(os.path.join(RAW_REFEREE_DIR, name)):
+            return os.path.join(RAW_REFEREE_DIR, name)
+    return None
+
+@app.get("/available-referees")
+async def get_available_referees():
+    """Árbitros ya descargados (raw_referees/) — para elegir uno sin tener que
+    volver a pegar la URL/ID y re-descargar."""
+    if not os.path.isdir(RAW_REFEREE_DIR):
+        return {"referees": []}
+
+    out = []
+    for name in os.listdir(RAW_REFEREE_DIR):
+        folder = os.path.join(RAW_REFEREE_DIR, name)
+        if not os.path.isdir(folder):
+            continue
+        manifest = _read_raw_json(os.path.join(folder, "manifest.json"))
+        referee_id = manifest.get("referee_id")
+        if referee_id is None:
+            m = re.search(r'-\s*(\d+)$', name)
+            referee_id = int(m.group(1)) if m else None
+        if referee_id is None:
+            continue
+        n_matches = len(manifest.get("selected_matches") or manifest.get("downloaded_matches") or [])
+        out.append({
+            "referee_id":      referee_id,
+            "referee_name":    manifest.get("referee_name", name),
+            "n_matches":       n_matches,
+            "last_update_utc": manifest.get("last_update_utc"),
+        })
+
+    out.sort(key=lambda r: r["referee_name"])
+    return {"referees": out}
+
+def _card_type_label(incident_class):
+    c = (incident_class or "").lower()
+    if c == "yellow":
+        return "Amarilla"
+    if c == "yellowred":
+        return "Roja (doble amarilla)"
+    if c == "red":
+        return "Roja"
+    return "Amarilla"
+
+class DownloadRefereeRequest(BaseModel):
+    referee: str          # ID numérico o URL de SofaScore
+    n_partidos: int = 20
+
+@app.post("/download-referee")
+def download_referee(req: DownloadRefereeRequest):
+    """Descarga los últimos partidos finalizados dirigidos por un árbitro de
+    SofaScore (event + incidents), listos para /referee-analysis."""
+    referee_id = _parse_referee_id(req.referee)
+    if not referee_id:
+        raise HTTPException(status_code=400, detail="No se pudo interpretar el ID/URL del árbitro")
+
+    from client import SofaScoreClient
+    from referee_downloader import RefereeDownloader
+
+    try:
+        client = SofaScoreClient()
+        rd = RefereeDownloader(client)
+        result = rd.descargar_arbitro(referee_id, req.n_partidos)
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"No se pudo consultar SofaScore: {e}")
+
+    if not result.get("matches"):
+        raise HTTPException(status_code=404, detail="No se encontraron partidos finalizados para ese árbitro")
+
+    return {
+        "referee_id":    result["referee_id"],
+        "referee_name":  result["referee_name"],
+        "matches_found": len(result["matches"]),
+    }
+
+def _parse_tournament_filter(raw: str | None):
+    # Separador "~~" (no "," — nombres de torneo como "Liga 1, Apertura" o
+    # "U17 FIFA World Cup, Group C" ya traen comas).
+    if not raw:
+        return None
+    names = [t for t in raw.split('~~') if t.strip()]
+    return set(names) if names else None
+
+@app.get("/referee-analysis/{referee_id}")
+async def get_referee_analysis(referee_id: int, tournaments: str = None):
+    """Distribución de tarjetas (10 min) + promedio de tarjetas por partido
+    (5 min) + marcador de cada partido dirigido, a partir de lo descargado
+    en /download-referee. `tournaments` (opcional, separado por "~~") filtra
+    a solo esas competiciones (ej. "Liga 1, Apertura~~CONMEBOL Libertadores")
+    — la distribución y el promedio se recalculan sobre ese subconjunto."""
+    folder = _find_referee_folder(referee_id)
+    if not folder:
+        raise HTTPException(status_code=404, detail="Árbitro sin datos descargados. Usá 'Descargar árbitro' primero.")
+
+    referee_info = _read_raw_json(os.path.join(folder, "referee.json")).get("referee", {}) or {}
+
+    # El folder de un árbitro acumula TODOS los partidos que se descargaron
+    # alguna vez (corridas anteriores con otro n_partidos, etc.) — el análisis
+    # se limita a "selected_matches" del último manifest, que es la selección
+    # de la última corrida de "Analizar" (los N más recientes pedidos).
+    manifest = _read_raw_json(os.path.join(folder, "manifest.json"))
+    selected_ids = set(manifest.get("selected_matches") or [])
+
+    matches_dir = os.path.join(folder, "matches")
+    raw_matches = []  # todos los de la selección, SIN filtrar por torneo (para armar el filtro)
+
+    if os.path.isdir(matches_dir):
+        import datetime as _dt
+        match_ids = selected_ids if selected_ids else set(os.listdir(matches_dir))
+        for match_id in match_ids:
+            match_folder = os.path.join(matches_dir, match_id)
+            event = _read_raw_json(os.path.join(match_folder, "event.json"))
+            if not event:
+                continue
+            incidents_raw = _read_raw_json(os.path.join(match_folder, "incidents.json")).get("incidents", [])
+
+            home = event.get("homeTeam", {}) or {}
+            away = event.get("awayTeam", {}) or {}
+            ts = event.get("startTimestamp")
+            fecha = _dt.datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d') if ts else None
+            tournament = (event.get("tournament") or {}).get("name", "") or "Sin competición"
+
+            cards = []
+            for inc in incidents_raw:
+                if not isinstance(inc, dict) or inc.get("incidentType") != "card":
+                    continue
+                minute = inc.get("time")
+                if minute is None:
+                    continue
+                cards.append((minute, _card_type_label(inc.get("incidentClass"))))
+
+            raw_matches.append({
+                "match_id":   match_id,
+                "fecha":      fecha,
+                "tournament": tournament,
+                "home_name":  home.get("name", "?"),
+                "away_name":  away.get("name", "?"),
+                "home_score": (event.get("homeScore") or {}).get("current"),
+                "away_score": (event.get("awayScore") or {}).get("current"),
+                "cards":      cards,
+            })
+
+    # Torneos disponibles para el filtro — sobre el total descargado, no sobre
+    # lo ya filtrado, así las opciones no desaparecen al tildar alguna.
+    tournament_counts = {}
+    for m in raw_matches:
+        tournament_counts[m["tournament"]] = tournament_counts.get(m["tournament"], 0) + 1
+    available_tournaments = [
+        {"name": k, "count": v}
+        for k, v in sorted(tournament_counts.items(), key=lambda kv: -kv[1])
+    ]
+
+    tournament_filter = _parse_tournament_filter(tournaments)
+    filtered_matches = [m for m in raw_matches if not tournament_filter or m["tournament"] in tournament_filter]
+
+    matches_out = []
+    all_cards = []  # (minuto, label) — solo de los partidos filtrados
+    for m in filtered_matches:
+        yellow = sum(1 for _, l in m["cards"] if l == "Amarilla")
+        red = sum(1 for _, l in m["cards"] if l.startswith("Roja"))
+        matches_out.append({
+            "match_id":    m["match_id"],
+            "fecha":       m["fecha"],
+            "tournament":  m["tournament"],
+            "home_name":   m["home_name"],
+            "away_name":   m["away_name"],
+            "home_score":  m["home_score"],
+            "away_score":  m["away_score"],
+            "cards_count": len(m["cards"]),
+            "yellow":      yellow,
+            "red":         red,
+        })
+        all_cards.extend(m["cards"])
+
+    matches_out.sort(key=lambda m: m["fecha"] or "0000-00-00", reverse=True)
+    n_matches = len(matches_out)
+
+    def build_distribution(bs):
+        num_regular = 90 // bs
+        labels = []
+        for i in range(num_regular):
+            start = 0 if i == 0 else i * bs + 1
+            end = (i + 1) * bs
+            labels.append(f"{start}-{end}")
+        labels.append("90+")
+
+        bins = [{"label": lbl, "count": 0, "by_type": {}} for lbl in labels]
+        for minute, label in all_cards:
+            try:
+                m = int(minute)
+            except (TypeError, ValueError):
+                m = 0
+            idx = min((m - 1) // bs if m > 0 else 0, num_regular)
+            bins[idx]["count"] += 1
+            bins[idx]["by_type"][label] = bins[idx]["by_type"].get(label, 0) + 1
+        return bins
+
+    distribution_10 = build_distribution(10)
+    distribution_5  = build_distribution(5)
+    distribution_5_avg = [
+        {
+            "label": b["label"],
+            "avg": round(b["count"] / n_matches, 2) if n_matches else 0,
+            "by_type_avg": {k: round(v / n_matches, 2) if n_matches else 0 for k, v in b["by_type"].items()},
+        }
+        for b in distribution_5
+    ]
+
+    return {
+        "referee": {
+            "id":                referee_id,
+            "name":              referee_info.get("name", f"Árbitro {referee_id}"),
+            "country":           (referee_info.get("country") or {}).get("name", ""),
+            "career_games":      referee_info.get("games"),
+            "career_yellow":     referee_info.get("yellowCards"),
+            "career_red":        referee_info.get("redCards"),
+            "career_yellow_red": referee_info.get("yellowRedCards"),
+        },
+        "available_tournaments": available_tournaments,
+        "n_matches_analyzed":    n_matches,
+        "n_matches_total":       len(raw_matches),
+        "matches":               matches_out,
+        "distribution_10":       distribution_10,
+        "distribution_5_avg":    distribution_5_avg,
     }
 
 

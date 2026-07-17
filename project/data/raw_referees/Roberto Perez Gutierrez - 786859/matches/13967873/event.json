@@ -1,0 +1,206 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "U17 FIFA World Cup, Group B",
+    "slug": "u17-fifa-world-cup-group-b",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "U17 World Championship",
+      "slug": "u17-world-championship",
+      "primaryColorHex": "#398835",
+      "secondaryColorHex": "#377ac4",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 31445,
+      "hasPerformanceGraphFeature": false,
+      "showBanner": true,
+      "id": 279,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بطولة كأس العالم تحت 17 سنة",
+          "bn": "আন্ডার 17ওয়ার্ল্ড চ্যাম্পিয়নশিপ",
+          "hi": "U-17 वर्ल्ड चैंपियनशिप",
+          "ru": "до 17 лет, Чемпионат мира"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 342,
+    "isGroup": true,
+    "groupName": "Group B",
+    "isLive": false,
+    "id": 6206,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس العالم تحت 17 سنة، المجموعة B",
+        "bn": "আন্ডার17 ফিফা ওয়ার্ল্ডকাপ, গ্রুপ বি",
+        "hi": "U17 फीफा वर्ल्ड कप, ग्रुप बी",
+        "ru": "Чемпионат мира по футболу U17 ФИФА, Группа B"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "U17 FIFA World Cup 2025",
+    "year": "2025",
+    "editor": false,
+    "id": 76257
+  },
+  "roundInfo": {
+    "round": 2
+  },
+  "customId": "TcjsmCu",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Portugal U17",
+    "slug": "portugal-u17",
+    "shortName": "Portugal U17",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 19257,
+    "nameCode": "POR",
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "id": 22643,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#cc0000",
+      "secondary": "#66cc66",
+      "text": "#66cc66"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "البرتغال تحت 17",
+        "hi": "पोर्तुगाल U17",
+        "ru": "Португалия U17"
+      },
+      "shortNameTranslation": {
+        "ar": "البرتغال تحت 17"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Morocco U17",
+    "slug": "morocco-u17",
+    "shortName": "Morocco U17",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 81955,
+    "nameCode": "MAR",
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "id": 48862,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#006600",
+      "text": "#006600"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "المغرب تحت 17",
+        "hi": "मोरक्को U17",
+        "ru": "Марокко U17"
+      },
+      "shortNameTranslation": {
+        "ar": "المغرب تحت 17"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 6,
+    "display": 6,
+    "period1": 4,
+    "period2": 2,
+    "normaltime": 6
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 4,
+    "injuryTime2": 4,
+    "currentPeriodStartTimestamp": 1762436226
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1762439172
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 13967873,
+  "slug": "morocco-u17-portugal-u17",
+  "startTimestamp": 1762432200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false
+}

@@ -1,0 +1,2807 @@
+{
+  "incidents": [
+    {
+      "text": "PEN",
+      "homeScore": 3,
+      "awayScore": 4,
+      "isLive": false,
+      "period": "penalties",
+      "time": 999,
+      "addedTime": 999,
+      "timeSeconds": 59940,
+      "incidentType": "period",
+      "reversedPeriodTime": 7,
+      "reversedPeriodTimeSeconds": 360,
+      "periodTimeSeconds": 540
+    },
+    {
+      "player": {
+        "name": "Máximo Carrizo",
+        "firstName": "Máximo Carrizo",
+        "slug": "maximo-carrizo",
+        "shortName": "M. Carrizo",
+        "position": "M",
+        "jerseyNumber": "10",
+        "height": 160,
+        "userCount": 254,
+        "gender": "M",
+        "sofascoreId": "8j7sm6",
+        "id": 1464681,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204156800,
+        "proposedMarketValueRaw": {
+          "value": 410000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ماكسيمو كاريزو",
+            "ru": "Максимо Карризо"
+          },
+          "shortNameTranslation": {
+            "ar": "م. كاريزو",
+            "ru": "М. Карризо"
+          }
+        }
+      },
+      "homeScore": 3,
+      "awayScore": 4,
+      "sequence": 10,
+      "description": "Goalkeeper save",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Máximo Carrizo",
+            "firstName": "Máximo Carrizo",
+            "slug": "maximo-carrizo",
+            "shortName": "M. Carrizo",
+            "position": "M",
+            "jerseyNumber": "10",
+            "height": 160,
+            "userCount": 254,
+            "gender": "M",
+            "sofascoreId": "8j7sm6",
+            "id": 1464681,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1204156800,
+            "proposedMarketValueRaw": {
+              "value": 410000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "ماكسيمو كاريزو",
+                "ru": "Максимо Карризо"
+              },
+              "shortNameTranslation": {
+                "ar": "م. كاريزو",
+                "ru": "М. Карризо"
+              }
+            }
+          },
+          "eventType": "penalty-save",
+          "time": 100,
+          "playerCoordinates": {
+            "x": 88.5,
+            "y": 50
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 47.1
+          },
+          "goalMouthCoordinates": {
+            "x": 65.59,
+            "y": 70.5
+          },
+          "goalkeeper": {
+            "name": "Chouaib Bellaarouch",
+            "firstName": "Chouaib Bellaarouch",
+            "slug": "chouaib-bellaarouch",
+            "shortName": "C. Bellaarouch",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 188,
+            "userCount": 914,
+            "gender": "M",
+            "sofascoreId": "sxxkky",
+            "id": 1931440,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1202601600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "شعيب بلالاروش",
+                "ru": "Шуаиб Беллааруш"
+              },
+              "shortNameTranslation": {
+                "ar": "ش. بلالاروش",
+                "ru": "Ш. Беллааруш"
+              }
+            }
+          },
+          "isHome": true
+        }
+      ],
+      "id": 118584017,
+      "incidentType": "penaltyShootout",
+      "isHome": true,
+      "incidentClass": "missed",
+      "reason": "goalkeeperSave"
+    },
+    {
+      "player": {
+        "name": "Ilyas Hidaoui",
+        "firstName": "Ilyas Hidaoui",
+        "slug": "ilyas-hidaoui",
+        "shortName": "I. Hidaoui",
+        "position": "D",
+        "jerseyNumber": "15",
+        "height": 187,
+        "userCount": 413,
+        "gender": "M",
+        "sofascoreId": "c8w2m9",
+        "id": 1961642,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1208044800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إلياس هداوي",
+            "ru": "Хидауи, Ильяс"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. هداوي",
+            "ru": "И. Хидауи"
+          }
+        }
+      },
+      "homeScore": 3,
+      "awayScore": 4,
+      "sequence": 9,
+      "description": "Scored",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Ilyas Hidaoui",
+            "firstName": "Ilyas Hidaoui",
+            "slug": "ilyas-hidaoui",
+            "shortName": "I. Hidaoui",
+            "position": "D",
+            "jerseyNumber": "15",
+            "height": 187,
+            "userCount": 413,
+            "gender": "M",
+            "sofascoreId": "c8w2m9",
+            "id": 1961642,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1208044800,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "إلياس هداوي",
+                "ru": "Хидауи, Ильяс"
+              },
+              "shortNameTranslation": {
+                "ar": "إ. هداوي",
+                "ru": "И. Хидауи"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 99,
+          "playerCoordinates": {
+            "x": 11.5,
+            "y": 50
+          },
+          "gkCoordinates": {
+            "x": 0.6,
+            "y": 50
+          },
+          "goalShotCoordinates": {
+            "x": 0,
+            "y": 45.9
+          },
+          "goalMouthCoordinates": {
+            "x": 27.96,
+            "y": 65.17
+          },
+          "goalkeeper": {
+            "name": "Aidan Stokes",
+            "firstName": "Aidan Stokes",
+            "slug": "aidan-stokes",
+            "shortName": "A. Stokes",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 183,
+            "userCount": 75,
+            "gender": "M",
+            "sofascoreId": "6gmdr8",
+            "id": 1210151,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1200268800,
+            "proposedMarketValueRaw": {
+              "value": 46000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أيدان ستوكز",
+                "ru": "Айдан Стокс"
+              },
+              "shortNameTranslation": {
+                "ar": "أ. ستوكز",
+                "ru": "А. Стокс"
+              }
+            }
+          },
+          "isHome": false,
+          "goalType": "penalty"
+        }
+      ],
+      "id": 118584015,
+      "incidentType": "penaltyShootout",
+      "isHome": false,
+      "incidentClass": "scored",
+      "reason": "scored"
+    },
+    {
+      "player": {
+        "name": "Mathis Albert",
+        "firstName": "Mathis Albert",
+        "slug": "mathis-albert",
+        "shortName": "M. Albert",
+        "position": "F",
+        "jerseyNumber": "11",
+        "height": 175,
+        "userCount": 1420,
+        "gender": "M",
+        "sofascoreId": "vnxu9w",
+        "id": 1937835,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1242864000,
+        "proposedMarketValueRaw": {
+          "value": 310000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ماثيس ألبرت",
+            "ru": "Матис Альберт"
+          },
+          "shortNameTranslation": {
+            "ar": "م. ألبرت",
+            "ru": "М. Альберт"
+          }
+        }
+      },
+      "homeScore": 3,
+      "awayScore": 3,
+      "sequence": 8,
+      "description": "Scored",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Mathis Albert",
+            "firstName": "Mathis Albert",
+            "slug": "mathis-albert",
+            "shortName": "M. Albert",
+            "position": "F",
+            "jerseyNumber": "11",
+            "height": 175,
+            "userCount": 1420,
+            "gender": "M",
+            "sofascoreId": "vnxu9w",
+            "id": 1937835,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1242864000,
+            "proposedMarketValueRaw": {
+              "value": 310000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "ماثيس ألبرت",
+                "ru": "Матис Альберт"
+              },
+              "shortNameTranslation": {
+                "ar": "م. ألبرت",
+                "ru": "М. Альберт"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 98,
+          "playerCoordinates": {
+            "x": 88.5,
+            "y": 50
+          },
+          "gkCoordinates": {
+            "x": 99.7,
+            "y": 50
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 48
+          },
+          "goalMouthCoordinates": {
+            "x": 60.75,
+            "y": 58.83
+          },
+          "goalkeeper": {
+            "name": "Chouaib Bellaarouch",
+            "firstName": "Chouaib Bellaarouch",
+            "slug": "chouaib-bellaarouch",
+            "shortName": "C. Bellaarouch",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 188,
+            "userCount": 914,
+            "gender": "M",
+            "sofascoreId": "sxxkky",
+            "id": 1931440,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1202601600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "شعيب بلالاروش",
+                "ru": "Шуаиб Беллааруш"
+              },
+              "shortNameTranslation": {
+                "ar": "ش. بلالاروش",
+                "ru": "Ш. Беллааруш"
+              }
+            }
+          },
+          "isHome": true,
+          "goalType": "penalty"
+        }
+      ],
+      "id": 118584013,
+      "incidentType": "penaltyShootout",
+      "isHome": true,
+      "incidentClass": "scored",
+      "reason": "scored"
+    },
+    {
+      "player": {
+        "name": "Ahmed Mawhoub",
+        "firstName": "Ahmed Mawhoub",
+        "slug": "ahmed-mawhoub",
+        "shortName": "A. Mawhoub",
+        "position": "M",
+        "height": 180,
+        "userCount": 405,
+        "gender": "M",
+        "sofascoreId": "wmmchd",
+        "id": 1931405,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1199404800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أحمد موهوب",
+            "ru": "Ахмед Мавхуб"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. موهوب",
+            "ru": "А. Мавхуб"
+          }
+        }
+      },
+      "homeScore": 2,
+      "awayScore": 3,
+      "sequence": 7,
+      "description": "Goalkeeper save",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Ahmed Mouhoub",
+            "slug": "ahmed-mouhoub",
+            "shortName": "A. Mouhoub",
+            "position": "M",
+            "height": 180,
+            "userCount": 47,
+            "gender": "M",
+            "sofascoreId": "kv5rik",
+            "id": 2115997,
+            "marketValueCurrency": "EUR",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أحمد موهوب"
+              },
+              "shortNameTranslation": {
+                "ar": "أ. موهوب"
+              }
+            }
+          },
+          "eventType": "penalty-save",
+          "time": 97,
+          "playerCoordinates": {
+            "x": 11.5,
+            "y": 50
+          },
+          "goalShotCoordinates": {
+            "x": 0,
+            "y": 47.8
+          },
+          "goalMouthCoordinates": {
+            "x": 38.17,
+            "y": 68.33
+          },
+          "goalkeeper": {
+            "name": "Aidan Stokes",
+            "firstName": "Aidan Stokes",
+            "slug": "aidan-stokes",
+            "shortName": "A. Stokes",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 183,
+            "userCount": 75,
+            "gender": "M",
+            "sofascoreId": "6gmdr8",
+            "id": 1210151,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1200268800,
+            "proposedMarketValueRaw": {
+              "value": 46000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أيدان ستوكز",
+                "ru": "Айдан Стокс"
+              },
+              "shortNameTranslation": {
+                "ar": "أ. ستوكز",
+                "ru": "А. Стокс"
+              }
+            }
+          },
+          "isHome": false
+        }
+      ],
+      "id": 118584012,
+      "incidentType": "penaltyShootout",
+      "isHome": false,
+      "incidentClass": "missed",
+      "reason": "goalkeeperSave"
+    },
+    {
+      "player": {
+        "name": "Chase Adams",
+        "slug": "chase-adams",
+        "shortName": "C. Adams",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 180,
+        "userCount": 191,
+        "gender": "M",
+        "sofascoreId": "nzttiz",
+        "id": 1847602,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1208390400,
+        "proposedMarketValueRaw": {
+          "value": 220000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تشيس آدامز",
+            "ru": "Чейз Адамс"
+          },
+          "shortNameTranslation": {
+            "ar": "ت. آدامز",
+            "ru": "Ч. Адамс"
+          }
+        }
+      },
+      "homeScore": 2,
+      "awayScore": 3,
+      "sequence": 6,
+      "description": "Scored",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Chase Adams",
+            "slug": "chase-adams",
+            "shortName": "C. Adams",
+            "position": "F",
+            "jerseyNumber": "9",
+            "height": 180,
+            "userCount": 191,
+            "gender": "M",
+            "sofascoreId": "nzttiz",
+            "id": 1847602,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1208390400,
+            "proposedMarketValueRaw": {
+              "value": 220000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "تشيس آدامز",
+                "ru": "Чейз Адамс"
+              },
+              "shortNameTranslation": {
+                "ar": "ت. آدامز",
+                "ru": "Ч. Адамс"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 96,
+          "playerCoordinates": {
+            "x": 88.5,
+            "y": 50
+          },
+          "gkCoordinates": {
+            "x": 99.1,
+            "y": 50.5
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 50.4
+          },
+          "goalMouthCoordinates": {
+            "x": 47.85,
+            "y": 69.33
+          },
+          "goalkeeper": {
+            "name": "Chouaib Bellaarouch",
+            "firstName": "Chouaib Bellaarouch",
+            "slug": "chouaib-bellaarouch",
+            "shortName": "C. Bellaarouch",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 188,
+            "userCount": 914,
+            "gender": "M",
+            "sofascoreId": "sxxkky",
+            "id": 1931440,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1202601600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "شعيب بلالاروش",
+                "ru": "Шуаиб Беллааруш"
+              },
+              "shortNameTranslation": {
+                "ar": "ش. بلالاروش",
+                "ru": "Ш. Беллааруш"
+              }
+            }
+          },
+          "isHome": true,
+          "goalType": "penalty"
+        }
+      ],
+      "id": 118584010,
+      "incidentType": "penaltyShootout",
+      "isHome": true,
+      "incidentClass": "scored",
+      "reason": "scored"
+    },
+    {
+      "player": {
+        "name": "Wassim Dardake",
+        "firstName": "Wassim Dardake",
+        "slug": "wassim-dardake",
+        "shortName": "W. Dardake",
+        "position": "F",
+        "jerseyNumber": "10",
+        "height": 172,
+        "userCount": 283,
+        "sofascoreId": "6ii463",
+        "id": 1931591,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1202774400,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "وسيم درداقي",
+            "ru": "Вассим Дардак"
+          },
+          "shortNameTranslation": {
+            "ar": "و. درداقي",
+            "ru": "В. Дардак"
+          }
+        }
+      },
+      "homeScore": 1,
+      "awayScore": 3,
+      "sequence": 5,
+      "description": "Scored",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Wassim Dardake",
+            "firstName": "Wassim Dardake",
+            "slug": "wassim-dardake",
+            "shortName": "W. Dardake",
+            "position": "F",
+            "jerseyNumber": "10",
+            "height": 172,
+            "userCount": 283,
+            "sofascoreId": "6ii463",
+            "id": 1931591,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1202774400,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "وسيم درداقي",
+                "ru": "Вассим Дардак"
+              },
+              "shortNameTranslation": {
+                "ar": "و. درداقي",
+                "ru": "В. Дардак"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 95,
+          "playerCoordinates": {
+            "x": 11.5,
+            "y": 50
+          },
+          "gkCoordinates": {
+            "x": 0.5,
+            "y": 50
+          },
+          "goalShotCoordinates": {
+            "x": 0,
+            "y": 47.4
+          },
+          "goalMouthCoordinates": {
+            "x": 36.02,
+            "y": 86.33
+          },
+          "goalkeeper": {
+            "name": "Aidan Stokes",
+            "firstName": "Aidan Stokes",
+            "slug": "aidan-stokes",
+            "shortName": "A. Stokes",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 183,
+            "userCount": 75,
+            "gender": "M",
+            "sofascoreId": "6gmdr8",
+            "id": 1210151,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1200268800,
+            "proposedMarketValueRaw": {
+              "value": 46000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أيدان ستوكز",
+                "ru": "Айдан Стокс"
+              },
+              "shortNameTranslation": {
+                "ar": "أ. ستوكز",
+                "ru": "А. Стокс"
+              }
+            }
+          },
+          "isHome": false,
+          "goalType": "penalty"
+        }
+      ],
+      "id": 118584008,
+      "incidentType": "penaltyShootout",
+      "isHome": false,
+      "incidentClass": "scored",
+      "reason": "scored"
+    },
+    {
+      "player": {
+        "name": "Cooper Sanchez",
+        "slug": "cooper-sanchez",
+        "shortName": "C. Sanchez",
+        "position": "M",
+        "jerseyNumber": "15",
+        "height": 172,
+        "userCount": 103,
+        "gender": "M",
+        "sofascoreId": "wrwwin",
+        "id": 1846925,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1206489600,
+        "proposedMarketValueRaw": {
+          "value": 1100000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كوبر سانشيز",
+            "ru": "Купер Санчес"
+          },
+          "shortNameTranslation": {
+            "ar": "ك. سانشيز",
+            "ru": "К. Санчес"
+          }
+        }
+      },
+      "homeScore": 1,
+      "awayScore": 2,
+      "sequence": 4,
+      "description": "Goalkeeper save",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Cooper Sanchez",
+            "slug": "cooper-sanchez",
+            "shortName": "C. Sanchez",
+            "position": "M",
+            "jerseyNumber": "15",
+            "height": 172,
+            "userCount": 103,
+            "gender": "M",
+            "sofascoreId": "wrwwin",
+            "id": 1846925,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1206489600,
+            "proposedMarketValueRaw": {
+              "value": 1100000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "كوبر سانشيز",
+                "ru": "Купер Санчес"
+              },
+              "shortNameTranslation": {
+                "ar": "ك. سانشيز",
+                "ru": "К. Санчес"
+              }
+            }
+          },
+          "eventType": "penalty-save",
+          "time": 94,
+          "playerCoordinates": {
+            "x": 88.5,
+            "y": 50
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 53.7
+          },
+          "goalMouthCoordinates": {
+            "x": 30.11,
+            "y": 72.5
+          },
+          "goalkeeper": {
+            "name": "Chouaib Bellaarouch",
+            "firstName": "Chouaib Bellaarouch",
+            "slug": "chouaib-bellaarouch",
+            "shortName": "C. Bellaarouch",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 188,
+            "userCount": 914,
+            "gender": "M",
+            "sofascoreId": "sxxkky",
+            "id": 1931440,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1202601600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "شعيب بلالاروش",
+                "ru": "Шуаиб Беллааруш"
+              },
+              "shortNameTranslation": {
+                "ar": "ش. بلالاروش",
+                "ru": "Ш. Беллааруш"
+              }
+            }
+          },
+          "isHome": true
+        }
+      ],
+      "id": 118584006,
+      "incidentType": "penaltyShootout",
+      "isHome": true,
+      "incidentClass": "missed",
+      "reason": "goalkeeperSave"
+    },
+    {
+      "player": {
+        "name": "Ismail El Aoud",
+        "firstName": "Ismail El Aoud",
+        "slug": "ismail-el-aoud",
+        "shortName": "I. E. Aoud",
+        "position": "M",
+        "jerseyNumber": "20",
+        "height": 179,
+        "userCount": 1861,
+        "gender": "M",
+        "sofascoreId": "b4pkhj",
+        "id": 1861721,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1246406400,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إسماعيل العود",
+            "ru": "Эль Ауд, Исмаил"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. العود",
+            "ru": "И. Эль Ауд"
+          }
+        }
+      },
+      "homeScore": 1,
+      "awayScore": 2,
+      "sequence": 3,
+      "description": "Scored",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Ismail El Aoud",
+            "firstName": "Ismail El Aoud",
+            "slug": "ismail-el-aoud",
+            "shortName": "I. E. Aoud",
+            "position": "M",
+            "jerseyNumber": "20",
+            "height": 179,
+            "userCount": 1861,
+            "gender": "M",
+            "sofascoreId": "b4pkhj",
+            "id": 1861721,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1246406400,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "إسماعيل العود",
+                "ru": "Эль Ауд, Исмаил"
+              },
+              "shortNameTranslation": {
+                "ar": "إ. العود",
+                "ru": "И. Эль Ауд"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 93,
+          "playerCoordinates": {
+            "x": 11.5,
+            "y": 50
+          },
+          "gkCoordinates": {
+            "x": 0.6,
+            "y": 50.4
+          },
+          "goalShotCoordinates": {
+            "x": 0,
+            "y": 46.1
+          },
+          "goalMouthCoordinates": {
+            "x": 29.03,
+            "y": 95.83
+          },
+          "goalkeeper": {
+            "name": "Aidan Stokes",
+            "firstName": "Aidan Stokes",
+            "slug": "aidan-stokes",
+            "shortName": "A. Stokes",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 183,
+            "userCount": 75,
+            "gender": "M",
+            "sofascoreId": "6gmdr8",
+            "id": 1210151,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1200268800,
+            "proposedMarketValueRaw": {
+              "value": 46000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أيدان ستوكز",
+                "ru": "Айдан Стокс"
+              },
+              "shortNameTranslation": {
+                "ar": "أ. ستوكز",
+                "ru": "А. Стокс"
+              }
+            }
+          },
+          "isHome": false,
+          "goalType": "penalty"
+        }
+      ],
+      "id": 118584003,
+      "incidentType": "penaltyShootout",
+      "isHome": false,
+      "incidentClass": "scored",
+      "reason": "scored"
+    },
+    {
+      "player": {
+        "name": "Cavan Sullivan",
+        "slug": "cavan-sullivan",
+        "shortName": "C. Sullivan",
+        "position": "M",
+        "jerseyNumber": "6",
+        "height": 173,
+        "userCount": 5679,
+        "gender": "M",
+        "sofascoreId": "sxuuit",
+        "id": 1847696,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1254096000,
+        "proposedMarketValueRaw": {
+          "value": 4300000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كافان سوليفان",
+            "bn": "কাভান সুলিভান",
+            "hi": "कैवन सुलिवान",
+            "ru": "Каван Салливан"
+          },
+          "shortNameTranslation": {
+            "ar": "ك. سوليفان",
+            "bn": "সি সুলিভান",
+            "hi": "सी. सुलिवान",
+            "ru": "К. Салливан"
+          }
+        }
+      },
+      "homeScore": 1,
+      "awayScore": 1,
+      "sequence": 2,
+      "description": "Scored",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Cavan Sullivan",
+            "slug": "cavan-sullivan",
+            "shortName": "C. Sullivan",
+            "position": "M",
+            "jerseyNumber": "6",
+            "height": 173,
+            "userCount": 5679,
+            "gender": "M",
+            "sofascoreId": "sxuuit",
+            "id": 1847696,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1254096000,
+            "proposedMarketValueRaw": {
+              "value": 4300000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "كافان سوليفان",
+                "bn": "কাভান সুলিভান",
+                "hi": "कैवन सुलिवान",
+                "ru": "Каван Салливан"
+              },
+              "shortNameTranslation": {
+                "ar": "ك. سوليفان",
+                "bn": "সি সুলিভান",
+                "hi": "सी. सुलिवान",
+                "ru": "К. Салливан"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "left-foot",
+          "time": 92,
+          "playerCoordinates": {
+            "x": 88.5,
+            "y": 50
+          },
+          "gkCoordinates": {
+            "x": 99.7,
+            "y": 50
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 47.4
+          },
+          "goalMouthCoordinates": {
+            "x": 63.98,
+            "y": 55.67
+          },
+          "goalkeeper": {
+            "name": "Chouaib Bellaarouch",
+            "firstName": "Chouaib Bellaarouch",
+            "slug": "chouaib-bellaarouch",
+            "shortName": "C. Bellaarouch",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 188,
+            "userCount": 914,
+            "gender": "M",
+            "sofascoreId": "sxxkky",
+            "id": 1931440,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1202601600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "شعيب بلالاروش",
+                "ru": "Шуаиб Беллааруш"
+              },
+              "shortNameTranslation": {
+                "ar": "ش. بلالاروش",
+                "ru": "Ш. Беллааруш"
+              }
+            }
+          },
+          "isHome": true,
+          "goalType": "penalty"
+        }
+      ],
+      "id": 118584002,
+      "incidentType": "penaltyShootout",
+      "isHome": true,
+      "incidentClass": "scored",
+      "reason": "scored"
+    },
+    {
+      "player": {
+        "name": "Ziyad Baha",
+        "firstName": "Ziyad Baha",
+        "slug": "ziyad-baha",
+        "shortName": "Z. Baha",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 183,
+        "userCount": 1875,
+        "gender": "M",
+        "sofascoreId": "c8i5s8",
+        "id": 1861738,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1249862400,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "زياد باها",
+            "ru": "Баха, Зияд"
+          },
+          "shortNameTranslation": {
+            "ar": "ز. باها",
+            "ru": "З. Баха"
+          }
+        }
+      },
+      "homeScore": 0,
+      "awayScore": 1,
+      "sequence": 1,
+      "description": "Scored",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Ziyad Baha",
+            "firstName": "Ziyad Baha",
+            "slug": "ziyad-baha",
+            "shortName": "Z. Baha",
+            "position": "F",
+            "jerseyNumber": "9",
+            "height": 183,
+            "userCount": 1875,
+            "gender": "M",
+            "sofascoreId": "c8i5s8",
+            "id": 1861738,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1249862400,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "زياد باها",
+                "ru": "Баха, Зияд"
+              },
+              "shortNameTranslation": {
+                "ar": "ز. باها",
+                "ru": "З. Баха"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 92,
+          "playerCoordinates": {
+            "x": 11.5,
+            "y": 50
+          },
+          "gkCoordinates": {
+            "x": 0.6,
+            "y": 49.8
+          },
+          "goalShotCoordinates": {
+            "x": 0,
+            "y": 45.9
+          },
+          "goalMouthCoordinates": {
+            "x": 27.96,
+            "y": 96.83
+          },
+          "goalkeeper": {
+            "name": "Aidan Stokes",
+            "firstName": "Aidan Stokes",
+            "slug": "aidan-stokes",
+            "shortName": "A. Stokes",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 183,
+            "userCount": 75,
+            "gender": "M",
+            "sofascoreId": "6gmdr8",
+            "id": 1210151,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1200268800,
+            "proposedMarketValueRaw": {
+              "value": 46000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أيدان ستوكز",
+                "ru": "Айдан Стокс"
+              },
+              "shortNameTranslation": {
+                "ar": "أ. ستوكز",
+                "ru": "А. Стокс"
+              }
+            }
+          },
+          "isHome": false,
+          "goalType": "penalty"
+        }
+      ],
+      "id": 118584000,
+      "incidentType": "penaltyShootout",
+      "isHome": false,
+      "incidentClass": "scored",
+      "reason": "scored"
+    },
+    {
+      "text": "FT",
+      "homeScore": 1,
+      "awayScore": 1,
+      "isLive": false,
+      "time": 90,
+      "addedTime": 999,
+      "timeSeconds": 5400,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "playerIn": {
+        "name": "Yones El Bayadi",
+        "firstName": "Yones El Bayadi",
+        "slug": "yones-el-bayadi",
+        "shortName": "Y. E. Bayadi",
+        "position": "F",
+        "height": 175,
+        "userCount": 173,
+        "gender": "M",
+        "sofascoreId": "ejj6ez",
+        "id": 1931592,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204934400,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "يونس البياضي",
+            "ru": "Йонес Эль Баяди"
+          },
+          "shortNameTranslation": {
+            "ar": "ي. البياضي",
+            "ru": "Й. Баяди"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Abdellah Ouazane",
+        "firstName": "Abdellah Ouazane",
+        "slug": "abdellah-ouazane",
+        "shortName": "A. Ouazane",
+        "position": "M",
+        "jerseyNumber": "8",
+        "height": 184,
+        "userCount": 5100,
+        "gender": "M",
+        "sofascoreId": "q995ta",
+        "id": 1931396,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1231977600,
+        "proposedMarketValueRaw": {
+          "value": 1500000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "عبد الله أوزان",
+            "bn": "আবদেল্লাহ ওয়াজানে",
+            "hi": "अब्देल्लाह औज़ाने",
+            "ru": "Абделлах Уазане"
+          },
+          "shortNameTranslation": {
+            "ar": "ع. أوزان",
+            "bn": "এ.  ওয়াজানে",
+            "hi": "ए. औज़ाने",
+            "ru": "А. Уазане"
+          }
+        }
+      },
+      "id": 125132899,
+      "time": 90,
+      "addedTime": 7,
+      "injury": true,
+      "isHome": false,
+      "incidentClass": "injury",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 1
+    },
+    {
+      "length": 6,
+      "time": 90,
+      "addedTime": 0,
+      "incidentType": "injuryTime",
+      "reversedPeriodTime": 1
+    },
+    {
+      "homeScore": 1,
+      "awayScore": 1,
+      "player": {
+        "name": "Abdellah Ouazane",
+        "firstName": "Abdellah Ouazane",
+        "slug": "abdellah-ouazane",
+        "shortName": "A. Ouazane",
+        "position": "M",
+        "jerseyNumber": "8",
+        "height": 184,
+        "userCount": 5100,
+        "gender": "M",
+        "sofascoreId": "q995ta",
+        "id": 1931396,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1231977600,
+        "proposedMarketValueRaw": {
+          "value": 1500000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "عبد الله أوزان",
+            "bn": "আবদেল্লাহ ওয়াজানে",
+            "hi": "अब्देल्लाह औज़ाने",
+            "ru": "Абделлах Уазане"
+          },
+          "shortNameTranslation": {
+            "ar": "ع. أوزان",
+            "bn": "এ.  ওয়াজানে",
+            "hi": "ए. औज़ाने",
+            "ru": "А. Уазане"
+          }
+        }
+      },
+      "assist1": {
+        "name": "Hamza Bouhaddi",
+        "firstName": "Hamza Bouhadi ",
+        "slug": "hamza-bouhadi",
+        "shortName": "H. Bouhadi ",
+        "position": "D",
+        "jerseyNumber": "2",
+        "height": 174,
+        "userCount": 308,
+        "gender": "M",
+        "sofascoreId": "b44tff",
+        "id": 1931577,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1223337600,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "حمزة بوحادي",
+            "ru": "Бухадди, Хамза"
+          },
+          "shortNameTranslation": {
+            "ar": "ح. بوحادي",
+            "ru": "Х. Бухадди"
+          }
+        }
+      },
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Chouaib Bellaarouch",
+            "firstName": "Chouaib Bellaarouch",
+            "slug": "chouaib-bellaarouch",
+            "shortName": "C. Bellaarouch",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 188,
+            "userCount": 914,
+            "gender": "M",
+            "sofascoreId": "sxxkky",
+            "id": 1931440,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1202601600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "شعيب بلالاروش",
+                "ru": "Шуаиб Беллааруш"
+              },
+              "shortNameTranslation": {
+                "ar": "ش. بلالاروش",
+                "ru": "Ш. Беллааруш"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 89,
+          "playerCoordinates": {
+            "x": 96.4,
+            "y": 54.5
+          },
+          "passEndCoordinates": {
+            "x": 64.5,
+            "y": 86.5
+          },
+          "isHome": false
+        },
+        {
+          "player": {
+            "name": "Hamza Bouhaddi",
+            "firstName": "Hamza Bouhadi ",
+            "slug": "hamza-bouhadi",
+            "shortName": "H. Bouhadi ",
+            "position": "D",
+            "jerseyNumber": "2",
+            "height": 174,
+            "userCount": 308,
+            "gender": "M",
+            "sofascoreId": "b44tff",
+            "id": 1931577,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1223337600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "حمزة بوحادي",
+                "ru": "Бухадди, Хамза"
+              },
+              "shortNameTranslation": {
+                "ar": "ح. بوحادي",
+                "ru": "Х. Бухадди"
+              }
+            }
+          },
+          "eventType": "pass",
+          "isAssist": true,
+          "time": 89,
+          "playerCoordinates": {
+            "x": 52.9,
+            "y": 89.9
+          },
+          "passEndCoordinates": {
+            "x": 28,
+            "y": 92.9
+          },
+          "isHome": false
+        },
+        {
+          "player": {
+            "name": "Abdellah Ouazane",
+            "firstName": "Abdellah Ouazane",
+            "slug": "abdellah-ouazane",
+            "shortName": "A. Ouazane",
+            "position": "M",
+            "jerseyNumber": "8",
+            "height": 184,
+            "userCount": 5100,
+            "gender": "M",
+            "sofascoreId": "q995ta",
+            "id": 1931396,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1231977600,
+            "proposedMarketValueRaw": {
+              "value": 1500000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "عبد الله أوزان",
+                "bn": "আবদেল্লাহ ওয়াজানে",
+                "hi": "अब्देल्लाह औज़ाने",
+                "ru": "Абделлах Уазане"
+              },
+              "shortNameTranslation": {
+                "ar": "ع. أوزان",
+                "bn": "এ.  ওয়াজানে",
+                "hi": "ए. औज़ाने",
+                "ru": "А. Уазане"
+              }
+            }
+          },
+          "eventType": "ball-movement",
+          "bodyPart": "left-foot",
+          "time": 89,
+          "playerCoordinates": {
+            "x": 28,
+            "y": 92.9
+          },
+          "isHome": false
+        },
+        {
+          "player": {
+            "name": "Abdellah Ouazane",
+            "firstName": "Abdellah Ouazane",
+            "slug": "abdellah-ouazane",
+            "shortName": "A. Ouazane",
+            "position": "M",
+            "jerseyNumber": "8",
+            "height": 184,
+            "userCount": 5100,
+            "gender": "M",
+            "sofascoreId": "q995ta",
+            "id": 1931396,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1231977600,
+            "proposedMarketValueRaw": {
+              "value": 1500000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "عبد الله أوزان",
+                "bn": "আবদেল্লাহ ওয়াজানে",
+                "hi": "अब्देल्लाह औज़ाने",
+                "ru": "Абделлах Уазане"
+              },
+              "shortNameTranslation": {
+                "ar": "ع. أوزان",
+                "bn": "এ.  ওয়াজানে",
+                "hi": "ए. औज़ाने",
+                "ru": "А. Уазане"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "left-foot",
+          "time": 89,
+          "playerCoordinates": {
+            "x": 15.1,
+            "y": 57.3
+          },
+          "gkCoordinates": {
+            "x": 0.9,
+            "y": 50.4
+          },
+          "goalShotCoordinates": {
+            "x": 0,
+            "y": 52.4
+          },
+          "goalMouthCoordinates": {
+            "x": 62.9,
+            "y": 94.67
+          },
+          "goalkeeper": {
+            "name": "Aidan Stokes",
+            "firstName": "Aidan Stokes",
+            "slug": "aidan-stokes",
+            "shortName": "A. Stokes",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 183,
+            "userCount": 75,
+            "gender": "M",
+            "sofascoreId": "6gmdr8",
+            "id": 1210151,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1200268800,
+            "proposedMarketValueRaw": {
+              "value": 46000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أيدان ستوكز",
+                "ru": "Айдан Стокс"
+              },
+              "shortNameTranslation": {
+                "ar": "أ. ستوكز",
+                "ru": "А. Стокс"
+              }
+            }
+          },
+          "isHome": false,
+          "goalType": "regular"
+        }
+      ],
+      "id": 329514427,
+      "time": 89,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 2
+    },
+    {
+      "playerIn": {
+        "name": "Chase Adams",
+        "slug": "chase-adams",
+        "shortName": "C. Adams",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 180,
+        "userCount": 191,
+        "gender": "M",
+        "sofascoreId": "nzttiz",
+        "id": 1847602,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1208390400,
+        "proposedMarketValueRaw": {
+          "value": 220000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تشيس آدامز",
+            "ru": "Чейз Адамс"
+          },
+          "shortNameTranslation": {
+            "ar": "ت. آدامز",
+            "ru": "Ч. Адамс"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Julian Hall",
+        "firstName": "Julian Hall",
+        "slug": "hall-julian",
+        "shortName": "J. Hall",
+        "position": "F",
+        "jerseyNumber": "16",
+        "height": 178,
+        "userCount": 1588,
+        "gender": "M",
+        "sofascoreId": "6gf2fz",
+        "id": 1546887,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1206316800,
+        "proposedMarketValueRaw": {
+          "value": 8199999,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "هول، جوليان",
+            "ru": "Джулиан Холл"
+          },
+          "shortNameTranslation": {
+            "ar": "ج. هول",
+            "ru": "Д. Холл"
+          }
+        }
+      },
+      "id": 125132873,
+      "time": 84,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 7
+    },
+    {
+      "playerIn": {
+        "name": "Ahmed Mawhoub",
+        "firstName": "Ahmed Mawhoub",
+        "slug": "ahmed-mawhoub",
+        "shortName": "A. Mawhoub",
+        "position": "M",
+        "height": 180,
+        "userCount": 405,
+        "gender": "M",
+        "sofascoreId": "wmmchd",
+        "id": 1931405,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1199404800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أحمد موهوب",
+            "ru": "Ахмед Мавхуб"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. موهوب",
+            "ru": "А. Мавхуб"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Elyes Saidi",
+        "firstName": "Elyes Saïdi",
+        "slug": "elyes-saidi",
+        "shortName": "E. Saïdi",
+        "position": "M",
+        "jerseyNumber": "6",
+        "height": 177,
+        "userCount": 605,
+        "gender": "M",
+        "sofascoreId": "xdp3cc",
+        "id": 2052215,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1229299200,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إلياس سعيدي",
+            "ru": "Элиес Саиди"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. سعيدي",
+            "ru": "Э. Саиди"
+          }
+        }
+      },
+      "id": 125132870,
+      "time": 81,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 10
+    },
+    {
+      "playerIn": {
+        "name": "Wassim Dardake",
+        "firstName": "Wassim Dardake",
+        "slug": "wassim-dardake",
+        "shortName": "W. Dardake",
+        "position": "F",
+        "jerseyNumber": "10",
+        "height": 172,
+        "userCount": 283,
+        "sofascoreId": "6ii463",
+        "id": 1931591,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1202774400,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "وسيم درداقي",
+            "ru": "Вассим Дардак"
+          },
+          "shortNameTranslation": {
+            "ar": "و. درداقي",
+            "ru": "В. Дардак"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Ilyas El Arbaoui",
+        "firstName": "Ilyas El Arbaoui",
+        "slug": "ilyas-el-arbaoui",
+        "shortName": "I. E. Arbaoui",
+        "position": "D",
+        "jerseyNumber": "14",
+        "height": 170,
+        "userCount": 450,
+        "gender": "M",
+        "sofascoreId": "kvvgkv",
+        "id": 1931581,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204588800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إلياس الأرباوي",
+            "ru": "Арбауи, Ильяс Эль"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. الأرباوي",
+            "ru": "И. Арбауи"
+          }
+        }
+      },
+      "id": 125132845,
+      "time": 81,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 10
+    },
+    {
+      "player": {
+        "name": "Mathis Albert",
+        "firstName": "Mathis Albert",
+        "slug": "mathis-albert",
+        "shortName": "M. Albert",
+        "position": "F",
+        "jerseyNumber": "11",
+        "height": 175,
+        "userCount": 1420,
+        "gender": "M",
+        "sofascoreId": "vnxu9w",
+        "id": 1937835,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1242864000,
+        "proposedMarketValueRaw": {
+          "value": 310000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ماثيس ألبرت",
+            "ru": "Матис Альберт"
+          },
+          "shortNameTranslation": {
+            "ar": "م. ألبرت",
+            "ru": "М. Альберт"
+          }
+        }
+      },
+      "playerName": "Mathis Albert",
+      "reason": "Foul",
+      "rescinded": false,
+      "id": 124335995,
+      "time": 75,
+      "isHome": true,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 16
+    },
+    {
+      "playerIn": {
+        "name": "Luca Moisa",
+        "firstName": "Luca Moisa",
+        "slug": "luca-moisa",
+        "shortName": "L. Moisa",
+        "position": "M",
+        "jerseyNumber": "34",
+        "height": 170,
+        "userCount": 60,
+        "gender": "M",
+        "sofascoreId": "cehxfu",
+        "id": 1800522,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1208649600,
+        "proposedMarketValueRaw": {
+          "value": 575000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "لوكا مويزا",
+            "ru": "Лука Мойса"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. مويزا",
+            "ru": "Л. Мойса"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Nimfasha Berchimas",
+        "firstName": "Nimfasha Berchimas",
+        "slug": "nimfasha-berchimas",
+        "shortName": "N. Berchimas",
+        "position": "M",
+        "jerseyNumber": "27",
+        "height": 172,
+        "userCount": 453,
+        "gender": "M",
+        "sofascoreId": "jv9fae",
+        "id": 1441123,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1203638400,
+        "proposedMarketValueRaw": {
+          "value": 1400000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نيمفاشا بيرشيمس",
+            "ru": "Нимфаша Берчимас"
+          },
+          "shortNameTranslation": {
+            "ar": "ن. بيرشيمس",
+            "ru": "Н. Берчимас"
+          }
+        }
+      },
+      "id": 125132799,
+      "time": 74,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 17
+    },
+    {
+      "playerIn": {
+        "name": "Máximo Carrizo",
+        "firstName": "Máximo Carrizo",
+        "slug": "maximo-carrizo",
+        "shortName": "M. Carrizo",
+        "position": "M",
+        "jerseyNumber": "10",
+        "height": 160,
+        "userCount": 254,
+        "gender": "M",
+        "sofascoreId": "8j7sm6",
+        "id": 1464681,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204156800,
+        "proposedMarketValueRaw": {
+          "value": 410000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ماكسيمو كاريزو",
+            "ru": "Максимо Карризо"
+          },
+          "shortNameTranslation": {
+            "ar": "م. كاريزو",
+            "ru": "М. Карризо"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Jude Terry",
+        "slug": "jude-terry",
+        "shortName": "J. Terry",
+        "position": "M",
+        "jerseyNumber": "8",
+        "height": 175,
+        "userCount": 195,
+        "gender": "M",
+        "sofascoreId": "jsmma2",
+        "id": 1847619,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1223424000,
+        "proposedMarketValueRaw": {
+          "value": 73000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تيري، جود",
+            "ru": "Терри, Джуд"
+          },
+          "shortNameTranslation": {
+            "ar": "ج. تيري",
+            "ru": "Д. Терри"
+          }
+        }
+      },
+      "id": 125132798,
+      "time": 73,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 18
+    },
+    {
+      "playerIn": {
+        "name": "Ziyad Baha",
+        "firstName": "Ziyad Baha",
+        "slug": "ziyad-baha",
+        "shortName": "Z. Baha",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 183,
+        "userCount": 1875,
+        "gender": "M",
+        "sofascoreId": "c8i5s8",
+        "id": 1861738,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1249862400,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "زياد باها",
+            "ru": "Баха, Зияд"
+          },
+          "shortNameTranslation": {
+            "ar": "ز. باها",
+            "ru": "З. Баха"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Nahel Haddani",
+        "firstName": "Nahël Haddani",
+        "slug": "nahel-haddani",
+        "shortName": "N. Haddani",
+        "position": "F",
+        "jerseyNumber": "20",
+        "height": 179,
+        "userCount": 576,
+        "gender": "M",
+        "sofascoreId": "f78237",
+        "id": 2270566,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1229212800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ناهيل حداني",
+            "ru": "Нахель Хаддани"
+          },
+          "shortNameTranslation": {
+            "ar": "ن. حداني",
+            "ru": "Н. Хаддани"
+          }
+        }
+      },
+      "id": 125132796,
+      "time": 72,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 19
+    },
+    {
+      "confirmed": true,
+      "player": {
+        "name": "Hamza Bouhaddi",
+        "firstName": "Hamza Bouhadi ",
+        "slug": "hamza-bouhadi",
+        "shortName": "H. Bouhadi ",
+        "position": "D",
+        "jerseyNumber": "2",
+        "height": 174,
+        "userCount": 308,
+        "gender": "M",
+        "sofascoreId": "b44tff",
+        "id": 1931577,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1223337600,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "حمزة بوحادي",
+            "ru": "Бухадди, Хамза"
+          },
+          "shortNameTranslation": {
+            "ar": "ح. بوحادي",
+            "ru": "Х. Бухадди"
+          }
+        }
+      },
+      "isHome": false,
+      "id": 91347,
+      "time": 71,
+      "incidentClass": "penaltyNotAwarded",
+      "incidentType": "varDecision",
+      "reversedPeriodTime": 20
+    },
+    {
+      "playerIn": {
+        "name": "Abdellah Ouazane",
+        "firstName": "Abdellah Ouazane",
+        "slug": "abdellah-ouazane",
+        "shortName": "A. Ouazane",
+        "position": "M",
+        "jerseyNumber": "8",
+        "height": 184,
+        "userCount": 5100,
+        "gender": "M",
+        "sofascoreId": "q995ta",
+        "id": 1931396,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1231977600,
+        "proposedMarketValueRaw": {
+          "value": 1500000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "عبد الله أوزان",
+            "bn": "আবদেল্লাহ ওয়াজানে",
+            "hi": "अब्देल्लाह औज़ाने",
+            "ru": "Абделлах Уазане"
+          },
+          "shortNameTranslation": {
+            "ar": "ع. أوزان",
+            "bn": "এ.  ওয়াজানে",
+            "hi": "ए. औज़ाने",
+            "ru": "А. Уазане"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Zakari El Khalfioui",
+        "firstName": "Zakari El Khalfioui",
+        "slug": "zakari-el-khalfioui",
+        "shortName": "Z. E. Khalfioui",
+        "position": "M",
+        "jerseyNumber": "18",
+        "height": 176,
+        "userCount": 639,
+        "gender": "M",
+        "sofascoreId": "c8w2sj",
+        "id": 1961685,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204070400,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "زاكاري الخلفيوي",
+            "ru": "Эль Халфиуи, Закари"
+          },
+          "shortNameTranslation": {
+            "ar": "ز. الخلفيوي",
+            "ru": "З. Эль Халфиуи"
+          }
+        }
+      },
+      "id": 125132755,
+      "time": 65,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 26
+    },
+    {
+      "playerIn": {
+        "name": "Ismail El Aoud",
+        "firstName": "Ismail El Aoud",
+        "slug": "ismail-el-aoud",
+        "shortName": "I. E. Aoud",
+        "position": "M",
+        "jerseyNumber": "20",
+        "height": 179,
+        "userCount": 1861,
+        "gender": "M",
+        "sofascoreId": "b4pkhj",
+        "id": 1861721,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1246406400,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إسماعيل العود",
+            "ru": "Эль Ауд, Исмаил"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. العود",
+            "ru": "И. Эль Ауд"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Abdelali Daoudi",
+        "firstName": "Abdelali Daoudi",
+        "slug": "abdelali-daoudi",
+        "shortName": "A. Daoudi",
+        "position": "F",
+        "height": 175,
+        "userCount": 518,
+        "gender": "M",
+        "sofascoreId": "pa69uu",
+        "id": 1997598,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1215043200,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "عبد العلي داودي",
+            "ru": "Абделали Дауди"
+          },
+          "shortNameTranslation": {
+            "ar": "ع. داودي",
+            "ru": "А. Дауди"
+          }
+        }
+      },
+      "id": 125132754,
+      "time": 65,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 26
+    },
+    {
+      "time": 59,
+      "player": {
+        "name": "Mathis Albert",
+        "firstName": "Mathis Albert",
+        "slug": "mathis-albert",
+        "shortName": "M. Albert",
+        "position": "F",
+        "jerseyNumber": "11",
+        "height": 175,
+        "userCount": 1420,
+        "gender": "M",
+        "sofascoreId": "vnxu9w",
+        "id": 1937835,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1242864000,
+        "proposedMarketValueRaw": {
+          "value": 310000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ماثيس ألبرت",
+            "ru": "Матис Альберт"
+          },
+          "shortNameTranslation": {
+            "ar": "م. ألبرت",
+            "ru": "М. Альберт"
+          }
+        }
+      },
+      "description": "Off target",
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Mathis Albert",
+            "firstName": "Mathis Albert",
+            "slug": "mathis-albert",
+            "shortName": "M. Albert",
+            "position": "F",
+            "jerseyNumber": "11",
+            "height": 175,
+            "userCount": 1420,
+            "gender": "M",
+            "sofascoreId": "vnxu9w",
+            "id": 1937835,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1242864000,
+            "proposedMarketValueRaw": {
+              "value": 310000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "ماثيس ألبرت",
+                "ru": "Матис Альберт"
+              },
+              "shortNameTranslation": {
+                "ar": "م. ألبرت",
+                "ru": "М. Альберт"
+              }
+            }
+          },
+          "eventType": "penalty-miss",
+          "time": 59,
+          "playerCoordinates": {
+            "x": 88.5,
+            "y": 50
+          },
+          "gkCoordinates": {
+            "x": 99.5,
+            "y": 50
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 43
+          },
+          "goalMouthCoordinates": {
+            "x": 87.63,
+            "y": 56
+          },
+          "goalkeeper": {
+            "name": "Chouaib Bellaarouch",
+            "firstName": "Chouaib Bellaarouch",
+            "slug": "chouaib-bellaarouch",
+            "shortName": "C. Bellaarouch",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 188,
+            "userCount": 914,
+            "gender": "M",
+            "sofascoreId": "sxxkky",
+            "id": 1931440,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1202601600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "شعيب بلالاروش",
+                "ru": "Шуаиб Беллааруш"
+              },
+              "shortNameTranslation": {
+                "ar": "ش. بلالاروش",
+                "ru": "Ш. Беллааруш"
+              }
+            }
+          },
+          "isHome": true
+        }
+      ],
+      "id": 118583959,
+      "incidentType": "inGamePenalty",
+      "isHome": true,
+      "incidentClass": "missed",
+      "reason": "offTarget",
+      "reversedPeriodTime": 32
+    },
+    {
+      "confirmed": true,
+      "player": {
+        "name": "Jude Terry",
+        "slug": "jude-terry",
+        "shortName": "J. Terry",
+        "position": "M",
+        "jerseyNumber": "8",
+        "height": 175,
+        "userCount": 195,
+        "gender": "M",
+        "sofascoreId": "jsmma2",
+        "id": 1847619,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1223424000,
+        "proposedMarketValueRaw": {
+          "value": 73000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تيري، جود",
+            "ru": "Терри, Джуд"
+          },
+          "shortNameTranslation": {
+            "ar": "ج. تيري",
+            "ru": "Д. Терри"
+          }
+        }
+      },
+      "isHome": true,
+      "id": 91344,
+      "time": 48,
+      "incidentClass": "cardUpgrade",
+      "incidentType": "varDecision",
+      "reversedPeriodTime": 43
+    },
+    {
+      "player": {
+        "name": "Jude Terry",
+        "slug": "jude-terry",
+        "shortName": "J. Terry",
+        "position": "M",
+        "jerseyNumber": "8",
+        "height": 175,
+        "userCount": 195,
+        "gender": "M",
+        "sofascoreId": "jsmma2",
+        "id": 1847619,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1223424000,
+        "proposedMarketValueRaw": {
+          "value": 73000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تيري، جود",
+            "ru": "Терри, Джуд"
+          },
+          "shortNameTranslation": {
+            "ar": "ج. تيري",
+            "ru": "Д. Терри"
+          }
+        }
+      },
+      "playerName": "Jude Terry",
+      "reason": "Foul",
+      "rescinded": false,
+      "id": 124335867,
+      "time": 47,
+      "isHome": true,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 44
+    },
+    {
+      "text": "HT",
+      "homeScore": 1,
+      "awayScore": 0,
+      "isLive": false,
+      "time": 45,
+      "addedTime": 999,
+      "timeSeconds": 2700,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "length": 3,
+      "time": 45,
+      "addedTime": 0,
+      "incidentType": "injuryTime",
+      "reversedPeriodTime": 1
+    },
+    {
+      "player": {
+        "name": "Ilyas Hidaoui",
+        "firstName": "Ilyas Hidaoui",
+        "slug": "ilyas-hidaoui",
+        "shortName": "I. Hidaoui",
+        "position": "D",
+        "jerseyNumber": "15",
+        "height": 187,
+        "userCount": 413,
+        "gender": "M",
+        "sofascoreId": "c8w2m9",
+        "id": 1961642,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1208044800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إلياس هداوي",
+            "ru": "Хидауи, Ильяс"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. هداوي",
+            "ru": "И. Хидауи"
+          }
+        }
+      },
+      "playerName": "Ilyas Hidaoui",
+      "reason": "Argument",
+      "rescinded": false,
+      "id": 124335802,
+      "time": 38,
+      "isHome": false,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 8
+    },
+    {
+      "confirmed": true,
+      "player": {
+        "name": "Ilyas Hidaoui",
+        "firstName": "Ilyas Hidaoui",
+        "slug": "ilyas-hidaoui",
+        "shortName": "I. Hidaoui",
+        "position": "D",
+        "jerseyNumber": "15",
+        "height": 187,
+        "userCount": 413,
+        "gender": "M",
+        "sofascoreId": "c8w2m9",
+        "id": 1961642,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1208044800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إلياس هداوي",
+            "ru": "Хидауи, Ильяс"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. هداوي",
+            "ru": "И. Хидауи"
+          }
+        }
+      },
+      "isHome": false,
+      "id": 91343,
+      "time": 36,
+      "incidentClass": "cardUpgrade",
+      "incidentType": "varDecision",
+      "reversedPeriodTime": 10
+    },
+    {
+      "player": {
+        "name": "Julian Hall",
+        "firstName": "Julian Hall",
+        "slug": "hall-julian",
+        "shortName": "J. Hall",
+        "position": "F",
+        "jerseyNumber": "16",
+        "height": 178,
+        "userCount": 1588,
+        "gender": "M",
+        "sofascoreId": "6gf2fz",
+        "id": 1546887,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1206316800,
+        "proposedMarketValueRaw": {
+          "value": 8199999,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "هول، جوليان",
+            "ru": "Джулиан Холл"
+          },
+          "shortNameTranslation": {
+            "ar": "ج. هول",
+            "ru": "Д. Холл"
+          }
+        }
+      },
+      "playerName": "Julian Hall",
+      "reason": "Argument",
+      "rescinded": false,
+      "id": 124335784,
+      "time": 34,
+      "isHome": true,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 12
+    },
+    {
+      "homeScore": 1,
+      "awayScore": 0,
+      "player": {
+        "name": "Jude Terry",
+        "slug": "jude-terry",
+        "shortName": "J. Terry",
+        "position": "M",
+        "jerseyNumber": "8",
+        "height": 175,
+        "userCount": 195,
+        "gender": "M",
+        "sofascoreId": "jsmma2",
+        "id": 1847619,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1223424000,
+        "proposedMarketValueRaw": {
+          "value": 73000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "تيري، جود",
+            "ru": "Терри, Джуд"
+          },
+          "shortNameTranslation": {
+            "ar": "ج. تيري",
+            "ru": "Д. Терри"
+          }
+        }
+      },
+      "assist1": {
+        "name": "Cavan Sullivan",
+        "slug": "cavan-sullivan",
+        "shortName": "C. Sullivan",
+        "position": "M",
+        "jerseyNumber": "6",
+        "height": 173,
+        "userCount": 5679,
+        "gender": "M",
+        "sofascoreId": "sxuuit",
+        "id": 1847696,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1254096000,
+        "proposedMarketValueRaw": {
+          "value": 4300000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كافان سوليفان",
+            "bn": "কাভান সুলিভান",
+            "hi": "कैवन सुलिवान",
+            "ru": "Каван Салливан"
+          },
+          "shortNameTranslation": {
+            "ar": "ك. سوليفان",
+            "bn": "সি সুলিভান",
+            "hi": "सी. सुलिवान",
+            "ru": "К. Салливан"
+          }
+        }
+      },
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Christopher Cupps",
+            "firstName": "Christopher Cupps",
+            "slug": "christopher-cupps",
+            "shortName": "C. Cupps",
+            "position": "D",
+            "jerseyNumber": "4",
+            "height": 185,
+            "userCount": 115,
+            "gender": "M",
+            "sofascoreId": "ekepsi",
+            "id": 1834764,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1211760000,
+            "proposedMarketValueRaw": {
+              "value": 110000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "كريستوفر كابس",
+                "ru": "Кристофер Каппс"
+              },
+              "shortNameTranslation": {
+                "ar": "ك. كابس",
+                "ru": "К. Каппс"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 21,
+          "playerCoordinates": {
+            "x": 41.5,
+            "y": 33.6
+          },
+          "passEndCoordinates": {
+            "x": 42.4,
+            "y": 64
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Enrique Martinez",
+            "firstName": "Enrique Martinez",
+            "slug": "enrique-martinez",
+            "shortName": "E. Martinez",
+            "position": "D",
+            "jerseyNumber": "20",
+            "height": 186,
+            "userCount": 18,
+            "gender": "M",
+            "sofascoreId": "gw8z2c",
+            "id": 1892052,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1213228800,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "إنريكي مارتينيز",
+                "ru": "Мартинес, Энрике"
+              },
+              "shortNameTranslation": {
+                "ar": "إ. مارتينيز",
+                "ru": "Э. Мартинес"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 21,
+          "playerCoordinates": {
+            "x": 41.2,
+            "y": 70.2
+          },
+          "passEndCoordinates": {
+            "x": 47.5,
+            "y": 87.4
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Pedro Guimaraes",
+            "firstName": "Pedro Guimaraes",
+            "slug": "pedro-guimaraes",
+            "shortName": "P. Guimaraes",
+            "position": "D",
+            "jerseyNumber": "3",
+            "height": 178,
+            "userCount": 80,
+            "gender": "M",
+            "sofascoreId": "gw8g4n",
+            "id": 1906356,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1207785600,
+            "proposedMarketValueRaw": {
+              "value": 290000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيدرو غيمارايش",
+                "ru": "Гимарайнш, Педро"
+              },
+              "shortNameTranslation": {
+                "ar": "ب. غيمارايش",
+                "ru": "П. Гимарайнш"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 21,
+          "playerCoordinates": {
+            "x": 47.3,
+            "y": 88.5
+          },
+          "passEndCoordinates": {
+            "x": 76.7,
+            "y": 91.2
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Mathis Albert",
+            "firstName": "Mathis Albert",
+            "slug": "mathis-albert",
+            "shortName": "M. Albert",
+            "position": "F",
+            "jerseyNumber": "11",
+            "height": 175,
+            "userCount": 1420,
+            "gender": "M",
+            "sofascoreId": "vnxu9w",
+            "id": 1937835,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1242864000,
+            "proposedMarketValueRaw": {
+              "value": 310000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "ماثيس ألبرت",
+                "ru": "Матис Альберт"
+              },
+              "shortNameTranslation": {
+                "ar": "م. ألبرت",
+                "ru": "М. Альберт"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 21,
+          "playerCoordinates": {
+            "x": 77.2,
+            "y": 88.3
+          },
+          "passEndCoordinates": {
+            "x": 95.6,
+            "y": 80.4
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Cavan Sullivan",
+            "slug": "cavan-sullivan",
+            "shortName": "C. Sullivan",
+            "position": "M",
+            "jerseyNumber": "6",
+            "height": 173,
+            "userCount": 5679,
+            "gender": "M",
+            "sofascoreId": "sxuuit",
+            "id": 1847696,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1254096000,
+            "proposedMarketValueRaw": {
+              "value": 4300000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "كافان سوليفان",
+                "bn": "কাভান সুলিভান",
+                "hi": "कैवन सुलिवान",
+                "ru": "Каван Салливан"
+              },
+              "shortNameTranslation": {
+                "ar": "ك. سوليفان",
+                "bn": "সি সুলিভান",
+                "hi": "सी. सुलिवान",
+                "ru": "К. Салливан"
+              }
+            }
+          },
+          "eventType": "pass",
+          "isAssist": true,
+          "time": 21,
+          "playerCoordinates": {
+            "x": 98.7,
+            "y": 72.6
+          },
+          "passEndCoordinates": {
+            "x": 88.8,
+            "y": 56.2
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Jude Terry",
+            "slug": "jude-terry",
+            "shortName": "J. Terry",
+            "position": "M",
+            "jerseyNumber": "8",
+            "height": 175,
+            "userCount": 195,
+            "gender": "M",
+            "sofascoreId": "jsmma2",
+            "id": 1847619,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1223424000,
+            "proposedMarketValueRaw": {
+              "value": 73000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "تيري، جود",
+                "ru": "Терри, Джуд"
+              },
+              "shortNameTranslation": {
+                "ar": "ج. تيري",
+                "ru": "Д. Терри"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 21,
+          "playerCoordinates": {
+            "x": 88.6,
+            "y": 55.8
+          },
+          "gkCoordinates": {
+            "x": 99.1,
+            "y": 51.3
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 49.6
+          },
+          "goalMouthCoordinates": {
+            "x": 52.15,
+            "y": 93.67
+          },
+          "goalkeeper": {
+            "name": "Chouaib Bellaarouch",
+            "firstName": "Chouaib Bellaarouch",
+            "slug": "chouaib-bellaarouch",
+            "shortName": "C. Bellaarouch",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 188,
+            "userCount": 914,
+            "gender": "M",
+            "sofascoreId": "sxxkky",
+            "id": 1931440,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1202601600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "شعيب بلالاروش",
+                "ru": "Шуаиб Беллааруш"
+              },
+              "shortNameTranslation": {
+                "ar": "ش. بلالاروش",
+                "ru": "Ш. Беллааруш"
+              }
+            }
+          },
+          "isHome": true,
+          "goalType": "regular"
+        }
+      ],
+      "id": 329511286,
+      "time": 21,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 25
+    }
+  ],
+  "home": {
+    "goalkeeperColor": {
+      "primary": "990000",
+      "number": "ffffff",
+      "outline": "990000",
+      "fancyNumber": "ffffff"
+    },
+    "playerColor": {
+      "primary": "0033cc",
+      "number": "ffffff",
+      "outline": "0033cc",
+      "fancyNumber": "ffffff"
+    }
+  },
+  "away": {
+    "goalkeeperColor": {
+      "primary": "0000cc",
+      "number": "ffffff",
+      "outline": "808080",
+      "fancyNumber": "ffffff"
+    },
+    "playerColor": {
+      "primary": "ffffff",
+      "number": "cc0000",
+      "outline": "ffffff",
+      "fancyNumber": "222226"
+    }
+  }
+}

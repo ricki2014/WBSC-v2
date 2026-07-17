@@ -96,30 +96,61 @@ export const getSharedLiveState = async () => {
   return r.data;
 };
 
-export const fetchTeamMatches = async (file, statKey, matches = null) => {
+// `cond` = filtro LOCAL/VISITA/TOTAL elegido en Previa — el backend lo ignora
+// si `matches` (Seleccionados) viene con contenido, así que siempre es seguro
+// mandar ambos.
+export const fetchTeamMatches = async (file, statKey, matches = null, cond = 'TOTAL') => {
   const params = {};
   if (matches?.length) params.matches = matches.join(',');
+  if (cond && cond !== 'TOTAL') params.cond = cond;
   const r = await axios.get(`${BASE}/team-matches/${encodeURIComponent(file)}/${encodeURIComponent(statKey)}`, { params });
   return r.data;
 };
 
-export const fetchPlayerMatches = async (file, playerName, statKey = '', playerId = null, matches = null) => {
+export const fetchPlayerMatches = async (file, playerName, statKey = '', playerId = null, matches = null, cond = 'TOTAL') => {
   const params = { stat_key: statKey };
   if (playerId != null) params.player_id = playerId;
   if (matches?.length) params.matches = matches.join(',');
+  if (cond && cond !== 'TOTAL') params.cond = cond;
   const r = await axios.get(`${BASE}/player-matches/${encodeURIComponent(file)}/${encodeURIComponent(playerName)}`, {
     params,
   });
   return r.data;
 };
 
-export const fetchShotDistribution = async (file, matchId = 'all', binSize = 10, playerName = null, matches = null) => {
+// `scoreline` (opcional): 'Ganando'|'Empate'|'Perdiendo' — filtra a los tiros/
+// tarjetas ocurridos con el equipo del archivo en ese estado EN ESE INSTANTE
+// (cruza contra el marcador real del partido, raw_json). Requiere que el
+// partido tenga raw_json descargado (ver /download-team); si no, esas filas
+// simplemente no entran (el backend no inventa un estado).
+// `normalized` (opcional): en vez de la distribución por tramo, devuelve
+// {states: [{state, count, minutes, rate_per_90}, ...]} — tiros/tarjetas
+// cada 90' REALMENTE jugados en cada estado, para comparar equipos sin el
+// sesgo de cuánto tiempo pasa cada uno ganando/perdiendo.
+export const fetchShotDistribution = async (file, matchId = 'all', binSize = 10, playerName = null, matches = null, cond = 'TOTAL', scoreline = null, normalized = false) => {
   const params = {};
   if (matchId !== 'all') params.match_id = matchId;
   if (binSize !== 10) params.bin_size = binSize;
   if (playerName) params.player_name = playerName;
   if (matches?.length) params.matches = matches.join(',');
+  if (cond && cond !== 'TOTAL') params.cond = cond;
+  if (scoreline && scoreline !== 'Todas') params.scoreline = scoreline;
+  if (normalized) params.normalized = true;
   const r = await axios.get(`${BASE}/shot-distribution/${encodeURIComponent(file)}`, { params });
+  return r.data;
+};
+
+export const fetchCardDistribution = async (file, matchId = 'all', binSize = 10, playerName = null, matches = null, side = 'Propio', cond = 'TOTAL', scoreline = null, normalized = false) => {
+  const params = {};
+  if (matchId !== 'all') params.match_id = matchId;
+  if (binSize !== 10) params.bin_size = binSize;
+  if (playerName) params.player_name = playerName;
+  if (matches?.length) params.matches = matches.join(',');
+  if (side !== 'Propio') params.side = side;
+  if (cond && cond !== 'TOTAL') params.cond = cond;
+  if (scoreline && scoreline !== 'Todas') params.scoreline = scoreline;
+  if (normalized) params.normalized = true;
+  const r = await axios.get(`${BASE}/card-distribution/${encodeURIComponent(file)}`, { params });
   return r.data;
 };
 
@@ -130,5 +161,35 @@ export const fetchMomentumMatches = async (teamId) => {
 
 export const fetchMomentumData = async (teamId, matchId) => {
   const r = await axios.get(`${BASE}/momentum/${encodeURIComponent(teamId)}/${encodeURIComponent(matchId)}`);
+  return r.data;
+};
+
+export const fetchScorelineTimeline = async (teamId, binSize = 10) => {
+  const params = {};
+  if (binSize !== 10) params.bin_size = binSize;
+  const r = await axios.get(`${BASE}/scoreline-timeline/${encodeURIComponent(teamId)}`, { params });
+  return r.data.matches;
+};
+
+// Análisis de árbitro — ventana aparte abierta desde el botón "Árbitro" del Header.
+export const getAvailableReferees = async () => {
+  const r = await axios.get(`${BASE}/available-referees`);
+  return r.data.referees;
+};
+
+export const downloadReferee = async (referee, nPartidos = 20) => {
+  const r = await axios.post(`${BASE}/download-referee`,
+    { referee: String(referee), n_partidos: Number(nPartidos) },
+    { timeout: 5 * 60 * 1000 });
+  return r.data;
+};
+
+// `tournaments` (opcional) filtra a solo esas competiciones — el backend
+// recalcula distribución/promedio sobre ese subconjunto. Se manda con "~~"
+// como separador porque los nombres de torneo traen comas (ej. "Liga 1, Apertura").
+export const getRefereeAnalysis = async (refereeId, tournaments = null) => {
+  const params = {};
+  if (tournaments?.length) params.tournaments = tournaments.join('~~');
+  const r = await axios.get(`${BASE}/referee-analysis/${encodeURIComponent(refereeId)}`, { params });
   return r.data;
 };

@@ -1,0 +1,215 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Libertadores, Group D",
+    "slug": "copa-libertadores-group-d",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Libertadores",
+      "slug": "conmebol-libertadores",
+      "primaryColorHex": "#573215",
+      "secondaryColorHex": "#dfaf49",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 220768,
+      "hasPerformanceGraphFeature": false,
+      "id": 384,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوبا ليبرتادوريس",
+          "bn": "কনমেবল লিবার্তাদোরেস",
+          "hi": "कॉनमेबोल लिबर्टाडोरेस",
+          "ru": "КОНМЕБОЛ Либертадорес"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 685,
+    "isGroup": true,
+    "groupName": "Group D",
+    "groupSign": "D",
+    "isLive": false,
+    "id": 2931,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس ليبرتادوريس - كونمبول - المجموعة D",
+        "bn": "কনমেবল লিবার্তাডোরস, গ্রুপ ডি",
+        "hi": "कॉनमेबोल लिबर्टाडोरेस, ग्रुप डी",
+        "ru": "Кубок Либертадорес КОНМЕБОЛ, Группа D"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Libertadores 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87760
+  },
+  "roundInfo": {
+    "round": 3
+  },
+  "customId": "bnbsafc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Barcelona SC Guayaquil",
+    "slug": "barcelona-sc",
+    "shortName": "Barcelona SC",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 88278,
+    "nameCode": "BSC",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 5250,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#fce000",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "برشلونة إس سي",
+        "hi": "बार्सिलोना एससी",
+        "ru": "Барселона"
+      },
+      "shortNameTranslation": {
+        "ar": "برشلونة إس سي"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Universidad Católica",
+    "slug": "universidad-catolica",
+    "shortName": "Universidad Católica",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 34985,
+    "nameCode": "UC",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 3151,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "يونيفيرسيداد كاثوليكا",
+        "ru": "Универсидад Католика"
+      },
+      "shortNameTranslation": {
+        "ar": "يونيفيرسيداد كاثوليكا"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 2,
+    "period2": 0,
+    "normaltime": 2
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 6,
+    "currentPeriodStartTimestamp": 1777510939
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1777514051
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "correctHalftimeAiInsight": true,
+  "id": 15832835,
+  "slug": "barcelona-sc-guayaquil-universidad-catolica",
+  "startTimestamp": 1777507200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

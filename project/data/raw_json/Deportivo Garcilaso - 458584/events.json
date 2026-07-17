@@ -1,0 +1,6849 @@
+{
+  "events": [
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Clausura",
+        "slug": "liga-1-clausura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 218,
+        "isGroup": false,
+        "roundPrefix": "Clausura",
+        "isLive": false,
+        "id": 34468,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، إياب",
+            "bn": "লিগা 1, ক্লাউসুরা",
+            "hi": "लीगा 1, क्लॉसुरा",
+            "ru": "Лига 1, Клаусура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 70962
+      },
+      "roundInfo": {
+        "round": 11
+      },
+      "customId": "ehKsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Universidad Técnica de Cajamarca",
+        "slug": "universidad-tecnica-de-cajamarca",
+        "shortName": "UTC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 6489,
+        "nameCode": "CAJ",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 87854,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "جامعة تكنيكا دي كاخاماركا",
+            "ru": "УТК де Кахамарка"
+          },
+          "shortNameTranslation": {
+            "ar": "يو تي سي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 3,
+        "injuryTime2": 7,
+        "currentPeriodStartTimestamp": 1758848854
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1758852020
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 14636612,
+      "slug": "deportivo-garcilaso-universidad-tecnica-de-cajamarca",
+      "startTimestamp": 1758844800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Clausura",
+        "slug": "liga-1-clausura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 218,
+        "isGroup": false,
+        "roundPrefix": "Clausura",
+        "isLive": false,
+        "id": 34468,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، إياب",
+            "bn": "লিগা 1, ক্লাউসুরা",
+            "hi": "लीगा 1, क्लॉसुरा",
+            "ru": "Лига 1, Клаусура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 70962
+      },
+      "roundInfo": {
+        "round": 12
+      },
+      "customId": "kAAsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Cusco FC",
+        "slug": "cusco-fc",
+        "shortName": "Cusco",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 16988,
+        "nameCode": "CUS",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 63760,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#00ffff",
+          "secondary": "#33ffff",
+          "text": "#33ffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كوسكو إف سي",
+            "ru": "Реал Гарсиласо"
+          },
+          "shortNameTranslation": {
+            "ar": "كوسكو"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 4,
+        "display": 4,
+        "period1": 1,
+        "period2": 3,
+        "normaltime": 4
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 0,
+        "currentPeriodStartTimestamp": 1759282332
+      },
+      "changes": {
+        "changes": [
+          "time.injuryTime2"
+        ],
+        "changeTimestamp": 1759285061
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 14636620,
+      "slug": "deportivo-garcilaso-cusco-fc",
+      "startTimestamp": 1759278600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Clausura",
+        "slug": "liga-1-clausura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 218,
+        "isGroup": false,
+        "roundPrefix": "Clausura",
+        "isLive": false,
+        "id": 34468,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، إياب",
+            "bn": "লিগা 1, ক্লাউসুরা",
+            "hi": "लीगा 1, क्लॉसुरा",
+            "ru": "Лига 1, Клаусура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 70962
+      },
+      "roundInfo": {
+        "round": 13
+      },
+      "customId": "hWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Alianza Atlético de Sullana",
+        "slug": "alianza-atletico-de-sullana",
+        "shortName": "Alianza Atlético",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8664,
+        "nameCode": "AAT",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2307,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#6600ff",
+          "text": "#6600ff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أليانزا أتلتيكو دي سولانا",
+            "ru": "Альянса Атлетико"
+          },
+          "shortNameTranslation": {
+            "ar": "أليانزا أتلتيكو"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 4,
+        "display": 4,
+        "period1": 2,
+        "period2": 2,
+        "normaltime": 4
+      },
+      "time": {
+        "injuryTime1": 3,
+        "injuryTime2": 4,
+        "currentPeriodStartTimestamp": 1759707443
+      },
+      "changes": {
+        "changes": [
+          "time.injuryTime2"
+        ],
+        "changeTimestamp": 1760100665
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": true,
+      "id": 14636865,
+      "slug": "deportivo-garcilaso-alianza-atletico-de-sullana",
+      "startTimestamp": 1759703400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Clausura",
+        "slug": "liga-1-clausura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 218,
+        "isGroup": false,
+        "roundPrefix": "Clausura",
+        "isLive": false,
+        "id": 34468,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، إياب",
+            "bn": "লিগা 1, ক্লাউসুরা",
+            "hi": "लीगा 1, क्लॉसुरा",
+            "ru": "Лига 1, Клаусура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 70962
+      },
+      "roundInfo": {
+        "round": 14
+      },
+      "customId": "JwIdsgzee",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "CD Juan Pablo II",
+        "slug": "adc-juan-pablo-ii",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 4776,
+        "nameCode": "JUA",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 511206,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إيه دي سي خوان بابلو 2",
+            "ru": "КД Хуан Пабло II"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 4,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1760390591
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1760393725
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 14753645,
+      "slug": "adc-juan-pablo-ii-deportivo-garcilaso",
+      "startTimestamp": 1760386500,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Clausura",
+        "slug": "liga-1-clausura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 218,
+        "isGroup": false,
+        "roundPrefix": "Clausura",
+        "isLive": false,
+        "id": 34468,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، إياب",
+            "bn": "লিগা 1, ক্লাউসুরা",
+            "hi": "लीगा 1, क्लॉसुरा",
+            "ru": "Лига 1, Клаусура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 70962
+      },
+      "roundInfo": {
+        "round": 15
+      },
+      "customId": "cWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Club Sporting Cristal",
+        "slug": "club-sporting-cristal",
+        "shortName": "Sporting Cristal",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 55324,
+        "nameCode": "CRI",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2302,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#33ccff",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سبورتنج كريستال",
+            "ru": "Спортинг Кристал"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 0,
+        "injuryTime2": 5,
+        "currentPeriodStartTimestamp": 1760916646
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1760919666
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 14817017,
+      "slug": "deportivo-garcilaso-club-sporting-cristal",
+      "startTimestamp": 1760913000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Clausura",
+        "slug": "liga-1-clausura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 218,
+        "isGroup": false,
+        "roundPrefix": "Clausura",
+        "isLive": false,
+        "id": 34468,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، إياب",
+            "bn": "লিগা 1, ক্লাউসুরা",
+            "hi": "लीगा 1, क्लॉसुरा",
+            "ru": "Лига 1, Клаусура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 70962
+      },
+      "roundInfo": {
+        "round": 16
+      },
+      "customId": "UCnsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Ayacucho",
+        "slug": "ayacucho",
+        "shortName": "Ayacucho",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 3621,
+        "nameCode": "AYA",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 33894,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أياكوتشو",
+            "ru": "ФК Аякучо"
+          },
+          "shortNameTranslation": {
+            "ar": "أياكوتشو"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 4,
+        "display": 4,
+        "period1": 2,
+        "period2": 2,
+        "normaltime": 4
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "time": {
+        "injuryTime1": 6,
+        "injuryTime2": 9,
+        "currentPeriodStartTimestamp": 1761419227
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.period2",
+          "homeScore.normaltime",
+          "time.currentPeriodStart"
+        ],
+        "changeTimestamp": 1761422518
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": true,
+      "id": 14841182,
+      "homeRedCards": 2,
+      "awayRedCards": 3,
+      "slug": "deportivo-garcilaso-ayacucho",
+      "startTimestamp": 1761415200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Clausura",
+        "slug": "liga-1-clausura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 218,
+        "isGroup": false,
+        "roundPrefix": "Clausura",
+        "isLive": false,
+        "id": 34468,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، إياب",
+            "bn": "লিগা 1, ক্লাউসুরা",
+            "hi": "लीगा 1, क्लॉसुरा",
+            "ru": "Лига 1, Клаусура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 70962
+      },
+      "roundInfo": {
+        "round": 17
+      },
+      "customId": "hlJcsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Asociación Deportiva Tarma",
+        "slug": "asociacion-deportiva-tarma",
+        "shortName": "ADT",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 7558,
+        "nameCode": "ASO",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 335557,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "جمعية ديبورتيفا تارما",
+            "ru": "Ассоциация Депортива Тарма"
+          },
+          "shortNameTranslation": {
+            "ar": "إيه دي تي",
+            "ru": "АДТ"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 7,
+        "currentPeriodStartTimestamp": 1762041912
+      },
+      "changes": {
+        "changes": [
+          "time.injuryTime2"
+        ],
+        "changeTimestamp": 1762045573
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": false,
+      "id": 14841194,
+      "homeRedCards": 1,
+      "slug": "deportivo-garcilaso-asociacion-deportiva-tarma",
+      "startTimestamp": 1762038000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Clausura",
+        "slug": "liga-1-clausura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 218,
+        "isGroup": false,
+        "roundPrefix": "Clausura",
+        "isLive": false,
+        "id": 34468,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، إياب",
+            "bn": "লিগা 1, ক্লাউসুরা",
+            "hi": "लीगा 1, क्लॉसुरा",
+            "ru": "Лига 1, Клаусура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 70962
+      },
+      "roundInfo": {
+        "round": 18
+      },
+      "customId": "fWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Universitario de Deportes",
+        "slug": "universitario",
+        "shortName": "Universitario",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 86644,
+        "nameCode": "UNI",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2305,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffcc",
+          "secondary": "#ffffcc",
+          "text": "#ffffcc"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "يونيفرسيتاريو دي ديبورتس",
+            "hi": "यूनिवर्सिटारिओ दे देपोरतेस",
+            "ru": "Университарио де Депортес"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 1,
+        "injuryTime2": 5,
+        "currentPeriodStartTimestamp": 1762571166
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1762574259
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 14935674,
+      "slug": "deportivo-garcilaso-universitario-de-deportes",
+      "startTimestamp": 1762567200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "cWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Club Sporting Cristal",
+        "slug": "club-sporting-cristal",
+        "shortName": "Sporting Cristal",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 55324,
+        "nameCode": "CRI",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2302,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#33ccff",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سبورتنج كريستال",
+            "ru": "Спортинг Кристал"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 1,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1769972593
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1769975717
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 15362090,
+      "slug": "deportivo-garcilaso-club-sporting-cristal",
+      "startTimestamp": 1769968800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 2
+      },
+      "customId": "JwIdscPHi",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "FC Cajamarca",
+        "slug": "fc-cajamarca",
+        "shortName": "Cajamarca",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 3837,
+        "nameCode": "CAJ",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 1082002,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إف سي كاجاماركا",
+            "ru": "ФК Кахамарка"
+          },
+          "shortNameTranslation": {
+            "ru": "Кахамарка"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 7,
+        "currentPeriodStartTimestamp": 1770672800
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1770676005
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 15438956,
+      "slug": "fc-cajamarca-deportivo-garcilaso",
+      "startTimestamp": 1770669000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 3
+      },
+      "customId": "hlJcsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Asociación Deportiva Tarma",
+        "slug": "asociacion-deportiva-tarma",
+        "shortName": "ADT",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 7558,
+        "nameCode": "ASO",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 335557,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "جمعية ديبورتيفا تارما",
+            "ru": "Ассоциация Депортива Тарма"
+          },
+          "shortNameTranslation": {
+            "ar": "إيه دي تي",
+            "ru": "АДТ"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 1,
+        "period2": 0,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 4,
+        "currentPeriodStartTimestamp": 1771095845
+      },
+      "changes": {
+        "changes": [
+          "time.injuryTime2"
+        ],
+        "changeTimestamp": 1771098810
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 15445916,
+      "awayRedCards": 1,
+      "slug": "deportivo-garcilaso-asociacion-deportiva-tarma",
+      "startTimestamp": 1771092000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 4
+      },
+      "customId": "JwIdsYgXd",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "CD Moquegua",
+        "slug": "ucv-de-moquegua",
+        "shortName": "Moquegua",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 2166,
+        "nameCode": "UCV",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 492848,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سي دي موكغوا",
+            "ru": "КД Мокегуа"
+          },
+          "shortNameTranslation": {
+            "ar": "موكغوا",
+            "ru": "Мокегуа"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1771880698
+      },
+      "changes": {
+        "changes": [
+          "time.injuryTime2",
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1771883792
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 15447031,
+      "slug": "cd-moquegua-deportivo-garcilaso",
+      "startTimestamp": 1771876800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 5
+      },
+      "customId": "bWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Cienciano",
+        "slug": "cienciano",
+        "shortName": "Cienciano",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 19508,
+        "nameCode": "CIE",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2301,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سيينسيانو",
+            "hi": "CS Cienciano",
+            "ru": "CS Cienciano"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 3,
+        "display": 3,
+        "period1": 1,
+        "period2": 2,
+        "normaltime": 3
+      },
+      "time": {
+        "injuryTime1": 9,
+        "injuryTime2": 7,
+        "currentPeriodStartTimestamp": 1772245705
+      },
+      "changes": {
+        "changes": [
+          "eventState.statusIndicator"
+        ],
+        "changeTimestamp": 1772666883
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 15536575,
+      "slug": "deportivo-garcilaso-cienciano",
+      "startTimestamp": 1772241300,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "CONMEBOL Sudamericana, Qualification",
+        "slug": "copa-sudamericana-qualification",
+        "category": {
+          "name": "South America",
+          "slug": "south-america",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 18,
+          "country": {},
+          "id": 1470,
+          "flag": "south-america",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أمريكا الجنوبية",
+              "ru": "Южная Америка"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "CONMEBOL Sudamericana",
+          "slug": "conmebol-sudamericana",
+          "primaryColorHex": "#e3c000",
+          "secondaryColorHex": "#13489c",
+          "category": {
+            "name": "South America",
+            "slug": "south-america",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 18,
+            "country": {},
+            "id": 1470,
+            "flag": "south-america",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أمريكا الجنوبية",
+                "ru": "Южная Америка"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 127962,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 480,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "كأس أمريكا الجنوبية لكرة القدم",
+              "bn": "কনমেবল সুদাআমেরিকানা",
+              "hi": "कॉनमेबोल सुदामेरिकाना",
+              "pt": "Copa Sul-Americana",
+              "ru": "КОНМЕБОЛ Судамерикана"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 530,
+        "isGroup": false,
+        "isLive": false,
+        "id": 91417,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كوبا سود أمريكانا، التصفيات",
+            "bn": "কনমেবল সুদামেরিকানা, কোয়ালিফিকেশন",
+            "hi": "कॉनमेबोल सुदामेरिकाना, क्वालिफिकेशन",
+            "pt": "Copa Sul-Americana, Primeira fase",
+            "ru": "КОНМЕБОЛ Судамерикана, Квалификация"
+          },
+          "shortNameTranslation": {}
+        },
+        "qualificationOrPreliminary": true
+      },
+      "season": {
+        "name": "CONMEBOL Sudamericana 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 87770
+      },
+      "roundInfo": {
+        "round": 1,
+        "name": "Qualification Round 1",
+        "slug": "qualification-round-1"
+      },
+      "customId": "hWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Alianza Atlético de Sullana",
+        "slug": "alianza-atletico-de-sullana",
+        "shortName": "Alianza Atlético",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8664,
+        "nameCode": "AAT",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2307,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#6600ff",
+          "text": "#6600ff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أليانزا أتلتيكو دي سولانا",
+            "ru": "Альянса Атлетико"
+          },
+          "shortNameTranslation": {
+            "ar": "أليانزا أتلتيكو"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 9,
+        "currentPeriodStartTimestamp": 1772593413
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime"
+        ],
+        "changeTimestamp": 1772596696
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 15254184,
+      "slug": "deportivo-garcilaso-alianza-atletico-de-sullana",
+      "startTimestamp": 1772589600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "cupMatchesInRound": 1,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 6
+      },
+      "customId": "kAAsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Cusco FC",
+        "slug": "cusco-fc",
+        "shortName": "Cusco",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 16988,
+        "nameCode": "CUS",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 63760,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#00ffff",
+          "secondary": "#33ffff",
+          "text": "#33ffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كوسكو إف سي",
+            "ru": "Реал Гарсиласо"
+          },
+          "shortNameTranslation": {
+            "ar": "كوسكو"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 5,
+        "currentPeriodStartTimestamp": 1772931844
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1772934884
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 15590540,
+      "slug": "deportivo-garcilaso-cusco-fc",
+      "startTimestamp": 1772928000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 7
+      },
+      "customId": "lWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Alianza Lima",
+        "slug": "alianza-lima",
+        "shortName": "Alianza Lima",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 103258,
+        "nameCode": "ALI",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2311,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#091d47",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أليانزا ليما",
+            "ru": "Альянса Лима"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 3,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1773533145
+      },
+      "changes": {
+        "changes": [
+          "time.injuryTime2",
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1773536290
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 15607092,
+      "homeRedCards": 1,
+      "slug": "deportivo-garcilaso-alianza-lima",
+      "startTimestamp": 1773529200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 8
+      },
+      "customId": "NancsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Club Atlético Grau",
+        "slug": "club-atletico-grau",
+        "shortName": "Atlético Grau",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 10639,
+        "nameCode": "CAG",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 282538,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي أتلتيكو غراو",
+            "ru": "Клуб Атлетико Грау"
+          },
+          "shortNameTranslation": {
+            "ar": "أتلتيكو غراو",
+            "ru": "Грау"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 3,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1774215613
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1774218688
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 15655435,
+      "slug": "deportivo-garcilaso-club-atletico-grau",
+      "startTimestamp": 1774211400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {
+        "statusIndicator": "varInProgressAway",
+        "timestamp": 1775331521
+      },
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 9
+      },
+      "customId": "mWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Sport Boys",
+        "slug": "sport-boys",
+        "shortName": "Sport Boys",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8353,
+        "nameCode": "SBA",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2312,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffc0db",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سبورت بويز",
+            "ru": "Спорт Бойз"
+          },
+          "shortNameTranslation": {
+            "ar": "سبورت بويز"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 3,
+        "display": 3,
+        "period1": 1,
+        "period2": 2,
+        "normaltime": 3
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 10,
+        "currentPeriodStartTimestamp": 1775330611
+      },
+      "changes": {
+        "changes": [
+          "time.injuryTime2",
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1775333927
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 15714349,
+      "slug": "deportivo-garcilaso-sport-boys",
+      "startTimestamp": 1775326500,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 11
+      },
+      "customId": "VCnsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Sport Huancayo",
+        "slug": "sport-huancayo",
+        "shortName": "Sport Huancayo",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 6496,
+        "nameCode": "HUA",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 33895,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ffff00",
+          "text": "#ffff00"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سبورت هوانكايو",
+            "ru": "Спорт Хуанкайо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 1,
+        "period2": 0,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 3,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1776555337
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1776558478
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": false,
+      "id": 15885657,
+      "slug": "deportivo-garcilaso-sport-huancayo",
+      "startTimestamp": 1776551400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 10
+      },
+      "customId": "fWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Universitario de Deportes",
+        "slug": "universitario",
+        "shortName": "Universitario",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 86644,
+        "nameCode": "UNI",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2305,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffcc",
+          "secondary": "#ffffcc",
+          "text": "#ffffcc"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "يونيفرسيتاريو دي ديبورتس",
+            "hi": "यूनिवर्सिटारिओ दे देपोरतेस",
+            "ru": "Университарио де Депортес"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 4,
+        "display": 4,
+        "period1": 2,
+        "period2": 2,
+        "normaltime": 4
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 5,
+        "currentPeriodStartTimestamp": 1776911602
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1776914636
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 15881794,
+      "slug": "deportivo-garcilaso-universitario-de-deportes",
+      "startTimestamp": 1776907800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 12
+      },
+      "customId": "iWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Melgar",
+        "slug": "melgar",
+        "shortName": "Melgar",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 26485,
+        "nameCode": "MEL",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2308,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#000000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ميلغار",
+            "ru": "ФБК Мельгар"
+          },
+          "shortNameTranslation": {
+            "ar": "ميلغار"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 12,
+        "currentPeriodStartTimestamp": 1777338258
+      },
+      "changes": {
+        "changes": [
+          "time.injuryTime2",
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1777341745
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 15929225,
+      "slug": "deportivo-garcilaso-melgar",
+      "startTimestamp": 1777334400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 13
+      },
+      "customId": "eVacsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Los Chankas CYC",
+        "slug": "los-chankas-cyc",
+        "shortName": "Los Chankas",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 9252,
+        "nameCode": "CHA",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 252254,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#e20e0e",
+          "text": "#e20e0e"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "لوس تشانكاس سي واي سي",
+            "ru": "Лос Чанкас ЦИК"
+          },
+          "shortNameTranslation": {
+            "ar": "لوس تشانكاس",
+            "ru": "Лос Чанкас"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 6,
+        "injuryTime2": 9,
+        "currentPeriodStartTimestamp": 1777921911
+      },
+      "changes": {
+        "changes": [
+          "cardsCode"
+        ],
+        "changeTimestamp": 1778180413
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 15930116,
+      "awayRedCards": 1,
+      "slug": "deportivo-garcilaso-los-chankas-cyc",
+      "startTimestamp": 1777917600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 14
+      },
+      "customId": "hWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Alianza Atlético de Sullana",
+        "slug": "alianza-atletico-de-sullana",
+        "shortName": "Alianza Atlético",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8664,
+        "nameCode": "AAT",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2307,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#6600ff",
+          "text": "#6600ff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أليانزا أتلتيكو دي سولانا",
+            "ru": "Альянса Атлетико"
+          },
+          "shortNameTranslation": {
+            "ar": "أليانزا أتلتيكو"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 4,
+        "injuryTime2": 5,
+        "currentPeriodStartTimestamp": 1778526381
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1778529422
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 16022825,
+      "slug": "deportivo-garcilaso-alianza-atletico-de-sullana",
+      "startTimestamp": 1778522400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 15
+      },
+      "customId": "ehKsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Universidad Técnica de Cajamarca",
+        "slug": "universidad-tecnica-de-cajamarca",
+        "shortName": "UTC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 6489,
+        "nameCode": "CAJ",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 87854,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "جامعة تكنيكا دي كاخاماركا",
+            "ru": "УТК де Кахамарка"
+          },
+          "shortNameTranslation": {
+            "ar": "يو تي سي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1779045600
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1779048674
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 16022838,
+      "slug": "deportivo-garcilaso-universidad-tecnica-de-cajamarca",
+      "startTimestamp": 1779041700,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 16
+      },
+      "customId": "jxKbsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Comerciantes Unidos",
+        "slug": "comerciantes-unidos",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 5293,
+        "nameCode": "COM",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 213609,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffff00",
+          "secondary": "#ffff00",
+          "text": "#ffff00"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كوميرسيانتس يوني دوس",
+            "ru": "Комерсиантес Унитос"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 1,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1779744775
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1779747859
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 16147472,
+      "slug": "deportivo-garcilaso-comerciantes-unidos",
+      "startTimestamp": 1779741000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Liga 1, Apertura",
+        "slug": "liga-1-apertura",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Liga 1",
+          "slug": "liga-1",
+          "secondaryColorHex": "#f91018",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 21942,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 406,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الدوري الممتاز",
+              "bn": "লিগা 1",
+              "hi": "लीगा 1",
+              "ru": "Лига 1"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 219,
+        "isGroup": false,
+        "roundPrefix": "Apertura",
+        "isLive": false,
+        "id": 34467,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري 1، ذهاب",
+            "bn": "লিগা 1, অ্যাপেরতুরা",
+            "hi": "लीगा 1, एपर्टुरा",
+            "ru": "Лига 1, Апертура"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Liga 1 2026",
+        "year": "2026",
+        "editor": false,
+        "id": 88529
+      },
+      "roundInfo": {
+        "round": 17
+      },
+      "customId": "JwIdsgzee",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "CD Juan Pablo II",
+        "slug": "adc-juan-pablo-ii",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 4776,
+        "nameCode": "JUA",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 511206,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إيه دي سي خوان بابلو 2",
+            "ru": "КД Хуан Пабло II"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 4,
+        "display": 4,
+        "period1": 2,
+        "period2": 2,
+        "normaltime": 4
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 4,
+        "injuryTime2": 4,
+        "currentPeriodStartTimestamp": 1780175111
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1780178180
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 16153074,
+      "awayRedCards": 1,
+      "slug": "adc-juan-pablo-ii-deportivo-garcilaso",
+      "startTimestamp": 1780171200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Copa de La Liga, Group F",
+        "slug": "copa-de-la-liga-group-f",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Peru Copa de la Liga ",
+          "slug": "copa-de-la-liga",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 1832,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 35067,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ru": "Кубок Лиги"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": true,
+        "groupName": "Group F",
+        "id": 186045,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ru": "Кубок Лиги, Группа F"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "2026",
+        "year": "2026",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 5
+        },
+        "id": 95197
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "kAAsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Cusco FC",
+        "slug": "cusco-fc",
+        "shortName": "Cusco",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 16988,
+        "nameCode": "CUS",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 63760,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#00ffff",
+          "secondary": "#33ffff",
+          "text": "#33ffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كوسكو إف سي",
+            "ru": "Реал Гарсиласо"
+          },
+          "shortNameTranslation": {
+            "ar": "كوسكو"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1781481762
+      },
+      "changes": {
+        "changes": [
+          "providerLock.status",
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1781484776
+      },
+      "hasGlobalHighlights": false,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16230427,
+      "slug": "deportivo-garcilaso-cusco-fc",
+      "startTimestamp": 1781478000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Copa de La Liga, Group F",
+        "slug": "copa-de-la-liga-group-f",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Peru Copa de la Liga ",
+          "slug": "copa-de-la-liga",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 1832,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 35067,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ru": "Кубок Лиги"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": true,
+        "groupName": "Group F",
+        "id": 186045,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ru": "Кубок Лиги, Группа F"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "2026",
+        "year": "2026",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 5
+        },
+        "id": 95197
+      },
+      "roundInfo": {
+        "round": 2
+      },
+      "customId": "bWsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Cienciano",
+        "slug": "cienciano",
+        "shortName": "Cienciano",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 19508,
+        "nameCode": "CIE",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 2301,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سيينسيانو",
+            "hi": "CS Cienciano",
+            "ru": "CS Cienciano"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 1,
+        "period2": 0,
+        "normaltime": 1
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1782086700
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1782089867
+      },
+      "hasGlobalHighlights": false,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16230439,
+      "homeRedCards": 1,
+      "awayRedCards": 1,
+      "slug": "deportivo-garcilaso-cienciano",
+      "startTimestamp": 1782082800,
+      "finalResultOnly": false,
+      "feedLocked": false,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Copa de La Liga, Group F",
+        "slug": "copa-de-la-liga-group-f",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Peru Copa de la Liga ",
+          "slug": "copa-de-la-liga",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 1832,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 35067,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ru": "Кубок Лиги"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": true,
+        "groupName": "Group F",
+        "id": 186045,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ru": "Кубок Лиги, Группа F"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "2026",
+        "year": "2026",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 5
+        },
+        "id": 95197
+      },
+      "roundInfo": {
+        "round": 3
+      },
+      "customId": "OqkcsJwId",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Binacional",
+        "slug": "deportivo-binacional",
+        "shortName": "Binacional",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 3830,
+        "nameCode": "EDB",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 275839,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#215fba",
+          "secondary": "#feffff",
+          "text": "#feffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو بيناسيونال",
+            "ru": "Депортиво Бинасиональ"
+          },
+          "shortNameTranslation": {
+            "ar": "بيناسيونال",
+            "ru": "Бинасиональ"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 4,
+        "display": 4,
+        "period1": 2,
+        "period2": 2,
+        "normaltime": 4
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 1,
+        "period2": 0,
+        "normaltime": 1
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1782767909
+      },
+      "changes": {
+        "changes": [
+          "cardsCode"
+        ],
+        "changeTimestamp": 1782778790
+      },
+      "hasGlobalHighlights": false,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16230455,
+      "slug": "deportivo-garcilaso-deportivo-binacional",
+      "startTimestamp": 1782764100,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Copa de la Liga, Knockout Stage",
+        "slug": "copa-de-la-liga-knockout-stage",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Peru Copa de la Liga ",
+          "slug": "copa-de-la-liga",
+          "category": {
+            "name": "Peru",
+            "slug": "peru",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "PE",
+              "alpha3": "PER",
+              "name": "Peru",
+              "slug": "peru"
+            },
+            "id": 20,
+            "flag": "peru",
+            "alpha2": "PE",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "بيرو",
+                "ru": "Перу"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 1832,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 35067,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ru": "Кубок Лиги"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "id": 190242
+      },
+      "season": {
+        "name": "2026",
+        "year": "2026",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 5
+        },
+        "id": 95197
+      },
+      "roundInfo": {
+        "round": 5,
+        "name": "Round of 16",
+        "slug": "round-of-16",
+        "cupRoundType": 8
+      },
+      "customId": "JwIdsYgXd",
+      "status": {
+        "code": 120,
+        "description": "AP",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "CD Moquegua",
+        "slug": "ucv-de-moquegua",
+        "shortName": "Moquegua",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 2166,
+        "nameCode": "UCV",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 492848,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سي دي موكغوا",
+            "ru": "КД Мокегуа"
+          },
+          "shortNameTranslation": {
+            "ar": "موكغوا",
+            "ru": "Мокегуа"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Deportivo Garcilaso",
+        "slug": "deportivo-garcilaso",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8823,
+        "nameCode": "DEP",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 458584,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديبورتيفو غارسيلاسو",
+            "ru": "Депортиво Гарсиласо"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 4,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0,
+        "extra1": 0,
+        "extra2": 0,
+        "overtime": 0,
+        "penalties": 4
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0,
+        "extra1": 0,
+        "extra2": 0,
+        "overtime": 0,
+        "penalties": 2
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1783886400,
+        "lastPeriodEndTimestamp": 1783882091
+      },
+      "changes": {
+        "changes": [
+          "homeScore.current",
+          "homeScore.penalties",
+          "awayScore.current",
+          "awayScore.penalties"
+        ],
+        "changeTimestamp": 1783886882
+      },
+      "hasGlobalHighlights": false,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16418652,
+      "slug": "cd-moquegua-deportivo-garcilaso",
+      "startTimestamp": 1783879200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "cupMatchesInRound": 1,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    }
+  ],
+  "hasNextPage": true
+}

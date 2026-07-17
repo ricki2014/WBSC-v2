@@ -1,0 +1,239 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Libertadores, Qualification",
+    "slug": "copa-libertadores-qualification",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "country": {},
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Libertadores",
+      "slug": "conmebol-libertadores",
+      "primaryColorHex": "#573215",
+      "secondaryColorHex": "#dfaf49",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "country": {},
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 220768,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 384,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوبا ليبرتادوريس",
+          "bn": "কনমেবল লিবার্তাদোরেস",
+          "hi": "कॉनमेबोल लिबर्टाडोरेस",
+          "ru": "КОНМЕБОЛ Либертадорес"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 680,
+    "isGroup": false,
+    "isLive": false,
+    "id": 14805,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوبا ليبرتادوريس، التصفيات",
+        "bn": "কনমেবল লিবার্তাদোরেস, কোয়ালিফাইং",
+        "hi": "कॉनमेबोल लिबर्टाडोरेस, क्वालिफिकेशन",
+        "ru": "Кубок Либертадорес КОНМЕБОЛ, квалификация"
+      },
+      "shortNameTranslation": {}
+    },
+    "qualificationOrPreliminary": true
+  },
+  "season": {
+    "name": "CONMEBOL Libertadores 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87760
+  },
+  "roundInfo": {
+    "round": 3,
+    "name": "Qualification Round 3",
+    "slug": "qualification-round-3"
+  },
+  "customId": "cWsEzc",
+  "status": {
+    "code": 120,
+    "description": "AP",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "aggregatedWinnerCode": 1,
+  "homeTeam": {
+    "name": "Club Sporting Cristal",
+    "slug": "club-sporting-cristal",
+    "shortName": "Sporting Cristal",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 55324,
+    "nameCode": "CRI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2302,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#33ccff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورتنج كريستال",
+        "ru": "Спортинг Кристал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Carabobo FC",
+    "slug": "carabobo",
+    "shortName": "Carabobo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 15329,
+    "nameCode": "CFC",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "VE",
+      "alpha3": "VEN",
+      "name": "Venezuela",
+      "slug": "venezuela"
+    },
+    "id": 6229,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#31060f",
+      "secondary": "#222226",
+      "text": "#222226"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كارابوبو إف سي",
+        "hi": "कराबोबो ऍफ़सी",
+        "ru": "Карабобо ФК"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 4,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1,
+    "penalties": 3,
+    "aggregated": 2
+  },
+  "awayScore": {
+    "current": 4,
+    "display": 2,
+    "period1": 2,
+    "period2": 0,
+    "normaltime": 2,
+    "penalties": 2,
+    "aggregated": 2
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 6,
+    "currentPeriodStartTimestamp": 1773270288
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.display",
+      "homeScore.penalties",
+      "homeScore.aggregated",
+      "awayScore.display",
+      "awayScore.penalties",
+      "awayScore.aggregated"
+    ],
+    "changeTimestamp": 1773274205
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "correctHalftimeAiInsight": true,
+  "id": 15253550,
+  "slug": "carabobo-club-sporting-cristal",
+  "previousLegEventId": 15458730,
+  "startTimestamp": 1773266400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "cupMatchesInRound": 2,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

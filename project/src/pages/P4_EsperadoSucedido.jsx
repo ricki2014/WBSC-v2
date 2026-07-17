@@ -1,18 +1,17 @@
 // TAB 4 — Esperado vs Sucedido vs Restante
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { fetchTeamMatches } from '../api';
-import { computePositions } from '../lib/pitchLayout';
 
 const ROWS_DEF = [
-  { icon: '⚽', label: 'Goles',          k: 'G_F',  lk: 'Goles'        },
-  { icon: '🚩', label: 'Corners',        k: 'C_F',  lk: 'Corners'      },
-  { icon: '🟨', label: 'Amarillas',      k: 'AM_F', lk: 'Tarjetas'     },
-  { icon: '🟥', label: 'Tarjetas rojas', k: 'RO_F', lk: 'Rojas'        },
-  { icon: '🎯', label: 'Disparos tot.',  k: 'TI_F', lk: 'Disparos'     },
-  { icon: '🥅', label: 'Tiro al arco',   k: null,   lk: 'TiroAlArco'   },
-  { icon: '🔄', label: 'Pases',          k: 'PA_F', lk: 'Pases'        },
-  { icon: '🤛', label: 'Faltas com.',    k: 'FA_F', lk: 'FoulCometido' },
-  { icon: '🛡️', label: 'Faltas rec.',    k: 'FA_C', lk: 'FoulRecibido' },
+  { icon: '⚽', label: 'Goles',          k: 'G_F',   lk: 'Goles'        },
+  { icon: '🚩', label: 'Corners',        k: 'C_F',   lk: 'Corners'      },
+  { icon: '🟨', label: 'Amarillas',      k: 'AM_F',  lk: 'Tarjetas'     },
+  { icon: '🟥', label: 'Tarjetas rojas', k: 'RO_F',  lk: 'Rojas'        },
+  { icon: '🎯', label: 'Disparos tot.',  k: 'TI_F',  lk: 'Disparos'     },
+  { icon: '🥅', label: 'Tiro al arco',   k: 'SOT_F', lk: 'TiroAlArco'   },
+  { icon: '🔄', label: 'Pases',          k: 'PA_F',  lk: 'Pases'        },
+  { icon: '🤛', label: 'Faltas com.',    k: 'FA_F',  lk: 'FoulCometido' },
+  { icon: '🛡️', label: 'Faltas rec.',    k: 'FA_C',  lk: 'FoulRecibido' },
 ];
 
 const HALVES = [
@@ -20,50 +19,6 @@ const HALVES = [
   { id: '2T', label: '2° Tiempo' },
   { id: 'FT', label: 'Total'     },
 ];
-
-// ─── TIRO AL ARCO: no hay columna histórica por equipo (el downloader nunca
-// captura "shots on target" a nivel equipo/tiempo, solo por jugador). Como
-// alternativa, el Esperado de esta fila se arma sumando el promedio individual
-// histórico (Al Arco p90) de los jugadores que están EN CANCHA ahora mismo —
-// se recalcula solo porque `positions` depende de `lineupData`, que cambia con
-// cada sustitución.
-function buildStatsMap(rankings) {
-  const byId = {}, byName = {};
-  Object.values(rankings || {}).forEach(roleRows => {
-    (roleRows || []).forEach(row => {
-      const name = (row.jugador || '').toLowerCase();
-      if (row.player_id != null) byId[row.player_id] = { ...(byId[row.player_id] || {}), ...row };
-      if (name) byName[name] = { ...(byName[name] || {}), ...row };
-    });
-  });
-  return { byId, byName };
-}
-
-function findPlayerStatsRow(player, statsMap) {
-  if (player.id != null && statsMap.byId[player.id]) return statsMap.byId[player.id];
-  const names = [player.shortName, player.name].filter(Boolean);
-  for (const name of names) {
-    const nl = name.toLowerCase();
-    if (statsMap.byName[nl]) return statsMap.byName[nl];
-    for (const [key, val] of Object.entries(statsMap.byName)) {
-      const tokens = nl.split(' ').filter(t => t.length > 3);
-      if (tokens.some(t => key.includes(t))) return val;
-      const ktokens = key.split(' ').filter(t => t.length > 3);
-      if (ktokens.some(t => nl.includes(t))) return val;
-    }
-  }
-  return null;
-}
-
-function sumOnFieldStat(onFieldPlayers, statsMap, key) {
-  let sum = 0, matched = 0;
-  onFieldPlayers.forEach(p => {
-    const row = findPlayerStatsRow(p, statsMap);
-    const v = row ? Number(row[key]) : NaN;
-    if (!isNaN(v)) { sum += v; matched++; }
-  });
-  return { sum, matched, total: onFieldPlayers.length };
-}
 
 function pct(suc, esp) {
   if (!esp || esp === 0) return null;
@@ -246,27 +201,44 @@ function GoalBucketLegend() {
   );
 }
 
+// Filas cuyo modal de historial también debe mostrar, lado a lado, otra
+// estadística relacionada (ej. Tiro al arco → además la columna de Tiros
+// Totales) — mismo partido, mismo desglose 1T/2T/Total.
+const EXTRA_STAT_MAP = {
+  SOT_F: { key: 'TI_F', label: 'Tiros Tot.' },
+};
+
 // ─── MODAL HISTORIAL POR PARTIDO ─────────────────────────────────────────────
-function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMatches, selRivalMatches, onClose }) {
+function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMatches, selRivalMatches, cond, rivalCond, onClose }) {
   const [data, setData]           = useState(null);
   const [rivalData, setRivalData] = useState(null);
+  const [extraData, setExtraData] = useState(null);
   const [loading, setLoading]     = useState(true);
+
+  const extraStat = EXTRA_STAT_MAP[row?.k];
 
   useEffect(() => {
     if (!file || !row?.k) return;
     setLoading(true);
-    fetchTeamMatches(file, row.k, selMatches)
+    fetchTeamMatches(file, row.k, selMatches, cond)
       .then(d => setData(d))
       .catch(() => setData(null))
       .finally(() => setLoading(false));
-  }, [file, row?.k, selMatches]);
+  }, [file, row?.k, selMatches, cond]);
 
   useEffect(() => {
     if (!rivalFile || !row?.k) return;
-    fetchTeamMatches(rivalFile, row.k, selRivalMatches)
+    fetchTeamMatches(rivalFile, row.k, selRivalMatches, rivalCond)
       .then(d => setRivalData(d))
       .catch(() => setRivalData(null));
-  }, [rivalFile, row?.k, selRivalMatches]);
+  }, [rivalFile, row?.k, selRivalMatches, rivalCond]);
+
+  useEffect(() => {
+    if (!file || !extraStat) { setExtraData(null); return; }
+    fetchTeamMatches(file, extraStat.key, selMatches, cond)
+      .then(d => setExtraData(d))
+      .catch(() => setExtraData(null));
+  }, [file, extraStat?.key, selMatches, cond]);
 
   useEffect(() => {
     const h = e => { if (e.key === 'Escape') onClose(); };
@@ -274,7 +246,8 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMa
     return () => window.removeEventListener('keydown', h);
   }, [onClose]);
 
-  const matches = data?.matches || [];
+  const matches      = data?.matches || [];
+  const extraMatches = extraData?.matches || [];
 
   const totals = { stat_1T: 0, stat_2T: 0, stat_FT: 0, rival_1T: 0, rival_2T: 0, rival_FT: 0 };
   matches.forEach(m => {
@@ -284,6 +257,13 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMa
     totals.rival_1T += m.rival_1T ?? 0;
     totals.rival_2T += m.rival_2T ?? 0;
     totals.rival_FT += m.rival_FT ?? 0;
+  });
+
+  const extraTotals = { stat_1T: 0, stat_2T: 0, stat_FT: 0 };
+  extraMatches.forEach(m => {
+    extraTotals.stat_1T += m.stat_1T ?? 0;
+    extraTotals.stat_2T += m.stat_2T ?? 0;
+    extraTotals.stat_FT += m.stat_FT ?? 0;
   });
 
   const parseScore = str => {
@@ -334,9 +314,16 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMa
                 <th className="px-2 py-2 text-center font-semibold border-b border-gray-700">L/V</th>
                 <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 font-mono">HT</th>
                 <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 font-mono">FT</th>
-                <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 text-yellow-400">1T</th>
-                <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 text-cyan-400">2T</th>
-                <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 text-green-400">Total</th>
+                <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 text-yellow-400">{extraStat ? `${row.label} 1T` : '1T'}</th>
+                <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 text-cyan-400">{extraStat ? `${row.label} 2T` : '2T'}</th>
+                <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 text-green-400">{extraStat ? `${row.label} Tot` : 'Total'}</th>
+                {extraStat && (
+                  <>
+                    <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 border-l border-gray-600 text-purple-400">{extraStat.label} 1T</th>
+                    <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 text-purple-400">{extraStat.label} 2T</th>
+                    <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 text-purple-400">{extraStat.label} Tot</th>
+                  </>
+                )}
                 <th className="px-2 py-2 text-center font-semibold border-b border-gray-700">R</th>
                 <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 border-l border-gray-600 text-orange-400">Riv 1T</th>
                 <th className="px-2 py-2 text-center font-semibold border-b border-gray-700 text-orange-400">Riv 2T</th>
@@ -347,6 +334,7 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMa
               {matches.map((m, i) => {
                 const r = result(m);
                 const hasFecha = m.fecha !== null && m.fecha !== undefined;
+                const em = extraMatches[i];
                 return (
                   <tr key={i} className={`border-b border-gray-800/50 ${i % 2 === 0 ? 'bg-gray-900/30' : ''} hover:bg-gray-700/30`}>
                     <td className="px-2 py-1.5 text-gray-600">{i + 1}</td>
@@ -363,6 +351,13 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMa
                     <td className="px-2 py-1.5 text-center text-yellow-400 font-bold">{fmt(m.stat_1T)}</td>
                     <td className="px-2 py-1.5 text-center text-cyan-400 font-bold">{fmt(m.stat_2T)}</td>
                     <td className="px-2 py-1.5 text-center text-green-400 font-bold">{fmt(m.stat_FT)}</td>
+                    {extraStat && (
+                      <>
+                        <td className="px-2 py-1.5 text-center text-purple-400 font-bold border-l border-gray-600">{fmt(em?.stat_1T)}</td>
+                        <td className="px-2 py-1.5 text-center text-purple-400 font-bold">{fmt(em?.stat_2T)}</td>
+                        <td className="px-2 py-1.5 text-center text-purple-400 font-bold">{fmt(em?.stat_FT)}</td>
+                      </>
+                    )}
                     <td className={`px-2 py-1.5 text-center font-bold
                       ${r === 'G' ? 'text-green-400' : r === 'P' ? 'text-red-400' : r === 'E' ? 'text-yellow-400' : 'text-gray-600'}`}>
                       {r || '—'}
@@ -382,6 +377,13 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMa
                 <td className="px-2 py-1.5 text-center text-yellow-400 font-bold">{fmt(totals.stat_1T)}</td>
                 <td className="px-2 py-1.5 text-center text-cyan-400 font-bold">{fmt(totals.stat_2T)}</td>
                 <td className="px-2 py-1.5 text-center text-green-400 font-bold">{fmt(totals.stat_FT)}</td>
+                {extraStat && (
+                  <>
+                    <td className="px-2 py-1.5 text-center text-purple-400 font-bold border-l border-gray-600">{fmt(extraTotals.stat_1T)}</td>
+                    <td className="px-2 py-1.5 text-center text-purple-400 font-bold">{fmt(extraTotals.stat_2T)}</td>
+                    <td className="px-2 py-1.5 text-center text-purple-400 font-bold">{fmt(extraTotals.stat_FT)}</td>
+                  </>
+                )}
                 <td />
                 <td className="px-2 py-1.5 text-center text-orange-400 font-bold border-l border-gray-600">{fmt(totals.rival_1T)}</td>
                 <td className="px-2 py-1.5 text-center text-orange-400 font-bold">{fmt(totals.rival_2T)}</td>
@@ -452,6 +454,34 @@ function StatMatchModal({ row, teamName, file, rivalFile, rivalName, half, selMa
                       Sobre {matches.length} partidos ({teamName}) · {rMatches.length} partidos ({rivalName})
                     </span>
                   </div>
+
+                  <div className="mt-4 pt-3 border-t border-gray-700/50">
+                    <div className="text-[11px] text-gray-500 mb-3 font-semibold uppercase tracking-wide">
+                      Distribución de Goles en Contra por Partido — 1° Tiempo · 2° Tiempo · Total
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <div className="text-[10px] text-green-400 font-bold mb-2 text-center">{teamName}</div>
+                        <div className="flex flex-col gap-4">
+                          <GoalBucketChart matches={matches} statKey="rival" mode="prob"  title="Probabilidad de goles en contra" />
+                          <GoalBucketChart matches={matches} statKey="rival" mode="count" title="N° de partidos con X goles en contra" />
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] text-blue-400 font-bold mb-2 text-center">{rivalName}</div>
+                        <div className="flex flex-col gap-4">
+                          <GoalBucketChart matches={rMatches} statKey="rival" mode="prob"  title="Probabilidad de goles en contra" />
+                          <GoalBucketChart matches={rMatches} statKey="rival" mode="count" title="N° de partidos con X goles en contra" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
+                      <GoalBucketLegend />
+                      <span className="text-[9px] text-gray-600">
+                        Sobre {matches.length} partidos ({teamName}) · {rMatches.length} partidos ({rivalName})
+                      </span>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -474,7 +504,7 @@ function expectedValue(r, stats, rivalStats, half) {
 }
 
 // ─── TABLA ESR POR EQUIPO ─────────────────────────────────────────────────────
-function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onRowClick, onFieldSHO }) {
+function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onRowClick }) {
   const colorCls = color === 'green' ? 'text-green-400' : 'text-blue-400';
   const bgCls    = color === 'green'
     ? 'bg-green-500/10 border-green-500/30'
@@ -499,10 +529,7 @@ function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onR
         </thead>
         <tbody>
           {ROWS_DEF.map(r => {
-            const isSHO = r.lk === 'TiroAlArco';
-            const esp  = isSHO
-              ? (onFieldSHO ? (half === 'FT' ? onFieldSHO.sum : onFieldSHO.sum / 2) : 0)
-              : expectedValue(r, stats, rivalStats, half);
+            const esp  = expectedValue(r, stats, rivalStats, half);
             const suc  = liveTeam?.[r.lk] ?? 0;
             const rest = esp > 0 ? esp - suc : 0;
             const p    = pct(suc, esp);
@@ -513,18 +540,11 @@ function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onR
                 className={`border-b border-gray-800/50 transition-colors
                   ${clickable ? 'cursor-pointer hover:bg-white/5 active:bg-white/10' : ''}`}
                 onClick={clickable ? () => onRowClick(r) : undefined}
-                title={clickable
-                  ? `Ver historial de ${r.label} por partido`
-                  : isSHO
-                    ? `Esperado = suma del promedio individual (Al Arco p90) de los ${onFieldSHO?.total ?? 11} jugadores en cancha (${onFieldSHO?.matched ?? 0} con datos) — se recalcula con cada cambio`
-                    : undefined}
+                title={clickable ? `Ver historial de ${r.label} por partido` : undefined}
               >
                 <td className="py-1.5 text-gray-300 text-[11px]">
                   {r.icon} {r.label}
                   {clickable && <span className="ml-1 text-gray-600 text-[9px]">↗</span>}
-                  {isSHO && onFieldSHO && (
-                    <span className="ml-1 text-gray-600 text-[9px]">({onFieldSHO.matched}/{onFieldSHO.total} en cancha)</span>
-                  )}
                 </td>
                 <td className="py-1.5 text-center">
                   <span className="text-yellow-400 font-bold">
@@ -558,30 +578,12 @@ function TeamESR({ teamName, stats, rivalStats, liveTeam, color, half, file, onR
 
 // ─── COMPONENTE PRINCIPAL ─────────────────────────────────────────────────────
 export default function P4_EsperadoSucedido({
-  analysis, liveStats, selectedFiles, matches1, matches2,
-  lineupData, manualPos, fieldSwapped, baseSwapped,
+  analysis, liveStats, selectedFiles, matches1, matches2, cond1, cond2,
 }) {
   const [half, setHalf] = useState('FT');
   const [modal, setModal] = useState(null); // { row, teamName, file }
 
   const handleClose = useCallback(() => setModal(null), []);
-
-  // Jugadores actualmente en cancha — se recalcula solo con cada sustitución
-  // porque `lineupData` se actualiza en el lugar (ver P5_Alineaciones).
-  const positions = useMemo(
-    () => manualPos ?? computePositions(lineupData, fieldSwapped, baseSwapped),
-    [manualPos, lineupData, fieldSwapped, baseSwapped]
-  );
-
-  const shoStatsMaps = useMemo(() => ({
-    team1: buildStatsMap(analysis?.rankings?.team1),
-    team2: buildStatsMap(analysis?.rankings?.team2),
-  }), [analysis]);
-
-  const onFieldSHO = useMemo(() => ({
-    team1: sumOnFieldStat(positions.filter(p => p.team === 'team1'), shoStatsMaps.team1, 'Al Arco p90'),
-    team2: sumOnFieldStat(positions.filter(p => p.team === 'team2'), shoStatsMaps.team2, 'Al Arco p90'),
-  }), [positions, shoStatsMaps]);
 
   if (!analysis) return (
     <div className="h-full flex items-center justify-center text-gray-500 text-sm">
@@ -625,8 +627,7 @@ export default function P4_EsperadoSucedido({
           color="green"
           half={half}
           file={selectedFiles?.f1}
-          onFieldSHO={onFieldSHO.team1}
-          onRowClick={r => setModal({ row: r, teamName: team1.name, file: selectedFiles?.f1, rivalFile: selectedFiles?.f2, rivalName: team2.name, matches: matches1, rivalMatches: matches2 })}
+          onRowClick={r => setModal({ row: r, teamName: team1.name, file: selectedFiles?.f1, rivalFile: selectedFiles?.f2, rivalName: team2.name, matches: matches1, rivalMatches: matches2, cond: cond1, rivalCond: cond2 })}
         />
         <TeamESR
           teamName={team2.name}
@@ -636,8 +637,7 @@ export default function P4_EsperadoSucedido({
           color="blue"
           half={half}
           file={selectedFiles?.f2}
-          onFieldSHO={onFieldSHO.team2}
-          onRowClick={r => setModal({ row: r, teamName: team2.name, file: selectedFiles?.f2, rivalFile: selectedFiles?.f1, rivalName: team1.name, matches: matches2, rivalMatches: matches1 })}
+          onRowClick={r => setModal({ row: r, teamName: team2.name, file: selectedFiles?.f2, rivalFile: selectedFiles?.f1, rivalName: team1.name, matches: matches2, rivalMatches: matches1, cond: cond2, rivalCond: cond1 })}
         />
 
         {/* Modal sobreposición */}
@@ -651,6 +651,8 @@ export default function P4_EsperadoSucedido({
               rivalName={modal.rivalName}
               selMatches={modal.matches}
               selRivalMatches={modal.rivalMatches}
+              cond={modal.cond}
+              rivalCond={modal.rivalCond}
               half={half}
               onClose={handleClose}
             />
@@ -662,8 +664,6 @@ export default function P4_EsperadoSucedido({
         <span>ℹ️</span>
         <span>
           Esperado = (mi promedio + lo que el rival concede/induce en promedio) / 2 · misma fórmula que "Expectativas" en Previa
-          <br/>
-          🥅 Tiro al arco es la excepción: no hay dato histórico por equipo, así que Esperado = suma del promedio individual (Al Arco p90) de los jugadores en cancha ahora — se recalcula con cada sustitución
           <br/>
           Barra verde = dentro de lo esperado · Amarilla = llegando al límite · Roja = por encima
           <span className="ml-2 text-gray-600">· Haz clic en una fila para ver el historial por partido</span>

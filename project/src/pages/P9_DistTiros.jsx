@@ -11,11 +11,115 @@ const RESULTADO_COLOR = {
 };
 const RESULTADO_ORDER = ['Gol', 'Al arco', 'Afuera', 'Bloqueado'];
 
+// ─── FILTRO GANANDO / EMPATE / PERDIENDO (marcador en el instante del tiro) ──
+// Un solo filtro para los DOS paneles: "Ganando" muestra los tiros de CADA
+// equipo cuando ESE equipo iba ganando en ese momento (no solo team1).
+// Requiere raw_json descargado (event+incidents) para saber el marcador en
+// cada minuto — partidos sin esos datos quedan afuera del filtro.
+const SCORELINE_OPTIONS = [
+  { value: 'Todas',     label: 'Todas'       },
+  { value: 'Ganando',   label: '🟢 Ganando'  },
+  { value: 'Empate',    label: '⚪ Empate'   },
+  { value: 'Perdiendo', label: '🔴 Perdiendo' },
+];
+
+function ScorelineFilter({ value, onChange }) {
+  return (
+    <div className="flex gap-1">
+      {SCORELINE_OPTIONS.map(o => {
+        const active = value === o.value;
+        return (
+          <button key={o.value} onClick={() => onChange(o.value)}
+            className={`text-[10px] px-2 py-1 rounded-lg border font-medium transition-all
+              ${active ? 'bg-gray-700 border-gray-400 text-white' : 'bg-gray-800 border-gray-600 text-gray-400 hover:border-gray-400'}`}>
+            {o.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+// ─── TOGGLE "NORMALIZADO" ─────────────────────────────────────────────────────
+// Un conteo crudo de "tiros ganando" está sesgado por cuánto tiempo pasa cada
+// equipo ganando — un equipo que casi nunca gana va a tener pocos tiros ahí
+// aunque dispare mucho cada vez que gana. Normalizado muestra tiros CADA 90'
+// REALMENTE jugados en cada estado, para comparar parejo entre equipos.
+function NormalizedToggle({ active, onChange }) {
+  return (
+    <button onClick={() => onChange(!active)}
+      className={`text-[10px] px-2 py-1 rounded-lg border font-medium transition-all
+        ${active ? 'bg-purple-900/40 border-purple-500 text-purple-300' : 'bg-gray-800 border-gray-600 text-gray-400 hover:border-gray-400'}`}>
+      📐 Normalizado
+    </button>
+  );
+}
+
+const SCORELINE_STYLE = {
+  Ganando:   { icon: '🟢', bar: 'bg-green-500' },
+  Empate:    { icon: '⚪', bar: 'bg-gray-400'  },
+  Perdiendo: { icon: '🔴', bar: 'bg-red-500'   },
+};
+
+// ─── PANEL "NORMALIZADO" (cada 90' jugados en ese estado) ────────────────────
+function NormalizedPanel({ states, loading, color, unitLabel, n_matches_reliable }) {
+  if (loading) return <div className="flex items-center justify-center py-6 text-gray-500 text-xs">Cargando...</div>;
+  if (!states || states.length === 0) return (
+    <div className="flex items-center justify-center py-6 text-gray-500 text-xs">Sin datos</div>
+  );
+  const accent  = color === 'green' ? 'text-green-400' : color === 'red' ? 'text-red-400' : 'text-blue-400';
+  const border  = color === 'green' ? 'border-green-800/30' : color === 'red' ? 'border-red-800/30' : 'border-blue-800/30';
+  const maxRate = Math.max(...states.map(s => s.rate_per_90 || 0), 0.01);
+  return (
+    <div className={`bg-gray-900/60 border ${border} rounded-xl p-3 flex flex-col gap-3`}>
+      <div className="flex items-center justify-between">
+        <span className={`text-xs font-semibold ${accent}`}>📐 Normalizado — {unitLabel} cada 90' jugados en ese estado</span>
+        {n_matches_reliable != null && <span className="text-gray-500 text-[10px]">{n_matches_reliable} partidos con dato</span>}
+      </div>
+      {states.map(s => (
+        <div key={s.state} className="flex flex-col gap-1">
+          <div className="flex items-center justify-between text-xs">
+            <span className="text-gray-300">{SCORELINE_STYLE[s.state]?.icon} {s.state}</span>
+            <span className="text-white font-bold">{s.rate_per_90 != null ? s.rate_per_90.toFixed(2) : '—'} / 90'</span>
+          </div>
+          <div className="w-full h-2 bg-gray-800 rounded overflow-hidden">
+            <div className={`h-full ${SCORELINE_STYLE[s.state]?.bar ?? 'bg-gray-600'}`}
+              style={{ width: `${s.rate_per_90 != null ? Math.max(2, (s.rate_per_90 / maxRate) * 100) : 0}%` }} />
+          </div>
+          <span className="text-gray-600 text-[10px]">{s.count} en {s.minutes}' jugados</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function playerLabel(player) {
   const full = player.name || player.shortName || '';
   const parts = full.trim().split(/\s+/);
   if (parts.length >= 2) return `${parts[0][0].toUpperCase()}. ${parts.slice(1).join(' ')}`;
   return full;
+}
+
+const playerUid = p => p.id != null ? `p${p.id}` : `${p.side}-${p.lineupOrder}`;
+
+// ─── ESCALA DE CALOR (acumulación de disparos a lo largo del partido) ────────
+// En vez de resaltar un único tramo puntual de 10 min con más disparos, el
+// color refleja el minuto promedio ponderado de todos los disparos del
+// jugador (0 = arrancó el partido, 90 = terminó) — así un jugador con
+// disparos repartidos entre el 0-30 da verde, concentrados en el 31-60 da
+// naranja, y en el 61-90+ da rojo, con degradado continuo entre medio.
+function heatColorForMinute(avgMinute) {
+  const t = Math.max(0, Math.min(1, avgMinute / 90));
+  const hue   = 135 - t * 135; // 135 verde → 0 rojo
+  const light = 78 - t * 33;   // 78% pálido → 45% intenso
+  return `hsl(${hue.toFixed(0)}, 68%, ${light.toFixed(0)}%)`;
+}
+
+// Punto medio (en minutos) representativo de cada tramo de la distribución.
+function binMidpoint(label) {
+  if (label === '90+') return 95;
+  const [start, end] = label.split('-').map(Number);
+  return (start + end) / 2;
 }
 
 // ─── BARRAS ───────────────────────────────────────────────────────────────────
@@ -91,9 +195,10 @@ function DistChart({ distribution, subtitle, color, loading, noDataMsg, sharedMa
 }
 
 // ─── PANEL DE EQUIPO (gráficos 10+5 min) ─────────────────────────────────────
-function TeamPanel({ file, teamName, color, selMatches, onMaxUpdate, sharedMax10, sharedMax5 }) {
+function TeamPanel({ file, teamName, color, selMatches, selCond, scorelineFilter, normalized, onMaxUpdate, sharedMax10, sharedMax5 }) {
   const [data10, setData10] = useState(null);
   const [data5,  setData5]  = useState(null);
+  const [normData, setNormData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [selectedMatch, setSelectedMatch] = useState('all');
 
@@ -104,20 +209,37 @@ function TeamPanel({ file, teamName, color, selMatches, onMaxUpdate, sharedMax10
     onMaxUpdate({ max10, max5 });
   };
 
+  // Normalizado es una llamada aparte (una sola, no hay 10/5 min acá) — pisa
+  // la vista de tramos mientras está activo.
   useEffect(() => {
-    if (!file) return;
+    if (!file || !normalized) return;
     setLoading(true);
-    Promise.all([fetchShotDistribution(file, 'all', 10, null, selMatches), fetchShotDistribution(file, 'all', 5, null, selMatches)])
+    fetchShotDistribution(file, selectedMatch, 10, null, selMatches, selCond, scorelineFilter, true)
+      .then(d => setNormData(d))
+      .catch(() => setNormData(null))
+      .finally(() => setLoading(false));
+  }, [file, selMatches, selCond, scorelineFilter, normalized, selectedMatch]);
+
+  useEffect(() => {
+    if (!file || normalized) return;
+    setLoading(true);
+    Promise.all([
+      fetchShotDistribution(file, 'all', 10, null, selMatches, selCond, scorelineFilter),
+      fetchShotDistribution(file, 'all', 5, null, selMatches, selCond, scorelineFilter),
+    ])
       .then(([d10, d5]) => { setData10(d10); setData5(d5); setSelectedMatch('all'); reportMax(d10.distribution, d5.distribution); })
       .catch(() => { setData10(null); setData5(null); })
       .finally(() => setLoading(false));
-  }, [file, selMatches]);
+  }, [file, selMatches, selCond, scorelineFilter, normalized]);
 
   const handleMatchChange = (matchId) => {
     setSelectedMatch(matchId);
-    if (!file) return;
+    if (!file || normalized) return; // el efecto de arriba maneja el refetch en modo normalizado
     setLoading(true);
-    Promise.all([fetchShotDistribution(file, matchId, 10, null, selMatches), fetchShotDistribution(file, matchId, 5, null, selMatches)])
+    Promise.all([
+      fetchShotDistribution(file, matchId, 10, null, selMatches, selCond, scorelineFilter),
+      fetchShotDistribution(file, matchId, 5, null, selMatches, selCond, scorelineFilter),
+    ])
       .then(([d10, d5]) => {
         setData10(prev => ({ ...prev, distribution: d10.distribution }));
         setData5(prev  => ({ ...prev, distribution: d5.distribution }));
@@ -127,7 +249,7 @@ function TeamPanel({ file, teamName, color, selMatches, onMaxUpdate, sharedMax10
       .finally(() => setLoading(false));
   };
 
-  const matches      = data10?.matches || [];
+  const matches      = (normalized ? normData?.matches : data10?.matches) || [];
   const accentBorder = color === 'green' ? 'border-green-700/50' : 'border-blue-700/50';
   const accentText   = color === 'green' ? 'text-green-400' : 'text-blue-400';
 
@@ -143,30 +265,66 @@ function TeamPanel({ file, teamName, color, selMatches, onMaxUpdate, sharedMax10
           ))}
         </select>
       </div>
-      <DistChart distribution={data10?.distribution} subtitle="Tramos de 10 min" color={color} loading={loading} sharedMax={sharedMax10} />
-      <DistChart distribution={data5?.distribution}  subtitle="Tramos de 5 min"  color={color} loading={loading} sharedMax={sharedMax5} />
+      {normalized ? (
+        <NormalizedPanel states={normData?.states} loading={loading} color={color} unitLabel="tiros" n_matches_reliable={normData?.n_matches_reliable} />
+      ) : (
+        <>
+          <DistChart distribution={data10?.distribution} subtitle="Tramos de 10 min" color={color} loading={loading} sharedMax={sharedMax10} />
+          <DistChart distribution={data5?.distribution}  subtitle="Tramos de 5 min"  color={color} loading={loading} sharedMax={sharedMax5} />
+        </>
+      )}
     </div>
   );
 }
 
 // ─── PUNTO DE JUGADOR EN CANCHA ───────────────────────────────────────────────
-function PlayerDot({ player, selected, onClick }) {
+function PlayerDot({ player, selected, onClick, heat }) {
   const isTeam1 = player.team === 'team1';
   const baseColor = isTeam1 ? 'bg-red-700 border-red-400' : 'bg-blue-700 border-blue-400';
-  const selColor  = isTeam1 ? 'bg-red-400 border-yellow-300' : 'bg-blue-400 border-yellow-300';
   const label = playerLabel(player);
+
+  // Si hay dato de acumulación de disparos, se pinta el círculo entero con
+  // el color correspondiente al minuto promedio ponderado de sus disparos
+  // en vez del color de equipo — acá lo que importa es cuándo tira, no de
+  // qué equipo es.
+  const heatColor = heat ? heatColorForMinute(heat.avgMinute) : null;
+  const circleStyle = heatColor
+    ? { backgroundColor: heatColor, borderColor: 'rgba(255,255,255,0.7)' }
+    : undefined;
+  const ringCls = selected ? 'ring-2 ring-yellow-400 scale-110' : 'group-hover:scale-105';
+
   return (
     <div
       onClick={() => onClick(player)}
       className="absolute flex flex-col items-center select-none cursor-pointer group"
       style={{ left: `${player.x}%`, top: `${player.y}%`, transform: 'translate(-50%,-50%)' }}>
       <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center font-bold text-white text-sm shadow-lg transition-all
-        ${selected ? selColor + ' ring-2 ring-yellow-400 scale-110' : baseColor + ' group-hover:scale-105'}`}>
+        ${heatColor ? ringCls : baseColor + ' ' + ringCls}`}
+        style={{ ...circleStyle, textShadow: '0 1px 3px rgba(0,0,0,0.9)' }}
+        title={heat ? `Minuto promedio de disparo: ${heat.avgMinute.toFixed(0)}' (${heat.total} disparos)` : undefined}>
         {player.number ?? '?'}
       </div>
       <span className="text-[10px] text-white bg-black/70 px-1 rounded truncate max-w-[72px] text-center mt-0.5 leading-tight">
         {label}
       </span>
+    </div>
+  );
+}
+
+// ─── LEYENDA DE LA ESCALA DE CALOR ────────────────────────────────────────────
+function HeatLegend() {
+  const STOPS = 20;
+  return (
+    <div className="flex flex-col gap-1">
+      <div className="flex rounded overflow-hidden h-2.5 w-full max-w-md">
+        {Array.from({ length: STOPS }, (_, i) => (
+          <div key={i} className="flex-1" style={{ background: heatColorForMinute((i / (STOPS - 1)) * 90) }} />
+        ))}
+      </div>
+      <div className="flex justify-between text-[8px] text-gray-500 w-full max-w-md">
+        <span>0-30' (disparos temprano)</span>
+        <span>61-90+' (disparos tarde)</span>
+      </div>
     </div>
   );
 }
@@ -186,10 +344,11 @@ function FieldMarkings() {
 }
 
 // ─── SECCIÓN CAMPO + DIST POR JUGADOR ────────────────────────────────────────
-function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, selectedFiles, team1Name, team2Name, matches1, matches2 }) {
+function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, selectedFiles, team1Name, team2Name, matches1, matches2, cond1, cond2 }) {
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [playerDist, setPlayerDist]         = useState(null);
   const [loadingDist, setLoadingDist]       = useState(false);
+  const [playerHeat, setPlayerHeat]         = useState({}); // uid -> { avgMinute, total }
 
   const swapped = fieldSwapped;
 
@@ -197,6 +356,46 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
     () => manualPos ?? computePositions(lineupData, swapped, baseSwapped),
     [manualPos, lineupData, swapped, baseSwapped]
   );
+
+  // Acumulación de disparos de cada jugador en cancha: minuto promedio
+  // ponderado por cantidad de disparos en cada tramo (no un pico puntual).
+  // Se recalcula solo con cambios de alineación/filtro de partidos.
+  useEffect(() => {
+    if (!positions.length) { setPlayerHeat({}); return; }
+    let cancelled = false;
+
+    const jobs = positions
+      .map(p => ({ p, isTeam1: p.team === 'team1' }))
+      .map(({ p, isTeam1 }) => ({
+        p,
+        file: isTeam1 ? selectedFiles?.f1 : selectedFiles?.f2,
+        matches: isTeam1 ? matches1 : matches2,
+        cond: isTeam1 ? cond1 : cond2,
+      }))
+      .filter(j => j.file);
+
+    Promise.all(jobs.map(j =>
+      fetchShotDistribution(j.file, 'all', 10, j.p.name || j.p.shortName || '', j.matches, j.cond)
+        .then(d => ({ uid: playerUid(j.p), dist: d.distribution || [] }))
+        .catch(() => ({ uid: playerUid(j.p), dist: [] }))
+    )).then(results => {
+      if (cancelled) return;
+      const map = {};
+      results.forEach(({ uid, dist }) => {
+        let weightedSum = 0, total = 0;
+        dist.forEach(bin => {
+          total += bin.count;
+          weightedSum += bin.count * binMidpoint(bin.label);
+        });
+        if (total > 0) {
+          map[uid] = { avgMinute: weightedSum / total, total };
+        }
+      });
+      setPlayerHeat(map);
+    });
+
+    return () => { cancelled = true; };
+  }, [positions, selectedFiles?.f1, selectedFiles?.f2, matches1, matches2, cond1, cond2]);
 
   const handlePlayerClick = (player) => {
     if (selectedPlayer && (selectedPlayer.id ?? selectedPlayer.lineupOrder) === (player.id ?? player.lineupOrder)) {
@@ -215,7 +414,7 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
 
     const name = player.name || player.shortName || '';
     setLoadingDist(true);
-    fetchShotDistribution(file, 'all', 10, name, isTeam1Player ? matches1 : matches2)
+    fetchShotDistribution(file, 'all', 10, name, isTeam1Player ? matches1 : matches2, isTeam1Player ? cond1 : cond2)
       .then(d => setPlayerDist(d.distribution))
       .catch(() => setPlayerDist(null))
       .finally(() => setLoadingDist(false));
@@ -262,6 +461,7 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
                   player={p}
                   selected={isSel}
                   onClick={handlePlayerClick}
+                  heat={playerHeat[playerUid(p)]}
                 />
               );
             })}
@@ -270,6 +470,10 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
                 Sin jugadores en cancha
               </div>
             )}
+          </div>
+          <div className="flex flex-wrap items-center gap-2 mt-1">
+            <span className="text-[9px] text-gray-500 shrink-0">🔥 Acumulación de disparos (minuto promedio):</span>
+            <HeatLegend />
           </div>
         </div>
 
@@ -298,10 +502,12 @@ function PlayerShotSection({ lineupData, manualPos, fieldSwapped, baseSwapped, s
 export default function P9_DistTiros({
   analysis, selectedFiles,
   lineupData, manualPos, fieldSwapped, baseSwapped,
-  team1Name, team2Name, matches1, matches2,
+  team1Name, team2Name, matches1, matches2, cond1, cond2,
 }) {
   const [team1Max, setTeam1Max] = useState({ max10: 0, max5: 0 });
   const [team2Max, setTeam2Max] = useState({ max10: 0, max5: 0 });
+  const [scorelineFilter, setScorelineFilter] = useState('Todas');
+  const [normalized, setNormalized] = useState(false);
   const sharedMax10 = Math.max(team1Max.max10, team2Max.max10, 1);
   const sharedMax5  = Math.max(team1Max.max5,  team2Max.max5,  1);
 
@@ -328,15 +534,26 @@ export default function P9_DistTiros({
             </div>
           ))}
         </div>
+        <div className="ml-auto flex items-center gap-2">
+          <span className="text-[10px] text-gray-500">Marcador:</span>
+          <ScorelineFilter value={scorelineFilter} onChange={setScorelineFilter} />
+          <NormalizedToggle active={normalized} onChange={setNormalized} />
+        </div>
       </div>
 
       {/* Paneles por equipo */}
       <div className="flex flex-col md:flex-row gap-3">
-        <TeamPanel file={selectedFiles?.f1} teamName={analysis.team1?.name} color="green" selMatches={matches1}
-          onMaxUpdate={setTeam1Max} sharedMax10={sharedMax10} sharedMax5={sharedMax5} />
-        <TeamPanel file={selectedFiles?.f2} teamName={analysis.team2?.name} color="blue"  selMatches={matches2}
-          onMaxUpdate={setTeam2Max} sharedMax10={sharedMax10} sharedMax5={sharedMax5} />
+        <TeamPanel file={selectedFiles?.f1} teamName={analysis.team1?.name} color="green" selMatches={matches1} selCond={cond1}
+          scorelineFilter={scorelineFilter} normalized={normalized} onMaxUpdate={setTeam1Max} sharedMax10={sharedMax10} sharedMax5={sharedMax5} />
+        <TeamPanel file={selectedFiles?.f2} teamName={analysis.team2?.name} color="blue"  selMatches={matches2} selCond={cond2}
+          scorelineFilter={scorelineFilter} normalized={normalized} onMaxUpdate={setTeam2Max} sharedMax10={sharedMax10} sharedMax5={sharedMax5} />
       </div>
+
+      {(scorelineFilter !== 'Todas' || normalized) && (
+        <div className="text-[10px] text-amber-500/80 shrink-0 -mt-1">
+          ⚠ Solo cuentan los partidos con datos descargados de SofaScore (raw_json) — un partido sin esos datos no puede saber el marcador minuto a minuto y queda afuera del filtro{normalized ? '/normalizado' : ''}.
+        </div>
+      )}
 
       <div className="text-[10px] text-gray-600 shrink-0">
         Disparos de la hoja "Disparos Detalle" · filtrá por partido para ver cada juego individualmente
@@ -353,6 +570,8 @@ export default function P9_DistTiros({
         team2Name={team2Name}
         matches1={matches1}
         matches2={matches2}
+        cond1={cond1}
+        cond2={cond2}
       />
     </div>
   );

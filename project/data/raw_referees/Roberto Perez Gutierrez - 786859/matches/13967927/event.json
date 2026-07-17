@@ -1,0 +1,204 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "U17 FIFA World Cup, Group C",
+    "slug": "u17-fifa-world-cup-group-c",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "U17 World Championship",
+      "slug": "u17-world-championship",
+      "primaryColorHex": "#398835",
+      "secondaryColorHex": "#377ac4",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 31445,
+      "hasPerformanceGraphFeature": false,
+      "showBanner": true,
+      "id": 279,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بطولة كأس العالم تحت 17 سنة",
+          "bn": "আন্ডার 17ওয়ার্ল্ড চ্যাম্পিয়নশিপ",
+          "hi": "U-17 वर्ल्ड चैंपियनशिप",
+          "ru": "до 17 лет, Чемпионат мира"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 341,
+    "isGroup": true,
+    "groupName": "Group C",
+    "isLive": false,
+    "id": 6207,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس العالم تحت 17 سنة، المجموعة C",
+        "bn": "আন্ডার17 ফিফা ওয়ার্ল্ডকাপ, গ্রুপ সি",
+        "hi": "U17 फीफा वर्ल्ड कप, ग्रुप सी",
+        "ru": "Чемпионат мира по футболу U17 ФИФА, Группа C"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "U17 FIFA World Cup 2025",
+    "year": "2025",
+    "editor": false,
+    "id": 76257
+  },
+  "roundInfo": {
+    "round": 3
+  },
+  "customId": "kdjsBlEc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "United Arab Emirates U17",
+    "slug": "united-arab-emirates-u17",
+    "shortName": "UAE U17",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 520,
+    "nameCode": "UAE",
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "id": 22660,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#00732f",
+      "text": "#00732f"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "الإمارات العربية المتحدة تحت 17",
+        "hi": "यूनाइटेड  अरब  एमिरेट्स U17",
+        "ru": "Объединенные Арабские Эмираты U17"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Senegal U17",
+    "slug": "senegal-u17",
+    "shortName": "Senegal U17",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 31606,
+    "nameCode": "SUU",
+    "disabled": false,
+    "national": true,
+    "type": 0,
+    "id": 323076,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#047151",
+      "text": "#047151"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "السنغال تحت 17",
+        "hi": "सेनेगल U17",
+        "ru": "Сенегал U17"
+      },
+      "shortNameTranslation": {
+        "ar": "السنغال تحت 17"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "awayScore": {
+    "current": 5,
+    "display": 5,
+    "period1": 3,
+    "period2": 2,
+    "normaltime": 5
+  },
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 3,
+    "currentPeriodStartTimestamp": 1762703313
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1762706254
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 13967927,
+  "slug": "senegal-u17-united-arab-emirates-u17",
+  "startTimestamp": 1762699500,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false
+}

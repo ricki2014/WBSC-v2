@@ -1,0 +1,236 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Sudamericana, Qualification",
+    "slug": "copa-sudamericana-qualification",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "country": {},
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Sudamericana",
+      "slug": "conmebol-sudamericana",
+      "primaryColorHex": "#e3c000",
+      "secondaryColorHex": "#13489c",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "country": {},
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 127962,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 480,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كأس أمريكا الجنوبية لكرة القدم",
+          "bn": "কনমেবল সুদাআমেরিকানা",
+          "hi": "कॉनमेबोल सुदामेरिकाना",
+          "pt": "Copa Sul-Americana",
+          "ru": "КОНМЕБОЛ Судамерикана"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 530,
+    "isGroup": false,
+    "isLive": false,
+    "id": 91417,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوبا سود أمريكانا، التصفيات",
+        "bn": "কনমেবল সুদামেরিকানা, কোয়ালিফিকেশন",
+        "hi": "कॉनमेबोल सुदामेरिकाना, क्वालिफिकेशन",
+        "pt": "Copa Sul-Americana, Primeira fase",
+        "ru": "КОНМЕБОЛ Судамерикана, Квалификация"
+      },
+      "shortNameTranslation": {}
+    },
+    "qualificationOrPreliminary": true
+  },
+  "season": {
+    "name": "CONMEBOL Sudamericana 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87770
+  },
+  "roundInfo": {
+    "round": 1,
+    "name": "Qualification Round 1",
+    "slug": "qualification-round-1"
+  },
+  "customId": "bWsiW",
+  "status": {
+    "code": 120,
+    "description": "AP",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Cienciano",
+    "slug": "cienciano",
+    "shortName": "Cienciano",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 19508,
+    "nameCode": "CIE",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2301,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سيينسيانو",
+        "hi": "CS Cienciano",
+        "ru": "CS Cienciano"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Melgar",
+    "slug": "melgar",
+    "shortName": "Melgar",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 26485,
+    "nameCode": "MEL",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2308,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#000000",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ميلغار",
+        "ru": "ФБК Мельгар"
+      },
+      "shortNameTranslation": {
+        "ar": "ميلغار"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 6,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1,
+    "penalties": 5
+  },
+  "awayScore": {
+    "current": 5,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1,
+    "penalties": 4
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 5,
+    "currentPeriodStartTimestamp": 1772760805
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.display",
+      "homeScore.penalties",
+      "awayScore.display",
+      "awayScore.penalties"
+    ],
+    "changeTimestamp": 1772764649
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "correctHalftimeAiInsight": false,
+  "id": 15254185,
+  "slug": "melgar-cienciano",
+  "startTimestamp": 1772757000,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "cupMatchesInRound": 1,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

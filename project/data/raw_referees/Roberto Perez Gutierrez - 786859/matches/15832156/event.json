@@ -1,0 +1,218 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Sudamericana, Group H",
+    "slug": "copa-sudamericana-group-h",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Sudamericana",
+      "slug": "conmebol-sudamericana",
+      "primaryColorHex": "#e3c000",
+      "secondaryColorHex": "#13489c",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 127962,
+      "hasPerformanceGraphFeature": false,
+      "id": 480,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كأس أمريكا الجنوبية لكرة القدم",
+          "bn": "কনমেবল সুদাআমেরিকানা",
+          "hi": "कॉनमेबोल सुदामेरिकाना",
+          "pt": "Copa Sul-Americana",
+          "ru": "КОНМЕБОЛ Судамерикана"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 522,
+    "isGroup": true,
+    "groupName": "Group H",
+    "groupSign": "H",
+    "isLive": false,
+    "id": 91443,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "bn": "কনমেবল সুদামেরিকানা, গ্রুপ এইচ",
+        "ar": "كوبا سود أمريكانا، المجموعة H",
+        "hi": "कॉनमेबोल सुदामेरिकाना, ग्रुप एच",
+        "pt": "Copa Sul-Americana, Grupo H",
+        "ru": "Кубок Южной Америки КОНМЕБОЛ, Группа H"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Sudamericana 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87770
+  },
+  "roundInfo": {
+    "round": 6
+  },
+  "customId": "lobstOc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "River Plate",
+    "slug": "river-plate",
+    "shortName": "River Plate",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 293730,
+    "nameCode": "RIV",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 3211,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ريفر بلايت",
+        "bn": "রিভার প্লেট",
+        "ru": "Ривер Плейт"
+      },
+      "shortNameTranslation": {
+        "ar": "ريفر بلايت",
+        "hi": "रिवर"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Blooming",
+    "slug": "blooming",
+    "shortName": "Blooming",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 21593,
+    "nameCode": "BLO",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 6968,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#0099ff",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "بلومينغ",
+        "ru": "Блуминг"
+      },
+      "shortNameTranslation": {
+        "ar": "بلومينغ"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 0,
+    "period2": 3,
+    "normaltime": 3
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 3,
+    "currentPeriodStartTimestamp": 1779931990
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1779934883
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 15832156,
+  "slug": "blooming-river-plate",
+  "startTimestamp": 1779928200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

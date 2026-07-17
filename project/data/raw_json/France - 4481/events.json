@@ -54,229 +54,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 719700,
-          "hasPerformanceGraphFeature": false,
-          "country": {},
-          "id": 1,
-          "hasEventPlayerStatistics": true,
-          "displayInverseHomeAwayTeams": false,
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "بطولة أمم أوروبا",
-              "bn": "ইউরো",
-              "hi": "यूरो",
-              "ru": "ЕВРО"
-            },
-            "shortNameTranslation": {}
-          }
-        },
-        "priority": 774,
-        "isGroup": true,
-        "groupName": "Group D",
-        "groupSign": "D",
-        "isLive": false,
-        "id": 1687,
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "يورو - المجموعة D",
-            "bn": "ইউরো, গ্রুপ ডি",
-            "hi": "यूरो, ग्रुप डी",
-            "ru": "Евро, Группа D"
-          },
-          "shortNameTranslation": {}
-        }
-      },
-      "season": {
-        "name": "EURO 2024",
-        "year": "2024",
-        "editor": false,
-        "id": 56953
-      },
-      "roundInfo": {
-        "round": 2
-      },
-      "customId": "GObsfUb",
-      "status": {
-        "code": 100,
-        "description": "Ended",
-        "type": "finished"
-      },
-      "winnerCode": 3,
-      "homeTeam": {
-        "name": "Netherlands",
-        "slug": "netherlands",
-        "shortName": "Netherlands",
-        "gender": "M",
-        "sport": {
-          "name": "Football",
-          "slug": "football",
-          "id": 1
-        },
-        "userCount": 625823,
-        "nameCode": "NED",
-        "ranking": 8,
-        "disabled": false,
-        "national": true,
-        "type": 0,
-        "country": {
-          "alpha2": "NL",
-          "alpha3": "NLD",
-          "name": "Netherlands",
-          "slug": "netherlands"
-        },
-        "id": 4705,
-        "subTeams": [],
-        "teamColors": {
-          "primary": "#ff6600",
-          "secondary": "#281fe0",
-          "text": "#281fe0"
-        },
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "هولندا",
-            "bn": "নেদারল্যান্ডস",
-            "hi": "नीदरलैंड्स",
-            "ru": "Нидерланды"
-          },
-          "shortNameTranslation": {
-            "ru": "Нидерланды"
-          }
-        }
-      },
-      "awayTeam": {
-        "name": "France",
-        "slug": "france",
-        "shortName": "France",
-        "gender": "M",
-        "sport": {
-          "name": "Football",
-          "slug": "football",
-          "id": 1
-        },
-        "userCount": 1811384,
-        "nameCode": "FRA",
-        "ranking": 3,
-        "disabled": false,
-        "national": true,
-        "type": 0,
-        "country": {
-          "alpha2": "FR",
-          "alpha3": "FRA",
-          "name": "France",
-          "slug": "france"
-        },
-        "id": 4481,
-        "subTeams": [],
-        "teamColors": {
-          "primary": "#01509e",
-          "secondary": "#e30613",
-          "text": "#e30613"
-        },
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "فرنسا",
-            "bn": "ফ্রান্স",
-            "hi": "फ्रांस",
-            "ru": "Франция"
-          },
-          "shortNameTranslation": {}
-        }
-      },
-      "homeScore": {
-        "current": 0,
-        "display": 0,
-        "period1": 0,
-        "period2": 0,
-        "normaltime": 0
-      },
-      "awayScore": {
-        "current": 0,
-        "display": 0,
-        "period1": 0,
-        "period2": 0,
-        "normaltime": 0
-      },
-      "time": {
-        "injuryTime1": 1,
-        "injuryTime2": 5,
-        "currentPeriodStartTimestamp": 1719000245
-      },
-      "changes": {
-        "changes": [
-          "status.code",
-          "status.description",
-          "status.type"
-        ],
-        "changeTimestamp": 1719003274
-      },
-      "hasGlobalHighlights": false,
-      "hasXg": true,
-      "hasEventPlayerStatistics": true,
-      "hasEventPlayerHeatMap": true,
-      "detailId": 1,
-      "crowdsourcingDataDisplayEnabled": false,
-      "id": 11873991,
-      "slug": "netherlands-france",
-      "startTimestamp": 1718996400,
-      "finalResultOnly": false,
-      "feedLocked": true,
-      "isEditor": false
-    },
-    {
-      "eventState": {},
-      "tournament": {
-        "name": "Euro, Group D",
-        "slug": "uefa-euro-group-d",
-        "category": {
-          "name": "Europe",
-          "slug": "europe",
-          "sport": {
-            "name": "Football",
-            "slug": "football",
-            "id": 1
-          },
-          "priority": 19,
-          "country": {},
-          "id": 1465,
-          "flag": "europe",
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "أوروبا",
-              "hi": "यूरोप",
-              "bn": "ইউরোপ",
-              "ru": "Европа"
-            },
-            "shortNameTranslation": {}
-          }
-        },
-        "uniqueTournament": {
-          "name": "EURO",
-          "slug": "european-championship",
-          "primaryColorHex": "#293cdb",
-          "secondaryColorHex": "#00ba5d",
-          "category": {
-            "name": "Europe",
-            "slug": "europe",
-            "sport": {
-              "name": "Football",
-              "slug": "football",
-              "id": 1
-            },
-            "priority": 19,
-            "country": {},
-            "id": 1465,
-            "flag": "europe",
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "أوروبا",
-                "hi": "यूरोप",
-                "bn": "ইউরোপ",
-                "ru": "Европа"
-              },
-              "shortNameTranslation": {}
-            }
-          },
-          "userCount": 719700,
+          "userCount": 721134,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 1,
@@ -334,7 +112,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -373,7 +151,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 258037,
+        "userCount": 258476,
         "nameCode": "POL",
         "ranking": 36,
         "disabled": false,
@@ -497,7 +275,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 719700,
+          "userCount": 721134,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 1,
@@ -556,7 +334,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -595,7 +373,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 583751,
+        "userCount": 618811,
         "nameCode": "BEL",
         "ranking": 9,
         "disabled": false,
@@ -719,7 +497,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 719700,
+          "userCount": 721134,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 1,
@@ -778,7 +556,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 2474237,
+        "userCount": 2490897,
         "nameCode": "POR",
         "ranking": 5,
         "disabled": false,
@@ -817,7 +595,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -955,7 +733,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 719700,
+          "userCount": 721134,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 1,
@@ -1014,7 +792,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 2299367,
+        "userCount": 2382021,
         "nameCode": "ESP",
         "ranking": 2,
         "disabled": false,
@@ -1053,7 +831,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -1177,7 +955,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -1234,7 +1012,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -1273,7 +1051,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 804657,
+        "userCount": 806002,
         "nameCode": "ITA",
         "ranking": 12,
         "disabled": false,
@@ -1393,7 +1171,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -1450,7 +1228,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -1489,7 +1267,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 583751,
+        "userCount": 618811,
         "nameCode": "BEL",
         "ranking": 9,
         "disabled": false,
@@ -1612,7 +1390,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -1669,7 +1447,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 35812,
+        "userCount": 35856,
         "nameCode": "ISR",
         "ranking": 76,
         "disabled": false,
@@ -1708,7 +1486,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -1830,7 +1608,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -1887,7 +1665,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 583751,
+        "userCount": 618811,
         "nameCode": "BEL",
         "ranking": 9,
         "disabled": false,
@@ -1926,7 +1704,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -2049,7 +1827,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -2106,7 +1884,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -2145,7 +1923,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 35812,
+        "userCount": 35856,
         "nameCode": "ISR",
         "ranking": 76,
         "disabled": false,
@@ -2267,7 +2045,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -2324,7 +2102,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 804657,
+        "userCount": 806002,
         "nameCode": "ITA",
         "ranking": 12,
         "disabled": false,
@@ -2363,7 +2141,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -2485,7 +2263,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -2544,7 +2322,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 555345,
+        "userCount": 555934,
         "nameCode": "CRO",
         "ranking": 11,
         "disabled": false,
@@ -2583,7 +2361,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -2707,7 +2485,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -2767,7 +2545,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -2806,7 +2584,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 555345,
+        "userCount": 555934,
         "nameCode": "CRO",
         "ranking": 11,
         "disabled": false,
@@ -2949,7 +2727,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -3008,7 +2786,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 2299367,
+        "userCount": 2382021,
         "nameCode": "ESP",
         "ranking": 2,
         "disabled": false,
@@ -3047,7 +2825,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -3173,7 +2951,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 275551,
+          "userCount": 276367,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 10783,
@@ -3231,7 +3009,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1090922,
+        "userCount": 1092962,
         "nameCode": "GER",
         "ranking": 10,
         "disabled": false,
@@ -3270,7 +3048,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -3394,7 +3172,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 212872,
+          "userCount": 213113,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 11,
@@ -3453,7 +3231,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 103097,
+        "userCount": 103202,
         "nameCode": "UKR",
         "ranking": 32,
         "disabled": false,
@@ -3492,7 +3270,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -3616,7 +3394,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 212872,
+          "userCount": 213113,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 11,
@@ -3675,7 +3453,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -3714,7 +3492,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 41487,
+        "userCount": 41504,
         "nameCode": "ISL",
         "ranking": 74,
         "disabled": false,
@@ -3837,7 +3615,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 212872,
+          "userCount": 213113,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 11,
@@ -3896,7 +3674,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -3935,7 +3713,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 90185,
+        "userCount": 90274,
         "nameCode": "AZE",
         "ranking": 126,
         "disabled": false,
@@ -4059,7 +3837,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 212872,
+          "userCount": 213113,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 11,
@@ -4118,7 +3896,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 41487,
+        "userCount": 41504,
         "nameCode": "ISL",
         "ranking": 74,
         "disabled": false,
@@ -4157,7 +3935,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -4281,7 +4059,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 212872,
+          "userCount": 213113,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 11,
@@ -4340,7 +4118,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -4379,7 +4157,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 103097,
+        "userCount": 103202,
         "nameCode": "UKR",
         "ranking": 32,
         "disabled": false,
@@ -4503,7 +4281,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 212872,
+          "userCount": 213113,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 11,
@@ -4562,7 +4340,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 90185,
+        "userCount": 90274,
         "nameCode": "AZE",
         "ranking": 126,
         "disabled": false,
@@ -4601,7 +4379,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -4725,7 +4503,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 119140,
+          "userCount": 119177,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 851,
@@ -4778,7 +4556,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 3322444,
+        "userCount": 3349588,
         "nameCode": "BRA",
         "ranking": 6,
         "disabled": false,
@@ -4817,7 +4595,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -4950,7 +4728,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 119140,
+          "userCount": 119177,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 851,
@@ -5003,7 +4781,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 527042,
+        "userCount": 535621,
         "nameCode": "COL",
         "ranking": 13,
         "disabled": false,
@@ -5042,7 +4820,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -5174,7 +4952,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 119140,
+          "userCount": 119177,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 851,
@@ -5227,7 +5005,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -5266,7 +5044,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 449671,
+        "userCount": 451098,
         "nameCode": "CIV",
         "ranking": 33,
         "disabled": false,
@@ -5402,7 +5180,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 119140,
+          "userCount": 119177,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 851,
@@ -5455,7 +5233,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -5494,7 +5272,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 28234,
+        "userCount": 28247,
         "nameCode": "NIR",
         "ranking": 70,
         "disabled": false,
@@ -5601,7 +5379,7 @@
           }
         },
         "uniqueTournament": {
-          "name": "FIFA World Cup",
+          "name": "World Championship",
           "slug": "world-championship",
           "primaryColorHex": "#d20a11",
           "secondaryColorHex": "#e8bb57",
@@ -5627,7 +5405,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 1960714,
+          "userCount": 2008891,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 16,
@@ -5731,7 +5509,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -5770,7 +5548,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 616593,
+        "userCount": 617900,
         "nameCode": "SEN",
         "ranking": 15,
         "disabled": false,
@@ -5882,7 +5660,7 @@
           }
         },
         "uniqueTournament": {
-          "name": "FIFA World Cup",
+          "name": "World Championship",
           "slug": "world-championship",
           "primaryColorHex": "#d20a11",
           "secondaryColorHex": "#e8bb57",
@@ -5908,7 +5686,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 1960714,
+          "userCount": 2008891,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 16,
@@ -6012,7 +5790,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -6051,7 +5829,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 166507,
+        "userCount": 167695,
         "nameCode": "IRA",
         "ranking": 57,
         "disabled": false,
@@ -6163,7 +5941,7 @@
           }
         },
         "uniqueTournament": {
-          "name": "FIFA World Cup",
+          "name": "World Championship",
           "slug": "world-championship",
           "primaryColorHex": "#d20a11",
           "secondaryColorHex": "#e8bb57",
@@ -6189,7 +5967,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 1960714,
+          "userCount": 2008891,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 16,
@@ -6293,7 +6071,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 380187,
+        "userCount": 439463,
         "nameCode": "NOR",
         "ranking": 31,
         "disabled": false,
@@ -6332,7 +6110,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -6420,7 +6198,7 @@
     {
       "eventState": {},
       "tournament": {
-        "name": "FIFA World Cup, Knockout",
+        "name": "World Championship, Knockout",
         "slug": "world-cup-knockout-stage",
         "category": {
           "name": "World",
@@ -6445,7 +6223,7 @@
           }
         },
         "uniqueTournament": {
-          "name": "FIFA World Cup",
+          "name": "World Championship",
           "slug": "world-championship",
           "primaryColorHex": "#d20a11",
           "secondaryColorHex": "#e8bb57",
@@ -6471,7 +6249,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 1960714,
+          "userCount": 2008891,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 16,
@@ -6577,7 +6355,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -6616,7 +6394,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 187856,
+        "userCount": 188004,
         "nameCode": "SWE",
         "ranking": 38,
         "disabled": false,
@@ -6703,7 +6481,7 @@
     {
       "eventState": {},
       "tournament": {
-        "name": "FIFA World Cup, Knockout",
+        "name": "World Championship, Knockout",
         "slug": "world-cup-knockout-stage",
         "category": {
           "name": "World",
@@ -6728,7 +6506,7 @@
           }
         },
         "uniqueTournament": {
-          "name": "FIFA World Cup",
+          "name": "World Championship",
           "slug": "world-championship",
           "primaryColorHex": "#d20a11",
           "secondaryColorHex": "#e8bb57",
@@ -6754,7 +6532,7 @@
               "shortNameTranslation": {}
             }
           },
-          "userCount": 1960714,
+          "userCount": 2008891,
           "hasPerformanceGraphFeature": false,
           "country": {},
           "id": 16,
@@ -6860,7 +6638,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 195948,
+        "userCount": 198268,
         "nameCode": "PAR",
         "ranking": 41,
         "disabled": false,
@@ -6901,7 +6679,7 @@
           "slug": "football",
           "id": 1
         },
-        "userCount": 1811384,
+        "userCount": 1934152,
         "nameCode": "FRA",
         "ranking": 3,
         "disabled": false,
@@ -6968,6 +6746,290 @@
       "id": 12813010,
       "slug": "paraguay-france",
       "startTimestamp": 1783198800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "cupMatchesInRound": 1,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "national"
+        ],
+        "level": [
+          "top-competitions",
+          "pro"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "World Championship, Knockout",
+        "slug": "world-cup-knockout-stage",
+        "category": {
+          "name": "World",
+          "slug": "world",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 20,
+          "country": {},
+          "id": 1468,
+          "flag": "international",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "العالم",
+              "hi": "विश्व",
+              "bn": "বিশ্ব",
+              "ru": "Мир"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "World Championship",
+          "slug": "world-championship",
+          "primaryColorHex": "#d20a11",
+          "secondaryColorHex": "#e8bb57",
+          "category": {
+            "name": "World",
+            "slug": "world",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 20,
+            "country": {},
+            "id": 1468,
+            "flag": "international",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "العالم",
+                "hi": "विश्व",
+                "bn": "বিশ্ব",
+                "ru": "Мир"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 2008891,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 16,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "pt-pt": "Mundial",
+              "ar": "كأس العالم",
+              "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ",
+              "hi": "वर्ल्ड चैंपियनशिप",
+              "hr": "FIFA Svjetsko prvenstvo",
+              "az": "FİFA Dünya Kuboku",
+              "nl": "Wereldkampioenschap",
+              "fr": "Coupe du monde",
+              "de": "Weltmeisterschaft",
+              "el": "Παγκόσμιο Κύπελλο",
+              "hu": "FIFA Világbajnokság",
+              "id": "Piala Dunia FIFA",
+              "it": "Coppa del Mondo FIFA",
+              "ja": "FIFAワールドカップ",
+              "ko": "FIFA 월드컵",
+              "no": "Verdensmesterskapet",
+              "pl": "Mistrzostwa Świata",
+              "pt": "Copa do Mundo FIFA",
+              "ro": "Campionatul Mondial",
+              "es": "Copa Mundial",
+              "es-la": "Copa Mundial",
+              "sv": "Världsmästerskapet",
+              "th": "ฟุตบอลโลก",
+              "tr": "FIFA Dünya Kupası",
+              "vi": "Giải Vô Địch Thế Giới",
+              "ru": "Чемпионат мира",
+              "sr": "Светско првенство"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 805,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3948,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بطولة العالم - مرحلة الإقصاء",
+            "bn": "ওয়ার্ল্ড চ্যাম্পিয়নশিপ, নকআউট স্টেজ",
+            "hi": "वर्ल्ड चैंपियनशिप, नॉकआउट स्टेज",
+            "hr": "FIFA Svjetsko prvenstvo, Eliminacije",
+            "az": "FİFA Dünya Kuboku, Pley-off",
+            "nl": "Wereldkampioenschap, Knock-outfase",
+            "fr": "Coupe du monde, Élimination directe",
+            "de": "Weltmeisterschaft, K.-o.-Phase",
+            "el": "Παγκόσμιο Κύπελλο, Νοκ άουτ φάση",
+            "hu": "Világbajnokság, Egyenes kieséses szakasz",
+            "pt-pt": "Mundial, A eliminar",
+            "tr": "FIFA Dünya Kupası, Eleme aşaması",
+            "vi": "Giải Vô Địch Thế Giới, Vòng loại trực tiếp",
+            "id": "Piala Dunia FIFA, Fase gugur",
+            "it": "Coppa del Mondo, Eliminazione diretta",
+            "ja": "FIFAワールドカップ, 決勝トーナメント",
+            "ko": "FIFA 월드컵, 토너먼트",
+            "no": "Verdensmesterskapet, Sluttspill",
+            "pl": "Mistrzostwa Świata, Faza pucharowa",
+            "pt": "Copa do Mundo FIFA, Fase eliminatória",
+            "ro": "Campionatul Mondial, Faza eliminatorie",
+            "es": "Copa Mundial, Eliminatorias",
+            "es-la": "Copa Mundial, Eliminatorias",
+            "sv": "Världsmästerskapet, Slutspel",
+            "th": "ฟุตบอลโลก, รอบแพ้คัดออก",
+            "ru": "Чемпионат мира, Плей-офф",
+            "sr": "Светско првенство, Елиминациона фаза"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "World Cup 2026",
+        "year": "2026",
+        "editor": false,
+        "seasonCoverageInfo": {},
+        "id": 58210
+      },
+      "roundInfo": {
+        "round": 27,
+        "name": "Quarterfinals",
+        "slug": "quarterfinals",
+        "cupRoundType": 4
+      },
+      "customId": "GObsDVb",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "France",
+        "slug": "france",
+        "shortName": "France",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 1934152,
+        "nameCode": "FRA",
+        "ranking": 3,
+        "disabled": false,
+        "national": true,
+        "type": 0,
+        "country": {
+          "alpha2": "FR",
+          "alpha3": "FRA",
+          "name": "France",
+          "slug": "france"
+        },
+        "id": 4481,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#01509e",
+          "secondary": "#e30613",
+          "text": "#e30613"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فرنسا",
+            "bn": "ফ্রান্স",
+            "hi": "फ्रांस",
+            "ru": "Франция"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Morocco",
+        "slug": "morocco",
+        "shortName": "Morocco",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 1269240,
+        "nameCode": "MAR",
+        "ranking": 7,
+        "disabled": false,
+        "national": true,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 4778,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#006600",
+          "text": "#006600"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "المغرب",
+            "bn": "মরক্কো",
+            "hi": "मोरक्को",
+            "ru": "Марокко"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 5,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1783631366,
+        "lastPeriodEndTimestamp": 1783630253
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1783634448
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 12813016,
+      "slug": "morocco-france",
+      "startTimestamp": 1783627200,
       "finalResultOnly": false,
       "feedLocked": true,
       "cupMatchesInRound": 1,

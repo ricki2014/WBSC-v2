@@ -16,7 +16,14 @@ const STAT_OPTIONS = [
   { key: 'Duelos %',        label: 'Duelos %',        icon: '⚔️', color: 'text-amber-400'  },
   { key: 'Pases %',         label: 'Pases %',         icon: '🔄', color: 'text-sky-400'    },
   { key: 'Tiros Arco %',    label: 'Precisión Tiro',  icon: '🎯', color: 'text-lime-400'   },
+  { key: 'Tarjetas Am. p90',  label: 'Tarjetas Am.',  icon: '🟨',   color: 'text-yellow-300' },
+  { key: 'Tarjetas Roja p90', label: 'Tarjetas Roja', icon: '🟥',   color: 'text-red-500'    },
+  { key: 'Tarjetas Tot. p90', label: 'Tarjetas',      icon: '🟨🟥', color: 'text-amber-300'  },
 ];
+
+// Las 3 variantes de tarjetas se agrupan en un solo botón con un mini-toggle
+// (ver sidebar más abajo) en vez de ocupar 3 filas separadas.
+const CARD_MODE_KEY = { am: 'Tarjetas Am. p90', roja: 'Tarjetas Roja p90', ambas: 'Tarjetas Tot. p90' };
 
 
 const playerUid = p => p.id != null ? `p${p.id}` : `${p.side}-${p.lineupOrder}`;
@@ -72,18 +79,18 @@ const COL_HEADER = {
   '_x_rating': 'Rating', '_x_goles': 'Goles', '_x_asistencias': 'Asis.', '_x_tiros_al_arco': 'Arco',
 };
 
-function PlayerMatchModal({ player, statOption, file, teamName, matches, onClose }) {
+function PlayerMatchModal({ player, statOption, file, teamName, matches, cond, onClose }) {
   const [data, setData]       = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!file || !player) return;
     setLoading(true);
-    fetchPlayerMatches(file, player.name || player.shortName || '', statOption.key, player.id, matches)
+    fetchPlayerMatches(file, player.name || player.shortName || '', statOption.key, player.id, matches, cond)
       .then(d => setData(d))
       .catch(() => setData(null))
       .finally(() => setLoading(false));
-  }, [file, player, statOption.key, matches]);
+  }, [file, player, statOption.key, matches, cond]);
 
   useEffect(() => {
     const handler = e => { if (e.key === 'Escape') onClose(); };
@@ -237,11 +244,12 @@ function PlayerDot({ player, statOption, pStats, onDoubleClick }) {
 export default function P8_StatsEnCancha({
   analysis, lineupData, manualPos, setManualPos,
   fieldSwapped, baseSwapped, team1Name, team2Name, selectedFiles,
-  selectedStatKey, setSelectedStatKey, matches1, matches2,
+  selectedStatKey, setSelectedStatKey, matches1, matches2, cond1, cond2,
 }) {
   const selectedKey    = selectedStatKey;
   const setSelectedKey = setSelectedStatKey;
   const [modalPlayer, setModalPlayer] = useState(null);
+  const [cardMode, setCardMode] = useState('am');
   const swapped = fieldSwapped;
 
   const handleCloseModal = useCallback(() => setModalPlayer(null), []);
@@ -282,6 +290,7 @@ export default function P8_StatsEnCancha({
   const modalFile     = modalPlayer ? (isModalTeam1 ? selectedFiles?.f1 : selectedFiles?.f2) : null;
   const modalTeamName = modalPlayer ? (isModalTeam1 ? team1Name : team2Name) : null;
   const modalMatches  = modalPlayer ? (isModalTeam1 ? matches1 : matches2) : null;
+  const modalCond     = modalPlayer ? (isModalTeam1 ? cond1 : cond2) : 'TOTAL';
 
   if (!lineupData) {
     return (
@@ -345,6 +354,7 @@ export default function P8_StatsEnCancha({
               file={modalFile}
               teamName={modalTeamName}
               matches={modalMatches}
+              cond={modalCond}
               onClose={handleCloseModal}
             />
           )}
@@ -358,7 +368,7 @@ export default function P8_StatsEnCancha({
       {/* ── SIDEBAR ───────────────────────────────────────────────────────── */}
       <div className="w-full md:w-32 lg:w-44 shrink-0 flex flex-col gap-1.5 overflow-auto">
         <div className="text-white font-bold text-xs mb-0.5 shrink-0">📌 Estadística</div>
-        {STAT_OPTIONS.map(s => {
+        {STAT_OPTIONS.filter(s => !Object.values(CARD_MODE_KEY).includes(s.key)).map(s => {
           const active = selectedKey === s.key;
           return (
             <button
@@ -378,6 +388,46 @@ export default function P8_StatsEnCancha({
             </button>
           );
         })}
+
+        {/* Tarjetas: un solo botón con mini-toggle Amarilla/Roja/Ambas */}
+        {(() => {
+          const cardKey = CARD_MODE_KEY[cardMode];
+          const cardOpt = STAT_OPTIONS.find(s => s.key === cardKey);
+          const active  = selectedKey === cardKey;
+          return (
+            <div className={`w-full flex flex-col gap-1.5 px-2.5 py-2 rounded-lg border transition-all
+              ${active
+                ? 'bg-gray-700 border-gray-400 shadow-inner'
+                : 'bg-gray-900 border-gray-700/60 hover:bg-gray-800 hover:border-gray-500'}`}>
+              <button
+                onClick={() => setSelectedKey(cardKey)}
+                className="w-full flex items-center gap-2 text-left">
+                <span className="text-sm shrink-0">{cardOpt.icon}</span>
+                <div className="min-w-0 flex-1">
+                  <div className={`text-[11px] font-medium leading-tight ${active ? cardOpt.color : 'text-gray-300'}`}>
+                    Tarjetas
+                  </div>
+                  <div className="text-[9px] text-gray-600 leading-tight">{cardOpt.key}</div>
+                </div>
+              </button>
+              <div className="flex gap-1">
+                {[['am', '🟨', 'Amarilla'], ['roja', '🟥', 'Roja'], ['ambas', '🟨🟥', 'Ambas']].map(([m, ic, title]) => (
+                  <button
+                    key={m}
+                    type="button"
+                    title={title}
+                    onClick={() => { setCardMode(m); setSelectedKey(CARD_MODE_KEY[m]); }}
+                    className={`flex-1 text-[10px] leading-none py-1 rounded border transition-all
+                      ${cardMode === m
+                        ? 'bg-gray-600 border-gray-400'
+                        : 'bg-gray-950 border-gray-800 hover:bg-gray-800'}`}>
+                    {ic}
+                  </button>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
       </div>
     </div>
   );

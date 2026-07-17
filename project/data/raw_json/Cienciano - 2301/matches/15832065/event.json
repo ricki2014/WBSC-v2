@@ -1,0 +1,229 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Sudamericana, Group B",
+    "slug": "copa-sudamericana-group-b",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "country": {},
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Sudamericana",
+      "slug": "conmebol-sudamericana",
+      "primaryColorHex": "#e3c000",
+      "secondaryColorHex": "#13489c",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "country": {},
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 127962,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 480,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كأس أمريكا الجنوبية لكرة القدم",
+          "bn": "কনমেবল সুদাআমেরিকানা",
+          "hi": "कॉनमेबोल सुदामेरिकाना",
+          "pt": "Copa Sul-Americana",
+          "ru": "КОНМЕБОЛ Судамерикана"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 528,
+    "isGroup": true,
+    "groupName": "Group B",
+    "groupSign": "B",
+    "isLive": false,
+    "id": 91437,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوبا سود أمريكانا، المجموعة B",
+        "bn": "কনমেবল সুদামেরিকানা, গ্রুপ বি",
+        "hi": "कॉनमेबोल सुदामेरिकाना, ग्रुप बी",
+        "pt": "Copa Sul-Americana, Grupo B",
+        "ru": "Кубок Южной Америки КОНМЕБОЛ, Группа B"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Sudamericana 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87770
+  },
+  "roundInfo": {
+    "round": 4
+  },
+  "customId": "bWsAoRb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Academia Puerto Cabello",
+    "slug": "academia-puerto-cabello",
+    "shortName": "Puerto Cabello",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 8702,
+    "nameCode": "APC",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "VE",
+      "alpha3": "VEN",
+      "name": "Venezuela",
+      "slug": "venezuela"
+    },
+    "id": 230725,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#000242",
+      "secondary": "#fe5c03",
+      "text": "#fe5c03"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أكاديميا بويرتو كابيو",
+        "hi": "एकाडेमिया पुएर्तो काबेल्लो",
+        "ru": "Академия Порто Кабельо"
+      },
+      "shortNameTranslation": {
+        "ru": "Порто Кабельо"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Cienciano",
+    "slug": "cienciano",
+    "shortName": "Cienciano",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 19508,
+    "nameCode": "CIE",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2301,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سيينسيانو",
+        "hi": "CS Cienciano",
+        "ru": "CS Cienciano"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 1,
+    "period2": 2,
+    "normaltime": 3
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 8,
+    "currentPeriodStartTimestamp": 1778031227
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1778034409
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "correctHalftimeAiInsight": true,
+  "id": 15832065,
+  "slug": "academia-puerto-cabello-cienciano",
+  "startTimestamp": 1778027400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

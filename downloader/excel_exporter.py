@@ -103,6 +103,7 @@ def _build_partidos(team_folder, team_id, scores_df):
             "match_id":   mid,
             "fecha":      _fecha,
             "partido":    f"{base['home_team']} vs {base['away_team']}",
+            "considerar": "Si",
             "home_team":  base["home_team"],
             "away_team":  base["away_team"],
             "condicion":  base["condicion"],
@@ -210,6 +211,60 @@ def _build_goles_equipo(team_folder, team_id):
                 "tipo":          inc.get("incidentClass", "regular"),
             })
     return pd.DataFrame(rows)
+
+
+# ─── HOJA: TARJETAS DETALLE ───────────────────────────────────────────────────
+# La API de estadísticas de SofaScore no siempre trae "Yellow cards"/"Red cards"
+# como stat_item (el ejemplo de Garcilaso vs Binacional no las tiene en "Match
+# overview") — los conteos por mitad (Amarillas_home_1t, etc.) que ya se ven en
+# 'Partidos'/'TARJETAS EQUIPO' siempre salen de este mismo timeline (incidents.json),
+# nunca de statistics.json. Esta hoja expone ese timeline evento por evento.
+
+_CARD_CLASS_ES = {
+    "yellow":    "Amarilla",
+    "red":       "Roja",
+    "yellowRed": "Roja (doble amarilla)",
+}
+
+def _build_tarjetas_detalle(team_folder, team_id):
+    """Una fila por tarjeta (propia o del rival) con minuto y jugador —
+    equivalente a 'Goles del Equipo' pero para amarillas/rojas."""
+    rows = []
+    for match_id, folder in iter_match_folders(team_folder):
+        ctx = match_context(match_id, folder, team_id=team_id)
+        data = load_match_json(folder, "incidents")
+        team_is_home = str(ctx.get("home_team_id", "")) == str(team_id)
+
+        for inc in data.get("incidents", []) if isinstance(data, dict) else []:
+            if inc.get("incidentType") != "card":
+                continue
+
+            is_home = inc.get("isHome")
+            equipo = "Propio" if is_home == team_is_home else "Rival"
+
+            player = inc.get("player", {}) or {}
+            minuto = inc.get("time", 0) or 0
+            added  = inc.get("addedTime", 0) or 0
+            min_str = f"{minuto}+{added}" if added and int(added) > 0 else str(minuto)
+            periodo = "2T" if int(minuto) > 45 else "1T"
+            clase = inc.get("incidentClass", "")
+
+            rows.append({
+                "partido":   ctx["partido"],
+                "match_id":  match_id,
+                "condicion": ctx["condicion"],
+                "rival":     ctx["away_team"] if ctx["condicion"] == "LOCAL" else ctx["home_team"],
+                "minuto":    min_str,
+                "periodo":   periodo,
+                "equipo":    equipo,
+                "jugador":   player.get("shortName", player.get("name", "")),
+                "tipo":      _CARD_CLASS_ES.get(clase, clase),
+            })
+
+    df = pd.DataFrame(rows)
+    if not df.empty and "match_id" in df.columns:
+        df = df.sort_values(["match_id", "minuto"]).reset_index(drop=True)
+    return df
 
 
 # ─── HOJA: POR JUGADOR x PARTIDO ─────────────────────────────────────────────
@@ -611,6 +666,9 @@ def build_excel(team_id, team_name, team_folder, urls_rows=None):
     print("   -> Construyendo hoja Disparos Detalle...")
     df_disparos_detalle = _build_disparos_detalle(team_folder, team_id)
 
+    print("   -> Construyendo hoja Tarjetas Detalle...")
+    df_tarjetas_detalle = _build_tarjetas_detalle(team_folder, team_id)
+
     # ── Escribir Excel ──
     with pd.ExcelWriter(path, engine="openpyxl") as writer:
         # Hojas nuevas (compatibles con Aw.py y api.py)
@@ -620,6 +678,7 @@ def build_excel(team_id, team_name, team_folder, urls_rows=None):
         df_arqueros.to_excel(writer,        sheet_name="Arqueros x Partido",  index=False)
         df_p90.to_excel(writer,             sheet_name="JUGADORES P90",       index=False)
         df_disparos_detalle.to_excel(writer, sheet_name="Disparos Detalle",   index=False)
+        df_tarjetas_detalle.to_excel(writer, sheet_name="Tarjetas Detalle",   index=False)
 
         # Hojas pivot originales (para análisis raw)
         df_goals.to_excel(writer,   sheet_name="GOLES EQUIPO",    index=False)

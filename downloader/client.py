@@ -63,3 +63,9 @@ class SofaScoreClient:
 
     def get_shotmap(self, match_id):
         return self.fetch(f"{BASE_URL}/event/{match_id}/shotmap", "shotmap")
+
+    def get_referee_info(self, referee_id):
+        return self.fetch(f"{BASE_URL}/referee/{referee_id}", "referee")
+
+    def get_referee_events(self, referee_id, page=0):
+        return self.fetch(f"{BASE_URL}/referee/{referee_id}/events/last/{page}", "referee-events")

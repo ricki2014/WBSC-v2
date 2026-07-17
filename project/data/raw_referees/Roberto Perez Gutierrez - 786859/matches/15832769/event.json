@@ -1,0 +1,216 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Libertadores, Group G",
+    "slug": "copa-libertadores-group-g",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Libertadores",
+      "slug": "conmebol-libertadores",
+      "primaryColorHex": "#573215",
+      "secondaryColorHex": "#dfaf49",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 220768,
+      "hasPerformanceGraphFeature": false,
+      "id": 384,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوبا ليبرتادوريس",
+          "bn": "কনমেবল লিবার্তাদোরেস",
+          "hi": "कॉनमेबोल लिबर्टाडोरेस",
+          "ru": "КОНМЕБОЛ Либертадорес"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 682,
+    "isGroup": true,
+    "groupName": "Group G",
+    "groupSign": "G",
+    "isLive": false,
+    "id": 2934,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس ليبرتادوريس - كونمبول - المجموعة G",
+        "bn": "কনমেবল লিবার্তাদোরস, গ্রুপ জি",
+        "hi": "कॉनमेबोल लिबर्टाडोरेस, ग्रुप जी",
+        "ru": "Кубок Либертадорес КОНМЕБОЛ, Группа G"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Libertadores 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87760
+  },
+  "roundInfo": {
+    "round": 2
+  },
+  "customId": "hfcsHOi",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "LDU",
+    "slug": "ldu",
+    "shortName": "LDU",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 71010,
+    "nameCode": "LDU",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 5257,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "إل دي يو",
+        "ru": "ЛДУ Кито"
+      },
+      "shortNameTranslation": {
+        "ar": "إل دي يو"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Mirassol",
+    "slug": "mirassol",
+    "shortName": "Mirassol",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 95890,
+    "nameCode": "MIR",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 21982,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#e8c728",
+      "secondary": "#174c30",
+      "text": "#174c30"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ميراسول",
+        "ru": "Мирассол"
+      },
+      "shortNameTranslation": {
+        "ar": "ميراسول",
+        "ru": "Мирассол"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 2,
+    "period2": 0,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 5,
+    "currentPeriodStartTimestamp": 1776222198
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1776225209
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 15832769,
+  "awayRedCards": 1,
+  "slug": "mirassol-ldu",
+  "startTimestamp": 1776218400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

@@ -83,6 +83,9 @@ function TeamFicha({ name, stats, color }) {
       <StatSection icon="🎯" label="Disparos"  sub="Favor / Contra" s={stats}
         kF1="TI_F_1T" kC1="TI_C_1T" kF2="TI_F_2T" kC2="TI_C_2T" kFF="TI_F_FT" kCF="TI_C_FT" />
 
+      <StatSection icon="🥅" label="Tiros al arco" sub="Favor / Contra" s={stats}
+        kF1="SOT_F_1T" kC1="SOT_C_1T" kF2="SOT_F_2T" kC2="SOT_C_2T" kFF="SOT_F_FT" kCF="SOT_C_FT" />
+
       <StatSection icon="↔️" label="Pases" sub="Favor / Contra" s={stats}
         kF1="PA_F_1T" kC1="PA_C_1T" kF2="PA_F_2T" kC2="PA_C_2T" kFF="PA_F_FT" kCF="PA_C_FT" big />
 
@@ -331,9 +334,8 @@ function Expectativas({ s1, s2, name1, name2 }) {
 }
 
 // ─── DISTRIBUCIÓN DE GOLES POR TRAMO ─────────────────────────────────────────
-function GoalDistChart({ dist, name, color }) {
+function GoalDistChart({ dist, name, color, max }) {
   if (!dist || dist.length === 0) return null;
-  const max = Math.max(...dist.map(d => d.count), 1);
   const accent = color === 'green' ? 'bg-green-500' : 'bg-blue-500';
   const text   = color === 'green' ? 'text-green-400' : 'text-blue-400';
   return (
@@ -365,6 +367,7 @@ function GoalDistSection({ dist1, dist2, name1, name2 }) {
   if (!dist1?.length && !dist2?.length) return null;
   const total1 = dist1?.reduce((s, d) => s + d.count, 0) ?? 0;
   const total2 = dist2?.reduce((s, d) => s + d.count, 0) ?? 0;
+  const max = Math.max(...(dist1 ?? []).map(d => d.count), ...(dist2 ?? []).map(d => d.count), 1);
   return (
     <div className="bg-gray-900 border border-gray-700/40 rounded-xl p-4">
       <div className="flex items-center gap-2 mb-3">
@@ -373,8 +376,8 @@ function GoalDistSection({ dist1, dist2, name1, name2 }) {
         <span className="text-gray-500 text-[10px]">· cada 10 minutos</span>
       </div>
       <div className="flex flex-col md:flex-row gap-6">
-        <GoalDistChart dist={dist1} name={`${name1} (${total1} goles)`} color="green" />
-        <GoalDistChart dist={dist2} name={`${name2} (${total2} goles)`} color="blue" />
+        <GoalDistChart dist={dist1} name={`${name1} (${total1} goles)`} color="green" max={max} />
+        <GoalDistChart dist={dist2} name={`${name2} (${total2} goles)`} color="blue" max={max} />
       </div>
     </div>
   );

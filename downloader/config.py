@@ -1,6 +1,7 @@
 BASE_URL = "https://api.sofascore.com/api/v1"
 DATA_DIR = "data"
 RAW_JSON_DIR = "data/raw_json"
+RAW_REFEREE_DIR = "data/raw_referees"
 EXCEL_DIR = "data/excel"
 
 HEADERS = {

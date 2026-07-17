@@ -1,0 +1,58 @@
+{
+  "incidents": [
+    {
+      "text": "FT",
+      "homeScore": 0,
+      "awayScore": 0,
+      "isLive": false,
+      "time": 90,
+      "addedTime": 999,
+      "timeSeconds": 5400,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "text": "HT",
+      "homeScore": 0,
+      "awayScore": 0,
+      "isLive": false,
+      "time": 45,
+      "addedTime": 999,
+      "timeSeconds": 2700,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    }
+  ],
+  "home": {
+    "goalkeeperColor": {
+      "primary": "57b3d1",
+      "number": "ffffff",
+      "outline": "57b3d1",
+      "fancyNumber": "222226"
+    },
+    "playerColor": {
+      "primary": "521f7c",
+      "number": "ffffff",
+      "outline": "521f7c",
+      "fancyNumber": "ffffff"
+    }
+  },
+  "away": {
+    "goalkeeperColor": {
+      "primary": "3d9725",
+      "number": "ffffff",
+      "outline": "3d9725",
+      "fancyNumber": "ffffff"
+    },
+    "playerColor": {
+      "primary": "d67bce",
+      "number": "3750bc",
+      "outline": "d67bce",
+      "fancyNumber": "ffffff"
+    }
+  }
+}

@@ -8,7 +8,9 @@ const TABS = [
   { icon: '📌', label: 'Stats Fijos' },
   { icon: '⚡', label: 'Stats en Vivo' },
   { icon: '🎯', label: 'Dist Tiros' },
+  { icon: '🟨', label: 'Dist Tarjetas' },
   { icon: '📉', label: 'Momentum' },
+  { icon: '🚦', label: 'Marcador x Tramo' },
 ];
 
 export default function Tabs({ tab, setTab }) {

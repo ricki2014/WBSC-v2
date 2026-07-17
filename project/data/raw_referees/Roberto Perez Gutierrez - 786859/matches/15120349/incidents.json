@@ -1,0 +1,895 @@
+{
+  "incidents": [
+    {
+      "text": "FT",
+      "homeScore": 1,
+      "awayScore": 0,
+      "isLive": false,
+      "time": 90,
+      "addedTime": 999,
+      "timeSeconds": 5400,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "playerIn": {
+        "name": "Fabio Pandolfi",
+        "firstName": "Fabio Pandolfi",
+        "slug": "fabio-pandolfi",
+        "shortName": "F. Pandolfi",
+        "position": "M",
+        "jerseyNumber": "6",
+        "height": 178,
+        "userCount": 103,
+        "gender": "M",
+        "sofascoreId": "sx4ybh",
+        "id": 2220176,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1211587200,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فابيو باندولفي",
+            "ru": "Пандольфи, Фабио"
+          },
+          "shortNameTranslation": {
+            "ar": "ف. باندولفي",
+            "ru": "Ф. Пандольфи"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Andrea Luongo",
+        "firstName": "Andrea Luongo",
+        "slug": "andrea-luongo",
+        "shortName": "A. Luongo",
+        "position": "M",
+        "jerseyNumber": "97",
+        "height": 178,
+        "userCount": 195,
+        "gender": "M",
+        "sofascoreId": "r3n6f8",
+        "id": 1985762,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1203120000,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "لونغو، أندريا",
+            "ru": "Луонго, Андреа"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. لونغو",
+            "ru": "А. Луонго"
+          }
+        }
+      },
+      "id": 125161618,
+      "time": 90,
+      "addedTime": 1,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 1
+    },
+    {
+      "playerIn": {
+        "name": "Leonardo Bovio",
+        "firstName": "Leonardo Bovio",
+        "slug": "leonardo-bovio",
+        "shortName": "L. Bovio",
+        "position": "D",
+        "jerseyNumber": "39",
+        "height": 187,
+        "userCount": 208,
+        "sofascoreId": "wmmcip",
+        "id": 1931502,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1202083200,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ليوناردو بوفيو",
+            "ru": "Леонардо Бовио"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. بوفيو",
+            "ru": "Л. Бовио"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Samuele Inacio",
+        "firstName": "Samuele Inacio",
+        "slug": "samuele-inacio",
+        "shortName": "S. Inacio",
+        "position": "M",
+        "jerseyNumber": "40",
+        "height": 175,
+        "userCount": 4073,
+        "gender": "M",
+        "sofascoreId": "r3v4tg",
+        "id": 1861666,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1207094400,
+        "proposedMarketValueRaw": {
+          "value": 15900000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سامويل إيناسيو",
+            "ru": "Самуэле Инасио"
+          },
+          "shortNameTranslation": {
+            "ar": "س. إيناسيو",
+            "ru": "С. Инасио"
+          }
+        }
+      },
+      "id": 125161620,
+      "time": 90,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 1
+    },
+    {
+      "length": 5,
+      "time": 90,
+      "addedTime": 0,
+      "incidentType": "injuryTime",
+      "reversedPeriodTime": 1
+    },
+    {
+      "player": {
+        "name": "Ashraf Loukman Tapsoba",
+        "slug": "ashraf-loukman-tapsoba",
+        "shortName": "A. L. Tapsoba",
+        "position": "F",
+        "height": 182,
+        "userCount": 1737,
+        "gender": "M",
+        "sofascoreId": "8rncka",
+        "id": 2110377,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1269907200,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أشرف لوكمان تابصوبا",
+            "ru": "Ашраф Лукоман Тапсоба"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. تابصوبا",
+            "ru": "А. Тапсоба"
+          }
+        }
+      },
+      "playerName": "Ashraf Loukman Tapsoba",
+      "reason": "Foul",
+      "rescinded": false,
+      "id": 124361527,
+      "time": 89,
+      "isHome": false,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 2
+    },
+    {
+      "confirmed": true,
+      "player": {
+        "name": "Ashraf Loukman Tapsoba",
+        "slug": "ashraf-loukman-tapsoba",
+        "shortName": "A. L. Tapsoba",
+        "position": "F",
+        "height": 182,
+        "userCount": 1737,
+        "gender": "M",
+        "sofascoreId": "8rncka",
+        "id": 2110377,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1269907200,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أشرف لوكمان تابصوبا",
+            "ru": "Ашраф Лукоман Тапсоба"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. تابصوبا",
+            "ru": "А. Тапсоба"
+          }
+        }
+      },
+      "isHome": false,
+      "id": 91582,
+      "time": 89,
+      "incidentClass": "cardUpgrade",
+      "incidentType": "varDecision",
+      "reversedPeriodTime": 2
+    },
+    {
+      "playerIn": {
+        "name": "Eric Ouattara",
+        "firstName": "Eric Ouattara",
+        "slug": "eric-ouattara",
+        "shortName": "E. Ouattara",
+        "position": "M",
+        "height": 180,
+        "userCount": 104,
+        "gender": "M",
+        "sofascoreId": "5be98e",
+        "id": 2330968,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1251072000,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إريك أواتارا",
+            "ru": "Эрик Уаттара"
+          },
+          "shortNameTranslation": {
+            "ar": "إي. أواتارا",
+            "ru": "Э. Уаттара"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Ousmane Ouedraogo",
+        "firstName": "Ousmane Ouedraogo",
+        "slug": "ousmane-ouedraogo",
+        "shortName": "O. Ouedraogo",
+        "position": "D",
+        "height": 178,
+        "userCount": 686,
+        "gender": "M",
+        "sofascoreId": "js3sci",
+        "id": 1939075,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1205193600,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أوسمان ويدراوغو",
+            "ru": "Уэдраого, Усман"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. ويدراوغو",
+            "ru": "У. Уэдраого"
+          }
+        }
+      },
+      "id": 125161616,
+      "time": 88,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 3
+    },
+    {
+      "player": {
+        "name": "Andrea Luongo",
+        "firstName": "Andrea Luongo",
+        "slug": "andrea-luongo",
+        "shortName": "A. Luongo",
+        "position": "M",
+        "jerseyNumber": "97",
+        "height": 178,
+        "userCount": 195,
+        "gender": "M",
+        "sofascoreId": "r3n6f8",
+        "id": 1985762,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1203120000,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "لونغو، أندريا",
+            "ru": "Луонго, Андреа"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. لونغو",
+            "ru": "А. Луонго"
+          }
+        }
+      },
+      "playerName": "Andrea Luongo",
+      "reason": "Foul",
+      "rescinded": false,
+      "id": 124361520,
+      "time": 85,
+      "isHome": true,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 6
+    },
+    {
+      "player": {
+        "name": "Thomas Campaniello",
+        "slug": "thomas-campaniello",
+        "shortName": "T. Campaniello",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 185,
+        "userCount": 434,
+        "gender": "M",
+        "sofascoreId": "cecsis",
+        "id": 1825909,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204243200,
+        "proposedMarketValueRaw": {
+          "value": 930000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كامبانييلو، توماس",
+            "ru": "Кампаньелло, Томас"
+          },
+          "shortNameTranslation": {
+            "ar": "ت. كامبانييلو",
+            "ru": "Т. Кампаньелло"
+          }
+        }
+      },
+      "playerName": "Thomas Campaniello",
+      "rescinded": false,
+      "id": 124361514,
+      "time": 83,
+      "isHome": true,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 8
+    },
+    {
+      "homeScore": 1,
+      "awayScore": 0,
+      "player": {
+        "name": "Thomas Campaniello",
+        "slug": "thomas-campaniello",
+        "shortName": "T. Campaniello",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 185,
+        "userCount": 434,
+        "gender": "M",
+        "sofascoreId": "cecsis",
+        "id": 1825909,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204243200,
+        "proposedMarketValueRaw": {
+          "value": 930000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كامبانييلو، توماس",
+            "ru": "Кампаньелло, Томас"
+          },
+          "shortNameTranslation": {
+            "ar": "ت. كامبانييلو",
+            "ru": "Т. Кампаньелло"
+          }
+        }
+      },
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Thomas Campaniello",
+            "slug": "thomas-campaniello",
+            "shortName": "T. Campaniello",
+            "position": "F",
+            "jerseyNumber": "9",
+            "height": 185,
+            "userCount": 434,
+            "gender": "M",
+            "sofascoreId": "cecsis",
+            "id": 1825909,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1204243200,
+            "proposedMarketValueRaw": {
+              "value": 930000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "كامبانييلو، توماس",
+                "ru": "Кампаньелло, Томас"
+              },
+              "shortNameTranslation": {
+                "ar": "ت. كامبانييلو",
+                "ru": "Т. Кампаньелло"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "left-foot",
+          "time": 83,
+          "playerCoordinates": {
+            "x": 83.1,
+            "y": 55.2
+          },
+          "gkCoordinates": {
+            "x": 96,
+            "y": 52.2
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 52.6
+          },
+          "goalMouthCoordinates": {
+            "x": 36.02,
+            "y": 81
+          },
+          "goalkeeper": {
+            "name": "Rahim Ouattara",
+            "firstName": "Rahim Ouattara",
+            "slug": "rahim-ouattara",
+            "shortName": "R. Ouattara",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 194,
+            "userCount": 440,
+            "gender": "M",
+            "sofascoreId": "wmpn4n",
+            "id": 2330990,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1230681600,
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "رحيم أواتارا",
+                "ru": "Рахим Уаттара"
+              },
+              "shortNameTranslation": {
+                "ar": "آر. أواتارا",
+                "ru": "Р. Уаттара"
+              }
+            }
+          },
+          "isHome": true,
+          "goalType": "regular"
+        }
+      ],
+      "id": 329952670,
+      "time": 82,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 9
+    },
+    {
+      "playerIn": {
+        "name": "Halidou Diakité",
+        "firstName": "Halidou",
+        "lastName": "Diakité",
+        "slug": "halidou-diakite",
+        "shortName": "H. Diakité",
+        "position": "F",
+        "height": 174,
+        "userCount": 231,
+        "gender": "M",
+        "sofascoreId": "ejuhwy",
+        "id": 2110380,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1245369600,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "حليدو ديكيت",
+            "ru": "Халиду Диакитэ"
+          },
+          "shortNameTranslation": {
+            "ar": "ح. ديكيت",
+            "ru": "Х. Диакитэ"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Cherif Barro",
+        "firstName": "Cherif Barro",
+        "slug": "cherif-barro",
+        "shortName": "C. Barro",
+        "position": "M",
+        "height": 185,
+        "userCount": 162,
+        "gender": "M",
+        "sofascoreId": "c8zmdx",
+        "id": 2330965,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1225929600,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "شريف بارو",
+            "ru": "Шериф Барро"
+          },
+          "shortNameTranslation": {
+            "ar": "سي. بارو",
+            "ru": "Ш. Барро"
+          }
+        }
+      },
+      "id": 125161607,
+      "time": 80,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 11
+    },
+    {
+      "player": {
+        "name": "Luca Reggiani",
+        "firstName": "Luca Reggiani",
+        "slug": "luca-reggiani",
+        "shortName": "L. Reggiani",
+        "position": "D",
+        "jerseyNumber": "49",
+        "height": 192,
+        "userCount": 2101,
+        "gender": "M",
+        "sofascoreId": "8rmjfy",
+        "id": 1937833,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1199836800,
+        "proposedMarketValueRaw": {
+          "value": 9700000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "لوكا ريجاني",
+            "ru": "Лука Реджиани"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. ريجاني",
+            "ru": "Л. Реджиани"
+          }
+        }
+      },
+      "playerName": "Luca Reggiani",
+      "rescinded": false,
+      "id": 124361504,
+      "time": 78,
+      "isHome": true,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 13
+    },
+    {
+      "player": {
+        "name": "David Marini",
+        "firstName": "David",
+        "lastName": "Marini",
+        "slug": "david-marini",
+        "shortName": "D. Marini",
+        "position": "D",
+        "height": 173,
+        "userCount": 48,
+        "gender": "M",
+        "sofascoreId": "kvnih9",
+        "id": 2051505,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204588800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديفيد ماريني",
+            "ru": "Марини, Давид"
+          },
+          "shortNameTranslation": {
+            "ar": "د. ماريني",
+            "ru": "Д. Марини"
+          }
+        }
+      },
+      "playerName": "David Marini",
+      "reason": "Foul",
+      "rescinded": false,
+      "id": 124361498,
+      "time": 72,
+      "isHome": true,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 19
+    },
+    {
+      "playerIn": {
+        "name": "Thomas Campaniello",
+        "slug": "thomas-campaniello",
+        "shortName": "T. Campaniello",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 185,
+        "userCount": 434,
+        "gender": "M",
+        "sofascoreId": "cecsis",
+        "id": 1825909,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204243200,
+        "proposedMarketValueRaw": {
+          "value": 930000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كامبانييلو، توماس",
+            "ru": "Кампаньелло, Томас"
+          },
+          "shortNameTranslation": {
+            "ar": "ت. كامبانييلو",
+            "ru": "Т. Кампаньелло"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Antonio Arena",
+        "firstName": "Antonio",
+        "lastName": "Arena",
+        "slug": "antonio-arena",
+        "shortName": "A. Arena",
+        "position": "F",
+        "jerseyNumber": "68",
+        "height": 188,
+        "userCount": 1239,
+        "gender": "M",
+        "sofascoreId": "ikkb7q",
+        "id": 1923599,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1234224000,
+        "proposedMarketValueRaw": {
+          "value": 4200000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أرينا، أنطونيو",
+            "ru": "Антонио Арена"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. أرينا",
+            "ru": "А. Арена"
+          }
+        }
+      },
+      "id": 125161595,
+      "time": 70,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 21
+    },
+    {
+      "playerIn": {
+        "name": "David Marini",
+        "firstName": "David",
+        "lastName": "Marini",
+        "slug": "david-marini",
+        "shortName": "D. Marini",
+        "position": "D",
+        "height": 173,
+        "userCount": 48,
+        "gender": "M",
+        "sofascoreId": "kvnih9",
+        "id": 2051505,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1204588800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديفيد ماريني",
+            "ru": "Марини, Давид"
+          },
+          "shortNameTranslation": {
+            "ar": "د. ماريني",
+            "ru": "Д. Марини"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Federico Steffanoni",
+        "slug": "federico-steffanoni",
+        "shortName": "F. Steffanoni",
+        "position": "M",
+        "jerseyNumber": "50",
+        "height": 180,
+        "userCount": 239,
+        "gender": "M",
+        "sofascoreId": "c8ey39",
+        "id": 1903114,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1220486400,
+        "proposedMarketValueRaw": {
+          "value": 1800000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فيديريكو ستيفانوني",
+            "ru": "Федерико Стеффанони"
+          },
+          "shortNameTranslation": {
+            "ar": "ف. ستيفانوني",
+            "ru": "Ф. Стеффанони"
+          }
+        }
+      },
+      "id": 125161594,
+      "time": 70,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 21
+    },
+    {
+      "player": {
+        "name": "Eddie Kogo",
+        "firstName": "Eddie Kogo",
+        "slug": "eddie-kogo",
+        "shortName": "E. Kogo",
+        "position": "M",
+        "height": 182,
+        "userCount": 119,
+        "gender": "M",
+        "sofascoreId": "xdg7ic",
+        "id": 2330967,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1230336000,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إيدي كوجو",
+            "ru": "Кого, Эдди"
+          },
+          "shortNameTranslation": {
+            "ar": "إي. كوجو",
+            "ru": "Э. Кого"
+          }
+        }
+      },
+      "playerName": "Eddie Kogo",
+      "reason": "Argument",
+      "rescinded": false,
+      "id": 124361466,
+      "time": 61,
+      "isHome": false,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 30
+    },
+    {
+      "playerIn": {
+        "name": "Destiny Elimoghale",
+        "firstName": "Destiny",
+        "lastName": "Elimoghale",
+        "slug": "destiny-onoguekhan-elimoghale",
+        "shortName": "D.Elimoghale",
+        "position": "M",
+        "jerseyNumber": "27",
+        "height": 182,
+        "userCount": 937,
+        "gender": "M",
+        "sofascoreId": "zqqbmu",
+        "id": 1908261,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1240444800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ديستني أونوجيخان إليموجالي",
+            "ru": "Дестини Элимогале"
+          },
+          "shortNameTranslation": {
+            "ar": "د. إليموجالي",
+            "ru": "Д. Элимогале"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Simone Lontani",
+        "slug": "simone-lontani",
+        "shortName": "S. Lontani",
+        "position": "F",
+        "jerseyNumber": "23",
+        "height": 181,
+        "userCount": 198,
+        "gender": "M",
+        "sofascoreId": "r33t27",
+        "id": 1912962,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1200614400,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "سيموني لونتاني",
+            "ru": "Лонтани, Симоне"
+          },
+          "shortNameTranslation": {
+            "ar": "س. لونتاني",
+            "ru": "С. Лонтани"
+          }
+        }
+      },
+      "id": 125161530,
+      "time": 55,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 36
+    },
+    {
+      "text": "HT",
+      "homeScore": 0,
+      "awayScore": 0,
+      "isLive": false,
+      "time": 45,
+      "addedTime": 999,
+      "timeSeconds": 2700,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "length": 2,
+      "time": 45,
+      "addedTime": 0,
+      "incidentType": "injuryTime",
+      "reversedPeriodTime": 1
+    },
+    {
+      "confirmed": true,
+      "player": {
+        "name": "Alassana Bagayogo",
+        "slug": "alassana-bagayogo",
+        "shortName": "A. Bagayogo",
+        "position": "M",
+        "height": 178,
+        "userCount": 483,
+        "gender": "M",
+        "sofascoreId": "ejuhw4",
+        "id": 2110376,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1230076800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ألاسانا باجايوغو",
+            "ru": "Багайого, Алассан"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. باجايوغو",
+            "ru": "А. Багайого"
+          }
+        }
+      },
+      "isHome": false,
+      "id": 91573,
+      "time": 22,
+      "incidentClass": "penaltyNotAwarded",
+      "incidentType": "varDecision",
+      "reversedPeriodTime": 24
+    }
+  ],
+  "home": {
+    "goalkeeperColor": {
+      "primary": "990000",
+      "number": "ffffff",
+      "outline": "990000",
+      "fancyNumber": "ffffff"
+    },
+    "playerColor": {
+      "primary": "0066ff",
+      "number": "ffffff",
+      "outline": "0066ff",
+      "fancyNumber": "ffffff"
+    }
+  },
+  "away": {
+    "goalkeeperColor": {
+      "primary": "fbff05",
+      "number": "222226",
+      "outline": "fbff05",
+      "fancyNumber": "222226"
+    },
+    "playerColor": {
+      "primary": "3399cc",
+      "number": "ffffff",
+      "outline": "3399cc",
+      "fancyNumber": "222226"
+    }
+  }
+}
