@@ -1,0 +1,234 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga Profesional de Fútbol, Apertura",
+    "slug": "primera-lfp-apertura",
+    "category": {
+      "name": "Argentina",
+      "slug": "argentina",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 48,
+      "flag": "argentina",
+      "alpha2": "AR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الأرجنتين",
+          "ru": "Аргентина"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga Profesional de Fútbol",
+      "slug": "liga-profesional-de-futbol",
+      "primaryColorHex": "#0cbad8",
+      "secondaryColorHex": "#daa813",
+      "category": {
+        "name": "Argentina",
+        "slug": "argentina",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "AR",
+          "alpha3": "ARG",
+          "name": "Argentina",
+          "slug": "argentina"
+        },
+        "id": 48,
+        "flag": "argentina",
+        "alpha2": "AR",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الأرجنتين",
+            "ru": "Аргентина"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 63751,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 155,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دوري كرة القدم للمحترفين",
+          "bn": "লীগা প্রোফেশনাল ডে ফুটবল",
+          "hi": "लीगा प्रोफेशनल डी फुटबॉल",
+          "ru": "Профессиональная лига футбола"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 434,
+    "isGroup": false,
+    "id": 143625,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "الدوري الاحترافي لكرة القدم، ذهاب",
+        "bn": "প্রিমেরা এলপিএফ, অ্যাপার্তুরা",
+        "hi": "प्राइमेरा एलपीएफ, एपर्टुरा",
+        "ru": "Лига Профессионального Футбола, Открытие"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Primera LPF 2026",
+    "year": "2026",
+    "editor": false,
+    "seasonCoverageInfo": {},
+    "id": 87913
+  },
+  "roundInfo": {
+    "round": 11
+  },
+  "customId": "mobstob",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "CA Lanús",
+    "slug": "lanus",
+    "shortName": "Lanús",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 43230,
+    "nameCode": "LAN",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "AR",
+      "alpha3": "ARG",
+      "name": "Argentina",
+      "slug": "argentina"
+    },
+    "id": 3218,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#660033",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "لانوس",
+        "ru": "Атлетико Ланус"
+      },
+      "shortNameTranslation": {
+        "ar": "لانوس"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Newell's Old Boys",
+    "slug": "newells-old-boys",
+    "shortName": "Newell's",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 23334,
+    "nameCode": "NOB",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "AR",
+      "alpha3": "ARG",
+      "name": "Argentina",
+      "slug": "argentina"
+    },
+    "id": 3212,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "نيولز أولد بويز",
+        "hi": "नेवेल्ल्स ओल्ड बॉयज",
+        "ru": "Ньюэллс Олд Бойз"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 5,
+    "display": 5,
+    "period1": 3,
+    "period2": 2,
+    "normaltime": 5
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 1,
+    "injuryTime2": 0,
+    "currentPeriodStartTimestamp": 1773788574
+  },
+  "changes": {
+    "changes": [
+      "time.injuryTime2"
+    ],
+    "changeTimestamp": 1773791290
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 15270022,
+  "slug": "ca-lanus-newells-old-boys",
+  "startTimestamp": 1773784800,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

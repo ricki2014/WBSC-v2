@@ -1,0 +1,308 @@
+{
+  "team": {
+    "name": "Sport Huancayo",
+    "slug": "sport-huancayo",
+    "shortName": "Sport Huancayo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "tournament": {
+      "name": "Liga 1, Clausura",
+      "slug": "liga-1-clausura",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "uniqueTournament": {
+        "name": "Liga 1",
+        "slug": "liga-1",
+        "secondaryColorHex": "#f91018",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          },
+          "transferPeriod": [
+            {
+              "activeFrom": "06-01 00:00",
+              "activeTo": "09-18 00:00"
+            },
+            {
+              "activeFrom": "12-30 00:00",
+              "activeTo": "02-16 00:00"
+            }
+          ]
+        },
+        "userCount": 22271,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 406,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري الممتاز",
+            "bn": "লিগা 1",
+            "hi": "लीगा 1",
+            "ru": "Лига 1"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 218,
+      "roundPrefix": "Clausura",
+      "isLive": false,
+      "id": 34468,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دوري 1، إياب",
+          "bn": "লিগা 1, ক্লাউসুরা",
+          "hi": "लीगा 1, क्लॉसुरा",
+          "ru": "Лига 1, Клаусура"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 22271,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 6497,
+    "manager": {
+      "name": "Richard Pellejero",
+      "slug": "pellejero-richard",
+      "shortName": "R. Pellejero",
+      "country": {
+        "alpha2": "UY",
+        "alpha3": "URY",
+        "name": "Uruguay",
+        "slug": "uruguay"
+      },
+      "id": 809358,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيلخيرو، ريتشارد",
+          "ru": "Пельехеро, Ричард"
+        },
+        "shortNameTranslation": {
+          "ar": "ر. بيلخيرو",
+          "ru": "Р. Пельехеро"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Huancayo",
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 32844
+      },
+      "venueCoordinates": {
+        "latitude": -12.072702,
+        "longitude": -75.201961
+      },
+      "hidden": true,
+      "slug": "estadio-huancayo",
+      "name": "Estadio Huancayo",
+      "capacity": 20000,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 1175,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب هوينكايو",
+          "hi": "एस्टेडियो हुआंकायो",
+          "bn": "এস্তাদিও হুয়ানকায়ো",
+          "ru": "Стадион Estadio Huancayo"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio Huancayo",
+        "capacity": 20000
+      }
+    },
+    "nameCode": "HUA",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 33895,
+    "fullName": "Sport Huancayo",
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffff00",
+      "text": "#ffff00"
+    },
+    "foundationDateTimestamp": 1170806400,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورت هوانكايو",
+        "ru": "Спорт Хуанкайо"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "position": 2,
+    "value": "4",
+    "form": [
+      "D",
+      "W"
+    ]
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Apertura",
+    "slug": "liga-1-apertura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 219,
+    "isGroup": false,
+    "roundPrefix": "Apertura",
+    "isLive": false,
+    "id": 34467,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، ذهاب",
+        "bn": "লিগা 1, অ্যাপেরতুরা",
+        "hi": "लीगा 1, एपर्टुरा",
+        "ru": "Лига 1, Апертура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 88529
+  },
+  "roundInfo": {
+    "round": 11
+  },
+  "customId": "cWsehK",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Club Sporting Cristal",
+    "slug": "club-sporting-cristal",
+    "shortName": "Sporting Cristal",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 56186,
+    "nameCode": "CRI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2302,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#33ccff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورتنج كريستال",
+        "ru": "Спортинг Кристал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Universidad Técnica de Cajamarca",
+    "slug": "universidad-tecnica-de-cajamarca",
+    "shortName": "UTC",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 6487,
+    "nameCode": "CAJ",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 87854,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "جامعة تكنيكا دي كاخاماركا",
+        "ru": "УТК де Кахамарка"
+      },
+      "shortNameTranslation": {
+        "ar": "يو تي سي"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 1,
+    "period2": 2,
+    "normaltime": 3
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 0,
+    "period2": 2,
+    "normaltime": 2
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 6,
+    "currentPeriodStartTimestamp": 1776618290
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1776621367
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 15885659,
+  "slug": "universidad-tecnica-de-cajamarca-club-sporting-cristal",
+  "startTimestamp": 1776614400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

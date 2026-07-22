@@ -1,0 +1,229 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Copa de La Liga, Group F",
+    "slug": "copa-de-la-liga-group-f",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Peru Copa de la Liga ",
+      "slug": "copa-de-la-liga",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 1836,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 35067,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ru": "Кубок Лиги"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 0,
+    "isGroup": true,
+    "groupName": "Group F",
+    "id": 186045,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ru": "Кубок Лиги, Группа F"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "2026",
+    "year": "2026",
+    "editor": false,
+    "seasonCoverageInfo": {
+      "editorCoverageLevel": 5
+    },
+    "id": 95197
+  },
+  "roundInfo": {
+    "round": 2
+  },
+  "customId": "kAAsOqkc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Deportivo Binacional",
+    "slug": "deportivo-binacional",
+    "shortName": "Binacional",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 3833,
+    "nameCode": "EDB",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 275839,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#215fba",
+      "secondary": "#feffff",
+      "text": "#feffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ديبورتيفو بيناسيونال",
+        "ru": "Депортиво Бинасиональ"
+      },
+      "shortNameTranslation": {
+        "ar": "بيناسيونال",
+        "ru": "Бинасиональ"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Cusco FC",
+    "slug": "cusco-fc",
+    "shortName": "Cusco",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 16985,
+    "nameCode": "CUS",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 63760,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#00ffff",
+      "secondary": "#33ffff",
+      "text": "#33ffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوسكو إف سي",
+        "ru": "Реал Гарсиласо"
+      },
+      "shortNameTranslation": {
+        "ar": "كوسكو"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 4,
+    "display": 4,
+    "period1": 2,
+    "period2": 2,
+    "normaltime": 4
+  },
+  "awayScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 2,
+    "period2": 1,
+    "normaltime": 3
+  },
+  "time": {
+    "periodLength": 2700,
+    "overtimeLength": 900,
+    "totalPeriodCount": 2,
+    "currentPeriodStartTimestamp": 1782155249
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.normaltime",
+      "awayScore.normaltime",
+      "time.currentPeriodStart"
+    ],
+    "changeTimestamp": 1782158129
+  },
+  "hasGlobalHighlights": false,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 16230440,
+  "slug": "deportivo-binacional-cusco-fc",
+  "startTimestamp": 1782151200,
+  "finalResultOnly": false,
+  "feedLocked": false,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Copa de La Liga, Group C",
+    "slug": "copa-de-la-liga-group-c",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Peru Copa de la Liga ",
+      "slug": "copa-de-la-liga",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 1836,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 35067,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ru": "Кубок Лиги"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 0,
+    "isGroup": true,
+    "groupName": "Group C",
+    "id": 186042,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ru": "Кубок Лиги, Группа C"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "2026",
+    "year": "2026",
+    "editor": false,
+    "seasonCoverageInfo": {
+      "editorCoverageLevel": 5
+    },
+    "id": 95197
+  },
+  "roundInfo": {
+    "round": 1
+  },
+  "customId": "ehKslvJc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 3,
+  "homeTeam": {
+    "name": "Deportivo Llacuabamba",
+    "slug": "deportivo-llacuabamba",
+    "shortName": "Llacuabamba",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 1071,
+    "nameCode": "LLA",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 336011,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#29adff",
+      "secondary": "#ffbf00",
+      "text": "#ffbf00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ديبورتيفو لاكوا بانبا",
+        "ru": "Депортиво Ллакуабамба"
+      },
+      "shortNameTranslation": {
+        "ar": "لاكوا بانبا",
+        "ru": "Ллакуабамба"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Universidad Técnica de Cajamarca",
+    "slug": "universidad-tecnica-de-cajamarca",
+    "shortName": "UTC",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 6487,
+    "nameCode": "CAJ",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 87854,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "جامعة تكنيكا دي كاخاماركا",
+        "ru": "УТК де Кахамарка"
+      },
+      "shortNameTranslation": {
+        "ar": "يو تي سي"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 0,
+    "period2": 2,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 0,
+    "period2": 2,
+    "normaltime": 2
+  },
+  "time": {
+    "currentPeriodStartTimestamp": 1781553660
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "time.currentPeriodStart"
+    ],
+    "changeTimestamp": 1781553688
+  },
+  "hasGlobalHighlights": false,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 16230422,
+  "awayRedCards": 1,
+  "slug": "deportivo-llacuabamba-universidad-tecnica-de-cajamarca",
+  "startTimestamp": 1781546400,
+  "finalResultOnly": false,
+  "feedLocked": false,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Copa de la Liga, Knockout Stage",
+    "slug": "copa-de-la-liga-knockout-stage",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Peru Copa de la Liga ",
+      "slug": "copa-de-la-liga",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 1836,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 35067,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ru": "Кубок Лиги"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 0,
+    "isGroup": false,
+    "id": 190242
+  },
+  "season": {
+    "name": "2026",
+    "year": "2026",
+    "editor": false,
+    "seasonCoverageInfo": {
+      "editorCoverageLevel": 5
+    },
+    "id": 95197
+  },
+  "roundInfo": {
+    "round": 5,
+    "name": "Round of 16",
+    "slug": "round-of-16",
+    "cupRoundType": 8
+  },
+  "customId": "bWshlJc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Cienciano",
+    "slug": "cienciano",
+    "shortName": "Cienciano",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 19665,
+    "nameCode": "CIE",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2301,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سيينسيانو",
+        "hi": "CS Cienciano",
+        "ru": "CS Cienciano"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Asociación Deportiva Tarma",
+    "slug": "asociacion-deportiva-tarma",
+    "shortName": "ADT",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 7564,
+    "nameCode": "ASO",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 335557,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#374df5",
+      "secondary": "#374df5",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "جمعية ديبورتيفا تارما",
+        "ru": "Ассоциация Депортива Тарма"
+      },
+      "shortNameTranslation": {
+        "ar": "إيه دي تي",
+        "ru": "АДТ"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 0,
+    "period2": 2,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 1,
+    "period2": 2,
+    "normaltime": 3
+  },
+  "time": {
+    "periodLength": 2700,
+    "overtimeLength": 900,
+    "totalPeriodCount": 2,
+    "currentPeriodStartTimestamp": 1783710299,
+    "lastPeriodEndTimestamp": 1783709020
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.normaltime",
+      "awayScore.normaltime",
+      "time.currentPeriodStart"
+    ],
+    "changeTimestamp": 1783713425
+  },
+  "hasGlobalHighlights": false,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 16418642,
+  "slug": "asociacion-deportiva-tarma-cienciano",
+  "startTimestamp": 1783706400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "cupMatchesInRound": 1,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

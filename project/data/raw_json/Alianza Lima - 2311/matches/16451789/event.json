@@ -1,0 +1,223 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Club Friendly Games",
+    "slug": "club-friendly-games",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "bn": "বিশ্ব",
+          "hi": "विश्व",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Club Friendly Games",
+      "slug": "club-friendly-games",
+      "primaryColorHex": "#25497d",
+      "secondaryColorHex": "#d38f1d",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "bn": "বিশ্ব",
+            "hi": "विश्व",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 32095,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 853,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "bn": "ক্লাব ফ্রেন্ডলি গেমস",
+          "ar": "مباريات ودية للأندية",
+          "hi": "क्लब फ्रेंडली गेम्स",
+          "ru": "Товарищеские игры клубов"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 0,
+    "isGroup": false,
+    "isLive": false,
+    "id": 86,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "hi": "क्लब फ्रेंडली गेम्स",
+        "ar": "مباريات ودية للأندية",
+        "bn": "ক্লাব ফ্রেন্ডলি গেমস",
+        "ru": "Кубок дружеских игр"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Club Friendly Games 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87177
+  },
+  "customId": "lWsmxc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Alianza Lima",
+    "slug": "alianza-lima",
+    "shortName": "Alianza Lima",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 103467,
+    "nameCode": "ALI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2311,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#091d47",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أليانزا ليما",
+        "ru": "Альянса Лима"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Deportivo Cali",
+    "slug": "deportivo-cali",
+    "shortName": "Dep. Cali",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 28219,
+    "nameCode": "CAL",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "CO",
+      "alpha3": "COL",
+      "name": "Colombia",
+      "slug": "colombia"
+    },
+    "id": 6112,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#006600",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ديبورتيفو كالي",
+        "hi": "एडी कैली",
+        "ru": "Депортиво Кали"
+      },
+      "shortNameTranslation": {
+        "ar": "ديب. كالي"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 1,
+    "period2": 1,
+    "normaltime": 2
+  },
+  "time": {
+    "periodLength": 2700,
+    "overtimeLength": 900,
+    "totalPeriodCount": 2,
+    "currentPeriodStartTimestamp": 1783893078,
+    "lastPeriodEndTimestamp": 1783891731
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.normaltime",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1783896316
+  },
+  "hasGlobalHighlights": false,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 16451789,
+  "slug": "deportivo-cali-alianza-lima",
+  "startTimestamp": 1783888200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

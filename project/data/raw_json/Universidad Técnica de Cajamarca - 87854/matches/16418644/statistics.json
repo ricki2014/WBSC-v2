@@ -1,0 +1,50 @@
+{
+  "statistics": [
+    {
+      "period": "ALL",
+      "groups": [
+        {
+          "groupName": "Match overview",
+          "statisticsItems": [
+            {
+              "name": "Ball possession",
+              "home": "44%",
+              "away": "56%",
+              "compareCode": 2,
+              "statisticsType": "positive",
+              "valueType": "event",
+              "homeValue": 44,
+              "awayValue": 56,
+              "renderType": 2,
+              "key": "ballPossession"
+            },
+            {
+              "name": "Corner kicks",
+              "home": "4",
+              "away": "5",
+              "compareCode": 2,
+              "statisticsType": "positive",
+              "valueType": "event",
+              "homeValue": 4,
+              "awayValue": 5,
+              "renderType": 1,
+              "key": "cornerKicks"
+            },
+            {
+              "name": "Yellow cards",
+              "home": "2",
+              "away": "1",
+              "compareCode": 1,
+              "statisticsType": "negative",
+              "valueType": "event",
+              "homeValue": 2,
+              "awayValue": 1,
+              "renderType": 1,
+              "key": "yellowCards"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

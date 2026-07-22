@@ -1,0 +1,321 @@
+{
+  "team": {
+    "name": "CA Lanús",
+    "slug": "lanus",
+    "shortName": "Lanús",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Argentina",
+      "slug": "argentina",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 48,
+      "flag": "argentina",
+      "alpha2": "AR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الأرجنتين",
+          "ru": "Аргентина"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "tournament": {
+      "name": "Liga Profesional de Fútbol",
+      "slug": "liga-profesional",
+      "category": {
+        "name": "Argentina",
+        "slug": "argentina",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "AR",
+          "alpha3": "ARG",
+          "name": "Argentina",
+          "slug": "argentina"
+        },
+        "id": 48,
+        "flag": "argentina",
+        "alpha2": "AR",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الأرجنتين",
+            "ru": "Аргентина"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "uniqueTournament": {
+        "name": "Liga Profesional de Fútbol",
+        "slug": "liga-profesional-de-futbol",
+        "primaryColorHex": "#0cbad8",
+        "secondaryColorHex": "#daa813",
+        "category": {
+          "name": "Argentina",
+          "slug": "argentina",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "AR",
+            "alpha3": "ARG",
+            "name": "Argentina",
+            "slug": "argentina"
+          },
+          "id": 48,
+          "flag": "argentina",
+          "alpha2": "AR",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الأرجنتين",
+              "ru": "Аргентина"
+            },
+            "shortNameTranslation": {}
+          },
+          "transferPeriod": [
+            {
+              "activeFrom": "06-01 00:00",
+              "activeTo": "09-18 00:00"
+            },
+            {
+              "activeFrom": "12-30 00:00",
+              "activeTo": "02-16 00:00"
+            }
+          ]
+        },
+        "userCount": 63751,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 155,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري كرة القدم للمحترفين",
+            "bn": "লীগা প্রোফেশনাল ডে ফুটবল",
+            "hi": "लीगा प्रोफेशनल डी फुटबॉल",
+            "ru": "Профессиональная лига футбола"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 435,
+      "isLive": false,
+      "id": 68,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লীগ প্রোফেশনাল",
+          "hi": "लीगा प्रोफेशनल",
+          "ru": "Профессиональная лига футбола"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga Profesional de Fútbol",
+      "slug": "liga-profesional-de-futbol",
+      "primaryColorHex": "#0cbad8",
+      "secondaryColorHex": "#daa813",
+      "category": {
+        "name": "Argentina",
+        "slug": "argentina",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "AR",
+          "alpha3": "ARG",
+          "name": "Argentina",
+          "slug": "argentina"
+        },
+        "id": 48,
+        "flag": "argentina",
+        "alpha2": "AR",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الأرجنتين",
+            "ru": "Аргентина"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 63751,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 155,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دوري كرة القدم للمحترفين",
+          "bn": "লীগা প্রোফেশনাল ডে ফুটবল",
+          "hi": "लीगा प्रोफेशनल डी फुटबॉल",
+          "ru": "Профессиональная лига футбола"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 43230,
+    "manager": {
+      "name": "Mauricio Pellegrino",
+      "slug": "mauricio-pellegrino",
+      "shortName": "M. Pellegrino",
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 706,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ماوريسيو بيلغريني",
+          "bn": "মরিসিও পেলেগ্রিনো",
+          "hi": "मौरिसियो पेलेग्रीनो",
+          "ru": "Маурисио Пеллегрино"
+        },
+        "shortNameTranslation": {
+          "ar": "م. بيلغريني",
+          "hi": "एम. पेलेग्रीनो",
+          "bn": "এম. পেলেগ্রিনো",
+          "ru": "М. Пеллегрино"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Buenos Aires",
+        "country": {
+          "alpha2": "AR",
+          "alpha3": "ARG",
+          "name": "Argentina",
+          "slug": "argentina"
+        },
+        "id": 18696
+      },
+      "venueCoordinates": {
+        "latitude": -58.37723,
+        "longitude": -34.61315
+      },
+      "hidden": true,
+      "slug": "estadio-ciudad-de-lanus",
+      "name": "Estadio Ciudad de Lanus",
+      "capacity": 46619,
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 981,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب مدينة لانوس",
+          "hi": "एस्टेडियो स्यूदाद डी लानुस",
+          "bn": "এস্তাদিও সিউদাদ ডি লানুস",
+          "ru": "Стадион Estadio Ciudad de Lanus"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio Ciudad de Lanus",
+        "capacity": 46619
+      }
+    },
+    "nameCode": "LAN",
+    "class": 0,
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "AR",
+      "alpha3": "ARG",
+      "name": "Argentina",
+      "slug": "argentina"
+    },
+    "id": 3218,
+    "fullName": "CA Lanús",
+    "teamColors": {
+      "primary": "#660033",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "foundationDateTimestamp": -1735516800,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "لانوس",
+        "ru": "Атлетико Ланус"
+      },
+      "shortNameTranslation": {
+        "ar": "لانوس"
+      }
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "avgRating": "6.71",
+    "position": 3,
+    "value": "6",
+    "form": [
+      "L",
+      "W",
+      "W",
+      "L",
+      "L"
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Apertura",
+    "slug": "liga-1-apertura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 219,
+    "isGroup": false,
+    "roundPrefix": "Apertura",
+    "isLive": false,
+    "id": 34467,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، ذهاب",
+        "bn": "লিগা 1, অ্যাপেরতুরা",
+        "hi": "लीगा 1, एपर्टुरा",
+        "ru": "Лига 1, Апертура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 88529
+  },
+  "roundInfo": {
+    "round": 1
+  },
+  "customId": "lWsVCn",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Sport Huancayo",
+    "slug": "sport-huancayo",
+    "shortName": "Sport Huancayo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 6493,
+    "nameCode": "HUA",
+    "national": false,
+    "type": 0,
+    "id": 33895,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffff00",
+      "text": "#ffff00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورت هوانكايو",
+        "ru": "Спорт Хуанкайо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Alianza Lima",
+    "slug": "alianza-lima",
+    "shortName": "Alianza Lima",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 103352,
+    "nameCode": "ALI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 2311,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#091d47",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أليانزا ليما",
+        "ru": "Альянса Лима"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 1,
+    "period2": 0,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 1,
+    "period2": 1,
+    "normaltime": 2
+  },
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 3,
+    "currentPeriodStartTimestamp": 1770233309
+  },
+  "changes": {
+    "changes": [
+      "time.injuryTime1",
+      "time.injuryTime2"
+    ],
+    "changeTimestamp": 1770243152
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "id": 15362086,
+  "slug": "sport-huancayo-alianza-lima",
+  "startTimestamp": 1769792400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

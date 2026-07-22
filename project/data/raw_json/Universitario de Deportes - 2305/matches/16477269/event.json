@@ -1,0 +1,222 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Club Friendly Games",
+    "slug": "club-friendly-games",
+    "category": {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "country": {},
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব",
+          "ru": "Мир"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Club Friendly Games",
+      "slug": "club-friendly-games",
+      "primaryColorHex": "#25497d",
+      "secondaryColorHex": "#d38f1d",
+      "category": {
+        "name": "World",
+        "slug": "world",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 20,
+        "country": {},
+        "id": 1468,
+        "flag": "international",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "العالم",
+            "hi": "विश्व",
+            "bn": "বিশ্ব",
+            "ru": "Мир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 31305,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 853,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "bn": "ক্লাব ফ্রেন্ডলি গেমস",
+          "ar": "مباريات ودية للأندية",
+          "hi": "क्लब फ्रेंडली गेम्स",
+          "ru": "Товарищеские игры клубов"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 0,
+    "isGroup": false,
+    "isLive": false,
+    "id": 86,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "hi": "क्लब फ्रेंडली गेम्स",
+        "ar": "مباريات ودية للأندية",
+        "bn": "ক্লাব ফ্রেন্ডলি গেমস",
+        "ru": "Кубок дружеских игр"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Club Friendly Games 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87177
+  },
+  "customId": "fWsrxc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Universitario de Deportes",
+    "slug": "universitario",
+    "shortName": "Universitario",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 86720,
+    "nameCode": "UNI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2305,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffcc",
+      "secondary": "#ffffcc",
+      "text": "#ffffcc"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "يونيفرسيتاريو دي ديبورتس",
+        "hi": "यूनिवर्सिटारिओ दे देपोरतेस",
+        "ru": "Университарио де Депортес"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Millonarios",
+    "slug": "millonarios",
+    "shortName": "Millonarios",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 71100,
+    "nameCode": "MIL",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "CO",
+      "alpha3": "COL",
+      "name": "Colombia",
+      "slug": "colombia"
+    },
+    "id": 6117,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#0000cc",
+      "secondary": "#0000cc",
+      "text": "#0000cc"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "النادى الرياضي ميلوناريوس",
+        "ru": "ФК Мильонариос"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 0,
+    "period2": 2,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "periodLength": 2700,
+    "overtimeLength": 900,
+    "totalPeriodCount": 2,
+    "currentPeriodStartTimestamp": 1783805946,
+    "lastPeriodEndTimestamp": 1783804992
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.normaltime",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1783808924
+  },
+  "hasGlobalHighlights": true,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 16477269,
+  "awayRedCards": 1,
+  "slug": "millonarios-universitario-de-deportes",
+  "startTimestamp": 1783801800,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

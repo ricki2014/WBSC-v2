@@ -124,6 +124,30 @@ function CardDistChart({ title, subtitle, bins, valueKey, byTypeKey, valueFmt, t
   );
 }
 
+// ─── PROMEDIO DE TARJETAS (sobre el subconjunto ya filtrado por competición) ──
+function AvgCardsSummary({ matches }) {
+  const n = matches?.length || 0;
+  if (n === 0) return null;
+  const yellow = matches.reduce((s, m) => s + (m.yellow || 0), 0);
+  const red    = matches.reduce((s, m) => s + (m.red    || 0), 0);
+  const tiles = [
+    { label: '🟨 Promedio amarillas',       value: yellow / n, color: 'text-yellow-400' },
+    { label: '🟥 Promedio rojas',           value: red    / n, color: 'text-red-400'    },
+    { label: '🟨🟥 Promedio amarillas+rojas', value: (yellow + red) / n, color: 'text-purple-300' },
+  ];
+  return (
+    <div className="flex flex-wrap gap-3">
+      {tiles.map(t => (
+        <div key={t.label} className="bg-gray-900/60 border border-purple-800/30 rounded-xl px-4 py-2.5 flex flex-col gap-0.5">
+          <span className="text-gray-500 text-[10px]">{t.label}</span>
+          <span className={`font-bold text-lg ${t.color}`}>{t.value.toFixed(2)}</span>
+          <span className="text-gray-600 text-[9px]">por partido ({n})</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 // ─── LISTA DE PARTIDOS DIRIGIDOS ──────────────────────────────────────────────
 function MatchList({ matches }) {
   if (!matches || matches.length === 0) {
@@ -316,6 +340,8 @@ export default function RefereeApp() {
             onToggle={handleToggleTournament}
             onReset={handleResetTournaments}
             loading={filterLoading} />
+
+          <AvgCardsSummary matches={analysis.matches} />
 
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex-1 min-w-0">

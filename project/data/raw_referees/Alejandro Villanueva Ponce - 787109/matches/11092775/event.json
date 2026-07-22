@@ -1,0 +1,202 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Apertura",
+    "slug": "liga-1-apertura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 219,
+    "isGroup": false,
+    "roundPrefix": "Apertura",
+    "isLive": false,
+    "id": 34467,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، ذهاب",
+        "bn": "লিগা 1, অ্যাপেরতুরা",
+        "hi": "लीगा 1, एपर्टुरा",
+        "ru": "Лига 1, Апертура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Primera Division 2023",
+    "year": "2023",
+    "editor": false,
+    "seasonCoverageInfo": {},
+    "id": 48078
+  },
+  "roundInfo": {
+    "round": 9
+  },
+  "customId": "kAAsVUac",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Cusco FC",
+    "slug": "cusco-fc",
+    "shortName": "Cusco",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 16985,
+    "nameCode": "CUS",
+    "national": false,
+    "type": 0,
+    "id": 63760,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#00ffff",
+      "secondary": "#33ffff",
+      "text": "#33ffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوسكو إف سي",
+        "ru": "Реал Гарсиласо"
+      },
+      "shortNameTranslation": {
+        "ar": "كوسكو"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Carlos A. Mannucci",
+    "slug": "carlos-a-mannucci",
+    "shortName": "C.A.Mannucci",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 2704,
+    "nameCode": "MAN",
+    "national": false,
+    "type": 0,
+    "id": 252245,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#0000ff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كارلوس أ. مانوتشي",
+        "ru": "Карлос А. Маннукки"
+      },
+      "shortNameTranslation": {
+        "ar": "كارلوس مانوتشي",
+        "ru": "К.А. Маннукки"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 1,
+    "period2": 2,
+    "normaltime": 3
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime2": 3,
+    "currentPeriodStartTimestamp": 1679350996
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.period2",
+      "homeScore.normaltime",
+      "awayScore.period2",
+      "awayScore.normaltime",
+      "time.currentPeriodStart"
+    ],
+    "changeTimestamp": 1679350998
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 11092775,
+  "slug": "carlos-mannucci-cusco-fc",
+  "startTimestamp": 1679344200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false
+}

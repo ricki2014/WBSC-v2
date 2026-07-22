@@ -1,0 +1,230 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Libertadores, Group G",
+    "slug": "copa-libertadores-group-g",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "country": {},
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Libertadores",
+      "slug": "conmebol-libertadores",
+      "primaryColorHex": "#573215",
+      "secondaryColorHex": "#dfaf49",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "country": {},
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 221575,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 384,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوبا ليبرتادوريس",
+          "bn": "কনমেবল লিবার্তাদোরেস",
+          "hi": "कॉनमेबोल लिबर्टाडोरेस",
+          "ru": "КОНМЕБОЛ Либертадорес"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 682,
+    "isGroup": true,
+    "groupName": "Group G",
+    "groupSign": "G",
+    "isLive": false,
+    "id": 2934,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس ليبرتادوريس - كونمبول - المجموعة G",
+        "bn": "কনমেবল লিবার্তাদোরস, গ্রুপ জি",
+        "hi": "कॉनमेबोल लिबर्टाडोरेस, ग्रुप जी",
+        "ru": "Кубок Либертадорес КОНМЕБОЛ, Группа G"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Libertadores 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87760
+  },
+  "roundInfo": {
+    "round": 2
+  },
+  "customId": "tobsIlhc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "CA Lanús",
+    "slug": "lanus",
+    "shortName": "Lanús",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 43230,
+    "nameCode": "LAN",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "AR",
+      "alpha3": "ARG",
+      "name": "Argentina",
+      "slug": "argentina"
+    },
+    "id": 3218,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#660033",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "لانوس",
+        "ru": "Атлетико Ланус"
+      },
+      "shortNameTranslation": {
+        "ar": "لانوس"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Club Always Ready",
+    "slug": "club-always-ready",
+    "shortName": "Always Ready",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 28896,
+    "nameCode": "ARE",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "BO",
+      "alpha3": "BOL",
+      "name": "Bolivia",
+      "slug": "bolivia"
+    },
+    "id": 268083,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#cc252b",
+      "text": "#cc252b"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أولوايز ريدي",
+        "bn": "অলওয়েস রেডি",
+        "hi": "ऑलवेज़ रेडी",
+        "ru": "Олвейс Реди"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 5,
+    "currentPeriodStartTimestamp": 1776380601
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1776383615
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 15832768,
+  "awayRedCards": 1,
+  "slug": "club-always-ready-ca-lanus",
+  "startTimestamp": 1776376800,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

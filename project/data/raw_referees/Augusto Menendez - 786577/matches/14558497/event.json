@@ -1,0 +1,191 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Clausura",
+    "slug": "liga-1-clausura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 218,
+    "isGroup": false,
+    "roundPrefix": "Clausura",
+    "isLive": false,
+    "id": 34468,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، إياب",
+        "bn": "লিগা 1, ক্লাউসুরা",
+        "hi": "लीगा 1, क्लॉसुरा",
+        "ru": "Лига 1, Клаусура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2025",
+    "year": "2025",
+    "editor": false,
+    "id": 70962
+  },
+  "roundInfo": {
+    "round": 9
+  },
+  "customId": "VCnsjxKb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Comerciantes Unidos",
+    "slug": "comerciantes-unidos",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 5290,
+    "nameCode": "COM",
+    "national": false,
+    "type": 0,
+    "id": 213609,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffff00",
+      "secondary": "#ffff00",
+      "text": "#ffff00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوميرسيانتس يوني دوس",
+        "ru": "Комерсиантес Унитос"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Sport Huancayo",
+    "slug": "sport-huancayo",
+    "shortName": "Sport Huancayo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 6493,
+    "nameCode": "HUA",
+    "national": false,
+    "type": 0,
+    "id": 33895,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffff00",
+      "text": "#ffff00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورت هوانكايو",
+        "ru": "Спорт Хуанкайо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 0,
+    "period2": 2,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 6,
+    "currentPeriodStartTimestamp": 1758143829
+  },
+  "changes": {
+    "changes": [
+      "time.injuryTime1"
+    ],
+    "changeTimestamp": 1758279585
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": false,
+  "id": 14558497,
+  "slug": "comerciantes-unidos-sport-huancayo",
+  "startTimestamp": 1758140100,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false
+}

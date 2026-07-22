@@ -1,0 +1,226 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Copa de La Liga, Group F",
+    "slug": "copa-de-la-liga-group-f",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Peru Copa de la Liga ",
+      "slug": "copa-de-la-liga",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 1836,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 35067,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ru": "Кубок Лиги"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 0,
+    "isGroup": true,
+    "groupName": "Group F",
+    "id": 186045,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ru": "Кубок Лиги, Группа F"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "2026",
+    "year": "2026",
+    "editor": false,
+    "seasonCoverageInfo": {
+      "editorCoverageLevel": 5
+    },
+    "id": 95197
+  },
+  "roundInfo": {
+    "round": 1
+  },
+  "customId": "kAAsJwId",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 3,
+  "homeTeam": {
+    "name": "Deportivo Garcilaso",
+    "slug": "deportivo-garcilaso",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 9039,
+    "nameCode": "DEP",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 458584,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#374df5",
+      "secondary": "#374df5",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ديبورتيفو غارسيلاسو",
+        "ru": "Депортиво Гарсиласо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Cusco FC",
+    "slug": "cusco-fc",
+    "shortName": "Cusco",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 16985,
+    "nameCode": "CUS",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 63760,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#00ffff",
+      "secondary": "#33ffff",
+      "text": "#33ffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوسكو إف سي",
+        "ru": "Реал Гарсиласо"
+      },
+      "shortNameTranslation": {
+        "ar": "كوسكو"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "periodLength": 2700,
+    "overtimeLength": 900,
+    "totalPeriodCount": 2,
+    "currentPeriodStartTimestamp": 1781481762
+  },
+  "changes": {
+    "changes": [
+      "providerLock.status",
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.normaltime",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1781484776
+  },
+  "hasGlobalHighlights": false,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 16230427,
+  "slug": "deportivo-garcilaso-cusco-fc",
+  "startTimestamp": 1781478000,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

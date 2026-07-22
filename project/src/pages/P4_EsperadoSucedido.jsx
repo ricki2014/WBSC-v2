@@ -50,7 +50,8 @@ function boxStats(arr) {
 }
 
 function Boxplot({ values, label, color }) {
-  const stats = boxStats(values.filter(v => v !== null && v !== undefined));
+  const cleanValues = values.filter(v => v !== null && v !== undefined && v !== -1);
+  const stats = boxStats(cleanValues);
   if (!stats) return null;
 
   const W = 430, H = 120, PAD = 38, PLOT_W = W - PAD * 2;
@@ -85,7 +86,7 @@ function Boxplot({ values, label, color }) {
         {/* mean dot */}
         <circle cx={x(stats.mean)} cy={47} r={4} fill={colors.dot} opacity={0.85}/>
         {/* individual points jittered */}
-        {values.map((v, i) => (
+        {cleanValues.map((v, i) => (
           <circle key={i} cx={x(v ?? 0)} cy={47 + (((i * 7) % 14) - 7) * 0.8} r={2.6}
             fill={colors.box} fillOpacity={0.35}/>
         ))}

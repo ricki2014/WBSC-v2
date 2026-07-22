@@ -1,0 +1,250 @@
+{
+  "team": {
+    "name": "Asociación Deportiva Tarma",
+    "slug": "asociacion-deportiva-tarma",
+    "shortName": "ADT",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "tournament": {
+      "name": "Copa Peru",
+      "slug": "copa-peru",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "priority": 0,
+      "isLive": false,
+      "id": 76579,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كأس بيرو",
+          "ru": "Кубок Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 7564,
+    "manager": {
+      "name": "Francisco Usucar",
+      "slug": "francisco-usucar",
+      "shortName": "F. Usucar",
+      "country": {
+        "alpha2": "UY",
+        "alpha3": "URY",
+        "name": "Uruguay",
+        "slug": "uruguay"
+      },
+      "id": 806095,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فرانسيسكو أوسوكار",
+          "ru": "Франсиско Усукар"
+        },
+        "shortNameTranslation": {
+          "ar": "ف. أوسوكار",
+          "ru": "Ф. Усукар"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Tarma",
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 23819
+      },
+      "hidden": true,
+      "slug": "estadio-uni-n-tarma",
+      "name": "Estadio Unión Tarma",
+      "capacity": 9000,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 38683,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب اتحاد تارما",
+          "hi": "एस्टेडियो यूनियन तर्मा",
+          "bn": "এস্তাদিও ইউনিয়ন তরমা",
+          "ru": "Стадион Estadio Unión Tarma"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio Unión Tarma",
+        "capacity": 9000
+      }
+    },
+    "nameCode": "ASO",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 335557,
+    "fullName": "Asociación Deportiva Tarma",
+    "teamColors": {
+      "primary": "#374df5",
+      "secondary": "#374df5",
+      "text": "#ffffff"
+    },
+    "foundationDateTimestamp": -1279324800,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "جمعية ديبورتيفا تارما",
+        "ru": "Ассоциация Депортива Тарма"
+      },
+      "shortNameTranslation": {
+        "ar": "إيه دي تي",
+        "ru": "АДТ"
+      }
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "position": 1,
+    "value": "4",
+    "form": [
+      "D",
+      "W"
+    ]
+  }
+}

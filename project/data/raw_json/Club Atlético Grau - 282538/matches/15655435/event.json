@@ -1,0 +1,233 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Apertura",
+    "slug": "liga-1-apertura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 219,
+    "isGroup": false,
+    "roundPrefix": "Apertura",
+    "isLive": false,
+    "id": 34467,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، ذهاب",
+        "bn": "লিগা 1, অ্যাপেরতুরা",
+        "hi": "लीगा 1, एपर्टुरा",
+        "ru": "Лига 1, Апертура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 88529
+  },
+  "roundInfo": {
+    "round": 8
+  },
+  "customId": "NancsJwId",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 3,
+  "homeTeam": {
+    "name": "Club Atlético Grau",
+    "slug": "club-atletico-grau",
+    "shortName": "Atlético Grau",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 10642,
+    "nameCode": "CAG",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 282538,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "نادي أتلتيكو غراو",
+        "ru": "Клуб Атлетико Грау"
+      },
+      "shortNameTranslation": {
+        "ar": "أتلتيكو غراو",
+        "ru": "Грау"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Deportivo Garcilaso",
+    "slug": "deportivo-garcilaso",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 9039,
+    "nameCode": "DEP",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 458584,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#374df5",
+      "secondary": "#374df5",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ديبورتيفو غارسيلاسو",
+        "ru": "Депортиво Гарсиласо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 6,
+    "currentPeriodStartTimestamp": 1774215613
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1774218688
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "correctHalftimeAiInsight": false,
+  "id": 15655435,
+  "slug": "deportivo-garcilaso-club-atletico-grau",
+  "startTimestamp": 1774211400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

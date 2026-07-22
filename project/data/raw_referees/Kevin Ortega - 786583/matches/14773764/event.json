@@ -1,0 +1,220 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Saudi Pro League",
+    "slug": "saudi-pro-league",
+    "category": {
+      "name": "Saudi Arabia",
+      "slug": "saudi-arabia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 310,
+      "flag": "saudi-arabia",
+      "alpha2": "SA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "السعودية",
+          "bn": "সৌদি আরব",
+          "hi": "सऊदी अरब",
+          "ru": "Саудовская Аравия"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Saudi Pro League",
+      "slug": "saudi-pro-league",
+      "primaryColorHex": "#0d1539",
+      "secondaryColorHex": "#61ab34",
+      "category": {
+        "name": "Saudi Arabia",
+        "slug": "saudi-arabia",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 310,
+        "flag": "saudi-arabia",
+        "alpha2": "SA",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "السعودية",
+            "bn": "সৌদি আরব",
+            "hi": "सऊदी अरब",
+            "ru": "Саудовская Аравия"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 178539,
+      "hasPerformanceGraphFeature": true,
+      "id": 955,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري السعودي للمحترفين",
+          "hi": "सऊदी प्रो लीग",
+          "bn": "সৌদি প্রো লীগ",
+          "ru": "Лига Про Саудовской Аравии"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 203,
+    "isGroup": false,
+    "isLive": false,
+    "id": 3708,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "hi": "सऊदी प्रो लीग",
+        "ar": "الدوري السعودي للمحترفين",
+        "bn": "সৌদি প্রো লীগ",
+        "ru": "Профессиональная Лига Саудовской Аравии"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Saudi Pro League 25/26",
+    "year": "25/26",
+    "editor": false,
+    "id": 80443
+  },
+  "roundInfo": {
+    "round": 26
+  },
+  "customId": "uOnsCvx",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Al-Qadsiah",
+    "slug": "al-qadisiyah",
+    "shortName": "Al-Qadsiah",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 75624,
+    "nameCode": "QAD",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 56027,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#cc0000",
+      "secondary": "#cc0000",
+      "text": "#cc0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "القادسية",
+        "bn": "আল-কাদিসিয়াহ",
+        "hi": "अल क़दिसियह",
+        "ru": "Аль Кадисиях"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Al-Ahli",
+    "slug": "al-ahli",
+    "shortName": "Al-Ahli",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 275670,
+    "nameCode": "AAS",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 34469,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#339900",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "الأهلي",
+        "bn": "আল-আহলি",
+        "hi": "अल-अहली",
+        "ru": "Аль-Ахли  Кса"
+      },
+      "shortNameTranslation": {
+        "ar": "الأهلي"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 0,
+    "period2": 3,
+    "normaltime": 3
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 2,
+    "period2": 0,
+    "normaltime": 2
+  },
+  "time": {
+    "injuryTime1": 6,
+    "injuryTime2": 7,
+    "currentPeriodStartTimestamp": 1773432581
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.normaltime"
+    ],
+    "changeTimestamp": 1773435953
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": false,
+  "id": 14773764,
+  "slug": "al-qadsiah-al-ahli",
+  "startTimestamp": 1773428400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

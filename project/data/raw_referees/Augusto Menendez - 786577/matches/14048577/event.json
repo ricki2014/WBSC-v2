@@ -1,0 +1,198 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Apertura",
+    "slug": "liga-1-apertura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 219,
+    "isGroup": false,
+    "roundPrefix": "Apertura",
+    "isLive": false,
+    "id": 34467,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، ذهاب",
+        "bn": "লিগা 1, অ্যাপেরতুরা",
+        "hi": "लीगा 1, एपर्टुरा",
+        "ru": "Лига 1, Апертура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2025",
+    "year": "2025",
+    "editor": false,
+    "id": 70962
+  },
+  "roundInfo": {
+    "round": 19
+  },
+  "customId": "hWsmW",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Alianza Atlético de Sullana",
+    "slug": "alianza-atletico-de-sullana",
+    "shortName": "Alianza Atlético",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 8657,
+    "nameCode": "AAT",
+    "national": false,
+    "type": 0,
+    "id": 2307,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#6600ff",
+      "text": "#6600ff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أليانزا أتلتيكو دي سولانا",
+        "ru": "Альянса Атлетико"
+      },
+      "shortNameTranslation": {
+        "ar": "أليانزا أتلتيكو"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Sport Boys",
+    "slug": "sport-boys",
+    "shortName": "Sport Boys",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 8359,
+    "nameCode": "SBA",
+    "national": false,
+    "type": 0,
+    "id": 2312,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffc0db",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورت بويز",
+        "ru": "Спорт Бойз"
+      },
+      "shortNameTranslation": {
+        "ar": "سبورت بويز"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 6,
+    "injuryTime2": 11,
+    "currentPeriodStartTimestamp": 1752356699
+  },
+  "changes": {
+    "changes": [
+      "time.injuryTime2"
+    ],
+    "changeTimestamp": 1752360096
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 14048577,
+  "homeRedCards": 1,
+  "awayRedCards": 3,
+  "slug": "sport-boys-alianza-atletico-de-sullana",
+  "startTimestamp": 1752352200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false
+}

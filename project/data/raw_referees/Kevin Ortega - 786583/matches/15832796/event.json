@@ -1,0 +1,214 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Libertadores, Group E",
+    "slug": "copa-libertadores-group-e",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Libertadores",
+      "slug": "conmebol-libertadores",
+      "primaryColorHex": "#573215",
+      "secondaryColorHex": "#dfaf49",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 220768,
+      "hasPerformanceGraphFeature": false,
+      "id": 384,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوبا ليبرتادوريس",
+          "bn": "কনমেবল লিবার্তাদোরেস",
+          "hi": "कॉनमेबोल लिबर्टाडोरेस",
+          "ru": "КОНМЕБОЛ Либертадорес"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 684,
+    "isGroup": true,
+    "groupName": "Group E",
+    "groupSign": "E",
+    "isLive": false,
+    "id": 2932,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس ليبرتادوريس - كونمبول - المجموعة E",
+        "bn": "কনমেবল লিবার্তাডোরস, গ্রুপ ই",
+        "hi": "कॉनमेबोल लिबर्टाडोरेस, ग्रुप ई",
+        "ru": "Кубок Либертадорес КОНМЕБОЛ, Группа E"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Libertadores 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87760
+  },
+  "roundInfo": {
+    "round": 4
+  },
+  "customId": "hOsqxc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 3,
+  "homeTeam": {
+    "name": "Independiente Santa Fe",
+    "slug": "independiente-santa-fe",
+    "shortName": "Santa Fe",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 39144,
+    "nameCode": "SFE",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 6116,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ff0033",
+      "text": "#ff0033"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "إنديبيندينت سانتا في",
+        "hi": "इंडिपेंडेंट सांटा फ़े",
+        "ru": "Индепендиенте Санта Фе"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Corinthians",
+    "slug": "corinthians",
+    "shortName": "Corinthians",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 641936,
+    "nameCode": "COR",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 1957,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كورينثيانز",
+        "ru": "Коринтианс"
+      },
+      "shortNameTranslation": {
+        "ar": "كورينثيانز"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 5,
+    "currentPeriodStartTimestamp": 1778117714
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1778120744
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "correctHalftimeAiInsight": false,
+  "id": 15832796,
+  "slug": "independiente-santa-fe-corinthians",
+  "startTimestamp": 1778113800,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

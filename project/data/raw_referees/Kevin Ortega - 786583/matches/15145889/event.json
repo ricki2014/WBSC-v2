@@ -1,0 +1,222 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Primera Division, Grand Final",
+    "slug": "primera-division-grand-final",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 21942,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 213,
+    "isGroup": false,
+    "isLive": false,
+    "id": 22323,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "الدوري الأول، المباراة الختامية",
+        "bn": "প্রাইমেরা ডিভিশন, গ্র্যান্ড ফাইনাল",
+        "hi": "प्राइमेरा डिवीज़न, ग्रैंड फ़ाइनल",
+        "ru": "Первая дивизия, Гранд-финал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2025",
+    "year": "2025",
+    "editor": false,
+    "id": 70962
+  },
+  "roundInfo": {
+    "round": 28,
+    "name": "Semifinals",
+    "slug": "semifinals",
+    "cupRoundType": 2
+  },
+  "customId": "cWslW",
+  "status": {
+    "code": 120,
+    "description": "AP",
+    "type": "finished"
+  },
+  "winnerCode": 3,
+  "aggregatedWinnerCode": 2,
+  "homeTeam": {
+    "name": "Alianza Lima",
+    "slug": "alianza-lima",
+    "shortName": "Alianza Lima",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 103258,
+    "nameCode": "ALI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 2311,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#091d47",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أليانزا ليما",
+        "ru": "Альянса Лима"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Club Sporting Cristal",
+    "slug": "club-sporting-cristal",
+    "shortName": "Sporting Cristal",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 55324,
+    "nameCode": "CRI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 2302,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#33ccff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورتنج كريستال",
+        "ru": "Спортинг Кристал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 7,
+    "display": 3,
+    "period1": 3,
+    "period2": 0,
+    "normaltime": 3,
+    "penalties": 4,
+    "aggregated": 4
+  },
+  "awayScore": {
+    "current": 8,
+    "display": 3,
+    "period1": 1,
+    "period2": 2,
+    "normaltime": 3,
+    "penalties": 5,
+    "aggregated": 4
+  },
+  "time": {
+    "injuryTime1": 5,
+    "injuryTime2": 5,
+    "currentPeriodStartTimestamp": 1765073235
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.display",
+      "homeScore.penalties",
+      "homeScore.aggregated",
+      "awayScore.display",
+      "awayScore.penalties",
+      "awayScore.aggregated"
+    ],
+    "changeTimestamp": 1765077431
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "correctHalftimeAiInsight": false,
+  "id": 15145889,
+  "slug": "alianza-lima-club-sporting-cristal",
+  "previousLegEventId": 15142340,
+  "startTimestamp": 1765069200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "cupMatchesInRound": 2,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

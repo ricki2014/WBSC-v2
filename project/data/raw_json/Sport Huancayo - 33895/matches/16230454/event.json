@@ -1,0 +1,222 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Copa de La Liga, Group E",
+    "slug": "copa-de-la-liga-group-e",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Peru Copa de la Liga ",
+      "slug": "copa-de-la-liga",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 1837,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 35067,
+      "hasEventPlayerStatistics": false,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ru": "Кубок Лиги"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 0,
+    "isGroup": true,
+    "groupName": "Group E",
+    "id": 186044,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ru": "Кубок Лиги, Группа E"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "2026",
+    "year": "2026",
+    "editor": false,
+    "seasonCoverageInfo": {
+      "editorCoverageLevel": 5
+    },
+    "id": 95197
+  },
+  "roundInfo": {
+    "round": 3
+  },
+  "customId": "VCnshlJc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Sport Huancayo",
+    "slug": "sport-huancayo",
+    "shortName": "Sport Huancayo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 6497,
+    "nameCode": "HUA",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 33895,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffff00",
+      "text": "#ffff00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورت هوانكايو",
+        "ru": "Спорт Хуанкайо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Asociación Deportiva Tarma",
+    "slug": "asociacion-deportiva-tarma",
+    "shortName": "ADT",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 7736,
+    "nameCode": "ASO",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 335557,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#374df5",
+      "secondary": "#374df5",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "جمعية ديبورتيفا تارما",
+        "ru": "Ассоциация Депортива Тарма"
+      },
+      "shortNameTranslation": {
+        "ar": "إيه دي تي",
+        "ru": "АДТ"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 1,
+    "period2": 0,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "currentPeriodStartTimestamp": 1782508740
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1782511912
+  },
+  "hasGlobalHighlights": false,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 16230454,
+  "slug": "asociacion-deportiva-tarma-sport-huancayo",
+  "startTimestamp": 1782504900,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

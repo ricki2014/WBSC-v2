@@ -1,0 +1,309 @@
+{
+  "team": {
+    "name": "Universidad Técnica de Cajamarca",
+    "slug": "universidad-tecnica-de-cajamarca",
+    "shortName": "UTC",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "tournament": {
+      "name": "Liga 1, Clausura",
+      "slug": "liga-1-clausura",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "uniqueTournament": {
+        "name": "Liga 1",
+        "slug": "liga-1",
+        "secondaryColorHex": "#f91018",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          },
+          "transferPeriod": [
+            {
+              "activeFrom": "06-01 00:00",
+              "activeTo": "09-18 00:00"
+            },
+            {
+              "activeFrom": "12-30 00:00",
+              "activeTo": "02-16 00:00"
+            }
+          ]
+        },
+        "userCount": 22141,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 406,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري الممتاز",
+            "bn": "লিগা 1",
+            "hi": "लीगा 1",
+            "ru": "Лига 1"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 218,
+      "roundPrefix": "Clausura",
+      "isLive": false,
+      "id": 34468,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دوري 1، إياب",
+          "bn": "লিগা 1, ক্লাউসুরা",
+          "hi": "लीगा 1, क्लॉसुरा",
+          "ru": "Лига 1, Клаусура"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 6487,
+    "manager": {
+      "name": "Cristian Paulucci",
+      "slug": "cristian-paulucci",
+      "shortName": "C. Paulucci",
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 796356,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كريستيان باولوكي",
+          "ru": "Кристиан Паулуцци"
+        },
+        "shortNameTranslation": {
+          "ar": "ك. باولوكي",
+          "ru": "К. Паулуцци"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Cajamarca",
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 30899
+      },
+      "venueCoordinates": {
+        "latitude": -7.161996,
+        "longitude": -78.510743
+      },
+      "hidden": true,
+      "slug": "estadio-heroes-de-san-ramon",
+      "name": "Estadio Heroes de San Ramon",
+      "capacity": 18000,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 10584,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب هيروز دي سان رامون",
+          "hi": "एस्टेडियो हीरोज डी सैन रामोन",
+          "bn": "এস্টাডিও হিরোস ডি সান রমন",
+          "ru": "Стадион Estadio Heroes de San Ramon"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio Heroes de San Ramon",
+        "capacity": 18000
+      }
+    },
+    "nameCode": "CAJ",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 87854,
+    "fullName": "Universidad Técnica de Cajamarca",
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "foundationDateTimestamp": -172540800,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "جامعة تكنيكا دي كاخاماركا",
+        "ru": "УТК де Кахамарка"
+      },
+      "shortNameTranslation": {
+        "ar": "يو تي سي"
+      }
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "position": 2,
+    "value": "1",
+    "form": [
+      "D"
+    ]
+  }
+}

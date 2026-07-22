@@ -1,0 +1,217 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Sudamericana, Group E",
+    "slug": "copa-sudamericana-group-e",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Sudamericana",
+      "slug": "conmebol-sudamericana",
+      "primaryColorHex": "#e3c000",
+      "secondaryColorHex": "#13489c",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 128047,
+      "hasPerformanceGraphFeature": false,
+      "id": 480,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كأس أمريكا الجنوبية لكرة القدم",
+          "bn": "কনমেবল সুদাআমেরিকানা",
+          "hi": "कॉनमेबोल सुदामेरिकाना",
+          "pt": "Copa Sul-Americana",
+          "ru": "КОНМЕБОЛ Судамерикана"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 525,
+    "isGroup": true,
+    "groupName": "Group E",
+    "groupSign": "E",
+    "isLive": false,
+    "id": 91440,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوبا سود أمريكانا، المجموعة E",
+        "bn": "কনমেবল সুদামেরিকানা, গ্রুপ ই",
+        "hi": "कॉनमेबोल सुदामेरिकाना, ग्रुप ई",
+        "pt": "Copa Sul-Americana, Grupo E",
+        "ru": "Кубок Южной Америки КОНМЕБОЛ, Группа E"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Sudamericana 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87770
+  },
+  "roundInfo": {
+    "round": 1
+  },
+  "customId": "pobsAjZc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Club Independiente Petrolero",
+    "slug": "independiente-petrolero",
+    "shortName": "Independiente Petrolero",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 7227,
+    "nameCode": "IND",
+    "national": false,
+    "type": 0,
+    "id": 372975,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#fc0601",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "إنديبينديتي بتروليرو",
+        "hi": "इंडिपेंडेंट पेट्रोलेरो",
+        "ru": "Клуб Индипендьенте"
+      },
+      "shortNameTranslation": {
+        "ar": "إنديبينديتي بتروليرو"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Racing Club",
+    "slug": "racing-club",
+    "shortName": "Racing",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 90849,
+    "nameCode": "RCS",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 3215,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#00ccff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "راسينغ كلوب",
+        "ru": "Расинг Клаб"
+      },
+      "shortNameTranslation": {
+        "ar": "راسينغ"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 1,
+    "period2": 0,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 2,
+    "period2": 1,
+    "normaltime": 3
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 4,
+    "injuryTime2": 4,
+    "currentPeriodStartTimestamp": 1775603402
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1775606444
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": false,
+  "id": 15832015,
+  "slug": "club-independiente-racing-club",
+  "startTimestamp": 1775599200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

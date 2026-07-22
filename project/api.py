@@ -1277,17 +1277,21 @@ def get_live_status(match_id: str):
         inc = session.get(f"https://api.sofascore.com/api/v1/event/{match_id}/incidents", timeout=10).json()
         for i in inc.get("incidents", []):
             if i.get("incidentType") == "card":
-                side = "home" if i.get("isHome") else "away"
                 pid = str(i.get("player", {}).get("id", ""))
+                if not pid:
+                    # Tarjeta a un no-jugador (DT/cuerpo técnico en el área
+                    # técnica) — SofaScore la manda sin "player" asociado.
+                    # No debe sumar a los conteos de equipo ni de jugador.
+                    continue
+                side = "home" if i.get("isHome") else "away"
                 klass = i.get("incidentClass")
                 field = "Amarilla" if klass == "yellow" else "Roja"
                 if klass == "yellow":
                     team_stats[side]["Tarjetas"] += 1
                 else:
                     team_stats[side]["Rojas"] += 1
-                if pid:
-                    player_stats.setdefault(pid, {})
-                    player_stats[pid][field] = player_stats[pid].get(field, 0) + 1
+                player_stats.setdefault(pid, {})
+                player_stats[pid][field] = player_stats[pid].get(field, 0) + 1
             elif i.get("incidentType") == "substitution":
                 p_in = i.get("playerIn", {}) or {}
                 p_out = i.get("playerOut", {}) or {}

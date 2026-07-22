@@ -1,0 +1,137 @@
+{
+  "statistics": [
+    {
+      "period": "ALL",
+      "groups": [
+        {
+          "groupName": "Match overview",
+          "statisticsItems": [
+            {
+              "name": "Ball possession",
+              "home": "67%",
+              "away": "33%",
+              "compareCode": 1,
+              "statisticsType": "positive",
+              "valueType": "event",
+              "homeValue": 67,
+              "awayValue": 33,
+              "renderType": 2,
+              "key": "ballPossession"
+            },
+            {
+              "name": "Corner kicks",
+              "home": "5",
+              "away": "3",
+              "compareCode": 1,
+              "statisticsType": "positive",
+              "valueType": "event",
+              "homeValue": 5,
+              "awayValue": 3,
+              "renderType": 1,
+              "key": "cornerKicks"
+            },
+            {
+              "name": "Fouls",
+              "home": "12",
+              "away": "6",
+              "compareCode": 1,
+              "statisticsType": "negative",
+              "valueType": "event",
+              "homeValue": 12,
+              "awayValue": 6,
+              "renderType": 1,
+              "key": "fouls"
+            },
+            {
+              "name": "Free kicks",
+              "home": "7",
+              "away": "13",
+              "compareCode": 2,
+              "statisticsType": "positive",
+              "valueType": "event",
+              "homeValue": 7,
+              "awayValue": 13,
+              "renderType": 1,
+              "key": "freeKicks"
+            },
+            {
+              "name": "Yellow cards",
+              "home": "1",
+              "away": "1",
+              "compareCode": 3,
+              "statisticsType": "negative",
+              "valueType": "event",
+              "homeValue": 1,
+              "awayValue": 1,
+              "renderType": 1,
+              "key": "yellowCards"
+            }
+          ]
+        },
+        {
+          "groupName": "Shots",
+          "statisticsItems": [
+            {
+              "name": "Shots on target",
+              "home": "3",
+              "away": "4",
+              "compareCode": 2,
+              "statisticsType": "positive",
+              "valueType": "event",
+              "homeValue": 3,
+              "awayValue": 4,
+              "renderType": 1,
+              "key": "shotsOnGoal"
+            },
+            {
+              "name": "Shots off target",
+              "home": "6",
+              "away": "2",
+              "compareCode": 1,
+              "statisticsType": "negative",
+              "valueType": "event",
+              "homeValue": 6,
+              "awayValue": 2,
+              "renderType": 1,
+              "key": "shotsOffGoal"
+            }
+          ]
+        },
+        {
+          "groupName": "Attack",
+          "statisticsItems": [
+            {
+              "name": "Offsides",
+              "home": "1",
+              "away": "1",
+              "compareCode": 3,
+              "statisticsType": "negative",
+              "valueType": "event",
+              "homeValue": 1,
+              "awayValue": 1,
+              "renderType": 1,
+              "key": "offsides"
+            }
+          ]
+        },
+        {
+          "groupName": "Passes",
+          "statisticsItems": [
+            {
+              "name": "Throw-ins",
+              "home": "20",
+              "away": "23",
+              "compareCode": 2,
+              "statisticsType": "positive",
+              "valueType": "event",
+              "homeValue": 20,
+              "awayValue": 23,
+              "renderType": 1,
+              "key": "throwIns"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

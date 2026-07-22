@@ -1,0 +1,211 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Primera Division, Grand Final",
+    "slug": "primera-division-grand-final",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 213,
+    "isGroup": false,
+    "isLive": false,
+    "id": 22323,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "الدوري الأول، المباراة الختامية",
+        "bn": "প্রাইমেরা ডিভিশন, গ্র্যান্ড ফাইনাল",
+        "hi": "प्राइमेरा डिवीज़न, ग्रैंड फ़ाइनल",
+        "ru": "Первая дивизия, Гранд-финал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2025",
+    "year": "2025",
+    "editor": false,
+    "id": 70962
+  },
+  "roundInfo": {
+    "round": 29,
+    "name": "Final",
+    "slug": "final",
+    "cupRoundType": 1
+  },
+  "customId": "cWskAA",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Club Sporting Cristal",
+    "slug": "club-sporting-cristal",
+    "shortName": "Sporting Cristal",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 56186,
+    "nameCode": "CRI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 2302,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#33ccff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورتنج كريستال",
+        "ru": "Спортинг Кристал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Cusco FC",
+    "slug": "cusco-fc",
+    "shortName": "Cusco",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 16985,
+    "nameCode": "CUS",
+    "national": false,
+    "type": 0,
+    "id": 63760,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#00ffff",
+      "secondary": "#33ffff",
+      "text": "#33ffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوسكو إف سي",
+        "ru": "Реал Гарсиласо"
+      },
+      "shortNameTranslation": {
+        "ar": "كوسكو"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 1,
+    "period2": 0,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 4,
+    "currentPeriodStartTimestamp": 1765418500
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1765421489
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 15192858,
+  "slug": "cusco-fc-club-sporting-cristal",
+  "startTimestamp": 1765414800,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "cupMatchesInRound": 2,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

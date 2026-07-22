@@ -1,0 +1,195 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Apertura",
+    "slug": "liga-1-apertura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 219,
+    "isGroup": false,
+    "roundPrefix": "Apertura",
+    "isLive": false,
+    "id": 34467,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، ذهاب",
+        "bn": "লিগা 1, অ্যাপেরতুরা",
+        "hi": "लीगा 1, एपर्टुरा",
+        "ru": "Лига 1, Апертура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Primera Division 2020",
+    "year": "2020",
+    "editor": false,
+    "id": 27096
+  },
+  "roundInfo": {
+    "round": 13
+  },
+  "customId": "VCnsIbYb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "AD Cantolao",
+    "slug": "ad-cantolao",
+    "shortName": "Cantolao",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 1810,
+    "nameCode": "CAN",
+    "national": false,
+    "type": 0,
+    "id": 245083,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffda00",
+      "secondary": "#0c0a00",
+      "text": "#0c0a00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "إيه دي كانتولاو",
+        "ru": "Академия Кантолао"
+      },
+      "shortNameTranslation": {
+        "ar": "كانتولاو"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Sport Huancayo",
+    "slug": "sport-huancayo",
+    "shortName": "Sport Huancayo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 6493,
+    "nameCode": "HUA",
+    "national": false,
+    "type": 0,
+    "id": 33895,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffff00",
+      "text": "#ffff00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورت هوانكايو",
+        "ru": "Спорт Хуанкайо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 0,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 1,
+    "normaltime": 3
+  },
+  "coverage": 3,
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 4,
+    "currentPeriodStartTimestamp": 1600813465
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.normaltime",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1600813475
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 8794208,
+  "slug": "ad-cantolao-sport-huancayo",
+  "startTimestamp": 1600806600,
+  "finalResultOnly": false,
+  "feedLocked": false,
+  "isEditor": false
+}

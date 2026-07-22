@@ -1,0 +1,226 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Libertadores, Group B",
+    "slug": "copa-libertadores-group-b",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "country": {},
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Libertadores",
+      "slug": "conmebol-libertadores",
+      "primaryColorHex": "#573215",
+      "secondaryColorHex": "#dfaf49",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "country": {},
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 220919,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 384,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوبا ليبرتادوريس",
+          "bn": "কনমেবল লিবার্তাদোরেস",
+          "hi": "कॉनमेबोल लिबर्टाडोरेस",
+          "ru": "КОНМЕБОЛ Либертадорес"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 687,
+    "isGroup": true,
+    "groupName": "Group B",
+    "groupSign": "B",
+    "isLive": false,
+    "id": 2929,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس ليبرتادوريس - كونمبول - المجموعة B",
+        "bn": "কনমেবল লিবার্তাদোরস, গ্রুপ বি",
+        "hi": "कॉनमेबोल लिबर्टाडोरेस, ग्रुप बी",
+        "ru": "Кубок Либертадорес КОНМЕБОЛ, Группа B"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Libertadores 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87760
+  },
+  "roundInfo": {
+    "round": 2
+  },
+  "customId": "fWspnb",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Universitario de Deportes",
+    "slug": "universitario",
+    "shortName": "Universitario",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 86720,
+    "nameCode": "UNI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2305,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffcc",
+      "secondary": "#ffffcc",
+      "text": "#ffffcc"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "يونيفرسيتاريو دي ديبورتس",
+        "hi": "यूनिवर्सिटारिओ दे देपोरतेस",
+        "ru": "Университарио де Депортес"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Coquimbo Unido",
+    "slug": "coquimbo-unido",
+    "shortName": "Coquimbo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 21722,
+    "nameCode": "COQ",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "CL",
+      "alpha3": "CHL",
+      "name": "Chile",
+      "slug": "chile"
+    },
+    "id": 3165,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffe700",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوكويمبو يونيدو",
+        "hi": "कॉक्विम्बो यूनिडो",
+        "ru": "Кокимбо Унидо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 1,
+    "period2": 1,
+    "normaltime": 2
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 6,
+    "injuryTime2": 5,
+    "currentPeriodStartTimestamp": 1776222377
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1776225377
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": false,
+  "correctHalftimeAiInsight": false,
+  "id": 15832772,
+  "slug": "coquimbo-unido-universitario-de-deportes",
+  "startTimestamp": 1776218400,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

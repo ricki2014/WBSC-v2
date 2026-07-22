@@ -1,0 +1,202 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Clausura",
+    "slug": "liga-1-clausura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 218,
+    "isGroup": false,
+    "roundPrefix": "Clausura",
+    "isLive": false,
+    "id": 34468,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، إياب",
+        "bn": "লিগা 1, ক্লাউসুরা",
+        "hi": "लीगा 1, क्लॉसुरा",
+        "ru": "Лига 1, Клаусура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Primera Division 2022",
+    "year": "2022",
+    "editor": false,
+    "id": 40118
+  },
+  "roundInfo": {
+    "round": 9
+  },
+  "customId": "cWsGfc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 3,
+  "homeTeam": {
+    "name": "Club Sporting Cristal",
+    "slug": "club-sporting-cristal",
+    "shortName": "Sporting Cristal",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 56186,
+    "nameCode": "CRI",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 2302,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#33ccff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورتنج كريستال",
+        "ru": "Спортинг Кристал"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Universidad César Vallejo",
+    "slug": "universidad-cesar-vallejo",
+    "shortName": "César Vallejo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 3938,
+    "nameCode": "UCV",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 5281,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#000033",
+      "secondary": "#000033",
+      "text": "#000033"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "جامعة سيزار فاليخو",
+        "ru": "Сезар Вальехо"
+      },
+      "shortNameTranslation": {
+        "ar": "سيزار فاليخو"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 6,
+    "currentPeriodStartTimestamp": 1661717606
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.period2",
+      "homeScore.normaltime",
+      "awayScore.period2",
+      "awayScore.normaltime",
+      "time.currentPeriodStart"
+    ],
+    "changeTimestamp": 1661717610
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 10438838,
+  "awayRedCards": 1,
+  "slug": "universidad-cesar-vallejo-club-sporting-cristal",
+  "startTimestamp": 1661710500,
+  "finalResultOnly": false,
+  "feedLocked": false,
+  "isEditor": false
+}

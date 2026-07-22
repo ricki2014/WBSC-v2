@@ -1,0 +1,201 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Apertura",
+    "slug": "liga-1-apertura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 219,
+    "isGroup": false,
+    "roundPrefix": "Apertura",
+    "isLive": false,
+    "id": 34467,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، ذهاب",
+        "bn": "লিগা 1, অ্যাপেরতুরা",
+        "hi": "लीगा 1, एपर्टुरा",
+        "ru": "Лига 1, Апертура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Primera Division 2023",
+    "year": "2023",
+    "editor": false,
+    "seasonCoverageInfo": {},
+    "id": 48078
+  },
+  "roundInfo": {
+    "round": 8
+  },
+  "customId": "VCnsGtu",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Unión Comercio",
+    "slug": "union-comercio",
+    "shortName": "Comercio",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 3053,
+    "nameCode": "UNI",
+    "national": false,
+    "type": 0,
+    "id": 48431,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#0000ff",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "يونión كوميرسيو",
+        "ru": "Унион Комерсио"
+      },
+      "shortNameTranslation": {
+        "ar": "كوميرسيو"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Sport Huancayo",
+    "slug": "sport-huancayo",
+    "shortName": "Sport Huancayo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 6493,
+    "nameCode": "HUA",
+    "national": false,
+    "type": 0,
+    "id": 33895,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffff00",
+      "text": "#ffff00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورت هوانكايو",
+        "ru": "Спорт Хуанкайо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 1,
+    "period2": 1,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 6,
+    "currentPeriodStartTimestamp": 1678643917
+  },
+  "changes": {
+    "changes": [
+      "time.currentPeriodStart",
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.period2",
+      "homeScore.normaltime",
+      "awayScore.period2",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1678643921
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 11092779,
+  "homeRedCards": 1,
+  "slug": "union-comercio-sport-huancayo",
+  "startTimestamp": 1678636800,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false
+}

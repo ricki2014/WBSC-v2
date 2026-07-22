@@ -1,0 +1,201 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Clausura",
+    "slug": "liga-1-clausura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 218,
+    "isGroup": false,
+    "roundPrefix": "Clausura",
+    "isLive": false,
+    "id": 34468,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، إياب",
+        "bn": "লিগা 1, ক্লাউসুরা",
+        "hi": "लीगा 1, क्लॉसुरा",
+        "ru": "Лига 1, Клаусура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2024",
+    "year": "2024",
+    "editor": false,
+    "id": 57741
+  },
+  "roundInfo": {
+    "round": 11
+  },
+  "customId": "hWsGtu",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Unión Comercio",
+    "slug": "union-comercio",
+    "shortName": "Comercio",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 3053,
+    "nameCode": "UNI",
+    "national": false,
+    "type": 0,
+    "id": 48431,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#0000ff",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "يونión كوميرسيو",
+        "ru": "Унион Комерсио"
+      },
+      "shortNameTranslation": {
+        "ar": "كوميرسيو"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Alianza Atlético de Sullana",
+    "slug": "alianza-atletico-de-sullana",
+    "shortName": "Alianza Atlético",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 8657,
+    "nameCode": "AAT",
+    "national": false,
+    "type": 0,
+    "id": 2307,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#6600ff",
+      "text": "#6600ff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أليانزا أتلتيكو دي سولانا",
+        "ru": "Альянса Атлетико"
+      },
+      "shortNameTranslation": {
+        "ar": "أليانزا أتلتيكو"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 2,
+    "period2": 0,
+    "normaltime": 2
+  },
+  "time": {
+    "injuryTime1": 5,
+    "injuryTime2": 6,
+    "currentPeriodStartTimestamp": 1726775907
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.period2",
+      "homeScore.normaltime",
+      "awayScore.period2",
+      "awayScore.normaltime",
+      "time.currentPeriodStart"
+    ],
+    "changeTimestamp": 1726775909
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 12702500,
+  "slug": "union-comercio-alianza-atletico-de-sullana",
+  "startTimestamp": 1726768800,
+  "finalResultOnly": false,
+  "feedLocked": false,
+  "isEditor": false
+}

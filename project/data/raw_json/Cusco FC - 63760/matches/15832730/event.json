@@ -1,0 +1,228 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Libertadores, Group A",
+    "slug": "copa-libertadores-group-a",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "country": {},
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Libertadores",
+      "slug": "conmebol-libertadores",
+      "primaryColorHex": "#573215",
+      "secondaryColorHex": "#dfaf49",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "country": {},
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 220919,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 384,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوبا ليبرتادوريس",
+          "bn": "কনমেবল লিবার্তাদোরেস",
+          "hi": "कॉनमेबोल लिबर्टाडोरेस",
+          "ru": "КОНМЕБОЛ Либертадорес"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 688,
+    "isGroup": true,
+    "groupName": "Group A",
+    "groupSign": "A",
+    "isLive": false,
+    "id": 2928,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس ليبرتادوريس - كونمبول - المجموعة A",
+        "bn": "কনমেবল লিবার্তাডোরস, গ্রুপ এ",
+        "hi": "कॉनमेबोल लिबर्टाडोरेस, ग्रुप ए",
+        "ru": "Кубок Либертадорес КОНМЕБОЛ, Группа A"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Libertadores 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87760
+  },
+  "roundInfo": {
+    "round": 1
+  },
+  "customId": "GucskAA",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Cusco FC",
+    "slug": "cusco-fc",
+    "shortName": "Cusco",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 16985,
+    "nameCode": "CUS",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 63760,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#00ffff",
+      "secondary": "#33ffff",
+      "text": "#33ffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوسكو إف سي",
+        "ru": "Реал Гарсиласо"
+      },
+      "shortNameTranslation": {
+        "ar": "كوسكو"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Flamengo",
+    "slug": "flamengo",
+    "shortName": "Flamengo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 1144915,
+    "nameCode": "FLA",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "BR",
+      "alpha3": "BRA",
+      "name": "Brazil",
+      "slug": "brazil"
+    },
+    "id": 5981,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "فلامينغو",
+        "ru": "ФК Фламенго РЖ"
+      },
+      "shortNameTranslation": {
+        "ar": "فلامينغو"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "awayScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 0,
+    "period2": 2,
+    "normaltime": 2
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 8,
+    "currentPeriodStartTimestamp": 1775698500
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1775701690
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 15832730,
+  "slug": "cusco-fc-flamengo",
+  "startTimestamp": 1775694600,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

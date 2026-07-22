@@ -1,0 +1,200 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Clausura, Group B",
+    "slug": "liga-1-clausura-group-b",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 208,
+    "isGroup": true,
+    "groupName": "Group B",
+    "groupSign": "B",
+    "isLive": false,
+    "id": 89702,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري الدرجة الأولى، الإياب، المجموعة B",
+        "bn": "লিগা 1, ক্লাউসুরা, গ্রুপ বি",
+        "hi": "लीगा 1, क्लॉसुरा, ग्रुप बी",
+        "ru": "Лига 1, Клаусура, Группа B"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Primera Division 2020",
+    "year": "2020",
+    "editor": false,
+    "id": 27096
+  },
+  "roundInfo": {
+    "round": 3
+  },
+  "customId": "UCnslvJc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Deportivo Llacuabamba",
+    "slug": "deportivo-llacuabamba",
+    "shortName": "Llacuabamba",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 1071,
+    "nameCode": "LLA",
+    "national": false,
+    "type": 0,
+    "id": 336011,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#29adff",
+      "secondary": "#ffbf00",
+      "text": "#ffbf00"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ديبورتيفو لاكوا بانبا",
+        "ru": "Депортиво Ллакуабамба"
+      },
+      "shortNameTranslation": {
+        "ar": "لاكوا بانبا",
+        "ru": "Ллакуабамба"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Ayacucho",
+    "slug": "ayacucho",
+    "shortName": "Ayacucho",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 3623,
+    "nameCode": "AYA",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 33894,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أياكوتشو",
+        "ru": "ФК Аякучо"
+      },
+      "shortNameTranslation": {
+        "ar": "أياكوتشو"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 0,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "normaltime": 0
+  },
+  "coverage": 3,
+  "time": {
+    "injuryTime1": 1,
+    "injuryTime2": 7,
+    "currentPeriodStartTimestamp": 1604434220
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.normaltime",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1604434223
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 9139331,
+  "slug": "deportivo-llacuabamba-ayacucho",
+  "startTimestamp": 1604427300,
+  "finalResultOnly": false,
+  "feedLocked": false,
+  "isEditor": false
+}

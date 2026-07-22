@@ -1,0 +1,334 @@
+{
+  "incidents": [
+    {
+      "text": "FT",
+      "homeScore": 1,
+      "awayScore": 2,
+      "isLive": false,
+      "time": 90,
+      "addedTime": 999,
+      "timeSeconds": 5400,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "rescinded": false,
+      "id": 125316840,
+      "time": 90,
+      "addedTime": 1,
+      "isHome": false,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 1
+    },
+    {
+      "from": "regular",
+      "homeScore": 1,
+      "awayScore": 2,
+      "player": {
+        "name": "Diego Hidalgo",
+        "firstName": "Diego",
+        "lastName": "Martin Hidalgo Mory",
+        "slug": "diego-martin-hidalgo-mory",
+        "shortName": "D.Hidalgo.",
+        "position": "M",
+        "jerseyNumber": "16",
+        "userCount": 3,
+        "gender": "M",
+        "sofascoreId": "hesxnj",
+        "id": 2158815,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1225152000,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دييغو مارتن إيدالغو موري",
+            "ru": "Диего Идальго"
+          },
+          "shortNameTranslation": {
+            "ar": "د. موري",
+            "ru": "Д. Идальго"
+          }
+        }
+      },
+      "period": "period2",
+      "id": 353014755,
+      "time": 90,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 1
+    },
+    {
+      "rescinded": false,
+      "id": 125316826,
+      "time": 86,
+      "isHome": false,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 5
+    },
+    {
+      "time": 82,
+      "id": 118643892,
+      "incidentType": "inGamePenalty",
+      "isHome": false,
+      "incidentClass": "missed",
+      "reversedPeriodTime": 9
+    },
+    {
+      "playerIn": {
+        "name": "Lionel Condezo",
+        "firstName": "Lionel",
+        "lastName": "Condezo",
+        "slug": "lionel-condezo",
+        "shortName": "L. Condezo",
+        "position": "M",
+        "jerseyNumber": "15",
+        "userCount": 0,
+        "gender": "M",
+        "sofascoreId": "nzhi6s",
+        "id": 2311666,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1266883200,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ليونيل كونديزو",
+            "ru": "Лионель Кондецо"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. كونديزو",
+            "ru": "Л. Кондецо"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Carlos Santos",
+        "firstName": "Carlos Santos",
+        "slug": "carlos-santos",
+        "shortName": "C. Santos",
+        "position": "F",
+        "height": 175,
+        "userCount": 8,
+        "sofascoreId": "jsxpve",
+        "id": 2039299,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1207440000,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كارلوس سانتوس",
+            "ru": "Карлос Сантос"
+          },
+          "shortNameTranslation": {
+            "ar": "ك. سانتوس",
+            "ru": "К. Сантос"
+          }
+        }
+      },
+      "id": 126433004,
+      "time": 61,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 30
+    },
+    {
+      "playerIn": {
+        "name": "Fabio Rosillo Arévalo",
+        "firstName": "Fabio",
+        "lastName": "Rosillo Arévalo",
+        "slug": "jhosmeny-balarezo",
+        "shortName": "J. Balarezo",
+        "position": "D",
+        "jerseyNumber": "5",
+        "userCount": 3,
+        "gender": "M",
+        "sofascoreId": "c85fxh",
+        "id": 2311637,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1241395200,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فابيو روسيلو أريفال",
+            "ru": "Фабио Росильо Аревало"
+          },
+          "shortNameTranslation": {
+            "ar": "ف. أريفال",
+            "ru": "Ф. Аревало"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Angelo Enmanuel Vidaurre Bendezu",
+        "firstName": "Angelo",
+        "lastName": "Enmanuel Vidaurre Bendezu",
+        "slug": "angelo-enmanuel-vidaurre-bendezu",
+        "shortName": "A. E. V. Bendezu",
+        "position": "D",
+        "jerseyNumber": "2",
+        "userCount": 5,
+        "gender": "M",
+        "sofascoreId": "iknzt4",
+        "id": 2158799,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1230940800,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أنجيلو إيمانويل فيداور بنيدزو",
+            "ru": "Анхело Эммануэль Видаль Бендецу"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. بنيدزو",
+            "ru": "А. Бендецу"
+          }
+        }
+      },
+      "id": 126432998,
+      "time": 61,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 30
+    },
+    {
+      "from": "regular",
+      "homeScore": 0,
+      "awayScore": 2,
+      "player": {
+        "name": "Cristian Penilla",
+        "firstName": "Cristian",
+        "lastName": "Penilla",
+        "slug": "cristian-penilla",
+        "shortName": "C. Penilla",
+        "position": "M",
+        "jerseyNumber": "17",
+        "height": 174,
+        "userCount": 1405,
+        "gender": "M",
+        "sofascoreId": "x7y2nt",
+        "id": 220439,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 673142400,
+        "proposedMarketValueRaw": {
+          "value": 130000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كريستيان بينيلا",
+            "ru": "Кристиан Пенилья"
+          },
+          "shortNameTranslation": {
+            "ar": "ك. بينيلا",
+            "ru": "К. Пенилья"
+          }
+        }
+      },
+      "period": "period2",
+      "id": 353011061,
+      "time": 49,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 42
+    },
+    {
+      "text": "HT",
+      "homeScore": 0,
+      "awayScore": 1,
+      "isLive": false,
+      "time": 45,
+      "addedTime": 999,
+      "timeSeconds": 2700,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "rescinded": false,
+      "id": 125316624,
+      "time": 31,
+      "isHome": true,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 15
+    },
+    {
+      "from": "regular",
+      "homeScore": 0,
+      "awayScore": 1,
+      "player": {
+        "name": "Guillermo Larios",
+        "firstName": "Guillermo Larios",
+        "lastName": "",
+        "slug": "guillermo-larios",
+        "shortName": "G. Larios",
+        "position": "F",
+        "jerseyNumber": "11",
+        "height": 170,
+        "userCount": 82,
+        "gender": "M",
+        "sofascoreId": "rst5ww",
+        "id": 1109858,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1021075200,
+        "proposedMarketValueRaw": {
+          "value": 330000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "غيليرمو لارياس",
+            "ru": "Гильермо Лариос"
+          },
+          "shortNameTranslation": {
+            "ar": "غ. لارياس",
+            "ru": "Г. Лариос"
+          }
+        }
+      },
+      "period": "period1",
+      "id": 353005293,
+      "time": 2,
+      "timeSeconds": 120,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 44,
+      "reversedPeriodTimeSeconds": 2580,
+      "periodTimeSeconds": 120
+    }
+  ],
+  "home": {
+    "goalkeeperColor": {
+      "primary": "ff8000",
+      "number": "f9f8f4",
+      "outline": "ff8000",
+      "fancyNumber": "222226"
+    },
+    "playerColor": {
+      "primary": "ffffff",
+      "number": "ee4329",
+      "outline": "ffffff",
+      "fancyNumber": "222226"
+    }
+  },
+  "away": {
+    "goalkeeperColor": {
+      "primary": "6987f0",
+      "number": "254497",
+      "outline": "6987f0",
+      "fancyNumber": "ffffff"
+    },
+    "playerColor": {
+      "primary": "2555b7",
+      "number": "ffffff",
+      "outline": "2555b7",
+      "fancyNumber": "ffffff"
+    }
+  }
+}

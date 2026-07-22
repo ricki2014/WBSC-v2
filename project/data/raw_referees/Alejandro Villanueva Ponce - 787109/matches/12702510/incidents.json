@@ -1,0 +1,1993 @@
+{
+  "incidents": [
+    {
+      "text": "FT",
+      "homeScore": 4,
+      "awayScore": 0,
+      "isLive": false,
+      "time": 90,
+      "addedTime": 999,
+      "timeSeconds": 5400,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "from": "penalty",
+      "homeScore": 4,
+      "awayScore": 0,
+      "player": {
+        "name": "Tomás Sandoval",
+        "slug": "tomas-sandoval",
+        "shortName": "T. Sandoval",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 183,
+        "userCount": 50,
+        "gender": "M",
+        "sofascoreId": "egvz58",
+        "id": 839368,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 922752000,
+        "proposedMarketValueRaw": {
+          "value": 360000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "توماس ساندوفال",
+            "ru": "Томас Сандовал"
+          },
+          "shortNameTranslation": {
+            "ar": "ت. ساندوفال",
+            "ru": "Т. Сандовал"
+          }
+        }
+      },
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Tomás Sandoval",
+            "slug": "tomas-sandoval",
+            "shortName": "T. Sandoval",
+            "position": "F",
+            "jerseyNumber": "9",
+            "height": 183,
+            "userCount": 50,
+            "gender": "M",
+            "sofascoreId": "egvz58",
+            "id": 839368,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 922752000,
+            "proposedMarketValueRaw": {
+              "value": 360000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "توماس ساندوفال",
+                "ru": "Томас Сандовал"
+              },
+              "shortNameTranslation": {
+                "ar": "ت. ساندوفال",
+                "ru": "Т. Сандовал"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 90,
+          "playerCoordinates": {
+            "x": 88.5,
+            "y": 50
+          },
+          "gkCoordinates": {
+            "x": 99.1,
+            "y": 50.4
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 46.1
+          },
+          "goalMouthCoordinates": {
+            "x": 70.97,
+            "y": 76.83
+          },
+          "isHome": true,
+          "goalType": "penalty"
+        }
+      ],
+      "id": 187803142,
+      "time": 90,
+      "addedTime": 4,
+      "isHome": true,
+      "incidentClass": "penalty",
+      "incidentType": "goal",
+      "reversedPeriodTime": 1
+    },
+    {
+      "playerIn": {
+        "name": "Pedro Paulo Requena",
+        "firstName": "",
+        "lastName": "",
+        "slug": "pedro-paulo-requena",
+        "shortName": "P. Requena",
+        "position": "D",
+        "height": 180,
+        "userCount": 4,
+        "gender": "M",
+        "sofascoreId": "jnpmer",
+        "id": 162435,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 664675200,
+        "proposedMarketValueRaw": {
+          "value": 24000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيدرو باولو ريكينا",
+            "ru": "Педро Пауло Рекена"
+          },
+          "shortNameTranslation": {
+            "ar": "ب. ريكينا",
+            "ru": "П. Рекена"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Jesus Serrano",
+        "slug": "jesus-serrano",
+        "shortName": "J. Serrano",
+        "position": "D",
+        "height": 180,
+        "userCount": 3,
+        "gender": "M",
+        "sofascoreId": "e7hwv8",
+        "id": 591020,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 714614400,
+        "proposedMarketValueRaw": {
+          "value": 52000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "خيسوس سيرانو",
+            "ru": "Хесус Серрано"
+          },
+          "shortNameTranslation": {
+            "ar": "خ. سيرانو",
+            "ru": "Х. Серрано"
+          }
+        }
+      },
+      "id": 123119958,
+      "time": 90,
+      "addedTime": 1,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 1
+    },
+    {
+      "playerIn": {
+        "name": "Jimmy Pérez",
+        "firstName": "Jimmy Pérez",
+        "lastName": "",
+        "slug": "jimmy-perez",
+        "shortName": "J. Pérez",
+        "position": "M",
+        "jerseyNumber": "20",
+        "height": 175,
+        "userCount": 23,
+        "gender": "M",
+        "sofascoreId": "kmnuid",
+        "id": 1107889,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 991699200,
+        "proposedMarketValueRaw": {
+          "value": 380000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "جيمي بيريز",
+            "ru": "Джимми Перес"
+          },
+          "shortNameTranslation": {
+            "ar": "ج. بيريز",
+            "ru": "Д. Перес"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Cristian Ojeda",
+        "slug": "cristian-ojeda",
+        "shortName": "C. Ojeda",
+        "position": "M",
+        "height": 170,
+        "userCount": 11,
+        "gender": "M",
+        "sofascoreId": "ggdewi",
+        "id": 909108,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 916963200,
+        "proposedMarketValueRaw": {
+          "value": 54000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كريستيان أوجيدا",
+            "ru": "Кристиан Охеда"
+          },
+          "shortNameTranslation": {
+            "ar": "ك. أوجيدا",
+            "ru": "К. Охеда"
+          }
+        }
+      },
+      "id": 123119957,
+      "time": 90,
+      "addedTime": 1,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 1
+    },
+    {
+      "length": 6,
+      "time": 90,
+      "addedTime": 0,
+      "incidentType": "injuryTime",
+      "reversedPeriodTime": 1
+    },
+    {
+      "homeScore": 3,
+      "awayScore": 0,
+      "player": {
+        "name": "Paulo de la Cruz",
+        "firstName": "Paulo",
+        "lastName": "de la Cruz",
+        "slug": "paulo-de-la-cruz",
+        "shortName": "P. de la Cruz",
+        "position": "M",
+        "jerseyNumber": "10",
+        "height": 168,
+        "userCount": 33,
+        "gender": "M",
+        "sofascoreId": "bbbg9q",
+        "id": 922873,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 940550400,
+        "proposedMarketValueRaw": {
+          "value": 370000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "باولو دي لا كروز",
+            "ru": "Пауло де ла Крус"
+          },
+          "shortNameTranslation": {
+            "ar": "ب. دي لا كروز",
+            "ru": "П. Крус"
+          }
+        }
+      },
+      "assist1": {
+        "name": "Tomás Sandoval",
+        "slug": "tomas-sandoval",
+        "shortName": "T. Sandoval",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 183,
+        "userCount": 50,
+        "gender": "M",
+        "sofascoreId": "egvz58",
+        "id": 839368,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 922752000,
+        "proposedMarketValueRaw": {
+          "value": 360000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "توماس ساندوفال",
+            "ru": "Томас Сандовал"
+          },
+          "shortNameTranslation": {
+            "ar": "ت. ساندوفال",
+            "ru": "Т. Сандовал"
+          }
+        }
+      },
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Aldair Vasquez",
+            "firstName": "Aldair",
+            "lastName": "Vasquez",
+            "slug": "aldair-vasquez",
+            "shortName": "A. Vasquez",
+            "position": "M",
+            "jerseyNumber": "20",
+            "height": 168,
+            "userCount": 25,
+            "gender": "M",
+            "sofascoreId": "fp2mi9",
+            "id": 1120902,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1045958400,
+            "proposedMarketValueRaw": {
+              "value": 410000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "ألدير فاسكيز",
+                "ru": "Алдаир Васкес"
+              },
+              "shortNameTranslation": {
+                "ar": "أ. فاسكيز",
+                "ru": "А. Васкес"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 89,
+          "playerCoordinates": {
+            "x": 59.8,
+            "y": 80.9
+          },
+          "passEndCoordinates": {
+            "x": 49.6,
+            "y": 67.3
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Leonel Solís",
+            "slug": "leonel-solis",
+            "shortName": "L. Solís",
+            "position": "M",
+            "jerseyNumber": "28",
+            "height": 181,
+            "userCount": 21,
+            "gender": "M",
+            "sofascoreId": "kw23zj",
+            "id": 883293,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 841363200,
+            "proposedMarketValueRaw": {
+              "value": 270000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "ليونيل سوليس",
+                "ru": "Леонель Солис"
+              },
+              "shortNameTranslation": {
+                "ar": "ل. سوليس",
+                "ru": "Л. Солис"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 89,
+          "playerCoordinates": {
+            "x": 49.6,
+            "y": 67.3
+          },
+          "passEndCoordinates": {
+            "x": 50.5,
+            "y": 49.9
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Aldair Vasquez",
+            "firstName": "Aldair",
+            "lastName": "Vasquez",
+            "slug": "aldair-vasquez",
+            "shortName": "A. Vasquez",
+            "position": "M",
+            "jerseyNumber": "20",
+            "height": 168,
+            "userCount": 25,
+            "gender": "M",
+            "sofascoreId": "fp2mi9",
+            "id": 1120902,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 1045958400,
+            "proposedMarketValueRaw": {
+              "value": 410000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "ألدير فاسكيز",
+                "ru": "Алдаир Васкес"
+              },
+              "shortNameTranslation": {
+                "ar": "أ. فاسكيز",
+                "ru": "А. Васкес"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 89,
+          "playerCoordinates": {
+            "x": 50.5,
+            "y": 49.9
+          },
+          "passEndCoordinates": {
+            "x": 58.3,
+            "y": 50.6
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Freddy Oncoy",
+            "slug": "freddy-oncoy",
+            "shortName": "F. Oncoy",
+            "position": "M",
+            "jerseyNumber": "23",
+            "height": 180,
+            "userCount": 18,
+            "gender": "M",
+            "sofascoreId": "g889j8",
+            "id": 975540,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 969408000,
+            "proposedMarketValueRaw": {
+              "value": 330000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "فريدي أونكوي",
+                "ru": "Фредди Онкой"
+              },
+              "shortNameTranslation": {
+                "ar": "ف. أونكوي",
+                "ru": "Ф. Онкой"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 89,
+          "playerCoordinates": {
+            "x": 58.3,
+            "y": 50.6
+          },
+          "passEndCoordinates": {
+            "x": 72.6,
+            "y": 47.9
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Tomás Sandoval",
+            "slug": "tomas-sandoval",
+            "shortName": "T. Sandoval",
+            "position": "F",
+            "jerseyNumber": "9",
+            "height": 183,
+            "userCount": 50,
+            "gender": "M",
+            "sofascoreId": "egvz58",
+            "id": 839368,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 922752000,
+            "proposedMarketValueRaw": {
+              "value": 360000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "توماس ساندوفال",
+                "ru": "Томас Сандовал"
+              },
+              "shortNameTranslation": {
+                "ar": "ت. ساندوفال",
+                "ru": "Т. Сандовал"
+              }
+            }
+          },
+          "eventType": "ball-movement",
+          "time": 89,
+          "playerCoordinates": {
+            "x": 72.6,
+            "y": 47.9
+          },
+          "passEndCoordinates": {
+            "x": 84.7,
+            "y": 41.8
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Tomás Sandoval",
+            "slug": "tomas-sandoval",
+            "shortName": "T. Sandoval",
+            "position": "F",
+            "jerseyNumber": "9",
+            "height": 183,
+            "userCount": 50,
+            "gender": "M",
+            "sofascoreId": "egvz58",
+            "id": 839368,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 922752000,
+            "proposedMarketValueRaw": {
+              "value": 360000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "توماس ساندوفال",
+                "ru": "Томас Сандовал"
+              },
+              "shortNameTranslation": {
+                "ar": "ت. ساندوفال",
+                "ru": "Т. Сандовал"
+              }
+            }
+          },
+          "eventType": "pass",
+          "isAssist": true,
+          "time": 89,
+          "playerCoordinates": {
+            "x": 85.6,
+            "y": 37
+          },
+          "passEndCoordinates": {
+            "x": 84.7,
+            "y": 41.8
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Paulo de la Cruz",
+            "firstName": "Paulo",
+            "lastName": "de la Cruz",
+            "slug": "paulo-de-la-cruz",
+            "shortName": "P. de la Cruz",
+            "position": "M",
+            "jerseyNumber": "10",
+            "height": 168,
+            "userCount": 33,
+            "gender": "M",
+            "sofascoreId": "bbbg9q",
+            "id": 922873,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 940550400,
+            "proposedMarketValueRaw": {
+              "value": 370000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "باولو دي لا كروز",
+                "ru": "Пауло де ла Крус"
+              },
+              "shortNameTranslation": {
+                "ar": "ب. دي لا كروز",
+                "ru": "П. Крус"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 89,
+          "playerCoordinates": {
+            "x": 87.4,
+            "y": 52.4
+          },
+          "gkCoordinates": {
+            "x": 98.4,
+            "y": 50.2
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 47.4
+          },
+          "goalMouthCoordinates": {
+            "x": 63.98,
+            "y": 56.83
+          },
+          "goalkeeper": {
+            "name": "Patrick Zubczuk",
+            "firstName": "Patrick",
+            "lastName": "Zubczuk",
+            "slug": "patrick-zubczuk",
+            "shortName": "P. Zubczuk",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 186,
+            "userCount": 67,
+            "gender": "M",
+            "sofascoreId": "ztcvhd",
+            "id": 846373,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 793324800,
+            "proposedMarketValueRaw": {
+              "value": 410000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "باتريك زوبتشوك",
+                "ru": "Патрик Зубчук"
+              },
+              "shortNameTranslation": {
+                "ar": "ب. زوبتشوك",
+                "ru": "П. Зубчук"
+              }
+            }
+          },
+          "isHome": true,
+          "goalType": "regular"
+        }
+      ],
+      "id": 187802907,
+      "time": 89,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 2
+    },
+    {
+      "playerIn": {
+        "name": "Freddy Oncoy",
+        "slug": "freddy-oncoy",
+        "shortName": "F. Oncoy",
+        "position": "M",
+        "jerseyNumber": "23",
+        "height": 180,
+        "userCount": 18,
+        "gender": "M",
+        "sofascoreId": "g889j8",
+        "id": 975540,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 969408000,
+        "proposedMarketValueRaw": {
+          "value": 330000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فريدي أونكوي",
+            "ru": "Фредди Онкой"
+          },
+          "shortNameTranslation": {
+            "ar": "ف. أونكوي",
+            "ru": "Ф. Онкой"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Neri Bandiera",
+        "firstName": "Neri",
+        "lastName": "Bandiera",
+        "slug": "neri-bandiera",
+        "shortName": "N. Bandiera",
+        "position": "M",
+        "jerseyNumber": "11",
+        "height": 172,
+        "userCount": 130,
+        "gender": "M",
+        "sofascoreId": "tuuc95",
+        "id": 830746,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 615427200,
+        "proposedMarketValueRaw": {
+          "value": 120000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نيري باندييرا",
+            "ru": "Нери Бандиера"
+          },
+          "shortNameTranslation": {
+            "ar": "ن. باندييرا",
+            "ru": "Н. Бандиера"
+          }
+        }
+      },
+      "id": 123119889,
+      "time": 79,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 12
+    },
+    {
+      "playerIn": {
+        "name": "Leonel Solís",
+        "slug": "leonel-solis",
+        "shortName": "L. Solís",
+        "position": "M",
+        "jerseyNumber": "28",
+        "height": 181,
+        "userCount": 21,
+        "gender": "M",
+        "sofascoreId": "kw23zj",
+        "id": 883293,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 841363200,
+        "proposedMarketValueRaw": {
+          "value": 270000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ليونيل سوليس",
+            "ru": "Леонель Солис"
+          },
+          "shortNameTranslation": {
+            "ar": "ل. سوليس",
+            "ru": "Л. Солис"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Diego Soto",
+        "slug": "diego-soto",
+        "shortName": "D. Soto",
+        "position": "M",
+        "jerseyNumber": "8",
+        "height": 175,
+        "userCount": 54,
+        "gender": "M",
+        "sofascoreId": "wrrieb",
+        "id": 980141,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 999216000,
+        "proposedMarketValueRaw": {
+          "value": 510000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دييغو سوتو",
+            "ru": "Диего Сото"
+          },
+          "shortNameTranslation": {
+            "ar": "د. سوتو",
+            "ru": "Д. Сото"
+          }
+        }
+      },
+      "id": 123119888,
+      "time": 78,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 13
+    },
+    {
+      "playerIn": {
+        "name": "Ángel Ojeda",
+        "slug": "angel-ojeda",
+        "shortName": "Á. Ojeda",
+        "position": "D",
+        "jerseyNumber": "6",
+        "height": 174,
+        "userCount": 5,
+        "gender": "M",
+        "sofascoreId": "gnxqqi",
+        "id": 339841,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 713491200,
+        "proposedMarketValueRaw": {
+          "value": 97000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أنخيل أوخيدا",
+            "ru": "Анхель Охеда"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. أوخيدا",
+            "ru": "А. Охеда"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Neil Marcos",
+        "slug": "neil-marcos",
+        "shortName": "N. Marcos",
+        "position": "M",
+        "height": 171,
+        "userCount": 2,
+        "gender": "M",
+        "sofascoreId": "n5d4cs",
+        "id": 1022066,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 705542400,
+        "proposedMarketValueRaw": {
+          "value": 77000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نيل ماركوس",
+            "ru": "Нил Маркос"
+          },
+          "shortNameTranslation": {
+            "ar": "ن. ماركوس",
+            "ru": "Н. Маркос"
+          }
+        }
+      },
+      "id": 123119847,
+      "time": 69,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 22
+    },
+    {
+      "playerIn": {
+        "name": "Jherson Reyes",
+        "firstName": "Jherson Reyes",
+        "lastName": "",
+        "slug": "jherson-reyes",
+        "shortName": "J. Reyes",
+        "position": "D",
+        "jerseyNumber": "17",
+        "height": 178,
+        "userCount": 21,
+        "gender": "M",
+        "sofascoreId": "utbsvk",
+        "id": 1130035,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1093478400,
+        "proposedMarketValueRaw": {
+          "value": 245000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "هيرسون ريس",
+            "ru": "Жерсон Рейес"
+          },
+          "shortNameTranslation": {
+            "ar": "ه. ريس",
+            "ru": "Ж. Рейес"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Mauro Da Luz",
+        "firstName": "Mauro",
+        "lastName": "Da Luz",
+        "slug": "mauro-da-luz",
+        "shortName": "M. Da Luz",
+        "position": "F",
+        "jerseyNumber": "77",
+        "height": 174,
+        "userCount": 124,
+        "gender": "M",
+        "sofascoreId": "8jkjn3",
+        "id": 924736,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 783993600,
+        "proposedMarketValueRaw": {
+          "value": 250000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ماورو دا لوز",
+            "ru": "Мауро Да Лус"
+          },
+          "shortNameTranslation": {
+            "ar": "م. دا لوز",
+            "ru": "М. Лус"
+          }
+        }
+      },
+      "id": 123119837,
+      "time": 64,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 27
+    },
+    {
+      "playerIn": {
+        "name": "Aldair Vasquez",
+        "firstName": "Aldair",
+        "lastName": "Vasquez",
+        "slug": "aldair-vasquez",
+        "shortName": "A. Vasquez",
+        "position": "M",
+        "jerseyNumber": "20",
+        "height": 168,
+        "userCount": 25,
+        "gender": "M",
+        "sofascoreId": "fp2mi9",
+        "id": 1120902,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1045958400,
+        "proposedMarketValueRaw": {
+          "value": 410000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ألدير فاسكيز",
+            "ru": "Алдаир Васкес"
+          },
+          "shortNameTranslation": {
+            "ar": "أ. فاسكيز",
+            "ru": "А. Васкес"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Elsar Rodas",
+        "firstName": "Elsar",
+        "lastName": "Rodas",
+        "slug": "elsar-rodas",
+        "shortName": "E. Rodas",
+        "position": "D",
+        "jerseyNumber": "6",
+        "height": 179,
+        "userCount": 10,
+        "gender": "M",
+        "sofascoreId": "r8937m",
+        "id": 790018,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 762393600,
+        "proposedMarketValueRaw": {
+          "value": 235000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إلسار روداس",
+            "ru": "Эльсар Родас"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. روداس",
+            "ru": "Э. Родас"
+          }
+        }
+      },
+      "id": 123119807,
+      "time": 58,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 33
+    },
+    {
+      "playerIn": {
+        "name": "Tomás Sandoval",
+        "slug": "tomas-sandoval",
+        "shortName": "T. Sandoval",
+        "position": "F",
+        "jerseyNumber": "9",
+        "height": 183,
+        "userCount": 50,
+        "gender": "M",
+        "sofascoreId": "egvz58",
+        "id": 839368,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 922752000,
+        "proposedMarketValueRaw": {
+          "value": 360000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "توماس ساندوفال",
+            "ru": "Томас Сандовал"
+          },
+          "shortNameTranslation": {
+            "ar": "ت. ساندوفال",
+            "ru": "Т. Сандовал"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Nicolás Figueroa",
+        "slug": "nicolas-figueroa",
+        "shortName": "N. Figueroa",
+        "position": "F",
+        "jerseyNumber": "18",
+        "height": 180,
+        "userCount": 30,
+        "gender": "M",
+        "sofascoreId": "vun57h",
+        "id": 988299,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1022198400,
+        "proposedMarketValueRaw": {
+          "value": 135000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نيكولاس فيغيروا",
+            "ru": "Николас Фигероа"
+          },
+          "shortNameTranslation": {
+            "ar": "ن. فيغيروا",
+            "ru": "Н. Фигероа"
+          }
+        }
+      },
+      "id": 123119806,
+      "time": 58,
+      "injury": false,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 33
+    },
+    {
+      "homeScore": 2,
+      "awayScore": 0,
+      "player": {
+        "name": "Neri Bandiera",
+        "firstName": "Neri",
+        "lastName": "Bandiera",
+        "slug": "neri-bandiera",
+        "shortName": "N. Bandiera",
+        "position": "M",
+        "jerseyNumber": "11",
+        "height": 172,
+        "userCount": 130,
+        "gender": "M",
+        "sofascoreId": "tuuc95",
+        "id": 830746,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 615427200,
+        "proposedMarketValueRaw": {
+          "value": 120000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نيري باندييرا",
+            "ru": "Нери Бандиера"
+          },
+          "shortNameTranslation": {
+            "ar": "ن. باندييرا",
+            "ru": "Н. Бандиера"
+          }
+        }
+      },
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Jeremy Rostaing",
+            "firstName": "Jeremy",
+            "lastName": "Rostaing",
+            "slug": "jeremy-rostaing",
+            "shortName": "J. Rostaing",
+            "position": "D",
+            "jerseyNumber": "15",
+            "height": 178,
+            "userCount": 21,
+            "gender": "M",
+            "sofascoreId": "qs5wep",
+            "id": 590468,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 801187200,
+            "proposedMarketValueRaw": {
+              "value": 260000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "جيريمي روستينغ",
+                "ru": "Джереми Ростаинг"
+              },
+              "shortNameTranslation": {
+                "ar": "ج. روستينغ",
+                "ru": "Д. Ростаинг"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 56,
+          "playerCoordinates": {
+            "x": 74.3,
+            "y": 20.9
+          },
+          "passEndCoordinates": {
+            "x": 70.4,
+            "y": 32.1
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Diego Soto",
+            "slug": "diego-soto",
+            "shortName": "D. Soto",
+            "position": "M",
+            "jerseyNumber": "8",
+            "height": 175,
+            "userCount": 54,
+            "gender": "M",
+            "sofascoreId": "wrrieb",
+            "id": 980141,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 999216000,
+            "proposedMarketValueRaw": {
+              "value": 510000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "دييغو سوتو",
+                "ru": "Диего Сото"
+              },
+              "shortNameTranslation": {
+                "ar": "د. سوتو",
+                "ru": "Д. Сото"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 56,
+          "playerCoordinates": {
+            "x": 70.4,
+            "y": 32.1
+          },
+          "passEndCoordinates": {
+            "x": 62.4,
+            "y": 50.1
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Rafael Guarderas",
+            "firstName": "Rafael",
+            "lastName": "Guarderas",
+            "slug": "rafael-guarderas",
+            "shortName": "R. Guarderas",
+            "position": "M",
+            "jerseyNumber": "5",
+            "height": 177,
+            "userCount": 11,
+            "gender": "M",
+            "sofascoreId": "8gk2cw",
+            "id": 805065,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 747792000,
+            "proposedMarketValueRaw": {
+              "value": 235000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "رافائيل غواردياس",
+                "ru": "Рафаэль Гуардерос"
+              },
+              "shortNameTranslation": {
+                "ar": "ر. غواردياس",
+                "ru": "Р. Гуардерос"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 56,
+          "playerCoordinates": {
+            "x": 62.4,
+            "y": 50.1
+          },
+          "passEndCoordinates": {
+            "x": 51.1,
+            "y": 37.6
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Rodrigo Tapia",
+            "firstName": "Rodrigo",
+            "lastName": "Tapia",
+            "slug": "rodrigo-tapia",
+            "shortName": "R. Tapia",
+            "position": "D",
+            "jerseyNumber": "27",
+            "height": 184,
+            "userCount": 16,
+            "gender": "M",
+            "sofascoreId": "qddejp",
+            "id": 830660,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 780710400,
+            "proposedMarketValueRaw": {
+              "value": 290000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "رودريغو تابيا",
+                "ru": "Родриго Тапиа"
+              },
+              "shortNameTranslation": {
+                "ar": "ر. تابيا",
+                "ru": "Р. Тапиа"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 56,
+          "playerCoordinates": {
+            "x": 54.9,
+            "y": 33.9
+          },
+          "passEndCoordinates": {
+            "x": 84.4,
+            "y": 88.9
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Elsar Rodas",
+            "firstName": "Elsar",
+            "lastName": "Rodas",
+            "slug": "elsar-rodas",
+            "shortName": "E. Rodas",
+            "position": "D",
+            "jerseyNumber": "6",
+            "height": 179,
+            "userCount": 10,
+            "gender": "M",
+            "sofascoreId": "r8937m",
+            "id": 790018,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 762393600,
+            "proposedMarketValueRaw": {
+              "value": 235000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "إلسار روداس",
+                "ru": "Эльсар Родас"
+              },
+              "shortNameTranslation": {
+                "ar": "إ. روداس",
+                "ru": "Э. Родас"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 56,
+          "playerCoordinates": {
+            "x": 85.6,
+            "y": 88.1
+          },
+          "passEndCoordinates": {
+            "x": 93.9,
+            "y": 49.7
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Neri Bandiera",
+            "firstName": "Neri",
+            "lastName": "Bandiera",
+            "slug": "neri-bandiera",
+            "shortName": "N. Bandiera",
+            "position": "M",
+            "jerseyNumber": "11",
+            "height": 172,
+            "userCount": 130,
+            "gender": "M",
+            "sofascoreId": "tuuc95",
+            "id": 830746,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 615427200,
+            "proposedMarketValueRaw": {
+              "value": 120000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "نيري باندييرا",
+                "ru": "Нери Бандиера"
+              },
+              "shortNameTranslation": {
+                "ar": "ن. باندييرا",
+                "ru": "Н. Бандиера"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "right-foot",
+          "time": 56,
+          "playerCoordinates": {
+            "x": 92.1,
+            "y": 53.6
+          },
+          "gkCoordinates": {
+            "x": 98.5,
+            "y": 49.8
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 51.9
+          },
+          "goalMouthCoordinates": {
+            "x": 39.78,
+            "y": 71.5
+          },
+          "goalkeeper": {
+            "name": "Patrick Zubczuk",
+            "firstName": "Patrick",
+            "lastName": "Zubczuk",
+            "slug": "patrick-zubczuk",
+            "shortName": "P. Zubczuk",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 186,
+            "userCount": 67,
+            "gender": "M",
+            "sofascoreId": "ztcvhd",
+            "id": 846373,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 793324800,
+            "proposedMarketValueRaw": {
+              "value": 410000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "باتريك زوبتشوك",
+                "ru": "Патрик Зубчук"
+              },
+              "shortNameTranslation": {
+                "ar": "ب. زوبتشوك",
+                "ru": "П. Зубчук"
+              }
+            }
+          },
+          "isHome": true,
+          "goalType": "regular"
+        }
+      ],
+      "id": 187800973,
+      "time": 56,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 35
+    },
+    {
+      "playerIn": {
+        "name": "Carlos Fernandez",
+        "firstName": "Carlos Fernandez",
+        "lastName": "",
+        "slug": "carlos-fernandez",
+        "shortName": "C. Fernandez",
+        "position": "F",
+        "height": 180,
+        "userCount": 2,
+        "gender": "M",
+        "sofascoreId": "vu6tmg",
+        "id": 1464523,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 796694400,
+        "proposedMarketValueRaw": {
+          "value": 130000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كارلوس فيرنانديز",
+            "ru": "Карлос Фернандес"
+          },
+          "shortNameTranslation": {
+            "ar": "ك. فيرنانديز",
+            "ru": "К. Фернандес"
+          }
+        }
+      },
+      "playerOut": {
+        "name": "Mario Otazú",
+        "slug": "mario-otazu",
+        "shortName": "M. Otazú",
+        "position": "M",
+        "jerseyNumber": "27",
+        "height": 183,
+        "userCount": 46,
+        "gender": "M",
+        "sofascoreId": "iwkvhm",
+        "id": 989711,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 836524800,
+        "proposedMarketValueRaw": {
+          "value": 340000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ماريو أوتازو",
+            "ru": "Марио Отазу"
+          },
+          "shortNameTranslation": {
+            "ar": "م. أوتازو",
+            "ru": "М. Отазу"
+          }
+        }
+      },
+      "id": 123119785,
+      "time": 52,
+      "injury": false,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "substitution",
+      "reversedPeriodTime": 39
+    },
+    {
+      "player": {
+        "name": "Nicolás Figueroa",
+        "slug": "nicolas-figueroa",
+        "shortName": "N. Figueroa",
+        "position": "F",
+        "jerseyNumber": "18",
+        "height": 180,
+        "userCount": 30,
+        "gender": "M",
+        "sofascoreId": "vun57h",
+        "id": 988299,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 1022198400,
+        "proposedMarketValueRaw": {
+          "value": 135000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نيكولاس فيغيروا",
+            "ru": "Николас Фигероа"
+          },
+          "shortNameTranslation": {
+            "ar": "ن. فيغيروا",
+            "ru": "Н. Фигероа"
+          }
+        }
+      },
+      "playerName": "Nicolás Figueroa",
+      "reason": "Foul",
+      "rescinded": false,
+      "id": 121601202,
+      "time": 51,
+      "isHome": true,
+      "incidentClass": "yellow",
+      "incidentType": "card",
+      "reversedPeriodTime": 40
+    },
+    {
+      "player": {
+        "name": "Jarlin Quintero",
+        "firstName": "Jarlin",
+        "lastName": "Quintero",
+        "slug": "jarlin-quintero",
+        "shortName": "J. Quintero",
+        "position": "F",
+        "jerseyNumber": "11",
+        "height": 182,
+        "userCount": 182,
+        "gender": "M",
+        "sofascoreId": "vjutbs",
+        "id": 805451,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 745718400,
+        "proposedMarketValueRaw": {
+          "value": 290000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "جارلين كوينتيرو",
+            "ru": "Харлин Кинтеро"
+          },
+          "shortNameTranslation": {
+            "ar": "ج. كوينتيرو",
+            "ru": "Х. Кинтеро"
+          }
+        }
+      },
+      "playerName": "Jarlin Quintero",
+      "reason": "Violent conduct",
+      "rescinded": false,
+      "id": 121601187,
+      "time": 48,
+      "isHome": false,
+      "incidentClass": "red",
+      "incidentType": "card",
+      "reversedPeriodTime": 43
+    },
+    {
+      "confirmed": false,
+      "player": {
+        "name": "Jarlin Quintero",
+        "firstName": "Jarlin",
+        "lastName": "Quintero",
+        "slug": "jarlin-quintero",
+        "shortName": "J. Quintero",
+        "position": "F",
+        "jerseyNumber": "11",
+        "height": 182,
+        "userCount": 182,
+        "gender": "M",
+        "sofascoreId": "vjutbs",
+        "id": 805451,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 745718400,
+        "proposedMarketValueRaw": {
+          "value": 290000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "جارلين كوينتيرو",
+            "ru": "Харлин Кинтеро"
+          },
+          "shortNameTranslation": {
+            "ar": "ج. كوينتيرو",
+            "ru": "Х. Кинтеро"
+          }
+        }
+      },
+      "isHome": false,
+      "id": 28409,
+      "time": 47,
+      "incidentClass": "cardUpgrade",
+      "incidentType": "varDecision",
+      "reversedPeriodTime": 44
+    },
+    {
+      "text": "HT",
+      "homeScore": 1,
+      "awayScore": 0,
+      "isLive": false,
+      "time": 45,
+      "addedTime": 999,
+      "timeSeconds": 2700,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "length": 2,
+      "time": 45,
+      "addedTime": 0,
+      "incidentType": "injuryTime",
+      "reversedPeriodTime": 1
+    },
+    {
+      "homeScore": 1,
+      "awayScore": 0,
+      "player": {
+        "name": "Neri Bandiera",
+        "firstName": "Neri",
+        "lastName": "Bandiera",
+        "slug": "neri-bandiera",
+        "shortName": "N. Bandiera",
+        "position": "M",
+        "jerseyNumber": "11",
+        "height": 172,
+        "userCount": 130,
+        "gender": "M",
+        "sofascoreId": "tuuc95",
+        "id": 830746,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 615427200,
+        "proposedMarketValueRaw": {
+          "value": 120000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نيري باندييرا",
+            "ru": "Нери Бандиера"
+          },
+          "shortNameTranslation": {
+            "ar": "ن. باندييرا",
+            "ru": "Н. Бандиера"
+          }
+        }
+      },
+      "assist1": {
+        "name": "Elsar Rodas",
+        "firstName": "Elsar",
+        "lastName": "Rodas",
+        "slug": "elsar-rodas",
+        "shortName": "E. Rodas",
+        "position": "D",
+        "jerseyNumber": "6",
+        "height": 179,
+        "userCount": 10,
+        "gender": "M",
+        "sofascoreId": "r8937m",
+        "id": 790018,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 762393600,
+        "proposedMarketValueRaw": {
+          "value": 235000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إلسار روداس",
+            "ru": "Эльсар Родас"
+          },
+          "shortNameTranslation": {
+            "ar": "إ. روداس",
+            "ru": "Э. Родас"
+          }
+        }
+      },
+      "footballPassingNetworkAction": [
+        {
+          "player": {
+            "name": "Elsar Rodas",
+            "firstName": "Elsar",
+            "lastName": "Rodas",
+            "slug": "elsar-rodas",
+            "shortName": "E. Rodas",
+            "position": "D",
+            "jerseyNumber": "6",
+            "height": 179,
+            "userCount": 10,
+            "gender": "M",
+            "sofascoreId": "r8937m",
+            "id": 790018,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 762393600,
+            "proposedMarketValueRaw": {
+              "value": 235000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "إلسار روداس",
+                "ru": "Эльсар Родас"
+              },
+              "shortNameTranslation": {
+                "ar": "إ. روداس",
+                "ru": "Э. Родас"
+              }
+            }
+          },
+          "eventType": "corner",
+          "time": 30,
+          "playerCoordinates": {
+            "x": 99.5,
+            "y": 0.5
+          },
+          "passEndCoordinates": {
+            "x": 87,
+            "y": 5.5
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Paulo de la Cruz",
+            "firstName": "Paulo",
+            "lastName": "de la Cruz",
+            "slug": "paulo-de-la-cruz",
+            "shortName": "P. de la Cruz",
+            "position": "M",
+            "jerseyNumber": "10",
+            "height": 168,
+            "userCount": 33,
+            "gender": "M",
+            "sofascoreId": "bbbg9q",
+            "id": 922873,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 940550400,
+            "proposedMarketValueRaw": {
+              "value": 370000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "باولو دي لا كروز",
+                "ru": "Пауло де ла Крус"
+              },
+              "shortNameTranslation": {
+                "ar": "ب. دي لا كروز",
+                "ru": "П. Крус"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 30,
+          "playerCoordinates": {
+            "x": 87,
+            "y": 5.5
+          },
+          "passEndCoordinates": {
+            "x": 88.3,
+            "y": 5.5
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Elsar Rodas",
+            "firstName": "Elsar",
+            "lastName": "Rodas",
+            "slug": "elsar-rodas",
+            "shortName": "E. Rodas",
+            "position": "D",
+            "jerseyNumber": "6",
+            "height": 179,
+            "userCount": 10,
+            "gender": "M",
+            "sofascoreId": "r8937m",
+            "id": 790018,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 762393600,
+            "proposedMarketValueRaw": {
+              "value": 235000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "إلسار روداس",
+                "ru": "Эльсар Родас"
+              },
+              "shortNameTranslation": {
+                "ar": "إ. روداس",
+                "ru": "Э. Родас"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 30,
+          "playerCoordinates": {
+            "x": 88.3,
+            "y": 5.5
+          },
+          "passEndCoordinates": {
+            "x": 69.9,
+            "y": 19.4
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Diego Soto",
+            "slug": "diego-soto",
+            "shortName": "D. Soto",
+            "position": "M",
+            "jerseyNumber": "8",
+            "height": 175,
+            "userCount": 54,
+            "gender": "M",
+            "sofascoreId": "wrrieb",
+            "id": 980141,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 999216000,
+            "proposedMarketValueRaw": {
+              "value": 510000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "دييغو سوتو",
+                "ru": "Диего Сото"
+              },
+              "shortNameTranslation": {
+                "ar": "د. سوتو",
+                "ru": "Д. Сото"
+              }
+            }
+          },
+          "eventType": "pass",
+          "time": 30,
+          "playerCoordinates": {
+            "x": 69.9,
+            "y": 19.4
+          },
+          "passEndCoordinates": {
+            "x": 74.6,
+            "y": 11.7
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Elsar Rodas",
+            "firstName": "Elsar",
+            "lastName": "Rodas",
+            "slug": "elsar-rodas",
+            "shortName": "E. Rodas",
+            "position": "D",
+            "jerseyNumber": "6",
+            "height": 179,
+            "userCount": 10,
+            "gender": "M",
+            "sofascoreId": "r8937m",
+            "id": 790018,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 762393600,
+            "proposedMarketValueRaw": {
+              "value": 235000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "إلسار روداس",
+                "ru": "Эльсар Родас"
+              },
+              "shortNameTranslation": {
+                "ar": "إ. روداس",
+                "ru": "Э. Родас"
+              }
+            }
+          },
+          "eventType": "pass",
+          "isAssist": true,
+          "time": 30,
+          "playerCoordinates": {
+            "x": 76,
+            "y": 12.6
+          },
+          "passEndCoordinates": {
+            "x": 89.2,
+            "y": 53.3
+          },
+          "isHome": true
+        },
+        {
+          "player": {
+            "name": "Neri Bandiera",
+            "firstName": "Neri",
+            "lastName": "Bandiera",
+            "slug": "neri-bandiera",
+            "shortName": "N. Bandiera",
+            "position": "M",
+            "jerseyNumber": "11",
+            "height": 172,
+            "userCount": 130,
+            "gender": "M",
+            "sofascoreId": "tuuc95",
+            "id": 830746,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 615427200,
+            "proposedMarketValueRaw": {
+              "value": 120000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "نيري باندييرا",
+                "ru": "Нери Бандиера"
+              },
+              "shortNameTranslation": {
+                "ar": "ن. باندييرا",
+                "ru": "Н. Бандиера"
+              }
+            }
+          },
+          "eventType": "goal",
+          "bodyPart": "head",
+          "time": 30,
+          "playerCoordinates": {
+            "x": 96.2,
+            "y": 50.7
+          },
+          "gkCoordinates": {
+            "x": 99,
+            "y": 49.8
+          },
+          "goalShotCoordinates": {
+            "x": 100,
+            "y": 51.2
+          },
+          "goalMouthCoordinates": {
+            "x": 43.55,
+            "y": 48.33
+          },
+          "goalkeeper": {
+            "name": "Patrick Zubczuk",
+            "firstName": "Patrick",
+            "lastName": "Zubczuk",
+            "slug": "patrick-zubczuk",
+            "shortName": "P. Zubczuk",
+            "position": "G",
+            "jerseyNumber": "1",
+            "height": 186,
+            "userCount": 67,
+            "gender": "M",
+            "sofascoreId": "ztcvhd",
+            "id": 846373,
+            "marketValueCurrency": "EUR",
+            "dateOfBirthTimestamp": 793324800,
+            "proposedMarketValueRaw": {
+              "value": 410000,
+              "currency": "EUR"
+            },
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "باتريك زوبتشوك",
+                "ru": "Патрик Зубчук"
+              },
+              "shortNameTranslation": {
+                "ar": "ب. زوبتشوك",
+                "ru": "П. Зубчук"
+              }
+            }
+          },
+          "isHome": true,
+          "goalType": "regular"
+        }
+      ],
+      "id": 187799083,
+      "time": 30,
+      "isHome": true,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 16
+    }
+  ],
+  "home": {
+    "goalkeeperColor": {
+      "primary": "4a4b4a",
+      "number": "ffffff",
+      "outline": "4a4b4a",
+      "fancyNumber": "ffffff"
+    },
+    "playerColor": {
+      "primary": "ffffff",
+      "number": "8f0408",
+      "outline": "ffffff",
+      "fancyNumber": "222226"
+    }
+  },
+  "away": {
+    "goalkeeperColor": {
+      "primary": "2ee442",
+      "number": "000000",
+      "outline": "2ee442",
+      "fancyNumber": "222226"
+    },
+    "playerColor": {
+      "primary": "c6bb9b",
+      "number": "000000",
+      "outline": "c6bb9b",
+      "fancyNumber": "222226"
+    }
+  }
+}

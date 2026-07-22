@@ -1,0 +1,198 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Clausura",
+    "slug": "liga-1-clausura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 218,
+    "isGroup": false,
+    "roundPrefix": "Clausura",
+    "isLive": false,
+    "id": 34468,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، إياب",
+        "bn": "লিগা 1, ক্লাউসুরা",
+        "hi": "लीगा 1, क्लॉसुरा",
+        "ru": "Лига 1, Клаусура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2025",
+    "year": "2025",
+    "editor": false,
+    "id": 70962
+  },
+  "roundInfo": {
+    "round": 1
+  },
+  "customId": "eVacsJwId",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Deportivo Garcilaso",
+    "slug": "deportivo-garcilaso",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 9039,
+    "nameCode": "DEP",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 458584,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#374df5",
+      "secondary": "#374df5",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ديبورتيفو غارسيلاسو",
+        "ru": "Депортиво Гарсиласо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Los Chankas CYC",
+    "slug": "los-chankas-cyc",
+    "shortName": "Los Chankas",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 9255,
+    "nameCode": "CHA",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 252254,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#e20e0e",
+      "text": "#e20e0e"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "لوس تشانكاس سي واي سي",
+        "ru": "Лос Чанкас ЦИК"
+      },
+      "shortNameTranslation": {
+        "ar": "لوس تشانكاس",
+        "ru": "Лос Чанкас"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 3,
+    "display": 3,
+    "period1": 1,
+    "period2": 2,
+    "normaltime": 3
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 4,
+    "injuryTime2": 3,
+    "currentPeriodStartTimestamp": 1752887060
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1752889946
+  },
+  "hasGlobalHighlights": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 14088086,
+  "slug": "deportivo-garcilaso-los-chankas-cyc",
+  "startTimestamp": 1752883200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false
+}

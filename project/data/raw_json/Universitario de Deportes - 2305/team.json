@@ -1,0 +1,314 @@
+{
+  "team": {
+    "name": "Universitario de Deportes",
+    "slug": "universitario",
+    "shortName": "Universitario",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "tournament": {
+      "name": "Liga 1, Clausura",
+      "slug": "liga-1-clausura",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "uniqueTournament": {
+        "name": "Liga 1",
+        "slug": "liga-1",
+        "secondaryColorHex": "#f91018",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          },
+          "transferPeriod": [
+            {
+              "activeFrom": "06-01 00:00",
+              "activeTo": "09-18 00:00"
+            },
+            {
+              "activeFrom": "12-30 00:00",
+              "activeTo": "02-16 00:00"
+            }
+          ]
+        },
+        "userCount": 22141,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 406,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري الممتاز",
+            "bn": "লিগা 1",
+            "hi": "लीगा 1",
+            "ru": "Лига 1"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 218,
+      "roundPrefix": "Clausura",
+      "isLive": false,
+      "id": 34468,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دوري 1، إياب",
+          "bn": "লিগা 1, ক্লাউসুরা",
+          "hi": "लीगा 1, क्लॉसुरा",
+          "ru": "Лига 1, Клаусура"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 86720,
+    "manager": {
+      "name": "Héctor Cúper",
+      "slug": "hector-cuper",
+      "shortName": "H. Cúper",
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 785400,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "هيكتور كوبر",
+          "bn": "হেক্টর কুপার",
+          "hi": "हेक्टर कुपर",
+          "ru": "Эктор Купер"
+        },
+        "shortNameTranslation": {
+          "ar": "هـ. كوبر",
+          "bn": "এইচ. কুপার",
+          "hi": "एच. कुपर",
+          "ru": "Э. Купер"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Lima",
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 18033
+      },
+      "venueCoordinates": {
+        "latitude": -12.055647,
+        "longitude": -76.935334
+      },
+      "hidden": true,
+      "slug": "estadio-monumental",
+      "name": "Estadio Monumental",
+      "capacity": 80093,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 1008,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب مونومنتال",
+          "hi": "एस्टेडियो मोनुमेंटल",
+          "bn": "ইস্তাদিও মনুমেন্টাল",
+          "ru": "Стадион Estadio Monumental"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio Monumental",
+        "capacity": 80093
+      }
+    },
+    "nameCode": "UNI",
+    "class": 1,
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2305,
+    "fullName": "Universitario de Deportes",
+    "teamColors": {
+      "primary": "#ffffcc",
+      "secondary": "#ffffcc",
+      "text": "#ffffcc"
+    },
+    "foundationDateTimestamp": -1432771200,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "يونيفرسيتاريو دي ديبورتس",
+        "hi": "यूनिवर्सिटारिओ दे देपोरतेस",
+        "ru": "Университарио де Депортес"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "position": 3,
+    "value": "0",
+    "form": [
+      "L"
+    ]
+  }
+}

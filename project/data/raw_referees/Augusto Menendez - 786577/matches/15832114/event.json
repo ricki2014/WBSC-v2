@@ -1,0 +1,215 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Sudamericana, Group C",
+    "slug": "copa-sudamericana-group-c",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Sudamericana",
+      "slug": "conmebol-sudamericana",
+      "primaryColorHex": "#e3c000",
+      "secondaryColorHex": "#13489c",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 128047,
+      "hasPerformanceGraphFeature": false,
+      "id": 480,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كأس أمريكا الجنوبية لكرة القدم",
+          "bn": "কনমেবল সুদাআমেরিকানা",
+          "hi": "कॉनमेबोल सुदामेरिकाना",
+          "pt": "Copa Sul-Americana",
+          "ru": "КОНМЕБОЛ Судамерикана"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 527,
+    "isGroup": true,
+    "groupName": "Group C",
+    "groupSign": "C",
+    "isLive": false,
+    "id": 91438,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوبا سود أمريكانا، المجموعة C",
+        "bn": "কনমেবল সুদামেরিকানা, গ্রুপ সি",
+        "hi": "कॉनमेबोल सुदामेरिकाना, ग्रुप सी",
+        "pt": "Copa Sul-Americana, Grupo C",
+        "ru": "Кубок Южной Америки КОНМЕБОЛ, Группа C"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Sudamericana 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87770
+  },
+  "roundInfo": {
+    "round": 6
+  },
+  "customId": "GOsvZub",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "São Paulo",
+    "slug": "sao-paulo",
+    "shortName": "São Paulo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 430857,
+    "nameCode": "SPA",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 1981,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ساو باولو",
+        "ru": "ФК Сан-Паулу"
+      },
+      "shortNameTranslation": {
+        "ar": "ساو باولو"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Boston River",
+    "slug": "boston-river",
+    "shortName": "Boston River",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 14565,
+    "nameCode": "BRI",
+    "national": false,
+    "type": 0,
+    "id": 174970,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#265c32",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "نهر بوسطن",
+        "ru": "ФК Бостон Ривер"
+      },
+      "shortNameTranslation": {
+        "ar": "نهر بوسطن"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 2,
+    "period2": 0,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 2,
+    "injuryTime2": 4,
+    "currentPeriodStartTimestamp": 1779836539
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1779839486
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 15832114,
+  "slug": "boston-river-sao-paulo",
+  "startTimestamp": 1779832800,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

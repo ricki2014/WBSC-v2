@@ -1,0 +1,305 @@
+{
+  "team": {
+    "name": "Comerciantes Unidos",
+    "slug": "comerciantes-unidos",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "tournament": {
+      "name": "Liga 2",
+      "slug": "liga-2",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "uniqueTournament": {
+        "name": "Liga 2",
+        "slug": "liga-2",
+        "secondaryColorHex": "#f91018",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          },
+          "transferPeriod": [
+            {
+              "activeFrom": "06-01 00:00",
+              "activeTo": "09-18 00:00"
+            },
+            {
+              "activeFrom": "12-30 00:00",
+              "activeTo": "02-16 00:00"
+            }
+          ]
+        },
+        "userCount": 2616,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 10297,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري الدرجة الثانية",
+            "bn": "লীগ 2",
+            "hi": "लीगा 2",
+            "ru": "Лига 2"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 0,
+      "isLive": false,
+      "id": 13431,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الثاني",
+          "bn": "লিগা 2",
+          "hi": "लीगा 2",
+          "ru": "Лига 2"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 5290,
+    "manager": {
+      "name": "Jose Eugenio Hernandez",
+      "slug": "jose-eugenio-hernandez",
+      "shortName": "J. E. Hernandez",
+      "country": {
+        "alpha2": "CO",
+        "alpha3": "COL",
+        "name": "Colombia",
+        "slug": "colombia"
+      },
+      "id": 72841,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "خوسيه يوجينيو هيرنانديز",
+          "ru": "Хосе Эухенио Эрнандес"
+        },
+        "shortNameTranslation": {
+          "ar": "خ. ي. هيرنانديز",
+          "ru": "Х. Эрнандес"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Cutervo",
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 37593
+      },
+      "venueCoordinates": {
+        "latitude": -6.3808588451561,
+        "longitude": -78.814138890607
+      },
+      "hidden": true,
+      "slug": "estadio-juan-maldonado-gamarra",
+      "name": "Estadio Municipal Juan Maldonado Gamarra",
+      "capacity": 13000,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 16377,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب خوان مالدونادو غامارا",
+          "hi": "एस्टेडियो जुआन माल्डोनाडो गामर्रा",
+          "bn": "এস্তাদিও জুয়ান মালডোনাডো গামাররা",
+          "ru": "Estadio Municipal Juan Maldonado Gamarra"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio Municipal Juan Maldonado Gamarra",
+        "capacity": 13000
+      }
+    },
+    "nameCode": "COM",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 213609,
+    "fullName": "Comerciantes Unidos",
+    "teamColors": {
+      "primary": "#ffff00",
+      "secondary": "#ffff00",
+      "text": "#ffff00"
+    },
+    "foundationDateTimestamp": 1032393600,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوميرسيانتس يوني دوس",
+        "ru": "Комерсиантес Унитос"
+      },
+      "shortNameTranslation": {}
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "position": 3,
+    "value": "0",
+    "form": [
+      "L"
+    ]
+  }
+}

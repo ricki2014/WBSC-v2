@@ -1,0 +1,201 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Clausura",
+    "slug": "liga-1-clausura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 218,
+    "isGroup": false,
+    "roundPrefix": "Clausura",
+    "isLive": false,
+    "id": 34468,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، إياب",
+        "bn": "লিগা 1, ক্লাউসুরা",
+        "hi": "लीगा 1, क्लॉसुरा",
+        "ru": "Лига 1, Клаусура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Liga 1 2024",
+    "year": "2024",
+    "editor": false,
+    "id": 57741
+  },
+  "roundInfo": {
+    "round": 10
+  },
+  "customId": "hlJcsJwId",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Deportivo Garcilaso",
+    "slug": "deportivo-garcilaso",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 9039,
+    "nameCode": "DEP",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 458584,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#374df5",
+      "secondary": "#374df5",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "ديبورتيفو غارسيلاسو",
+        "ru": "Депортиво Гарсиласо"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Asociación Deportiva Tarma",
+    "slug": "asociacion-deportiva-tarma",
+    "shortName": "ADT",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 7564,
+    "nameCode": "ASO",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 335557,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#374df5",
+      "secondary": "#374df5",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "جمعية ديبورتيفا تارما",
+        "ru": "Ассоциация Депортива Тарма"
+      },
+      "shortNameTranslation": {
+        "ar": "إيه دي تي",
+        "ru": "АДТ"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 1,
+    "period2": 0,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 9,
+    "currentPeriodStartTimestamp": 1726265780
+  },
+  "changes": {
+    "changes": [
+      "time.currentPeriodStart",
+      "status.code",
+      "status.description",
+      "status.type",
+      "homeScore.period2",
+      "homeScore.normaltime",
+      "awayScore.period2",
+      "awayScore.normaltime"
+    ],
+    "changeTimestamp": 1726265784
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 12702516,
+  "slug": "deportivo-garcilaso-asociacion-deportiva-tarma",
+  "startTimestamp": 1726258500,
+  "finalResultOnly": false,
+  "feedLocked": false,
+  "isEditor": false
+}

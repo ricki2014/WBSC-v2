@@ -1,0 +1,145 @@
+{
+  "incidents": [
+    {
+      "text": "FT",
+      "homeScore": 0,
+      "awayScore": 2,
+      "isLive": false,
+      "time": 90,
+      "addedTime": 999,
+      "timeSeconds": 5400,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "from": "regular",
+      "homeScore": 0,
+      "awayScore": 2,
+      "player": {
+        "name": "Daniel Giraldo",
+        "firstName": "Daniel",
+        "lastName": "Giraldo",
+        "slug": "daniel-giraldo",
+        "shortName": "D. Giraldo",
+        "position": "M",
+        "jerseyNumber": "8",
+        "height": 178,
+        "userCount": 181,
+        "gender": "M",
+        "sofascoreId": "vudtzh",
+        "id": 1136107,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 709948800,
+        "proposedMarketValueRaw": {
+          "value": 325000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دانيال جيرالدو",
+            "bn": "ড্যানিয়েল জিরাল্ডো",
+            "hi": "डेनियल गिराल्डो",
+            "ru": "Даниэль Хиральдо"
+          },
+          "shortNameTranslation": {
+            "ar": "د. جيرالدو",
+            "bn": "ডি. গিরাল্ডো",
+            "hi": "डी. गिराल्डो",
+            "ru": "Д. Хиральдо"
+          }
+        }
+      },
+      "period": "period2",
+      "id": 354360737,
+      "time": 90,
+      "addedTime": 8,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 1
+    },
+    {
+      "text": "HT",
+      "homeScore": 0,
+      "awayScore": 1,
+      "isLive": false,
+      "time": 45,
+      "addedTime": 999,
+      "timeSeconds": 2700,
+      "incidentType": "period",
+      "reversedPeriodTime": 1,
+      "reversedPeriodTimeSeconds": 0,
+      "periodTimeSeconds": 2700
+    },
+    {
+      "from": "regular",
+      "homeScore": 0,
+      "awayScore": 1,
+      "player": {
+        "name": "Steven Rodríguez",
+        "slug": "steven-rodriguez",
+        "shortName": "S. Rodríguez",
+        "position": "F",
+        "jerseyNumber": "23",
+        "height": 177,
+        "userCount": 392,
+        "gender": "M",
+        "sofascoreId": "q44uzg",
+        "id": 974308,
+        "marketValueCurrency": "EUR",
+        "dateOfBirthTimestamp": 908236800,
+        "proposedMarketValueRaw": {
+          "value": 740000,
+          "currency": "EUR"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ستيفن رودريغيز",
+            "ru": "Стивен Родригес"
+          },
+          "shortNameTranslation": {
+            "ar": "س. رودريغيز",
+            "ru": "С. Родригес"
+          }
+        }
+      },
+      "period": "period1",
+      "id": 354353188,
+      "time": 2,
+      "isHome": false,
+      "incidentClass": "regular",
+      "incidentType": "goal",
+      "reversedPeriodTime": 44
+    }
+  ],
+  "home": {
+    "goalkeeperColor": {
+      "primary": "ff8000",
+      "number": "f9f8f4",
+      "outline": "ff8000",
+      "fancyNumber": "222226"
+    },
+    "playerColor": {
+      "primary": "ffffff",
+      "number": "ee4329",
+      "outline": "ffffff",
+      "fancyNumber": "222226"
+    }
+  },
+  "away": {
+    "goalkeeperColor": {
+      "primary": "21e8f4",
+      "number": "0735bc",
+      "outline": "21e8f4",
+      "fancyNumber": "222226"
+    },
+    "playerColor": {
+      "primary": "fdfdfd",
+      "number": "bbf1f8",
+      "outline": "3399a4",
+      "fancyNumber": "222226"
+    }
+  }
+}

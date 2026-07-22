@@ -1,0 +1,230 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Sudamericana, Group A",
+    "slug": "copa-sudamericana-group-a",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "country": {},
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Sudamericana",
+      "slug": "conmebol-sudamericana",
+      "primaryColorHex": "#e3c000",
+      "secondaryColorHex": "#13489c",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "country": {},
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 128047,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 480,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كأس أمريكا الجنوبية لكرة القدم",
+          "bn": "কনমেবল সুদাআমেরিকানা",
+          "hi": "कॉनमेबोल सुदामेरिकाना",
+          "pt": "Copa Sul-Americana",
+          "ru": "КОНМЕБОЛ Судамерикана"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 529,
+    "isGroup": true,
+    "groupName": "Group A",
+    "groupSign": "A",
+    "isLive": false,
+    "id": 91436,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كوبا سودامريكانا، المجموعة A",
+        "bn": "কনমেবল সুদামেরিকানা, গ্রুপ এ",
+        "hi": "कॉनमेबोल सुदामेरिकाना, ग्रुप ए",
+        "pt": "Copa Sul-Americana, Grupo A",
+        "ru": "Кубок Южной Америки КОНМЕБОЛ, Группа A"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Sudamericana 2026",
+    "year": "2026",
+    "editor": false,
+    "id": 87770
+  },
+  "roundInfo": {
+    "round": 6
+  },
+  "customId": "hWsDcd",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Tigre",
+    "slug": "tigre",
+    "shortName": "Tigre",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 27758,
+    "nameCode": "TIG",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "AR",
+      "alpha3": "ARG",
+      "name": "Argentina",
+      "slug": "argentina"
+    },
+    "id": 7628,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#000099",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "تيغري",
+        "ru": "КА Тигре"
+      },
+      "shortNameTranslation": {
+        "ar": "تيغري"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Alianza Atlético de Sullana",
+    "slug": "alianza-atletico-de-sullana",
+    "shortName": "Alianza Atlético",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 8657,
+    "nameCode": "AAT",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2307,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#6600ff",
+      "text": "#6600ff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أليانزا أتلتيكو دي سولانا",
+        "ru": "Альянса Атлетико"
+      },
+      "shortNameTranslation": {
+        "ar": "أليانزا أتلتيكو"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 0,
+    "period2": 2,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "coverage": -1,
+  "time": {
+    "injuryTime1": 4,
+    "injuryTime2": 5,
+    "currentPeriodStartTimestamp": 1780018459
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1780021478
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "correctHalftimeAiInsight": true,
+  "id": 15832046,
+  "slug": "tigre-alianza-atletico-de-sullana",
+  "startTimestamp": 1780014600,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false,
+  "eventFilters": {
+    "category": [
+      "club"
+    ],
+    "level": [
+      "top-competitions",
+      "pro"
+    ],
+    "gender": [
+      "M"
+    ]
+  }
+}

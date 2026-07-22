@@ -1,0 +1,198 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "CONMEBOL Libertadores, Group A",
+    "slug": "copa-libertadores-group-a",
+    "category": {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية",
+          "ru": "Южная Америка"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "CONMEBOL Libertadores",
+      "slug": "conmebol-libertadores",
+      "primaryColorHex": "#573215",
+      "secondaryColorHex": "#dfaf49",
+      "category": {
+        "name": "South America",
+        "slug": "south-america",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 18,
+        "id": 1470,
+        "flag": "south-america",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أمريكا الجنوبية",
+            "ru": "Южная Америка"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 220919,
+      "hasPerformanceGraphFeature": false,
+      "id": 384,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوبا ليبرتادوريس",
+          "bn": "কনমেবল লিবার্তাদোরেস",
+          "hi": "कॉनमेबोल लिबर्टाडोरेस",
+          "ru": "КОНМЕБОЛ Либертадорес"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 688,
+    "isGroup": true,
+    "groupName": "Group A",
+    "groupSign": "A",
+    "isLive": false,
+    "id": 2928,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كأس ليبرتادوريس - كونمبول - المجموعة A",
+        "bn": "কনমেবল লিবার্তাডোরস, গ্রুপ এ",
+        "hi": "कॉनमेबोल लिबर्टाडोरेस, ग्रुप ए",
+        "ru": "Кубок Либертадорес КОНМЕБОЛ, Группа A"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "CONMEBOL Libertadores 2025",
+    "year": "2025",
+    "editor": false,
+    "id": 70083
+  },
+  "roundInfo": {
+    "round": 6
+  },
+  "customId": "gobsEzc",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1,
+  "homeTeam": {
+    "name": "Estudiantes de La Plata",
+    "slug": "estudiantes-de-la-plata",
+    "shortName": "Estudiantes",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 50479,
+    "nameCode": "ELP",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 3206,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "إستويانتوس دي لابلادا",
+        "hi": "एस्तुडियनतेस डे ला प्लाटा",
+        "ru": "Клуб Эстудиантес де Ла-Плата"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "awayTeam": {
+    "name": "Carabobo FC",
+    "slug": "carabobo",
+    "shortName": "Carabobo",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 15322,
+    "nameCode": "CFC",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 6229,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#31060f",
+      "secondary": "#222226",
+      "text": "#222226"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كارابوبو إف سي",
+        "hi": "कराबोबो ऍफ़सी",
+        "ru": "Карабобо ФК"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "homeScore": {
+    "current": 2,
+    "display": 2,
+    "period1": 2,
+    "period2": 0,
+    "normaltime": 2
+  },
+  "awayScore": {
+    "current": 0,
+    "display": 0,
+    "period1": 0,
+    "period2": 0,
+    "normaltime": 0
+  },
+  "time": {
+    "injuryTime1": 1,
+    "injuryTime2": 3,
+    "currentPeriodStartTimestamp": 1748395962
+  },
+  "changes": {
+    "changes": [
+      "status.code",
+      "status.description",
+      "status.type"
+    ],
+    "changeTimestamp": 1748398851
+  },
+  "hasGlobalHighlights": true,
+  "hasXg": true,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "correctAiInsight": true,
+  "id": 13640365,
+  "slug": "carabobo-estudiantes-de-la-plata",
+  "startTimestamp": 1748392200,
+  "finalResultOnly": false,
+  "feedLocked": true,
+  "isEditor": false
+}

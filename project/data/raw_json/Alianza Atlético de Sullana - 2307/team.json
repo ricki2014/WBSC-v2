@@ -1,0 +1,309 @@
+{
+  "team": {
+    "name": "Alianza Atlético de Sullana",
+    "slug": "alianza-atletico-de-sullana",
+    "shortName": "Alianza Atlético",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "tournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "uniqueTournament": {
+        "name": "Liga 1",
+        "slug": "liga-1",
+        "secondaryColorHex": "#f91018",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          },
+          "transferPeriod": [
+            {
+              "activeFrom": "06-01 00:00",
+              "activeTo": "09-18 00:00"
+            },
+            {
+              "activeFrom": "12-30 00:00",
+              "activeTo": "02-16 00:00"
+            }
+          ]
+        },
+        "userCount": 22141,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 406,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري الممتاز",
+            "bn": "লিগা 1",
+            "hi": "लीगा 1",
+            "ru": "Лига 1"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 210,
+      "isLive": false,
+      "id": 51,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "bn": "লীগ 1",
+          "hi": "लीगा 1",
+          "ar": "الدوري 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 8657,
+    "manager": {
+      "name": "Federico Urciuoli",
+      "slug": "federico-urciuoli",
+      "shortName": "F. Urciuoli",
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 816968,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فيديريكو أورسيوولي",
+          "ru": "Федерико Урчиоли"
+        },
+        "shortNameTranslation": {
+          "ar": "ف. أورسيوولي",
+          "ru": "Ф. Урчиоли"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Sullana",
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 25779
+      },
+      "venueCoordinates": {
+        "latitude": -4.896816,
+        "longitude": -80.684338
+      },
+      "hidden": true,
+      "slug": "estadio-campeones-del-36",
+      "name": "Estadio Campeones del 36",
+      "capacity": 12000,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 15723,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب كامبيونيس ديل 36",
+          "hi": "स्टेडियम कैम्पियोनेस डेल 36",
+          "bn": "এস্তাদিও ক্যামেওনেস ডেল 36",
+          "ru": "Неизвестно"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio Campeones del 36",
+        "capacity": 12000
+      }
+    },
+    "nameCode": "AAT",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 2307,
+    "fullName": "Alianza Atlético de Sullana",
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#6600ff",
+      "text": "#6600ff"
+    },
+    "foundationDateTimestamp": 1616544000,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "أليانزا أتلتيكو دي سولانا",
+        "ru": "Альянса Атлетико"
+      },
+      "shortNameTranslation": {
+        "ar": "أليانزا أتلتيكو"
+      }
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "position": 1,
+    "value": "6",
+    "form": [
+      "W",
+      "W"
+    ]
+  }
+}

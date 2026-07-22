@@ -1,0 +1,309 @@
+{
+  "team": {
+    "name": "Club Atlético Grau",
+    "slug": "club-atletico-grau",
+    "shortName": "Atlético Grau",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      },
+      "transferPeriod": [
+        {
+          "activeFrom": "06-01 00:00",
+          "activeTo": "09-18 00:00"
+        },
+        {
+          "activeFrom": "12-30 00:00",
+          "activeTo": "02-16 00:00"
+        }
+      ]
+    },
+    "tournament": {
+      "name": "Liga 2",
+      "slug": "liga-2",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "uniqueTournament": {
+        "name": "Liga 2",
+        "slug": "liga-2",
+        "secondaryColorHex": "#f91018",
+        "category": {
+          "name": "Peru",
+          "slug": "peru",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "PE",
+            "alpha3": "PER",
+            "name": "Peru",
+            "slug": "peru"
+          },
+          "id": 20,
+          "flag": "peru",
+          "alpha2": "PE",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "بيرو",
+              "ru": "Перу"
+            },
+            "shortNameTranslation": {}
+          },
+          "transferPeriod": [
+            {
+              "activeFrom": "06-01 00:00",
+              "activeTo": "09-18 00:00"
+            },
+            {
+              "activeFrom": "12-30 00:00",
+              "activeTo": "02-16 00:00"
+            }
+          ]
+        },
+        "userCount": 2616,
+        "hasPerformanceGraphFeature": false,
+        "country": {},
+        "id": 10297,
+        "displayInverseHomeAwayTeams": false,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري الدرجة الثانية",
+            "bn": "লীগ 2",
+            "hi": "लीगा 2",
+            "ru": "Лига 2"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "priority": 0,
+      "isLive": false,
+      "id": 13431,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الثاني",
+          "bn": "লিগা 2",
+          "hi": "लीगा 2",
+          "ru": "Лига 2"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "primaryUniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        },
+        "transferPeriod": [
+          {
+            "activeFrom": "06-01 00:00",
+            "activeTo": "09-18 00:00"
+          },
+          {
+            "activeFrom": "12-30 00:00",
+            "activeTo": "02-16 00:00"
+          }
+        ]
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "country": {},
+      "id": 406,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "userCount": 10642,
+    "manager": {
+      "name": "Gerardo Ameli",
+      "slug": "gerardo-ameli",
+      "shortName": "G. Ameli",
+      "country": {
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "name": "Argentina",
+        "slug": "argentina"
+      },
+      "id": 788405,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جيراردو أميلي",
+          "ru": "Херардо Амели"
+        },
+        "shortNameTranslation": {
+          "ar": "ج. أميلي",
+          "ru": "Х. Амели"
+        }
+      }
+    },
+    "venue": {
+      "city": {
+        "name": "Piura",
+        "country": {
+          "alpha2": "PE",
+          "alpha3": "PER",
+          "name": "Peru",
+          "slug": "peru"
+        },
+        "id": 32856
+      },
+      "venueCoordinates": {
+        "latitude": -5.192904,
+        "longitude": -80.617101
+      },
+      "hidden": true,
+      "slug": "estadio-miguel-grau",
+      "name": "Estadio Miguel Grau",
+      "capacity": 25000,
+      "country": {
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "name": "Peru",
+        "slug": "peru"
+      },
+      "id": 1338,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ملعب ميغيل غراو",
+          "hi": "एस्टेडियो मिगुएल ग्राउ",
+          "bn": "এস্তাদিও মিগুয়েল গ্রাউ",
+          "ru": "Спортивный комплекс Estadio Miguel Grau"
+        },
+        "shortNameTranslation": {}
+      },
+      "stadium": {
+        "name": "Estadio Miguel Grau",
+        "capacity": 25000
+      }
+    },
+    "nameCode": "CAG",
+    "national": false,
+    "type": 0,
+    "country": {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name": "Peru",
+      "slug": "peru"
+    },
+    "id": 282538,
+    "fullName": "Club Atlético Grau",
+    "teamColors": {
+      "primary": "#ffffff",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "foundationDateTimestamp": -1609113600,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "نادي أتلتيكو غراو",
+        "ru": "Клуб Атлетико Грау"
+      },
+      "shortNameTranslation": {
+        "ar": "أتلتيكو غراو",
+        "ru": "Грау"
+      }
+    },
+    "timeActive": []
+  },
+  "pregameForm": {
+    "position": 2,
+    "value": "3",
+    "form": [
+      "W"
+    ]
+  }
+}

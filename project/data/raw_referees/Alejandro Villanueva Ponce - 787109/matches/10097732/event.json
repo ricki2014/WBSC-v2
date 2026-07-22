@@ -1,0 +1,197 @@
+{
+  "eventState": {},
+  "tournament": {
+    "name": "Liga 1, Apertura",
+    "slug": "liga-1-apertura",
+    "category": {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو",
+          "ru": "Перу"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "uniqueTournament": {
+      "name": "Liga 1",
+      "slug": "liga-1",
+      "secondaryColorHex": "#f91018",
+      "category": {
+        "name": "Peru",
+        "slug": "peru",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "priority": 0,
+        "id": 20,
+        "flag": "peru",
+        "alpha2": "PE",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "بيرو",
+            "ru": "Перу"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "userCount": 22141,
+      "hasPerformanceGraphFeature": false,
+      "id": 406,
+      "hasEventPlayerStatistics": true,
+      "displayInverseHomeAwayTeams": false,
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدوري الممتاز",
+          "bn": "লিগা 1",
+          "hi": "लीगा 1",
+          "ru": "Лига 1"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    "priority": 219,
+    "isGroup": false,
+    "roundPrefix": "Apertura",
+    "isLive": false,
+    "id": 34467,
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "دوري 1، ذهاب",
+        "bn": "লিগা 1, অ্যাপেরতুরা",
+        "hi": "लीगा 1, एपर्टुरा",
+        "ru": "Лига 1, Апертура"
+      },
+      "shortNameTranslation": {}
+    }
+  },
+  "season": {
+    "name": "Primera Division 2022",
+    "year": "2022",
+    "editor": false,
+    "id": 40118
+  },
+  "roundInfo": {
+    "round": 15
+  },
+  "customId": "mWsVUac",
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 2,
+  "homeTeam": {
+    "name": "Sport Boys",
+    "slug": "sport-boys",
+    "shortName": "Sport Boys",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 8359,
+    "nameCode": "SBA",
+    "national": false,
+    "type": 0,
+    "id": 2312,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#ffc0db",
+      "secondary": "#000000",
+      "text": "#000000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "سبورت بويز",
+        "ru": "Спорт Бойз"
+      },
+      "shortNameTranslation": {
+        "ar": "سبورت بويز"
+      }
+    }
+  },
+  "awayTeam": {
+    "name": "Carlos A. Mannucci",
+    "slug": "carlos-a-mannucci",
+    "shortName": "C.A.Mannucci",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 2704,
+    "nameCode": "MAN",
+    "national": false,
+    "type": 0,
+    "id": 252245,
+    "subTeams": [],
+    "teamColors": {
+      "primary": "#0000ff",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "كارلوس أ. مانوتشي",
+        "ru": "Карлос А. Маннукки"
+      },
+      "shortNameTranslation": {
+        "ar": "كارلوس مانوتشي",
+        "ru": "К.А. Маннукки"
+      }
+    }
+  },
+  "homeScore": {
+    "current": 1,
+    "display": 1,
+    "period1": 0,
+    "period2": 1,
+    "normaltime": 1
+  },
+  "awayScore": {
+    "current": 4,
+    "display": 4,
+    "period1": 2,
+    "period2": 2,
+    "normaltime": 4
+  },
+  "time": {
+    "injuryTime1": 3,
+    "injuryTime2": 4,
+    "currentPeriodStartTimestamp": 1653250069
+  },
+  "changes": {
+    "changes": [
+      "cardsCode"
+    ],
+    "changeTimestamp": 1653488848
+  },
+  "hasGlobalHighlights": false,
+  "hasEventPlayerStatistics": true,
+  "hasEventPlayerHeatMap": true,
+  "detailId": 1,
+  "crowdsourcingDataDisplayEnabled": false,
+  "id": 10097732,
+  "homeRedCards": 1,
+  "awayRedCards": 1,
+  "slug": "carlos-mannucci-sport-boys",
+  "startTimestamp": 1653243300,
+  "finalResultOnly": false,
+  "feedLocked": false,
+  "isEditor": false
+}
