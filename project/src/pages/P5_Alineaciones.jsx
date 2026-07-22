@@ -88,6 +88,8 @@ export default function P5_Alineaciones({
   const [loading,      setLoading]      = useState(false);
   const [error,        setError]        = useState('');
   const [autoSide,     setAutoSide]     = useState('home');
+  const [applyTarget,  setApplyTarget]  = useState('both'); // 'both' | 'team1' | 'team2'
+  const [urlSrcSide,   setUrlSrcSide]   = useState('home'); // lado del link que es el equipo elegido
   const [showControls, setShowControls] = useState(false); // oculto por defecto
 
   // Evita que setLineupData (por sustitución) resetee manualPos
@@ -154,7 +156,25 @@ export default function P5_Alineaciones({
   const loadUrl = async () => {
     if (!urlInput.trim()) return;
     setLoading(true); setError('');
-    try { applyLineup(await fetchLineups({ url: urlInput })); }
+    try {
+      const data = await fetchLineups({ url: urlInput });
+      if (applyTarget === 'both') {
+        applyLineup(data);
+      } else {
+        // Solo reemplaza el lado (home/away) del equipo elegido, sin tocar al rival.
+        const destKey = applyTarget === teamOfHome ? 'home' : 'away';
+        const base = lineupData || {
+          home: [], away: [], home_name: '', away_name: '',
+          home_formation: '', away_formation: '', match_id: null,
+        };
+        applyLineup({
+          ...base,
+          [destKey]: data[urlSrcSide],
+          [`${destKey}_name`]: data[`${urlSrcSide}_name`],
+          [`${destKey}_formation`]: data[`${urlSrcSide}_formation`],
+        });
+      }
+    }
     catch { setError('No se pudieron obtener las alineaciones'); }
     finally { setLoading(false); }
   };
@@ -431,6 +451,26 @@ export default function P5_Alineaciones({
                   <input value={urlInput} onChange={e => setUrlInput(e.target.value)}
                     placeholder="https://www.sofascore.com/...#id:12345678"
                     className="w-full bg-gray-900 border border-gray-600 text-white text-xs rounded-lg px-3 py-2 mb-2 focus:outline-none focus:border-green-500"/>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="text-gray-500 text-[10px]">Aplicar a:</span>
+                    <select value={applyTarget} onChange={e => setApplyTarget(e.target.value)}
+                      className="bg-gray-800 border border-gray-600 text-white text-[10px] rounded px-1.5 py-1 focus:outline-none focus:border-green-500">
+                      <option value="both">Ambos equipos</option>
+                      <option value="team1">Solo {team1Label}</option>
+                      <option value="team2">Solo {team2Label}</option>
+                    </select>
+                    {applyTarget !== 'both' && (
+                      <>
+                        <span className="text-gray-500 text-[10px]">en ese link jugó de:</span>
+                        {['home','away'].map(s => (
+                          <label key={s} className="flex items-center gap-1 cursor-pointer text-[10px] text-gray-300">
+                            <input type="radio" checked={urlSrcSide===s} onChange={()=>setUrlSrcSide(s)} className="accent-green-500"/>
+                            {s==='home' ? 'Local' : 'Visita'}
+                          </label>
+                        ))}
+                      </>
+                    )}
+                  </div>
                   <button onClick={loadUrl} disabled={loading} className="btn-primary w-full text-xs py-1.5">
                     {loading ? '⏳ Cargando...' : '🔗 Cargar desde URL'}
                   </button>
